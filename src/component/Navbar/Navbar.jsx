@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
@@ -11,16 +13,25 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 
-const pages = ["Events in Surtaal", "Tickets", "About Us", "Artists", "Our Team"];
+const navLinks = [
+  { label: "Events in Surtaal", href: "/" },
+  { label: "Tickets", href: "/tickets" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Artists", href: "/artists" },
+  { label: "Our Team", href: "/our-team" },
+];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activePage, setActivePage] = useState("Events in Surtaal");
   const [highlightStyle, setHighlightStyle] = useState({});
   const [isMobile, setIsMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const itemRefs = useRef({});
-  const navRef = useRef(null);
+
+  const activePage =
+    navLinks.find((l) => l.href === pathname)?.label ?? "Events in Surtaal";
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 960);
@@ -35,33 +46,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScrollToSection = (page) => {
-    const sectionId = page.replace(/\s+/g, "-").toLowerCase();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handlePageClick = (page) => {
-    setActivePage(page);
-    setDrawerOpen(false);
-    handleScrollToSection(page);
-  };
-
-  // Sliding highlight for the pill
+  // Sliding highlight recalculation
   useEffect(() => {
     function recalcHighlight() {
       const el = itemRefs.current[activePage];
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const parentRect = el.parentElement?.getBoundingClientRect();
-      const leftWithinParent = parentRect ? rect.left - parentRect.left : el.offsetLeft;
+      const leftWithinParent = parentRect
+        ? rect.left - parentRect.left
+        : el.offsetLeft;
       setHighlightStyle({
         width: `${Math.round(rect.width)}px`,
         transform: `translateX(${Math.round(leftWithinParent)}px) translateY(-50%)`,
         top: "50%",
-        height: "80%",
+        // full height of the pill container
+        height: "100%",
       });
     }
 
@@ -87,64 +87,62 @@ export default function Navbar() {
         left: 0,
         width: "100%",
         zIndex: 1100,
-        px: 0,
       }}
     >
       {/* ── Desktop Navbar ── */}
       {!isMobile && (
         <div
-          ref={navRef}
           className="navbar-desktop"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr",
             alignItems: "center",
             width: "100%",
-            padding: "16px 40px",
-            backgroundColor: scrolled ? "rgba(8,6,0,0.85)" : "transparent",
-            backdropFilter: scrolled ? "blur(16px)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-            borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
-            transition: "background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease",
+            /* 1920px spec: padding-top 40.66px, left/right 90px */
+            padding: "40.66px 90px 0",
+            backgroundColor: scrolled ? "rgba(8,6,0,0.88)" : "transparent",
+            backdropFilter: scrolled ? "blur(18px)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
+            borderBottom: scrolled
+              ? "1px solid rgba(255,255,255,0.07)"
+              : "1px solid transparent",
+            transition: "background-color 0.4s ease, border-color 0.4s ease",
+            boxSizing: "border-box",
           }}
         >
-          {/* ── LEFT: Logo ── */}
+          {/* LEFT: Logo — 250px wide */}
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src="/Images/Navbar/Logo.svg"
-              alt="Surtaal Entertainment Logo"
-              style={{
-                height: "40px",
-                width: "auto",
-                cursor: "pointer",
-                objectFit: "contain",
-              }}
-              onClick={() => handlePageClick("Events in Surtaal")}
-            />
+            <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
+              <img
+                src="/Images/Navbar/Logo.svg"
+                alt="Surtaal Entertainment"
+                style={{ width: "250px", height: "auto", objectFit: "contain" }}
+              />
+            </Link>
           </div>
 
-          {/* ── CENTER: Nav Pill ── */}
+          {/* CENTER: Nav Pill */}
           <div
             style={{
-              backgroundColor: "#0F0F0F",
-              borderRadius: "100px",
+              /* spec: height 61.23px, bg #FFFFFF14, radius 50px, no padding */
+              height: "61.234771728515625px",
+              backgroundColor: "#FFFFFF14",
+              borderRadius: "50px",
               display: "flex",
               alignItems: "center",
-              gap: "2px",
-              padding: "5px 6px",
+              gap: "0px",
+              padding: "0",
               position: "relative",
               overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.07)",
-              boxShadow: "0 2px 24px rgba(0,0,0,0.4)",
             }}
           >
-            {/* Sliding Highlight */}
+            {/* Sliding White Highlight */}
             <div
               style={{
                 position: "absolute",
-                left: "6px",
+                left: "0px",
                 backgroundColor: "#FFFFFF",
-                borderRadius: "100px",
+                borderRadius: "50px",
                 transition:
                   "transform 0.35s cubic-bezier(0.4,0,0.2,1), width 0.35s cubic-bezier(0.4,0,0.2,1)",
                 zIndex: 0,
@@ -153,55 +151,69 @@ export default function Navbar() {
             />
 
             {/* Nav Items */}
-            {pages.map((page) => (
-              <div
-                key={page}
-                ref={(el) => (itemRefs.current[page] = el)}
-                onClick={() => handlePageClick(page)}
-                className="buttonnavbar"
-                style={{
-                  padding: "8px 16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "100px",
-                  cursor: "pointer",
-                  zIndex: 1,
-                  position: "relative",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <span
+            {navLinks.map(({ label, href }) => {
+              const isActive = activePage === label;
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  ref={(el) => (itemRefs.current[label] = el)}
+                  className="buttonnavbar"
                   style={{
-                    margin: 0,
-                    fontSize: "13px",
-                    fontWeight: activePage === page ? "600" : "400",
-                    letterSpacing: "0.01em",
-                    color: activePage === page ? "#0F0F0F" : "#CBD5E1",
-                    transition: "color 0.3s ease",
-                    fontFamily: "Georama-Medium, sans-serif",
-                    lineHeight: 1,
+                    /* full pill height, no extra padding, let flex center vertically */
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "50px",
+                    cursor: "pointer",
+                    zIndex: 1,
+                    position: "relative",
+                    whiteSpace: "nowrap",
+                    textDecoration: "none",
+                    padding: "0 28px",
                   }}
                 >
-                  {page}
-                </span>
-              </div>
-            ))}
+                  <span
+                    style={{
+                      fontFamily: isActive
+                        ? "Sora-SemiBold, sans-serif"
+                        : "Sora-Regular, sans-serif",
+                      fontWeight: isActive ? 600 : 400,
+                      fontSize: "22px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      color: isActive ? "#BD0040" : "#FFFFFF",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
-          {/* ── RIGHT: Contact Us Button ── */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
+          {/* RIGHT: Contact Us Button */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
             <button
               className="contact-btn"
-              onClick={() => handleScrollToSection("contact-us")}
+              onClick={() => router.push("/contact-us")}
             >
               Contact Us
+              <img src="/Images/Navbar/arrow.svg" alt="Arrow" />
             </button>
           </div>
         </div>
       )}
 
-      {/* ── Mobile Navbar ── */}
+      {/* ── Mobile Top Bar ── */}
       {isMobile && (
         <div
           style={{
@@ -212,19 +224,19 @@ export default function Navbar() {
             padding: "14px 20px",
             backgroundColor: scrolled ? "rgba(8,6,0,0.9)" : "transparent",
             backdropFilter: scrolled ? "blur(16px)" : "none",
-            borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+            borderBottom: scrolled
+              ? "1px solid rgba(255,255,255,0.06)"
+              : "1px solid transparent",
             transition: "background-color 0.4s ease",
           }}
         >
-          {/* Mobile Logo */}
-          <img
-            src="/Images/Navbar/Logo.svg"
-            alt="Surtaal Entertainment Logo"
-            style={{ height: "34px", width: "auto", objectFit: "contain", cursor: "pointer" }}
-            onClick={() => handlePageClick("Events in Surtaal")}
-          />
-
-          {/* Hamburger */}
+          <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
+            <img
+              src="/Images/Navbar/Logo.svg"
+              alt="Surtaal Entertainment"
+              style={{ width: "160px", height: "auto", objectFit: "contain" }}
+            />
+          </Link>
           <IconButton
             onClick={() => setDrawerOpen(true)}
             sx={{
@@ -267,12 +279,15 @@ export default function Navbar() {
         >
           <img
             src="/Images/Navbar/Logo.svg"
-            alt="Surtaal Entertainment Logo"
-            style={{ height: "30px", width: "auto", objectFit: "contain" }}
+            alt="Surtaal Entertainment"
+            style={{ width: "140px", height: "auto", objectFit: "contain" }}
           />
           <IconButton
             onClick={() => setDrawerOpen(false)}
-            sx={{ color: "#fff", "&:hover": { bgcolor: "rgba(255,255,255,0.08)" } }}
+            sx={{
+              color: "#fff",
+              "&:hover": { bgcolor: "rgba(255,255,255,0.08)" },
+            }}
           >
             <CloseIcon fontSize="small" />
           </IconButton>
@@ -280,43 +295,48 @@ export default function Navbar() {
 
         {/* Drawer Nav Items */}
         <List sx={{ px: 1, pt: 1 }}>
-          {pages.map((page) => (
-            <ListItem key={page} disablePadding sx={{ mb: 0.5 }}>
-              <ListItemButton
-                onClick={() => handlePageClick(page)}
-                sx={{
-                  borderRadius: "10px",
-                  bgcolor: page === activePage ? "#ffffff" : "transparent",
-                  color: page === activePage ? "#0F0F0F" : "#CBD5E1",
-                  py: 1.4,
-                  px: 2,
-                  "&:hover": {
-                    bgcolor: page === activePage ? "#f0f0f0" : "rgba(255,255,255,0.06)",
-                  },
-                  transition: "background-color 0.2s ease, color 0.2s ease",
-                }}
-              >
-                <ListItemText
-                  primary={page}
-                  primaryTypographyProps={{
-                    fontSize: "14px",
-                    fontWeight: page === activePage ? 600 : 400,
-                    fontFamily: "Georama-Medium, sans-serif",
+          {navLinks.map(({ label, href }) => {
+            const isActive = activePage === label;
+            return (
+              <ListItem key={label} disablePadding sx={{ mb: 0.5 }}>
+                <ListItemButton
+                  component={Link}
+                  href={href}
+                  onClick={() => setDrawerOpen(false)}
+                  sx={{
+                    borderRadius: "10px",
+                    bgcolor: isActive ? "#ffffff" : "transparent",
+                    py: 1.4,
+                    px: 2,
+                   
+          
                   }}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
+                >
+                  <ListItemText
+                    primary={label}
+                    primaryTypographyProps={{
+                      fontSize: "15px",
+                      fontWeight: isActive ? 600 : 400,
+                      fontFamily: isActive
+                        ? "Sora-SemiBold, sans-serif"
+                        : "Sora-Regular, sans-serif",
+                      color: isActive ? "#BD0040" : "#ffffff",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
 
         {/* Drawer Contact Us */}
-        <div style={{ padding: "16px", marginTop: "auto" }}>
+        <div style={{ padding: "16px" }}>
           <button
             className="contact-btn"
             style={{ width: "100%" }}
             onClick={() => {
               setDrawerOpen(false);
-              handleScrollToSection("contact-us");
+              router.push("/contact-us");
             }}
           >
             Contact Us

@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import Navbar from "@/component/Navbar/Navbar";
 
 export const metadata = {
   title: "Surtaal Entertainment",
@@ -8,11 +8,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
