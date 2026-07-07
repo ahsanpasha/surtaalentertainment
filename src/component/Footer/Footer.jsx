@@ -100,11 +100,12 @@ const Footer = () => {
 
         <div className="FooterBottom">
           <div className="FooterBottomLeft">
-            <span className="underline">Surtaal-USA</span> © 2025. All Rights
-            Reserved.
+            <span className="underline">Surtaal-USA</span> © 2025. All Rights Reserved.
           </div>
           <div className="FooterBottomRight">
-            Privacy Policy &nbsp;&nbsp;|&nbsp;&nbsp; Terms of Service
+            <span>Privacy Policy</span>
+            <div className="FooterBottomDivider"></div>
+            <span>Terms of Service</span>
           </div>
         </div>
       </div>

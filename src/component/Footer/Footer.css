@@ -133,20 +133,32 @@
 }
 
 .FooterBottom {
+  height: 62px;
   background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 80px;
+  padding: 0 122px;
 }
 
 .FooterBottomLeft,
 .FooterBottomRight {
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 100%;
   color: #ffffff;
-  font-weight: 500;
+}
+
+.FooterBottomRight {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.FooterBottomDivider {
+  height: 29px;
+  border-left: 1px solid #ffffff;
 }
 
 .FooterBottomLeft .underline {
