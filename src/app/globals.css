@@ -7,11 +7,8 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);  
+  --color-foreground: var(--foreground);
 }
-
-
-
 
 html,
 body {
@@ -22,7 +19,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 
 @font-face {
   font-family: "Georama-Regular";
@@ -93,5 +89,29 @@ body {
 @font-face {
   font-family: "Sora-Bold";
   src: url("/Fonts/Sora-Bold.ttf") format("truetype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Outfit-Bold";
+  src: url("/Fonts/Outfit-Bold.ttf") format("truetype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Outfit-Medium";
+  src: url("/Fonts/Outfit-Medium.ttf") format("truetype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Outfit-Regular";
+  src: url("/Fonts/Outfit-Regular.ttf") format("truetype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Outfit-SemiBold";
+  src: url("/Fonts/Outfit-SemiBold.ttf") format("truetype");
   font-display: block;
 }
