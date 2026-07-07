@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/component/Navbar/Navbar";
+import DynamicNavbar from "@/component/Navbar/DynamicNavbar";
 
 export const metadata = {
   title: "Surtaal Entertainment",
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <DynamicNavbar />
         {children}
       </body>
     </html>
