@@ -257,3 +257,136 @@
   color: #272727;
   margin: 0 0 40px 0;
 }
+
+.Oureventdiv {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 62px 85px 67.64px;
+}
+
+.eventdetail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.eventDateCol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-right: 50px;
+}
+
+.event21 {
+  font-family: "Georama-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 1;
+  color: #272727;
+  margin: 0;
+}
+
+.eventMonthDayCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.eventMonth {
+  font-family: "Georama-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #bd0040;
+  margin: 0;
+}
+
+.eventDay {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: #4b4b4b;
+  margin: 0;
+}
+
+.littleline {
+  width: 1px;
+  height: 132px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: 50px;
+}
+
+.eventLocationCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  max-width: 857px;
+  width: 100%;
+}
+
+.eventCity {
+  font-family: "Georama-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #bd0040;
+  margin: 0;
+}
+
+.eventAddress {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  color: #272727;
+  margin: 0;
+}
+
+.BuyTicketsbtn {
+  height: 86px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(180deg, #8d0432 0%, #bd0040 100%) border-box;
+  border: 2px solid transparent;
+  padding: 0 43.78px;
+  font-family: "Outfit-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 27.93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15.65px;
+  border-radius: 100px;
+  color: #bd0040;
+  cursor: pointer;
+  border-radius: 15.65px;
+}
+
+.spacebtwdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.MainEventDiv {
+  padding-left: 68.5px;
+  padding-right: 68.5px;
+  width: 100%;
+  padding-top: 72px;
+  padding-bottom: 58px;
+}
+
+.linetour {
+  width: 100%;
+  height: 1px;
+  background-color: #00000033;
+  margin: 40px 0;
+}

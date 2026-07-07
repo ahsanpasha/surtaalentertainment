@@ -123,25 +123,123 @@ export default function HomePage() {
         <p className="WhatWeOffer">
           <span>Zain Zohaib</span> USA Tour <span>2026</span>
         </p>
+        <div className="MainEventDiv">
+          <div className="eventdetail">
+            <div className="eventDateCol">
+              <p className="event21">21</p>
+              <div className="eventMonthDayCol">
+                <p className="eventMonth">May</p>
+                <p className="eventDay">Sun</p>
+              </div>
+            </div>
+            <div className="littleline"></div>
+            <div className="spacebtwdiv">
+              <div className="eventLocationCol">
+                <p className="eventCity">Boston, MA</p>
+                <p className="eventAddress">
+                  Berklee Performing Arts Centre
+                  <br />
+                  136 Massachusetts Avenue, Boston, MA 02115
+                </p>
+              </div>
+              <button className="BuyTicketsbtn">
+                Buy Tickets Now
+                <img src="/Images/Navbar/arrowred.svg" alt="" />
+              </button>
+            </div>
+          </div>
 
-        <div className="eventdetail">
-          <div>
-            <p>21</p>
-            <p>May Sun</p>
+          <div className="linetour"></div>
+
+          <div className="eventdetail">
+            <div className="eventDateCol">
+              <p className="event21">21</p>
+              <div className="eventMonthDayCol">
+                <p className="eventMonth">May</p>
+                <p className="eventDay">Sun</p>
+              </div>
+            </div>
+            <div className="littleline"></div>
+            <div className="spacebtwdiv">
+              <div className="eventLocationCol">
+                <p className="eventCity">Boston, MA</p>
+                <p className="eventAddress">
+                  Berklee Performing Arts Centre
+                  <br />
+                  136 Massachusetts Avenue, Boston, MA 02115
+                </p>
+              </div>
+              <button className="BuyTicketsbtn">
+                Buy Tickets Now
+                <img src="/Images/Navbar/arrowred.svg" alt="" />
+              </button>
+            </div>
           </div>
-          <div className="littleline"></div>
-          <div>
-            <p>Boston, MA</p>
-            <p>
-              Berklee Performing Arts Centre136 Massachusetts Avenue, Boston, MA
-              02115
-            </p>
-            <button>
-              Buy Tickets Now
-              <img src="/Images/Navbar/arrow.svg" alt="" />
-            </button>
+
+          <div className="linetour"></div>
+
+          <div className="eventdetail">
+            <div className="eventDateCol">
+              <p className="event21">21</p>
+              <div className="eventMonthDayCol">
+                <p className="eventMonth">May</p>
+                <p className="eventDay">Sun</p>
+              </div>
+            </div>
+            <div className="littleline"></div>
+            <div className="spacebtwdiv">
+              <div className="eventLocationCol">
+                <p className="eventCity">Boston, MA</p>
+                <p className="eventAddress">
+                  Berklee Performing Arts Centre
+                  <br />
+                  136 Massachusetts Avenue, Boston, MA 02115
+                </p>
+              </div>
+              <button className="BuyTicketsbtn">
+                Buy Tickets Now
+                <img src="/Images/Navbar/arrowred.svg" alt="" />
+              </button>
+            </div>
           </div>
+
+          <div className="linetour"></div>
+
+          <div className="eventdetail">
+            <div className="eventDateCol">
+              <p className="event21">21</p>
+              <div className="eventMonthDayCol">
+                <p className="eventMonth">May</p>
+                <p className="eventDay">Sun</p>
+              </div>
+            </div>
+            <div className="littleline"></div>
+            <div className="spacebtwdiv">
+              <div className="eventLocationCol">
+                <p className="eventCity">Boston, MA</p>
+                <p className="eventAddress">
+                  Berklee Performing Arts Centre
+                  <br />
+                  136 Massachusetts Avenue, Boston, MA 02115
+                </p>
+              </div>
+              <button className="BuyTicketsbtn">
+                Buy Tickets Now
+                <img src="/Images/Navbar/arrowred.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div className="linetour"></div>
         </div>
+
+        <button
+          className="SeeHowbtn"
+          style={{ margin: 0, width: "fit-content" }}
+        >
+          View All Events
+          <img src="/Images/Navbar/arrow.svg" alt="" />
+        </button>
       </div>
     </main>
   );
