@@ -99,7 +99,7 @@ export default function Navbar() {
             alignItems: "center",
             width: "100%",
             /* 1920px spec: padding-top 40.66px, left/right 90px */
-            padding: "40.66px 90px 0",
+            padding: "40.66px 90px 25px",
             backgroundColor: scrolled ? "rgba(8,6,0,0.88)" : "transparent",
             backdropFilter: scrolled ? "blur(18px)" : "none",
             WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
