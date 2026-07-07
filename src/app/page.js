@@ -113,6 +113,36 @@ export default function HomePage() {
           </button>
         </div>
       </div>
+
+      {/* our event */}
+      <div className="Oureventdiv">
+        <div className="ServicesDiv" style={{ width: "fit-content" }}>
+          <div className="CircleServices"></div>
+          <p className="ServicesText">our events</p>
+        </div>
+        <p className="WhatWeOffer">
+          <span>Zain Zohaib</span> USA Tour <span>2026</span>
+        </p>
+
+        <div className="eventdetail">
+          <div>
+            <p>21</p>
+            <p>May Sun</p>
+          </div>
+          <div className="littleline"></div>
+          <div>
+            <p>Boston, MA</p>
+            <p>
+              Berklee Performing Arts Centre136 Massachusetts Avenue, Boston, MA
+              02115
+            </p>
+            <button>
+              Buy Tickets Now
+              <img src="/Images/Navbar/arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

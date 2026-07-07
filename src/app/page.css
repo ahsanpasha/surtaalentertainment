@@ -239,12 +239,13 @@
   text-transform: capitalize;
   color: #272727;
   margin: 24px 0 32px 0;
+  max-width: 779px;
 }
 
 .BringingText span {
   font-family: "Georama-SemiBold", sans-serif;
   font-weight: 600;
-  color: #BD0040;
+  color: #bd0040;
 }
 
 .AboutDesc {
