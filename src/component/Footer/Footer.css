@@ -1,0 +1,18 @@
+.galleryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.galleryRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstdivhalf {
+  width: 100%;
+  height: 408px;
+}
