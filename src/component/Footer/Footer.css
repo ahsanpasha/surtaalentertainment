@@ -16,3 +16,140 @@
   width: 100%;
   height: 408px;
 }
+
+.FooterWrapper {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.FooterInfoContainer {
+  padding: 31px 55px 42px 91px;
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.FooterTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.FooterLogo img {
+  width: 250px;
+}
+
+.FooterNavLinks {
+  display: flex;
+  gap: 40px;
+}
+
+.FooterLink {
+  font-family: "Sora-Regular";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #272727;
+  text-decoration: none;
+}
+
+.FooterLink.active {
+  font-weight: 600;
+  font-family: "Sora-SemiBold";
+  color: #bd0040;
+}
+
+.FooterSocials {
+  display: flex;
+  align-items: center;
+  gap: 17.83px;
+}
+
+.FooterSocials > span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27.36px;
+  vertical-align: middle;
+  color: #272727;
+}
+
+.SocialIcons {
+  display: flex;
+  gap: 11.4 px;
+}
+
+.SocialIcon {
+  width: 47.87px;
+  height: 47.87px;
+  border: 1.14px solid #bd004040;
+  border-radius: 1138.71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bd0040;
+  cursor: pointer;
+}
+
+.FooterMiddle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 59px;
+}
+
+.ContactItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ContactText {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContactLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #828282;
+}
+
+.ContactValue {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 4px;
+}
+
+.ContactDivider {
+  width: 2px;
+  height: 84px;
+  background-color: #0000001f;
+}
+
+.FooterBottom {
+  background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 80px;
+}
+
+.FooterBottomLeft,
+.FooterBottomRight {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.FooterBottomLeft .underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
