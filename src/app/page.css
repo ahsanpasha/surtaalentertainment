@@ -619,6 +619,7 @@
   vertical-align: middle;
   text-transform: capitalize;
   color: #ffffff;
+  max-width: 430px;
 }
 
 .booknowbtn {

@@ -170,14 +170,14 @@ export default function HomePage() {
 
           <div className="Divmainrow">
             <div className="divrow">
-              <p className="starrrname">Zain Zohaib</p>
+              <p className="starrrname">Asif Ali Khan Santoo</p>
               <button className="booknowbtn">
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/arist02.webp"
                 className="aristimage"
                 alt=""
               />
@@ -194,14 +194,14 @@ export default function HomePage() {
 
           <div className="Divmainrow">
             <div className="divrow">
-              <p className="starrrname">Zain Zohaib</p>
+              <p className="starrrname">Shafqat Amanat Ali</p>
               <button className="booknowbtn">
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/arist03.webp"
                 className="aristimage"
                 alt=""
               />
@@ -218,14 +218,14 @@ export default function HomePage() {
 
           <div className="Divmainrow">
             <div className="divrow">
-              <p className="starrrname">Zain Zohaib</p>
+              <p className="starrrname">Aima Baig</p>
               <button className="booknowbtn">
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/arist04.webp"
                 className="aristimage"
                 alt=""
               />
@@ -242,14 +242,14 @@ export default function HomePage() {
 
           <div className="Divmainrow">
             <div className="divrow">
-              <p className="starrrname">Zain Zohaib</p>
+              <p className="starrrname">Fariha Pervez</p>
               <button className="booknowbtn">
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/arist05.webp"
                 className="aristimage"
                 alt=""
               />
@@ -266,14 +266,14 @@ export default function HomePage() {
 
           <div className="Divmainrow">
             <div className="divrow">
-              <p className="starrrname">Zain Zohaib</p>
+              <p className="starrrname">Asim Azhar</p>
               <button className="booknowbtn">
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/arist06.webp"
                 className="aristimage"
                 alt=""
               />

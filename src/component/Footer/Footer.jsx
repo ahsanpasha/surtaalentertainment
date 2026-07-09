@@ -9,33 +9,32 @@ const Footer = () => {
     <div>
       <div className="galleryContainer">
         <div className="galleryRow">
-          <img
-            src="/Images/Footer/Footer1.webp"
-            className="firstdivhalf"
-            alt=""
-          />
-          <img
-            src="/Images/Footer/Footer2.webp"
-            className="firstdivhalf"
-            alt=""
-          />
+          <div className="imageBox">
+            <img src="/Images/Footer/Footer1.webp" className="imgDefault" />
+            <img src="/Images/Footer/FooterHover1.webp" className="imgHover" />
+          </div>
+
+          <div className="imageBox">
+            <img src="/Images/Footer/Footer2.webp" className="imgDefault" />
+            <img src="/Images/Footer/FooterHover2.webp" className="imgHover" />
+          </div>
         </div>
+
         <div className="galleryRow">
-          <img
-            src="/Images/Footer/Footer3.webp"
-            className="firstdivhalf"
-            alt=""
-          />
-          <img
-            src="/Images/Footer/Footer4.webp"
-            className="firstdivhalf"
-            alt=""
-          />
-          <img
-            src="/Images/Footer/Footer5.webp"
-            className="firstdivhalf"
-            alt=""
-          />
+          <div className="imageBox">
+            <img src="/Images/Footer/Footer3.webp" className="imgDefault" />
+            <img src="/Images/Footer/FooterHover3.webp" className="imgHover" />
+          </div>
+
+          <div className="imageBox">
+            <img src="/Images/Footer/Footer4.webp" className="imgDefault" />
+            <img src="/Images/Footer/FooterHover4.webp" className="imgHover" />
+          </div>
+
+          <div className="imageBox">
+            <img src="/Images/Footer/Footer5.webp" className="imgDefault" />
+            <img src="/Images/Footer/FooterHover5.webp" className="imgHover" />
+          </div>
         </div>
       </div>
 
@@ -100,7 +99,8 @@ const Footer = () => {
 
         <div className="FooterBottom">
           <div className="FooterBottomLeft">
-            <span className="underline">Surtaal-USA</span> © 2025. All Rights Reserved.
+            <span className="underline">Surtaal-USA</span> © 2025. All Rights
+            Reserved.
           </div>
           <div className="FooterBottomRight">
             <span>Privacy Policy</span>
