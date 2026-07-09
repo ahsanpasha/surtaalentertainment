@@ -12,6 +12,7 @@
 
 html,
 body {
+  /* background-color: #ffffff; */
   background-color: #080600;
   background: #080600;
   color: var(--foreground);
@@ -19,6 +20,15 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* .main-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #080600;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+} */
 
 @font-face {
   font-family: "Georama-Regular";
