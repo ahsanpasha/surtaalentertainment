@@ -114,6 +114,175 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* entertainment club */}
+      <div>
+        <div className="EntertainmentDiv">
+          <div className="SurtaalMainRow">
+            <div className="SurtaalMainCol">
+              <div className="storyDiv" style={{ width: "fit-content" }}>
+                <div className="CircleServices"></div>
+                <p className="storytext">our story</p>
+              </div>
+              <p className="storyline">
+                Entertainment <span>Club</span>
+              </p>
+            </div>
+            <p className="Surtaalpara">
+              Surtaal Entertainment Club features a diverse lineup of celebrated
+              and emerging South Asian talent. From soulful qawwals to
+              contemporary fusion acts, this is where every artist under the
+              Surtaal banner comes together. Explore the voices, styles, and
+              performers that define the Surtaal experience.
+            </p>
+          </div>
+        </div>
+
+        <div className="DividerEntertainment"></div>
+        {/* artist01 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+
+        {/* artist02 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+
+        {/* artist03 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+
+        {/* artist04 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+
+        {/* artist05 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+
+        {/* artist06 */}
+        <div className="entertainmentartistbox">
+          <div className="straightlinediv">
+            <div className="circleentertainment"></div>
+          </div>
+
+          <div className="Divmainrow">
+            <div className="divrow">
+              <p className="starrrname">Zain Zohaib</p>
+              <button className="booknowbtn">
+                Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+            <div className="imageWrapper">
+              <img
+                src="/Images/EventinSurtaal/artist01.webp"
+                className="aristimage"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="DividerEntertainment"></div>
+      </div>
+
       {/* our event */}
       <div className="Oureventdiv">
         <div className="ServicesDiv" style={{ width: "fit-content" }}>
