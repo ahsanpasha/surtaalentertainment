@@ -271,7 +271,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .eventDateCol {
@@ -715,8 +715,10 @@
   .ServicesText {
     font-size: 14.75px;
     line-height: 18px;
+    letter-spacing: 6.15px;
   }
-  .WhatWeOffer {
+  .WhatWeOffer,
+  .WhatWeOffer span {
     font-size: 51.02px;
     line-height: 55px;
     margin-bottom: 28.51px;
@@ -759,5 +761,47 @@
     font-size: 15.01px;
     line-height: 24px;
     margin-bottom: 28.51px;
+  }
+  .Oureventdiv {
+    padding: 46.52px 63.78px 50.75px;
+  }
+  .MainEventDiv {
+    padding: 50px 51px 8px;
+  }
+  .event21 {
+    font-size: 69.03px;
+  }
+  .eventMonth {
+    font-size: 36.02px;
+  }
+  .littleline {
+    height: 99px;
+  }
+  .eventCity {
+    font-size: 36.02px;
+  }
+  .eventAddress {
+    font-size: 21.01px;
+    line-height: 24px;
+  }
+  .eventLocationCol {
+    gap: 24px;
+    max-width: 643.05px;
+  }
+  .eventDateCol {
+    margin-right: 30px;
+    gap: 18px;
+  }
+  .BuyTicketsbtn {
+    height: 64.53px;
+    font-size: 20.96px;
+    padding: 0 32px;
+  }
+  .BuyTicketsbtn img {
+    height: 12.5px;
+    width: 12.5px;
+  }
+  .linetour {
+    margin-bottom: 30px;
   }
 }
