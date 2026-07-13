@@ -428,7 +428,7 @@
   font-size: 68px;
   line-height: 70px;
   letter-spacing: 0.02em;
-  text-align: center;
+  text-align: start;
   text-transform: capitalize;
   color: #ffffff;
   margin: 30px 0 20px;
@@ -545,6 +545,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 63px;
 }
 .SurtaalMainCol {
   display: flex;
@@ -803,5 +804,49 @@
   }
   .linetour {
     margin-bottom: 30px;
+  }
+  .OurStorySection {
+    padding: 43px 62px 40px;
+  }
+  .storyDiv {
+    height: 33.02px;
+    padding: 0 16.5px;
+    gap: 12px;
+  }
+  .storytext {
+    font-size: 14.75px;
+    letter-spacing: 6.15px;
+  }
+  .storyline,
+  .storyline span {
+    font-size: 51.02px;
+    line-height: 54px;
+  }
+  .foundedtext {
+    max-width: 809.63px;
+    margin-bottom: 38.51px;
+  }
+  .SuccessDiv {
+    height: 209.35px;
+    padding: 0px 58.5px 0px 52px;
+  }
+  .SuccessNum {
+    font-size: 78.79px;
+    line-height: 80px;
+  }
+  .SuccessLabel {
+    margin-top: 36px;
+    font-size: 23.26px;
+  }
+  .EntertainmentDiv {
+    padding: 41px 85px 48px;
+  }
+  .Surtaalpara {
+    font-size: 15.01px;
+    line-height: 24px;
+    max-width: 620px;
+  }
+  .SurtaalMainCol {
+    gap: 0px;
   }
 }

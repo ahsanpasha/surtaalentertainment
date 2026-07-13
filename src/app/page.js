@@ -121,9 +121,9 @@ export default function HomePage() {
             <div className="SurtaalMainCol">
               <div className="storyDiv" style={{ width: "fit-content" }}>
                 <div className="CircleServices"></div>
-                <p className="storytext">our story</p>
+                <p className="storytext">Surtaal</p>
               </div>
-              <p className="storyline">
+              <p className="storyline" style={{ marginBottom: "0px" }}>
                 Entertainment <span>Club</span>
               </p>
             </div>
