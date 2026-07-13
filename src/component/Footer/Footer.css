@@ -219,6 +219,203 @@
   text-underline-offset: 4px;
 }
 
+@media (max-width: 1800px) {
+  .imageBox {
+    height: 371.8px;
+  }
+  .FooterLogo img {
+    width: 227.8px;
+  }
+  .FooterInfoContainer {
+    padding: 28.2px 50.1px 38.2px 82.9px;
+    gap: 28.2px;
+  }
+  .FooterLink {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .FooterNavLinks {
+    gap: 36.4px;
+  }
+  .FooterSocials > span {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .FooterSocials {
+    gap: 16.2px;
+  }
+  .SocialIcon {
+    height: 43.6px;
+    width: 43.6px;
+  }
+  .SocialIcon svg {
+    width: 20.6px;
+    height: 20.6px;
+  }
+  .ContactLabel {
+    font-size: 21.8px;
+    line-height: 21.8px;
+  }
+  .ContactValue {
+    font-size: 21.8px;
+    line-height: 21.8px;
+    margin-top: 3.6px;
+  }
+  .ContactDivider {
+    height: 76.5px;
+  }
+  .ContactItem img,
+  .ContactItem svg {
+    height: 53.7px;
+    width: auto;
+  }
+  .FooterBottomLeft,
+  .FooterBottomRight {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .FooterBottomDivider {
+    height: 26.4px;
+  }
+  .FooterBottomRight {
+    gap: 20px;
+  }
+  .FooterBottom {
+    padding-left: 111.1px;
+    padding-right: 111.1px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .imageBox {
+    height: 350.88px;
+  }
+  .FooterLogo img {
+    width: 215px;
+  }
+  .FooterInfoContainer {
+    padding: 26.66px 47.3px 36.12px 78.26px;
+    gap: 26.66px;
+  }
+  .FooterLink {
+    font-size: 18.92px;
+    line-height: 18.92px;
+  }
+  .FooterNavLinks {
+    gap: 34.4px;
+  }
+  .FooterSocials > span {
+    font-size: 18.92px;
+    line-height: 23.53px;
+  }
+  .FooterSocials {
+    gap: 15.33px;
+  }
+  .SocialIcon {
+    height: 41.17px;
+    width: 41.17px;
+  }
+  .SocialIcon svg {
+    width: 19.49px;
+    height: 19.49px;
+  }
+  .ContactLabel {
+    font-size: 20.64px;
+    line-height: 20.64px;
+  }
+  .ContactValue {
+    font-size: 20.64px;
+    line-height: 20.64px;
+    margin-top: 3.44px;
+  }
+  .ContactDivider {
+    height: 72.24px;
+  }
+  .ContactItem img, .ContactItem svg {
+    height: 50.74px;
+    width: auto;
+  }
+  .FooterBottomLeft, .FooterBottomRight {
+    font-size: 18.92px;
+    line-height: 18.92px;
+  }
+  .FooterBottomDivider {
+    height: 24.94px;
+  }
+  .FooterBottomRight {
+    gap: 18.92px;
+  }
+  .FooterBottom {
+    padding-left: 104.92px;
+    padding-right: 104.92px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .imageBox {
+    height: 330.43px;
+  }
+  .FooterLogo img {
+    width: 202.5px;
+  }
+  .FooterInfoContainer {
+    padding: 25.11px 44.55px 34.02px 73.71px;
+    gap: 25.11px;
+  }
+  .FooterLink {
+    font-size: 17.82px;
+    line-height: 17.82px;
+  }
+  .FooterNavLinks {
+    gap: 32.4px;
+  }
+  .FooterSocials > span {
+    font-size: 17.82px;
+    line-height: 22.16px;
+  }
+  .FooterSocials {
+    gap: 14.44px;
+  }
+  .SocialIcon {
+    height: 38.77px;
+    width: 38.77px;
+  }
+  .SocialIcon svg {
+    width: 18.36px;
+    height: 18.36px;
+  }
+  .ContactLabel {
+    font-size: 19.44px;
+    line-height: 19.44px;
+  }
+  .ContactValue {
+    font-size: 19.44px;
+    line-height: 19.44px;
+    margin-top: 3.24px;
+  }
+  .ContactDivider {
+    height: 68.04px;
+  }
+  .ContactItem img, .ContactItem svg {
+    height: 47.79px;
+    width: auto;
+  }
+  .FooterBottomLeft, .FooterBottomRight {
+    font-size: 17.82px;
+    line-height: 17.82px;
+  }
+  .FooterBottomDivider {
+    height: 23.49px;
+  }
+  .FooterBottomRight {
+    gap: 17.82px;
+  }
+  .FooterBottom {
+    padding-left: 98.82px;
+    padding-right: 98.82px;
+  }
+}
+
 @media (max-width: 1440px) {
   .imageBox {
     height: 306.14px;

@@ -667,6 +667,647 @@
   padding-bottom: 82px;
 }
 
+@media (max-width: 1800px) {
+  .MainHome {
+    padding: 232px 20px 213px;
+  }
+  .Celebrate {
+    padding: 10.94px 25px;
+    margin-bottom: 38.2px;
+  }
+  .CircleDiv {
+    height: 12.7px;
+    width: 12.7px;
+  }
+  .Celebratetext {
+    font-size: 21.8px;
+    line-height: 26.9px;
+  }
+  .FeelText {
+    font-size: 80.2px;
+    margin-bottom: 47.4px;
+    line-height: 89.5px;
+  }
+  .Leteverytext {
+    font-size: 20px;
+    line-height: 31px;
+    margin-bottom: 48.3px;
+    max-width: 867px;
+  }
+  .SeeHowbtn {
+    height: 67.4px;
+    gap: 12.2px;
+    font-size: 21.8px;
+  }
+  .SeeHowbtn img {
+    width: 12.1px;
+    height: 12.1px;
+  }
+  .ourServices {
+    padding: 51px 77.4px 93.6px 77.4px;
+  }
+  .ServicesDiv {
+    height: 40.3px;
+    padding: 0 21.6px;
+    margin-bottom: 38.2px;
+  }
+  .CircleServices {
+    height: 10.4px;
+    width: 10.4px;
+  }
+  .ServicesText {
+    font-size: 17.9px;
+    line-height: 22px;
+    letter-spacing: 7.4px;
+  }
+  .WhatWeOffer,
+  .WhatWeOffer span {
+    font-size: 61.9px;
+    line-height: 63.8px;
+    margin-bottom: 34.6px;
+  }
+  .ServiceDescTop {
+    max-width: 867px;
+    font-size: 18.2px;
+    line-height: 31px;
+    margin-bottom: 52.8px;
+  }
+  .ServiceCardsDiv {
+    padding: 0 12.7px;
+  }
+  .ServiceCardsDiv img {
+    width: 366.4px;
+    margin-bottom: 45.5px;
+  }
+  .Servicename {
+    font-size: 38.2px;
+    line-height: 41.9px;
+    margin-bottom: 34.6px;
+  }
+  .ServiceDesc {
+    font-size: 18.2px;
+    line-height: 21.8px;
+  }
+  .AboutDiv > img {
+    width: 767px;
+  }
+  .SecondAbout {
+    padding: 57.4px 65.6px 56.5px 51.9px;
+  }
+  .BringingText {
+    font-size: 61.9px;
+    line-height: 77.4px;
+    margin-top: 21.8px;
+    margin-bottom: 29.1px;
+  }
+  .AboutDesc {
+    font-size: 18.2px;
+    line-height: 31px;
+    margin-bottom: 36.4px;
+  }
+  .Oureventdiv {
+    padding: 56.5px 77.4px 61.6px;
+  }
+  .MainEventDiv {
+    padding: 65.6px 62.4px 52.8px;
+  }
+  .event21 {
+    font-size: 83.8px;
+  }
+  .eventMonth {
+    font-size: 43.7px;
+  }
+  .littleline {
+    height: 120.3px;
+  }
+  .eventCity {
+    font-size: 43.7px;
+  }
+  .eventAddress {
+    font-size: 25.5px;
+    line-height: 34.6px;
+  }
+  .eventLocationCol {
+    gap: 29.1px;
+    max-width: 781px;
+  }
+  .eventDateCol {
+    margin-right: 45.5px;
+    gap: 18.2px;
+  }
+  .BuyTicketsbtn {
+    height: 78.3px;
+    font-size: 25.4px;
+    padding: 0 39.9px;
+  }
+  .BuyTicketsbtn img {
+    height: 15.1px;
+    width: 15.1px;
+  }
+  .linetour {
+    margin-bottom: 36.4px;
+  }
+  .OurStorySection {
+    padding: 52.8px 76.5px 49.2px;
+  }
+  .storyDiv {
+    height: 40px;
+    padding: 0 20px;
+    gap: 14.9px;
+  }
+  .storytext {
+    font-size: 17.9px;
+    letter-spacing: 7.4px;
+  }
+  .storyline,
+  .storyline span {
+    font-size: 61.9px;
+    line-height: 63.8px;
+  }
+  .foundedtext {
+    max-width: 983px;
+    margin-bottom: 46.4px;
+  }
+  .SuccessDiv {
+    height: 254px;
+    padding: 0px 71px 0px 63.8px;
+  }
+  .SuccessNum {
+    font-size: 95.7px;
+    line-height: 95.7px;
+  }
+  .SuccessLabel {
+    margin-top: 27.3px;
+    font-size: 28.2px;
+  }
+  .EntertainmentDiv {
+    padding: 50.1px 103.9px 41px;
+  }
+  .Surtaalpara {
+    font-size: 18.2px;
+    line-height: 31px;
+    max-width: 754px;
+  }
+  .SurtaalMainCol {
+    gap: 10.9px;
+  }
+  .starrrname {
+    font-size: 71.1px;
+    line-height: 72.9px;
+    max-width: 391.9px;
+  }
+  .entertainmentartistbox {
+    gap: 86.6px;
+    padding: 0px 99.3px 0px 85.6px;
+  }
+  .booknowbtn {
+    height: 67.4px;
+    padding: 0 39.4px;
+    font-size: 21.8px;
+  }
+  .booknowbtn img {
+    height: 12.1px;
+    width: 12.1px;
+  }
+  .aristimage {
+    height: 414.7px;
+  }
+  .circleentertainment {
+    height: 19.1px;
+    width: 19.1px;
+  }
+  .Divmainrow {
+    padding-top: 74.7px;
+    padding-bottom: 74.7px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .MainHome {
+    padding: 219px 20px 201px;
+  }
+  .Celebrate {
+    padding: 10.32px 23.65px;
+    margin-bottom: 36.12px;
+  }
+  .CircleDiv {
+    height: 12.04px;
+    width: 12.04px;
+  }
+  .Celebratetext {
+    font-size: 20.64px;
+    line-height: 25.44px;
+  }
+  .FeelText {
+    font-size: 75.68px;
+    margin-bottom: 44.72px;
+    line-height: 84.48px;
+  }
+  .Leteverytext {
+    font-size: 18.92px;
+    line-height: 29.24px;
+    margin-bottom: 45.58px;
+    max-width: 818.72px;
+  }
+  .SeeHowbtn {
+    height: 63.64px;
+    gap: 11.57px;
+    font-size: 20.64px;
+  }
+  .SeeHowbtn img {
+    width: 11.45px;
+    height: 11.45px;
+  }
+  .ourServices {
+    padding: 48.16px 73.1px 88.38px 73.1px;
+  }
+  .ServicesDiv {
+    height: 38.04px;
+    padding: 0 20.43px;
+    margin-bottom: 36.12px;
+  }
+  .CircleServices {
+    height: 9.86px;
+    width: 9.86px;
+  }
+  .ServicesText {
+    font-size: 16.91px;
+    line-height: 20.84px;
+    letter-spacing: 7.04px;
+  }
+  .WhatWeOffer, .WhatWeOffer span {
+    font-size: 58.48px;
+    line-height: 60.2px;
+    margin-bottom: 32.68px;
+  }
+  .ServiceDescTop {
+    max-width: 818.72px;
+    font-size: 17.2px;
+    line-height: 29.24px;
+    margin-bottom: 49.88px;
+  }
+  .ServiceCardsDiv {
+    padding: 0 12.04px;
+  }
+  .ServiceCardsDiv img {
+    width: 345.72px;
+    margin-bottom: 43px;
+  }
+  .Servicename {
+    font-size: 36.12px;
+    line-height: 39.56px;
+    margin-bottom: 32.68px;
+  }
+  .ServiceDesc {
+    font-size: 17.2px;
+    line-height: 20.64px;
+  }
+  .AboutDiv > img {
+    width: 724.12px;
+  }
+  .SecondAbout {
+    padding: 54.18px 61.92px 53.32px 49.02px;
+  }
+  .BringingText {
+    font-size: 58.48px;
+    line-height: 73.1px;
+    margin-top: 20.64px;
+    margin-bottom: 27.52px;
+  }
+  .AboutDesc {
+    font-size: 17.2px;
+    line-height: 29.24px;
+    margin-bottom: 34.4px;
+  }
+  .Oureventdiv {
+    padding: 53.32px 73.1px 58.17px;
+  }
+  .MainEventDiv {
+    padding: 61.92px 58.91px 49.88px;
+  }
+  .event21 {
+    font-size: 79.12px;
+  }
+  .eventMonth {
+    font-size: 41.28px;
+  }
+  .littleline {
+    height: 113.52px;
+  }
+  .eventCity {
+    font-size: 41.28px;
+  }
+  .eventAddress {
+    font-size: 24.08px;
+    line-height: 32.68px;
+  }
+  .eventLocationCol {
+    gap: 27.52px;
+    max-width: 737.02px;
+  }
+  .eventDateCol {
+    margin-right: 43px;
+    gap: 17.2px;
+  }
+  .BuyTicketsbtn {
+    height: 73.96px;
+    font-size: 24.02px;
+    padding: 0 37.65px;
+  }
+  .BuyTicketsbtn img {
+    height: 14.32px;
+    width: 14.32px;
+  }
+  .linetour {
+    margin-bottom: 34.4px;
+  }
+  .OurStorySection {
+    padding: 49.88px 72.24px 46.44px;
+  }
+  .storyDiv {
+    height: 37.84px;
+    padding: 0 18.92px;
+    gap: 14.09px;
+  }
+  .storytext {
+    font-size: 16.91px;
+    letter-spacing: 7.04px;
+  }
+  .storyline, .storyline span {
+    font-size: 58.48px;
+    line-height: 60.2px;
+  }
+  .foundedtext {
+    max-width: 927.94px;
+    margin-bottom: 43.86px;
+  }
+  .SuccessDiv {
+    height: 239.94px;
+    padding: 0px 67.08px 0px 60.2px;
+  }
+  .SuccessNum {
+    font-size: 90.3px;
+    line-height: 90.3px;
+  }
+  .SuccessLabel {
+    margin-top: 25.8px;
+    font-size: 26.66px;
+  }
+  .EntertainmentDiv {
+    padding: 47.3px 98.04px 38.7px;
+  }
+  .Surtaalpara {
+    font-size: 17.2px;
+    line-height: 29.24px;
+    max-width: 712.08px;
+  }
+  .SurtaalMainCol {
+    gap: 10.32px;
+  }
+  .starrrname {
+    font-size: 67.08px;
+    line-height: 68.8px;
+    max-width: 369.8px;
+  }
+  .entertainmentartistbox {
+    gap: 81.7px;
+    padding: 0px 93.74px 0px 80.84px;
+  }
+  .booknowbtn {
+    height: 63.64px;
+    padding: 0 37.19px;
+    font-size: 20.64px;
+  }
+  .booknowbtn img {
+    height: 11.45px;
+    width: 11.45px;
+  }
+  .aristimage {
+    height: 391.3px;
+  }
+  .circleentertainment {
+    height: 18.06px;
+    width: 18.06px;
+  }
+  .Divmainrow {
+    padding-top: 70.52px;
+    padding-bottom: 70.52px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .MainHome {
+    padding: 206px 20px 189.3px;
+  }
+  .Celebrate {
+    padding: 9.72px 22.28px;
+    margin-bottom: 34.02px;
+  }
+  .CircleDiv {
+    height: 11.34px;
+    width: 11.34px;
+  }
+  .Celebratetext {
+    font-size: 19.44px;
+    line-height: 23.96px;
+  }
+  .FeelText {
+    font-size: 71.28px;
+    margin-bottom: 42.12px;
+    line-height: 79.57px;
+  }
+  .Leteverytext {
+    font-size: 17.82px;
+    line-height: 27.54px;
+    margin-bottom: 42.93px;
+    max-width: 771.12px;
+  }
+  .SeeHowbtn {
+    height: 59.94px;
+    gap: 10.9px;
+    font-size: 19.44px;
+  }
+  .SeeHowbtn img {
+    width: 10.78px;
+    height: 10.78px;
+  }
+  .ourServices {
+    padding: 45.36px 68.85px 83.24px 68.85px;
+  }
+  .ServicesDiv {
+    height: 35.83px;
+    padding: 0 19.24px;
+    margin-bottom: 34.02px;
+  }
+  .CircleServices {
+    height: 9.29px;
+    width: 9.29px;
+  }
+  .ServicesText {
+    font-size: 15.92px;
+    line-height: 19.63px;
+    letter-spacing: 6.63px;
+  }
+  .WhatWeOffer, .WhatWeOffer span {
+    font-size: 55.08px;
+    line-height: 56.7px;
+    margin-bottom: 30.78px;
+  }
+  .ServiceDescTop {
+    max-width: 771.12px;
+    font-size: 16.2px;
+    line-height: 27.54px;
+    margin-bottom: 46.98px;
+  }
+  .ServiceCardsDiv {
+    padding: 0 11.34px;
+  }
+  .ServiceCardsDiv img {
+    width: 325.62px;
+    margin-bottom: 40.5px;
+  }
+  .Servicename {
+    font-size: 34.02px;
+    line-height: 37.26px;
+    margin-bottom: 30.78px;
+  }
+  .ServiceDesc {
+    font-size: 16.2px;
+    line-height: 19.44px;
+  }
+  .AboutDiv > img {
+    width: 682.02px;
+  }
+  .SecondAbout {
+    padding: 51.03px 58.32px 50.22px 46.17px;
+  }
+  .BringingText {
+    font-size: 55.08px;
+    line-height: 68.85px;
+    margin-top: 19.44px;
+    margin-bottom: 25.92px;
+  }
+  .AboutDesc {
+    font-size: 16.2px;
+    line-height: 27.54px;
+    margin-bottom: 32.4px;
+  }
+  .Oureventdiv {
+    padding: 50.22px 68.85px 54.79px;
+  }
+  .MainEventDiv {
+    padding: 58.32px 55.49px 46.98px;
+  }
+  .event21 {
+    font-size: 74.52px;
+  }
+  .eventMonth {
+    font-size: 38.88px;
+  }
+  .littleline {
+    height: 106.92px;
+  }
+  .eventCity {
+    font-size: 38.88px;
+  }
+  .eventAddress {
+    font-size: 22.68px;
+    line-height: 30.78px;
+  }
+  .eventLocationCol {
+    gap: 25.92px;
+    max-width: 694.17px;
+  }
+  .eventDateCol {
+    margin-right: 40.5px;
+    gap: 16.2px;
+  }
+  .BuyTicketsbtn {
+    height: 69.66px;
+    font-size: 22.62px;
+    padding: 0 35.46px;
+  }
+  .BuyTicketsbtn img {
+    height: 13.49px;
+    width: 13.49px;
+  }
+  .linetour {
+    margin-bottom: 32.4px;
+  }
+  .OurStorySection {
+    padding: 46.98px 68.04px 43.74px;
+  }
+  .storyDiv {
+    height: 35.64px;
+    padding: 0 17.82px;
+    gap: 13.27px;
+  }
+  .storytext {
+    font-size: 15.92px;
+    letter-spacing: 6.63px;
+  }
+  .storyline, .storyline span {
+    font-size: 55.08px;
+    line-height: 56.7px;
+  }
+  .foundedtext {
+    max-width: 873.99px;
+    margin-bottom: 41.31px;
+  }
+  .SuccessDiv {
+    height: 225.99px;
+    padding: 0px 63.18px 0px 56.7px;
+  }
+  .SuccessNum {
+    font-size: 85.05px;
+    line-height: 85.05px;
+  }
+  .SuccessLabel {
+    margin-top: 24.3px;
+    font-size: 25.11px;
+  }
+  .EntertainmentDiv {
+    padding: 44.55px 92.34px 36.45px;
+  }
+  .Surtaalpara {
+    font-size: 16.2px;
+    line-height: 27.54px;
+    max-width: 670.68px;
+  }
+  .SurtaalMainCol {
+    gap: 9.72px;
+  }
+  .starrrname {
+    font-size: 63.18px;
+    line-height: 64.8px;
+    max-width: 348.3px;
+  }
+  .entertainmentartistbox {
+    gap: 76.95px;
+    padding: 0px 88.29px 0px 76.14px;
+  }
+  .booknowbtn {
+    height: 59.94px;
+    padding: 0 35.02px;
+    font-size: 19.44px;
+  }
+  .booknowbtn img {
+    height: 10.78px;
+    width: 10.78px;
+  }
+  .aristimage {
+    height: 368.55px;
+  }
+  .circleentertainment {
+    height: 17.01px;
+    width: 17.01px;
+  }
+  .Divmainrow {
+    padding-top: 66.42px;
+    padding-bottom: 66.42px;
+  }
+}
+
 @media (max-width: 1440px) {
   .MainHome {
     padding: 190px 20px 175px;
