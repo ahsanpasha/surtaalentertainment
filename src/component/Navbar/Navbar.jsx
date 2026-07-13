@@ -27,6 +27,7 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [highlightStyle, setHighlightStyle] = useState({});
   const [isMobile, setIsMobile] = useState(false);
+  const [is1440, setIs1440] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const itemRefs = useRef({});
 
@@ -34,7 +35,10 @@ export default function Navbar() {
     navLinks.find((l) => l.href === pathname)?.label ?? "Events in Surtaal";
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 960);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 960);
+      setIs1440(window.innerWidth <= 1440);
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -92,7 +96,7 @@ export default function Navbar() {
       {/* ── Desktop Navbar ── */}
       {!isMobile && (
         <div
-          className="navbar-desktop"
+          className={`navbar-desktop${is1440 ? " navbar-desktop-1440" : ""}` }
           style={{
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr",
@@ -116,6 +120,7 @@ export default function Navbar() {
               <img
                 src="/Images/Navbar/Logo.svg"
                 alt="Surtaal Entertainment"
+                className={is1440 ? "navbar-logo-1440" : ""}
                 style={{ width: "250px", height: "auto", objectFit: "contain" }}
               />
             </Link>
@@ -123,6 +128,7 @@ export default function Navbar() {
 
           {/* CENTER: Nav Pill */}
           <div
+            className={is1440 ? "navbar-pill-1440" : ""}
             style={{
               /* spec: height 61.23px, bg #FFFFFF14, radius 50px, no padding */
               height: "61.234771728515625px",
@@ -175,6 +181,7 @@ export default function Navbar() {
                   }}
                 >
                   <span
+                    className={is1440 ? "navbar-link-text-1440" : ""}
                     style={{
                       fontFamily: isActive
                         ? "Sora-SemiBold, sans-serif"
@@ -203,11 +210,15 @@ export default function Navbar() {
             }}
           >
             <button
-              className="contact-btn"
+              className={`contact-btn${is1440 ? " contact-btn-1440" : ""}`}
               onClick={() => router.push("/contact-us")}
             >
               Contact Us
-              <img src="/Images/Navbar/arrow.svg" alt="Arrow" />
+              <img
+                src="/Images/Navbar/arrow.svg"
+                alt="Arrow"
+                className={is1440 ? "contact-btn-arrow-1440" : ""}
+              />
             </button>
           </div>
         </div>

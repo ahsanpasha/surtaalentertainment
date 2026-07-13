@@ -25,3 +25,40 @@
   transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
   box-shadow: 0 4px 24px rgba(189, 0, 64, 0.35);
 }
+
+/* ── 1440px and below overrides ── */
+@media (max-width: 1440px) {
+  /* Logo */
+  .navbar-logo-1440 {
+    width: 187.34px !important;
+    height: auto !important;
+  }
+
+  /* Desktop navbar padding: 30px top, 67px sides, 20px bottom */
+  .navbar-desktop-1440 {
+    padding: 30px 67px 20px !important;
+  }
+
+  /* Nav pill height */
+  .navbar-pill-1440 {
+    height: 45.77px !important;
+  }
+
+  /* Nav link font size */
+  .navbar-link-text-1440 {
+    font-size: 16.51px !important;
+  }
+
+  /* Contact Us button */
+  .contact-btn-1440 {
+    height: 46.52px !important;
+    gap: 10px !important;
+    font-size: 16.51px !important;
+  }
+
+  /* Arrow icon inside contact btn */
+  .contact-btn-arrow-1440 {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
