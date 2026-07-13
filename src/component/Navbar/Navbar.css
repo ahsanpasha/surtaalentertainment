@@ -2,7 +2,6 @@
   user-select: none;
 }
 
-
 /* Contact Us Button — spec: height 62.65px, gradient, Montserrat Medium 22px, white */
 .contact-btn {
   display: flex;
@@ -11,8 +10,8 @@
   gap: 13.45px;
   height: 62.65651321411133px;
   padding: 0 36px;
-  background: linear-gradient(177.7deg, #BD0040 -1.74%, #890531 98.07%);
-  color: #FFFFFF;
+  background: linear-gradient(177.7deg, #bd0040 -1.74%, #890531 98.07%);
+  color: #ffffff;
   border: 1.34px solid #272727;
   border-radius: 13.45px;
   font-family: "Montserrat-Medium", sans-serif;
@@ -22,7 +21,10 @@
   letter-spacing: 0%;
   cursor: pointer;
   white-space: nowrap;
-  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
   box-shadow: 0 4px 24px rgba(189, 0, 64, 0.35);
 }
 
