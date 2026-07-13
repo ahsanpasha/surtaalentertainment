@@ -576,7 +576,7 @@
   height: 1px;
 }
 .straightlinediv {
-  height: 600px;
+  height: 100%;
   width: 1px;
   background-color: #ffffff2b;
   position: relative; /* important */
@@ -663,6 +663,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding-top: 82px;
+  padding-bottom: 82px;
 }
 
 @media (max-width: 1440px) {
@@ -848,5 +850,37 @@
   }
   .SurtaalMainCol {
     gap: 0px;
+  }
+  .starrrname {
+    font-size: 58.53px;
+    line-height: 60px;
+    max-width: 320px;
+  }
+  .entertainmentartistbox {
+    gap: 80px;
+  }
+  .booknowbtn {
+    height: 55.53px;
+    padding: 0 32px;
+    font-size: 18.01px;
+  }
+  .booknowbtn img {
+    height: 10px;
+    width: 10px;
+  }
+  .aristimage {
+    height: 341.41px;
+  }
+  .circleentertainment {
+    height: 15.76px;
+    width: 15.76px;
+  }
+  .entertainmentartistbox {
+    padding: 0px 80px 0px 70px;
+  }
+
+  .Divmainrow {
+    padding-top: 61px;
+    padding-bottom: 61px;
   }
 }
