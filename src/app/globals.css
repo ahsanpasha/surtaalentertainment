@@ -2043,11 +2043,10 @@ body {
 }
 
 .teamname {
-  font-family: "Georama-SemiBold";
+  font-family: "Georama-SemiBold", sans-serif;
   font-weight: 600;
-  font-style: SemiBold;
+  font-style: normal;
   font-size: 38px;
-  leading-trim: NONE;
   line-height: 40px;
   letter-spacing: 0.93px;
   text-align: center;
@@ -2057,11 +2056,10 @@ body {
 }
 
 .teamposition {
-  font-family: Montserrat-SemiBold;
+  font-family: "Montserrat-SemiBold", sans-serif;
   font-weight: 600;
-  font-style: SemiBold;
+  font-style: normal;
   font-size: 24px;
-  leading-trim: NONE;
   line-height: 30px;
   letter-spacing: 1.85px;
   text-align: center;
@@ -2071,11 +2069,10 @@ body {
 }
 
 .teamdesc {
-  font-family: Montserrat-Regular;
+  font-family: "Montserrat-Regular", sans-serif;
   font-weight: 400;
-  font-style: Regular;
+  font-style: normal;
   font-size: 20px;
-  leading-trim: NONE;
   line-height: 30px;
   letter-spacing: 1.85px;
   text-align: center;
@@ -2107,6 +2104,99 @@ body {
   align-items: center;
   justify-content: center;
   gap: 70px;
+}
+
+@media (max-width: 1800px) {
+  .teamimg {
+    height: 300px;
+    width: 300px;
+  }
+  .teamdiv {
+    gap: 51.6px;
+  }
+  .teamname {
+    font-size: 35.6px;
+    line-height: 37.5px;
+    margin-bottom: 21.6px;
+  }
+  .teamposition {
+    font-size: 22.5px;
+    line-height: 28.1px;
+    margin-bottom: 21.6px;
+  }
+  .teamdesc {
+    font-size: 18.8px;
+    line-height: 28.1px;
+    max-width: 346.9px;
+  }
+  .teamdivmain {
+    gap: 65.6px;
+  }
+  .ourteamdiv {
+    padding: 53.4px 72.2px 71.3px 72.2px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .teamimg {
+    height: 275px;
+    width: 275px;
+  }
+  .teamdiv {
+    gap: 47.2px;
+  }
+  .teamname {
+    font-size: 32.6px;
+    line-height: 34.4px;
+    margin-bottom: 19.8px;
+  }
+  .teamposition {
+    font-size: 20.6px;
+    line-height: 25.8px;
+    margin-bottom: 19.8px;
+  }
+  .teamdesc {
+    font-size: 17.2px;
+    line-height: 25.8px;
+    max-width: 317.8px;
+  }
+  .teamdivmain {
+    gap: 60.1px;
+  }
+  .ourteamdiv {
+    padding: 49px 66.2px 65.3px 66.2px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .teamimg {
+    height: 258.2px;
+    width: 258.2px;
+  }
+  .teamdiv {
+    gap: 44.4px;
+  }
+  .teamname {
+    font-size: 30.7px;
+    line-height: 32.3px;
+    margin-bottom: 18.6px;
+  }
+  .teamposition {
+    font-size: 19.4px;
+    line-height: 24.2px;
+    margin-bottom: 18.6px;
+  }
+  .teamdesc {
+    font-size: 16.1px;
+    line-height: 24.2px;
+    max-width: 298.6px;
+  }
+  .teamdivmain {
+    gap: 56.5px;
+  }
+  .ourteamdiv {
+    padding: 46px 62.1px 61.4px 62.1px;
+  }
 }
 
 @media (max-width: 1440px) {
