@@ -1828,7 +1828,160 @@ body {
   color: #bd0040;
 }
 
+@media (max-width: 1800px) {
+  .AboutusMain {
+    padding: 235px 20px 140px;
+  }
+  .elevatingdiv {
+    padding-left: 96px;
+  }
+  .elevatingText,
+  .elevatingText-normal-new {
+    font-size: 39.15px;
+    line-height: 40px;
+  }
+  .elevatingdivheader {
+    gap: 38.4px;
+    margin-right: 97.5px;
+  }
+  .linediv {
+    width: 667.5px;
+  }
+  .ElevatingEntertainmentText,
+  .ArtisticText {
+    font-size: 63.75px;
+    line-height: 79.7px;
+    margin-bottom: 35.6px;
+  }
+  .AboutUSDesc-new {
+    font-size: 18.75px;
+    line-height: 31.9px;
+  }
+  .acrossnorthdiv {
+    padding: 33.7px 78.7px 59px 58.1px;
+  }
+  .aboutimage {
+    max-width: 703px;
+  }
+  .AboutUSDesc {
+    font-size: 18.75px;
+    line-height: 31.9px;
+  }
+  .aboutuslower {
+    gap: 84px;
+    padding: 69.4px 100px;
+  }
+  .aboutuspara {
+    font-size: 20.6px;
+    line-height: 30px;
+    max-width: 1182px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .AboutusMain {
+    padding: 221px 20px 132px;
+  }
+  .elevatingdiv {
+    padding-left: 88.5px;
+  }
+  .elevatingText,
+  .elevatingText-normal-new {
+    font-size: 35.9px;
+    line-height: 36.6px;
+  }
+  .elevatingdivheader {
+    gap: 35.2px;
+    margin-right: 89.3px;
+  }
+  .linediv {
+    width: 611.6px;
+  }
+  .ElevatingEntertainmentText,
+  .ArtisticText {
+    font-size: 58.4px;
+    line-height: 73px;
+    margin-bottom: 32.6px;
+  }
+  .AboutUSDesc-new {
+    font-size: 17.2px;
+    line-height: 29.2px;
+  }
+  .acrossnorthdiv {
+    padding: 30.9px 72.1px 54.1px 53.2px;
+  }
+  .aboutimage {
+    max-width: 644px;
+  }
+  .AboutUSDesc {
+    font-size: 17.2px;
+    line-height: 29.2px;
+  }
+  .aboutuslower {
+    gap: 77.3px;
+    padding: 63.5px 92px;
+  }
+  .aboutuspara {
+    font-size: 18.9px;
+    line-height: 27.5px;
+    max-width: 1083px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .AboutusMain {
+    padding: 208px 20px 124.4px;
+  }
+  .elevatingdiv {
+    padding-left: 83px;
+  }
+  .elevatingText,
+  .elevatingText-normal-new {
+    font-size: 33.7px;
+    line-height: 34.3px;
+  }
+  .elevatingdivheader {
+    gap: 33px;
+    margin-right: 84px;
+  }
+  .linediv {
+    width: 574.5px;
+  }
+  .ElevatingEntertainmentText,
+  .ArtisticText {
+    font-size: 54.8px;
+    line-height: 68.5px;
+    margin-bottom: 30.6px;
+  }
+  .AboutUSDesc-new {
+    font-size: 16.1px;
+    line-height: 27.4px;
+  }
+  .acrossnorthdiv {
+    padding: 29px 67.7px 50.8px 50px;
+  }
+  .aboutimage {
+    max-width: 605px;
+  }
+  .AboutUSDesc {
+    font-size: 16.1px;
+    line-height: 27.4px;
+  }
+  .aboutuslower {
+    gap: 72.6px;
+    padding: 59.7px 86.3px;
+  }
+  .aboutuspara {
+    font-size: 17.7px;
+    line-height: 25.8px;
+    max-width: 1017px;
+  }
+}
+
 @media (max-width: 1440px) {
+  .AboutusMain {
+    padding: 193px 20px 115.2px;
+  }
   .elevatingdiv {
     padding-left: 77px;
   }
