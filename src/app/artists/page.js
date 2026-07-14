@@ -13,7 +13,86 @@ export default function ArtistsPage() {
         </p>
       </div>
 
-      <div></div>
+      <div className="artist-section">
+        {/* HEADER */}
+        <div className="artist-header">
+          <div>
+            <div className="ServicesDiv">
+              <div className="CircleServices"></div>
+              <p className="ServicesText">our services</p>
+            </div>
+            <p
+              className="ArtisticText"
+              style={{ maxWidth: "unset", marginBottom: "0px" }}
+            >
+              The <span>Artists</span> Behind the <span> Magic </span>
+            </p>
+          </div>
+          <div className="slider-btns">
+            <div className="sliderbtn">
+              <img src="/Images/Artists/left-arrow.svg" alt="" />
+            </div>
+            <div className="sliderbtngoaway">
+              <img src="/Images/Artists/right-arrow.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* CARDS */}
+        <div className="artist-row">
+          <div className="artist-card">
+            <img
+              src="/Images/Artists/a1.webp"
+              className="aristimagenew"
+              alt=""
+            />
+
+            <div className="artist-overlay">
+              <p className="artist-name">Asim Azhar</p>
+              <p className="artist-role">Singer</p>
+            </div>
+          </div>
+
+          <div className="artist-card">
+            <img
+              src="/Images/Artists/a1.webp"
+              className="aristimagenew"
+              alt=""
+            />
+
+            <div className="artist-overlay">
+              <p className="artist-name">Atif Aslam</p>
+              <p className="artist-role">Singer</p>
+            </div>
+          </div>
+
+          <div className="artist-card">
+            <img
+              src="/Images/Artists/a1.webp"
+              className="aristimagenew"
+              alt=""
+            />
+
+            <div className="artist-overlay">
+              <p className="artist-name">Sajjad Ali</p>
+              <p className="artist-role">Singer</p>
+            </div>
+          </div>
+
+          <div className="artist-card">
+            <img
+              src="/Images/Artists/a1.webp"
+              className="aristimagenew"
+              alt=""
+            />
+
+            <div className="artist-overlay">
+              <p className="artist-name">Zain Zohaib</p>
+              <p className="artist-role">Singer</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="OurStorySection">
         <div className="storyDiv" style={{ width: "fit-content" }}>
