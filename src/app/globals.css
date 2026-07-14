@@ -236,6 +236,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: fit-content;
   gap: 16.38px;
   border-radius: 50px;
   margin-bottom: 42px;
@@ -362,11 +363,11 @@ body {
   font-family: "Georama-Regular", sans-serif;
   font-weight: 400;
   font-size: 68px;
-  line-height: 85px;
+  line-height: 74px;
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #272727;
-  margin: 24px 0 32px 0;
+  margin: 0px 0 38px 0;
   max-width: 779px;
 }
 
@@ -1447,6 +1448,7 @@ body {
   .Celebrate {
     padding: 8.76px 20.63px;
     margin-bottom: 31.51px;
+    gap: 12px;
   }
   .CircleDiv {
     height: 10.5px;
@@ -1455,6 +1457,7 @@ body {
   .Celebratetext {
     font-size: 18px;
     line-height: 22px;
+    letter-spacing: 7.5px;
   }
   .FeelText {
     font-size: 66.03px;
@@ -1483,6 +1486,7 @@ body {
     height: 33.19px;
     padding: 0 17.82px;
     margin-bottom: 31.51px;
+    gap: 12px;
   }
   .CircleServices {
     height: 8.6px;
@@ -1698,5 +1702,175 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 103px;
+  gap: 90px;
+}
+
+.AboutUSDesc {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0;
+  color: #272727;
+  padding-right: 32px;
+}
+
+.ArtisticText {
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 74px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #272727;
+  margin: 0px 0 42px 0;
+  max-width: 862px;
+}
+
+.ArtisticText span {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #bd0040;
+}
+
+.elevatingdiv {
+  padding-left: 103px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6e5;
+}
+
+.linediv {
+  width: 712px;
+  height: 0.85px;
+  background-color: #bd004033;
+}
+
+.elevatingText {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 41.77px;
+  line-height: 42.61px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #bd0040;
+}
+.elevatedivmain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 27.27px;
+}
+
+.elevatingText-normal-new {
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 41.77px;
+  line-height: 42.61px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #555454;
+}
+.acrossnorthdiv {
+  padding: 36px 84px 63px 62px;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(
+      113.72deg,
+      rgba(39, 39, 39, 0.5) 2.87%,
+      rgba(0, 0, 0, 0.5) 92.4%
+    ),
+    url("/Images/AboutUs/mic.webp");
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.AboutUSDesc-new {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  text-shadow: 0px 4px 15px #000000bf;
+}
+
+.elevatingdivheader {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 41px;
+  margin-right: 104px;
+}
+
+.ElevatingEntertainmentText {
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 68px;
+  line-height: 85px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-shadow: 0px 4px 25px #000000a6;
+  margin-bottom: 38px;
+}
+.ElevatingEntertainmentText span {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #bd0040;
+}
+
+@media (max-width: 1440px) {
+  .elevatingdiv {
+    padding-left: 77px;
+  }
+  .elevatingText,
+  .elevatingText-normal-new {
+    font-size: 31px;
+    line-height: 35px;
+  }
+  .elevatingdivheader {
+    gap: 33px;
+    margin-right: 77px;
+  }
+  .linediv {
+    width: 530px;
+  }
+  .ElevatingEntertainmentText,
+  .ArtisticText {
+    font-size: 51px;
+    line-height: 55px;
+    margin-bottom: 28px;
+  }
+  .AboutUSDesc-new {
+    font-size: 15px;
+    line-height: 26px;
+  }
+  .acrossnorthdiv {
+    padding: 27px 63px 47px 46px;
+  }
+  .aboutimage {
+    max-width: 562.76px;
+  }
+  .AboutUSDesc {
+    font-size: 15px;
+    line-height: 26px;
+  }
+  .aboutuslower {
+    gap: 50px;
+    padding: 55px 80px;
+  }
+  .aboutuspara {
+    font-size: 16.51px;
+    line-height: 25.5px;
+    max-width: 945px;
+  }
 }
