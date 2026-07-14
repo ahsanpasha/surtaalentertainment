@@ -14,45 +14,71 @@ export default function OurTeamPage() {
         </p>
       </div>
       {/* ourteamdiv */}
-      <div></div>
-
-      <div className="OurStorySection">
-        <div className="storyDiv" style={{ width: "fit-content" }}>
+      <div className="ourteamdiv">
+        <div className="ServicesDiv" style={{ width: "fit-content" }}>
           <div className="CircleServices"></div>
-          <p className="storytext">our story</p>
+          <p className="ServicesText">Our Team</p>
         </div>
-        <p className="storyline">
-          Music Unites Here with <span>Surtaal</span>
+        <p className="WhatWeOffer">
+          The <span>People </span>Behind <span>Surtaal</span> USA
         </p>
-        <p className="foundedtext">
-          Founded in 2019, Surtaal Entertainment USA came into being with the
-          sole purpose of promoting the best of the best in the music world
-          through live events in North America.
+        <p className="ServiceDescTop ourteammaxwidth">
+          At Surtaal USA, our team is passionate about creating unforgettable
+          entertainment experiences that bring communities together through
+          music, culture, and live events.
         </p>
-        <div className="SuccessContainer">
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              7<span>+</span>
-            </p>
-            <p className="SuccessLabel">Years Experience</p>
+
+        <div className="teamdivmain">
+          <div className="teamdiv">
+            <img src="/Images/OurTeam/team1.webp" className="teamimg" alt="" />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <p className="teamname">Ashkenaz Vincent</p>
+              <p className="teamposition">Founder & CEO</p>
+              <p className="teamdesc">
+                Visionary leader driving Surtaal USA’s mission to deliver
+                world-class entertainment and cultural experiences.
+              </p>
+            </div>
           </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              100<span>+</span>
-            </p>
-            <p className="SuccessLabel">Successful Event</p>
+          <div className="teamdiv">
+            <img src="/Images/OurTeam/team2.webp" className="teamimg" alt="" />
+            <div>
+              <p className="teamname">Anosh Vincent</p>
+              <p className="teamposition">Head of Operations</p>
+              <p className="teamdesc">
+                Oversees event planning and operations, ensuring every
+                production runs smoothly and successfully.
+              </p>
+            </div>
           </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              50<span>+</span>
-            </p>
-            <p className="SuccessLabel">Exclusive Artists</p>
+          <div className="teamdiv">
+            <img src="/Images/OurTeam/team3.webp" className="teamimg" alt="" />
+            <div>
+              <p className="teamname">Rimla Qamar</p>
+              <p className="teamposition">Director of Sales & Strategy</p>
+              <p className="teamdesc">
+                Leads business growth, partnerships, and strategic initiatives
+                to expand the Surtaal USA brand.
+              </p>
+            </div>
           </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              60<span>+</span>
-            </p>
-            <p className="SuccessLabel">Professional Team</p>
+          <div className="teamdiv">
+            <img src="/Images/OurTeam/team4.webp" className="teamimg" alt="" />
+            <div>
+              <p className="teamname">Elia Ijjaaz</p>
+              <p className="teamposition">Production Director</p>
+              <p className="teamdesc">
+                Manages production and creative execution to deliver exceptional
+                live event experiences.
+              </p>
+            </div>
           </div>
         </div>
       </div>
