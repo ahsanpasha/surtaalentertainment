@@ -1657,3 +1657,46 @@ body {
     padding-bottom: 61px;
   }
 }
+
+/* about us */
+
+.aboutuspara {
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px 4px 25px 0px #000000d9;
+  max-width: 1261px;
+}
+
+.AboutusMain {
+  padding-top: 257.33px;
+  padding-bottom: 153.67px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/Images/EventinSurtaal/homepage_3x.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.aboutimage {
+  max-width: 750px;
+}
+
+.aboutuslower {
+  background-color: #ffffff;
+  padding: 74px 107px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 103px;
+}

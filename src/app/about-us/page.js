@@ -1,182 +1,60 @@
 import "../globals.css";
 
-export const metadata = {
-  title: "About Us | Surtaal Entertainment",
-  description: "Learn about Surtaal Entertainment and our mission",
-};
-
 export default function AboutUsPage() {
   return (
     <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          backgroundColor: "#080600",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "100px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "25%",
-            left: "40%",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(60,180,140,0.08) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
+      <div className="AboutusMain">
+        <div className="Celebrate">
+          <div className="CircleDiv"></div>
+          <p className="Celebratetext">About Us</p>
+        </div>
+        <p className="FeelText">
+          What is <span>Surtaal</span> USA?
+        </p>
+        <p className="aboutuspara">
+          Concept: Founded in 2019, Surtaal Entertainment USA came into being
+          with the sole purpose of promoting the best of the best in the music
+          world through live events in North America. <br />
+          Events & Concerts : Our aim is to bring together talent and artists
+          from around the globe and showcase their mastery through Music
+          Concerts & Gigs, Gala Events, Masterclasses, Music Promotion,
+          Entertainment events and Cultural Showcases.
+          <br />
+          Learn Music: We are providing a unique learning opportunity to those
+          who want to learn how to sing or play any instrument. We offer unique
+          customized training for each of our student and our teachers from all
+          around the world conduct group and one-on-one sessions depending upon
+          the requirement of the student.
+        </p>
+      </div>
+
+      <div className="aboutuslower">
+        <img
+          src="/Images/AboutUs/aboususimage.webp"
+          className="aboutimage"
+          alt=""
         />
-
-        <div
-          style={{
-            textAlign: "center",
-            padding: "0 24px",
-            zIndex: 1,
-            maxWidth: "760px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "13px",
-              letterSpacing: "0.2em",
-              color: "#9A7F45",
-              textTransform: "uppercase",
-              marginBottom: "20px",
-              fontFamily: "Georama-Medium, sans-serif",
-            }}
-          >
-            Our Story
-          </p>
-          <h1
-            style={{
-              fontSize: "clamp(2.8rem, 6.5vw, 5rem)",
-              fontFamily: "Montserrat-Bold, sans-serif",
-              color: "#ffffff",
-              margin: "0 0 28px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
-            }}
-          >
-            About Us
-          </h1>
-          <p
-            style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
-              color: "#7A7060",
-              fontFamily: "Georama-Regular, sans-serif",
-              lineHeight: 1.85,
-              marginBottom: "20px",
-            }}
-          >
-            Surtaal Entertainment is a premier live events and entertainment
-            company dedicated to bringing world-class music, culture, and
-            artistic experiences to audiences across the region.
-          </p>
-          <p
-            style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
-              color: "#7A7060",
-              fontFamily: "Georama-Regular, sans-serif",
-              lineHeight: 1.85,
-            }}
-          >
-            Founded with a passion for the arts, we curate unforgettable
-            evenings that connect artists with their audiences in the most
-            intimate and spectacular ways.
-          </p>
-
-          {/* Stats row */}
-          <div
-            style={{
-              display: "flex",
-              gap: "48px",
-              marginTop: "56px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            {[
-              { label: "Events", value: "50+" },
-              { label: "Artists", value: "200+" },
-              { label: "Audience", value: "10K+" },
-            ].map(({ label, value }) => (
-              <div key={label} style={{ textAlign: "center" }}>
-                <p
-                  style={{
-                    fontSize: "2.5rem",
-                    fontFamily: "Montserrat-Bold, sans-serif",
-                    color: "#fff",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {value}
-                </p>
-                <p
-                  style={{
-                    fontSize: "13px",
-                    color: "#7A7060",
-                    fontFamily: "Georama-Regular, sans-serif",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="OurStorySection">
-          <div className="storyDiv" style={{ width: "fit-content" }}>
+        <div>
+          <div className="ServicesDiv">
             <div className="CircleServices"></div>
-            <p className="storytext">our story</p>
+            <p className="ServicesText">our services</p>
           </div>
-          <p className="storyline">
-            Music Unites Here with <span>Surtaal</span>
+          <p className="BringingText">
+            We are bringing <span>Culture</span> & <span>Music</span> to Life
           </p>
-          <p className="foundedtext">
-            Founded in 2019, Surtaal Entertainment USA came into being with the
-            sole purpose of promoting the best of the best in the music world
-            through live events in North America.
+          <p className="AboutDesc">
+            Surtaal Entertainment brings the vibrant energy of South Asian music
+            and culture to life. From intimate gatherings to large-scale
+            productions, we create unforgettable experiences that fuse tradition
+            with contemporary artistry. Our passion lies in curating soulful
+            performances that captivate audiences across the globe. With a
+            diverse network of renowned musicians, dancers, and creative
+            professionals, we deliver seamless, high-impact events designed to
+            leave lasting impressions. Whether it’s a concert, wedding show, or
+            corporate gala — Surtaal turns every moment into a celebration.
           </p>
-          <div className="SuccessContainer">
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                7<span>+</span>
-              </p>
-              <p className="SuccessLabel">Years Experience</p>
-            </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                100<span>+</span>
-              </p>
-              <p className="SuccessLabel">Successful Event</p>
-            </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                50<span>+</span>
-              </p>
-              <p className="SuccessLabel">Exclusive Artists</p>
-            </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                60<span>+</span>
-              </p>
-              <p className="SuccessLabel">Professional Team</p>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

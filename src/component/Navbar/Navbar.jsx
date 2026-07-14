@@ -32,7 +32,7 @@ export default function Navbar() {
   const itemRefs = useRef({});
 
   const activePage =
-    navLinks.find((l) => l.href === pathname)?.label ?? "Events in Surtaal";
+    navLinks.find((l) => l.href === pathname)?.label || null;
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,13 +54,17 @@ export default function Navbar() {
   useEffect(() => {
     function recalcHighlight() {
       const el = itemRefs.current[activePage];
-      if (!el) return;
+      if (!el) {
+        setHighlightStyle({ opacity: 0 });
+        return;
+      }
       const rect = el.getBoundingClientRect();
       const parentRect = el.parentElement?.getBoundingClientRect();
       const leftWithinParent = parentRect
         ? rect.left - parentRect.left
         : el.offsetLeft;
       setHighlightStyle({
+        opacity: 1,
         width: `${Math.round(rect.width)}px`,
         transform: `translateX(${Math.round(leftWithinParent)}px) translateY(-50%)`,
         top: "50%",
