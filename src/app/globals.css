@@ -2230,6 +2230,7 @@ body {
   }
 }
 
+/* artist page */
 .artist-section {
   background-color: #fff;
 }
@@ -2277,6 +2278,7 @@ body {
   width: 458px;
   border-radius: 12px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .aristimagenew {
@@ -2320,15 +2322,87 @@ body {
   display: flex;
   flex-direction: row;
   gap: 22px;
-
   padding-left: 85px;
-
+  padding-bottom: 63px;
   overflow-x: auto;
   overflow-y: hidden;
-
   scroll-behavior: smooth;
 }
 
 .artist-row::-webkit-scrollbar {
   display: none;
+}
+
+.offerartist {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  background-color: #e6e6e5;
+}
+
+.offerartistimg {
+  max-width: 859px;
+}
+.tick {
+  height: 25px;
+  width: 25px;
+}
+.points {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.livetext {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 34px;
+  color: #272727;
+}
+
+.mainpointdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.SecondAboutartist {
+  padding: 51px 124px 51px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1440px) {
+  .artist-header {
+    padding: 43px 63px 60px 63px;
+  }
+  .artist-row {
+    padding-left: 63px;
+    padding-bottom: 47px;
+    gap: 16.5px;
+  }
+  .artist-card {
+    width: 343.5px;
+  }
+  .offerartistimg {
+    max-width: 644.25px;
+  }
+  .livetext {
+    font-size: 16.5px;
+    line-height: 25.5px;
+  }
+  .mainpointdiv {
+    gap: 21px;
+  }
+  .tick {
+    height: 18.75px;
+    width: 18.75px;
+  }
+  .SecondAboutartist {
+    padding: 38.25px 93px 38.25px 60px;
+  }
 }

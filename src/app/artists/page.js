@@ -1,6 +1,20 @@
+"use client";
+import React, { useRef } from "react";
 import "../globals.css";
 
 export default function ArtistsPage() {
+  const sliderRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (sliderRef.current) {
+      const scrollAmount = 458 + 22; // width of card (458) + gap (22)
+      sliderRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <main>
       <div className="AboutusMain">
@@ -29,17 +43,25 @@ export default function ArtistsPage() {
             </p>
           </div>
           <div className="slider-btns">
-            <div className="sliderbtn">
+            <div
+              className="sliderbtn"
+              onClick={() => scroll("left")}
+              style={{ cursor: "pointer" }}
+            >
               <img src="/Images/Artists/left-arrow.svg" alt="" />
             </div>
-            <div className="sliderbtngoaway">
+            <div
+              className="sliderbtngoaway"
+              onClick={() => scroll("right")}
+              style={{ cursor: "pointer" }}
+            >
               <img src="/Images/Artists/right-arrow.svg" alt="" />
             </div>
           </div>
         </div>
 
         {/* CARDS */}
-        <div className="artist-row">
+        <div className="artist-row" ref={sliderRef}>
           <div className="artist-card">
             <img
               src="/Images/Artists/a1.webp"
@@ -91,6 +113,73 @@ export default function ArtistsPage() {
               <p className="artist-role">Singer</p>
             </div>
           </div>
+
+          <div className="artist-card">
+            <img
+              src="/Images/Artists/a1.webp"
+              className="aristimagenew"
+              alt=""
+            />
+
+            <div className="artist-overlay">
+              <p className="artist-name">Zain Zohaib</p>
+              <p className="artist-role">Singer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="offerartist">
+        <img
+          src="/Images/Artists/mystory.webp"
+          className="offerartistimg"
+          alt="About Surtaal"
+        />
+        <div className="SecondAboutartist">
+          <div className="ServicesDiv" style={{ width: "fit-content" }}>
+            <div className="CircleServices"></div>
+            <p className="ServicesText">what we offer</p>
+          </div>
+          <p className="BringingText" style={{ maxWidth: "unset" }}>
+            Elevating Every <span>Occasion</span> Through <span>Music</span> And{" "}
+            <span>Art</span>
+          </p>
+
+          <div className="mainpointdiv">
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Live Concert Performances</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Cultural & Community Events</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Corporate Entertainment</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">
+                Private Celebrations & Special Occasions
+              </p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Artist Development & Promotion</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Collaborative Musical Projects</p>
+            </div>
+          </div>
+          <button
+            className="SeeHowbtn"
+            style={{ margin: 0, width: "fit-content" }}
+          >
+            Read More
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button>
         </div>
       </div>
 
