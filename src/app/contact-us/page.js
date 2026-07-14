@@ -1,177 +1,196 @@
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaMeta } from "react-icons/fa6";
 import "../globals.css";
 
 export default function ContactUsPage() {
   return (
     <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          backgroundColor: "#080600",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "100px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "25%",
-            left: "40%",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(60,180,140,0.08) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          style={{
-            textAlign: "center",
-            padding: "0 24px",
-            zIndex: 1,
-            maxWidth: "760px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "13px",
-              letterSpacing: "0.2em",
-              color: "#9A7F45",
-              textTransform: "uppercase",
-              marginBottom: "20px",
-              fontFamily: "Georama-Medium, sans-serif",
-            }}
-          >
-            Our Story
-          </p>
-          <h1
-            style={{
-              fontSize: "clamp(2.8rem, 6.5vw, 5rem)",
-              fontFamily: "Montserrat-Bold, sans-serif",
-              color: "#ffffff",
-              margin: "0 0 28px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
-            }}
-          >
-            About Us
-          </h1>
-          <p
-            style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
-              color: "#7A7060",
-              fontFamily: "Georama-Regular, sans-serif",
-              lineHeight: 1.85,
-              marginBottom: "20px",
-            }}
-          >
-            Surtaal Entertainment is a premier live events and entertainment
-            company dedicated to bringing world-class music, culture, and
-            artistic experiences to audiences across the region.
-          </p>
-          <p
-            style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
-              color: "#7A7060",
-              fontFamily: "Georama-Regular, sans-serif",
-              lineHeight: 1.85,
-            }}
-          >
-            Founded with a passion for the arts, we curate unforgettable
-            evenings that connect artists with their audiences in the most
-            intimate and spectacular ways.
-          </p>
-
-          {/* Stats row */}
-          <div
-            style={{
-              display: "flex",
-              gap: "48px",
-              marginTop: "56px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            {[
-              { label: "Events", value: "50+" },
-              { label: "Artists", value: "200+" },
-              { label: "Audience", value: "10K+" },
-            ].map(({ label, value }) => (
-              <div key={label} style={{ textAlign: "center" }}>
-                <p
-                  style={{
-                    fontSize: "2.5rem",
-                    fontFamily: "Montserrat-Bold, sans-serif",
-                    color: "#fff",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {value}
-                </p>
-                <p
-                  style={{
-                    fontSize: "13px",
-                    color: "#7A7060",
-                    fontFamily: "Georama-Regular, sans-serif",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div className="AboutusMain">
+        <div className="Celebrate">
+          <div className="CircleDiv"></div>
+          <p className="Celebratetext">Contact Us Now</p>
         </div>
-
-        <div className="OurStorySection">
-          <div className="storyDiv" style={{ width: "fit-content" }}>
+        <p className="FeelText">
+          The <span> Team </span> Behind Every
+          <br /> <span> Memorable </span>Moment
+        </p>
+      </div>
+      <div className="contact-section">
+        {/* LEFT SIDE */}
+        <div className="contact-left">
+          <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
-            <p className="storytext">our story</p>
+            <p className="ServicesText">contact us</p>
           </div>
-          <p className="storyline">
-            Music Unites Here with <span>Surtaal</span>
+          <p className="BringingText">
+            Get In <span>Touch</span>
           </p>
-          <p className="foundedtext">
-            Founded in 2019, Surtaal Entertainment USA came into being with the
-            sole purpose of promoting the best of the best in the music world
-            through live events in North America.
+          <p className="AboutDesc">
+            We'd love to hear from you! Reach out to explore collaboration
+            opportunities with Surtaal Entertainment. Let's bring unforgettable
+            South Asian music experiences to the world.
           </p>
-          <div className="SuccessContainer">
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                7<span>+</span>
-              </p>
-              <p className="SuccessLabel">Years Experience</p>
+          <div className="maindivstructure">
+            <div className="contact-item-my">
+              <img
+                src="/Images/ContactUs/phone.svg"
+                className="phoneicon"
+                alt=""
+              />
+              <div className="contact-div-new">
+                <p className="contact-itemlabel">Phone</p>
+                <p className="contact-itemvalue">+1-321-422-2223</p>
+              </div>
             </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                100<span>+</span>
-              </p>
-              <p className="SuccessLabel">Successful Event</p>
+
+            <div className="contact-item-my">
+              <img
+                src="/Images/ContactUs/email.svg"
+                className="phoneicon"
+                alt=""
+              />
+              <div className="contact-div-new">
+                <p className="contact-itemlabel">Email</p>
+                <p className="contact-itemvalue">info@surtaalusa.com</p>
+              </div>
             </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                50<span>+</span>
-              </p>
-              <p className="SuccessLabel">Exclusive Artists</p>
-            </div>
-            <div className="SuccessDiv">
-              <p className="SuccessNum">
-                60<span>+</span>
-              </p>
-              <p className="SuccessLabel">Professional Team</p>
+          </div>
+          <hr className="linenew" />
+
+          <div className="socials">
+            <p className="followtext">Follow Us On:</p>
+            <div className="icons">
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <RiTwitterXFill className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaInstagram className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaFacebook className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaMeta className="fillcolor" />
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* RIGHT SIDE FORM */}
+        <div className="form-border">
+          <div className="contact-form">
+            <div>
+              <h3 className="leaveamessage">Leave a Message</h3>
+              <p className="form-sub">
+                For assistance with inquiries or bookings, contact us directly.
+              </p>
+
+              <div className="newinputdivmine">
+                <div className="inputdivnew">
+                  <p className="labelofinput">Full Name</p>
+                  <input
+                    type="text"
+                    className="inputbox"
+                    placeholder="Enter Full Name"
+                  />
+                </div>
+
+                <div className="formrow">
+                  <div className="inputdivnew">
+                    <p className="labelofinput">Email</p>
+                    <input
+                      type="email"
+                      className="inputbox"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+                  <div className="inputdivnew">
+                    <p className="labelofinput">Phone</p>
+                    <input
+                      type="number"
+                      className="inputbox"
+                      placeholder="Enter Phone Number"
+                    />
+                  </div>
+                </div>
+                <div className="inputdivnew">
+                  <p className="labelofinput">Message</p>
+                  <textarea
+                    className="inputbox textareadesign"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <button className="sendmessage">Send Message</button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

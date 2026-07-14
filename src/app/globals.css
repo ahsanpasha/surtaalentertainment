@@ -2514,3 +2514,300 @@ body {
     padding: 38.25px 93px 38.25px 60px;
   }
 }
+
+.contact-section {
+  background-color: #ffffff;
+  padding: 66px 80px 72px 145px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 135px;
+}
+.AboutDesc {
+  max-width: 778px;
+}
+
+.contact-itemlabel {
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #828282;
+}
+
+.contact-itemvalue {
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 30px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 100%;
+  letter-spacing: 6%;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.contact-div-new {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contact-item-my {
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  align-items: center;
+}
+
+.maindivstructure {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.linenew {
+  border: 2.5px solid #0000001a;
+  width: 808px;
+  margin-top: 51px;
+  margin-bottom: 51px;
+}
+.form-border {
+  padding: 10px;
+  border-radius: 28px;
+  width: 100%;
+  background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
+}
+
+.contact-form {
+  border-radius: 18px; /* 28 - 10 */
+  background: #000;
+
+  padding: 46px 40px 26px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.leaveamessage {
+  font-family: Georama-Medium;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 52px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 55px;
+  letter-spacing: 1%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-bottom: 38px;
+}
+
+.form-sub {
+  font-family: Georama-Medium;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 20px;
+  letter-spacing: 1%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #c4c4c4;
+  margin-bottom: 42px;
+}
+
+.labelofinput {
+  font-family: Georama-Medium;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 28px;
+  letter-spacing: 3%;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #9b9b9b;
+}
+
+.inputdivnew {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.inputbox {
+  height: 90px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(41, 40, 40, 0.5) 0%,
+    rgba(31, 31, 31, 0.5) 100%
+  );
+  border: 1px solid #5a5a5ab2;
+  border-radius: 15px;
+  padding: 35.5px 32px 37.5px 32px;
+  font-family: Georama-Medium;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 30px;
+  letter-spacing: 3%;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #fff;
+  outline: none;
+}
+.inputbox:placeholder {
+  color: #4d5561;
+}
+
+.formrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+.newinputdivmine {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.textareadesign {
+  height: 159px;
+  resize: none;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.textareadesign::-webkit-scrollbar {
+  display: none;
+}
+
+.sendmessage {
+  height: 87.07793426513672px;
+  background: linear-gradient(177.7deg, #bd0040 -1.74%, #890531 98.07%);
+  border: 1.34px solid #272727;
+  border-radius: 13.45px;
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 26px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 100%;
+  letter-spacing: 2%;
+  color: #ffffff;
+}
+
+.followtext {
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 26px;
+  leading-trim: NONE;
+  line-height: 27.36px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #272727;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.socialicondiv {
+  width: 75px;
+  height: 75px;
+  border: 2.73px solid #bd0040bf;
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fillcolor {
+  font-size: 32px;
+  fill: url(#iconGradient); /* 👈 yahan gradient apply hoga */
+}
+
+.fillcolor {
+  font-size: 28px;
+
+  background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+}
+
+.phoneicon {
+  height: 84.75px;
+  width: 84.75px;
+}
+
+@media (max-width: 1440px) {
+  .contact-section {
+    padding: 49px 60px 54px 108px;
+    gap: 100px;
+  }
+  .linenew {
+    max-width: 606.06px;
+    margin-top: 38px;
+    margin-bottom: 38px;
+  }
+  .contact-itemlabel {
+    font-size: 18px;
+  }
+  .contact-itemvalue {
+    font-size: 22.5px;
+  }
+  .contact-div-new {
+    gap: 5.25px;
+  }
+  .contact-item-my {
+    gap: 16.5px;
+  }
+  .socials {
+    gap: 19.5px;
+  }
+  .followtext {
+    font-size: 19.5px;
+  }
+  .maindivstructure {
+    gap: 39px;
+  }
+  .icons {
+    gap: 15px;
+  }
+  .socialicondiv {
+    width: 56.25px;
+    height: 56.25px;
+    border-radius: 12.75px;
+    border: 2.05px solid #bd0040bf;
+  }
+  .phoneicon {
+    height: 63.57px;
+    width: 63.57px;
+  }
+}
