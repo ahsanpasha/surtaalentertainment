@@ -2376,6 +2376,114 @@ body {
   flex-direction: column;
 }
 
+@media (max-width: 1800px) {
+  .artist-header {
+    padding: 54.4px 79.7px 75.9px 79.7px;
+  }
+  .artist-row {
+    padding-left: 79.7px;
+    padding-bottom: 59.1px;
+    gap: 20.6px;
+  }
+  .artist-card {
+    width: 429.4px;
+  }
+  .offerartistimg {
+    max-width: 805.3px;
+  }
+  .livetext {
+    font-size: 20.6px;
+    line-height: 31.9px;
+  }
+  .mainpointdiv {
+    gap: 26.3px;
+  }
+  .tick {
+    height: 23.4px;
+    width: 23.4px;
+  }
+  .SecondAboutartist {
+    padding: 47.8px 116.3px 47.8px 75px;
+  }
+  .sliderbtn,
+  .sliderbtngoaway {
+    height: 76.9px;
+    width: 76.9px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .artist-header {
+    padding: 49.8px 73.1px 69.6px 73.1px;
+  }
+  .artist-row {
+    padding-left: 73.1px;
+    padding-bottom: 54.2px;
+    gap: 18.9px;
+  }
+  .artist-card {
+    width: 393.8px;
+  }
+  .offerartistimg {
+    max-width: 738.5px;
+  }
+  .livetext {
+    font-size: 18.9px;
+    line-height: 29.3px;
+  }
+  .mainpointdiv {
+    gap: 24.1px;
+  }
+  .tick {
+    height: 21.5px;
+    width: 21.5px;
+  }
+  .SecondAboutartist {
+    padding: 43.8px 106.7px 43.8px 68.8px;
+  }
+  .sliderbtn,
+  .sliderbtngoaway {
+    height: 70.5px;
+    width: 70.5px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .artist-header {
+    padding: 46.8px 68.6px 65.3px 68.6px;
+  }
+  .artist-row {
+    padding-left: 68.6px;
+    padding-bottom: 50.9px;
+    gap: 17.8px;
+  }
+  .artist-card {
+    width: 369.9px;
+  }
+  .offerartistimg {
+    max-width: 693.1px;
+  }
+  .livetext {
+    font-size: 17.8px;
+    line-height: 27.5px;
+  }
+  .mainpointdiv {
+    gap: 22.6px;
+  }
+  .tick {
+    height: 20.2px;
+    width: 20.2px;
+  }
+  .SecondAboutartist {
+    padding: 41.1px 100.1px 41.1px 64.5px;
+  }
+  .sliderbtn,
+  .sliderbtngoaway {
+    height: 66.2px;
+    width: 66.2px;
+  }
+}
+
 @media (max-width: 1440px) {
   .artist-header {
     padding: 43px 63px 60px 63px;
