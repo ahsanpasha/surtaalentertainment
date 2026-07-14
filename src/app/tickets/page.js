@@ -1,3 +1,5 @@
+import "../globals.css";
+
 export const metadata = {
   title: "Tickets | Surtaal Entertainment",
   description: "Book your tickets for Surtaal Entertainment events",

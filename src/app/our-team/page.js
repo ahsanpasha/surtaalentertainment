@@ -1,3 +1,5 @@
+import "../globals.css";
+
 export const metadata = {
   title: "Our Team | Surtaal Entertainment",
   description: "Meet the passionate team behind Surtaal Entertainment",

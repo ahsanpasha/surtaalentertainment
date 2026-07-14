@@ -1,21 +1,6 @@
 import "../globals.css";
 
-export const metadata = {
-  title: "Artists | Surtaal Entertainment",
-  description:
-    "Explore the talented artists performing at Surtaal Entertainment events",
-};
-
-const artists = [
-  { name: "Artist One", genre: "Classical" },
-  { name: "Artist Two", genre: "Fusion" },
-  { name: "Artist Three", genre: "Folk" },
-  { name: "Artist Four", genre: "Contemporary" },
-  { name: "Artist Five", genre: "Sufi" },
-  { name: "Artist Six", genre: "Jazz" },
-];
-
-export default function ArtistsPage() {
+export default function ContactUsPage() {
   return (
     <main>
       <section
@@ -26,8 +11,7 @@ export default function ArtistsPage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: "120px",
-          paddingBottom: "80px",
+          paddingTop: "100px",
           position: "relative",
           overflow: "hidden",
         }}
@@ -36,13 +20,13 @@ export default function ArtistsPage() {
         <div
           style={{
             position: "absolute",
-            top: "20%",
-            right: "20%",
+            top: "25%",
+            left: "40%",
             width: "500px",
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(200,100,60,0.08) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(60,180,140,0.08) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -52,8 +36,7 @@ export default function ArtistsPage() {
             textAlign: "center",
             padding: "0 24px",
             zIndex: 1,
-            width: "100%",
-            maxWidth: "1100px",
+            maxWidth: "760px",
           }}
         >
           <p
@@ -66,93 +49,88 @@ export default function ArtistsPage() {
               fontFamily: "Georama-Medium, sans-serif",
             }}
           >
-            Performing Artists
+            Our Story
           </p>
           <h1
             style={{
               fontSize: "clamp(2.8rem, 6.5vw, 5rem)",
               fontFamily: "Montserrat-Bold, sans-serif",
               color: "#ffffff",
-              margin: "0 0 48px",
+              margin: "0 0 28px",
               letterSpacing: "-0.02em",
               lineHeight: 1.1,
             }}
           >
-            Artists
+            About Us
           </h1>
-
-          {/* Artist Grid */}
-          <div
+          <p
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "20px",
-              width: "100%",
+              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
+              color: "#7A7060",
+              fontFamily: "Georama-Regular, sans-serif",
+              lineHeight: 1.85,
+              marginBottom: "20px",
             }}
           >
-            {artists.map(({ name, genre }) => (
-              <div
-                key={name}
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  borderRadius: "16px",
-                  padding: "36px 24px",
-                  textAlign: "center",
-                  transition: "border-color 0.3s ease, background 0.3s ease",
-                  cursor: "pointer",
-                }}
-              >
-                {/* Avatar placeholder */}
-                <div
-                  style={{
-                    width: "72px",
-                    height: "72px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(154,127,69,0.15)",
-                    border: "1px solid rgba(154,127,69,0.3)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0 auto 20px",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "24px",
-                      color: "#9A7F45",
-                      fontFamily: "Montserrat-Bold, sans-serif",
-                    }}
-                  >
-                    {name.charAt(0)}
-                  </span>
-                </div>
+            Surtaal Entertainment is a premier live events and entertainment
+            company dedicated to bringing world-class music, culture, and
+            artistic experiences to audiences across the region.
+          </p>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
+              color: "#7A7060",
+              fontFamily: "Georama-Regular, sans-serif",
+              lineHeight: 1.85,
+            }}
+          >
+            Founded with a passion for the arts, we curate unforgettable
+            evenings that connect artists with their audiences in the most
+            intimate and spectacular ways.
+          </p>
+
+          {/* Stats row */}
+          <div
+            style={{
+              display: "flex",
+              gap: "48px",
+              marginTop: "56px",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {[
+              { label: "Events", value: "50+" },
+              { label: "Artists", value: "200+" },
+              { label: "Audience", value: "10K+" },
+            ].map(({ label, value }) => (
+              <div key={label} style={{ textAlign: "center" }}>
                 <p
                   style={{
-                    fontSize: "16px",
-                    fontFamily: "Georama-Medium, sans-serif",
+                    fontSize: "2.5rem",
+                    fontFamily: "Montserrat-Bold, sans-serif",
                     color: "#fff",
                     margin: "0 0 8px",
-                    fontWeight: 600,
                   }}
                 >
-                  {name}
+                  {value}
                 </p>
                 <p
                   style={{
-                    fontSize: "12px",
-                    color: "#9A7F45",
+                    fontSize: "13px",
+                    color: "#7A7060",
                     fontFamily: "Georama-Regular, sans-serif",
-                    letterSpacing: "0.12em",
+                    letterSpacing: "0.1em",
                     textTransform: "uppercase",
                   }}
                 >
-                  {genre}
+                  {label}
                 </p>
               </div>
             ))}
           </div>
         </div>
+
         <div className="OurStorySection">
           <div className="storyDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>

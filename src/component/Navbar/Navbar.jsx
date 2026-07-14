@@ -96,7 +96,7 @@ export default function Navbar() {
       {/* ── Desktop Navbar ── */}
       {!isMobile && (
         <div
-          className={`navbar-desktop${is1440 ? " navbar-desktop-1440" : ""}` }
+          className={`navbar-desktop${is1440 ? " navbar-desktop-1440" : ""}`}
           style={{
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr",
@@ -116,7 +116,10 @@ export default function Navbar() {
         >
           {/* LEFT: Logo — 250px wide */}
           <div style={{ display: "flex", alignItems: "center" }}>
-            <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
+            <Link
+              href="/"
+              style={{ display: "inline-flex", alignItems: "center" }}
+            >
               <img
                 src="/Images/Navbar/Logo.svg"
                 alt="Surtaal Entertainment"
@@ -241,7 +244,10 @@ export default function Navbar() {
             transition: "background-color 0.4s ease",
           }}
         >
-          <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
+          <Link
+            href="/"
+            style={{ display: "inline-flex", alignItems: "center" }}
+          >
             <img
               src="/Images/Navbar/Logo.svg"
               alt="Surtaal Entertainment"
@@ -319,8 +325,6 @@ export default function Navbar() {
                     bgcolor: isActive ? "#ffffff" : "transparent",
                     py: 1.4,
                     px: 2,
-                   
-          
                   }}
                 >
                   <ListItemText
