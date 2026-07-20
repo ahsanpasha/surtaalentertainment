@@ -1,4 +1,6 @@
 import "./globals.css";
+import TourEvents from "../component/TourEvents/TourEvents";
+import SuccessStats from "../component/SuccessStats/SuccessStats";
 
 export default function HomePage() {
   return (
@@ -283,133 +285,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
       </div>
 
-      {/* our event */}
-      <div className="Oureventdiv">
-        <div className="ServicesDiv" style={{ width: "fit-content" }}>
-          <div className="CircleServices"></div>
-          <p className="ServicesText">our events</p>
-        </div>
-        <p className="WhatWeOffer">
-          <span>Zain Zohaib</span> USA Tour <span>2026</span>
-        </p>
-        <div className="MainEventDiv">
-          <div className="eventdetail">
-            <div className="eventDateCol">
-              <p className="event21">21</p>
-              <div className="eventMonthDayCol">
-                <p className="eventMonth">May</p>
-                <p className="eventDay">Sun</p>
-              </div>
-            </div>
-            <div className="littleline"></div>
-            <div className="spacebtwdiv">
-              <div className="eventLocationCol">
-                <p className="eventCity">Boston, MA</p>
-                <p className="eventAddress">
-                  Berklee Performing Arts Centre
-                  <br />
-                  136 Massachusetts Avenue, Boston, MA 02115
-                </p>
-              </div>
-              <button className="BuyTicketsbtn">
-                Buy Tickets Now
-                <img src="/Images/Navbar/arrowred.svg" alt="" />
-              </button>
-            </div>
-          </div>
-
-          <div className="linetour"></div>
-
-          <div className="eventdetail">
-            <div className="eventDateCol">
-              <p className="event21">21</p>
-              <div className="eventMonthDayCol">
-                <p className="eventMonth">May</p>
-                <p className="eventDay">Sun</p>
-              </div>
-            </div>
-            <div className="littleline"></div>
-            <div className="spacebtwdiv">
-              <div className="eventLocationCol">
-                <p className="eventCity">Boston, MA</p>
-                <p className="eventAddress">
-                  Berklee Performing Arts Centre
-                  <br />
-                  136 Massachusetts Avenue, Boston, MA 02115
-                </p>
-              </div>
-              <button className="BuyTicketsbtn">
-                Buy Tickets Now
-                <img src="/Images/Navbar/arrowred.svg" alt="" />
-              </button>
-            </div>
-          </div>
-
-          <div className="linetour"></div>
-
-          <div className="eventdetail">
-            <div className="eventDateCol">
-              <p className="event21">21</p>
-              <div className="eventMonthDayCol">
-                <p className="eventMonth">May</p>
-                <p className="eventDay">Sun</p>
-              </div>
-            </div>
-            <div className="littleline"></div>
-            <div className="spacebtwdiv">
-              <div className="eventLocationCol">
-                <p className="eventCity">Boston, MA</p>
-                <p className="eventAddress">
-                  Berklee Performing Arts Centre
-                  <br />
-                  136 Massachusetts Avenue, Boston, MA 02115
-                </p>
-              </div>
-              <button className="BuyTicketsbtn">
-                Buy Tickets Now
-                <img src="/Images/Navbar/arrowred.svg" alt="" />
-              </button>
-            </div>
-          </div>
-
-          <div className="linetour"></div>
-
-          <div className="eventdetail">
-            <div className="eventDateCol">
-              <p className="event21">21</p>
-              <div className="eventMonthDayCol">
-                <p className="eventMonth">May</p>
-                <p className="eventDay">Sun</p>
-              </div>
-            </div>
-            <div className="littleline"></div>
-            <div className="spacebtwdiv">
-              <div className="eventLocationCol">
-                <p className="eventCity">Boston, MA</p>
-                <p className="eventAddress">
-                  Berklee Performing Arts Centre
-                  <br />
-                  136 Massachusetts Avenue, Boston, MA 02115
-                </p>
-              </div>
-              <button className="BuyTicketsbtn">
-                Buy Tickets Now
-                <img src="/Images/Navbar/arrowred.svg" alt="" />
-              </button>
-            </div>
-          </div>
-
-          <div className="linetour"></div>
-        </div>
-
-        <button
-          className="SeeHowbtn"
-          style={{ margin: 0, width: "fit-content" }}
-        >
-          View All Events
-          <img src="/Images/Navbar/arrow.svg" alt="" />
-        </button>
-      </div>
+      <TourEvents />
 
       {/* story */}
       <div className="OurStorySection">
@@ -425,32 +301,7 @@ export default function HomePage() {
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>
-        <div className="SuccessContainer">
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              7<span>+</span>
-            </p>
-            <p className="SuccessLabel">Years Experience</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              100<span>+</span>
-            </p>
-            <p className="SuccessLabel">Successful Event</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              50<span>+</span>
-            </p>
-            <p className="SuccessLabel">Exclusive Artists</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              60<span>+</span>
-            </p>
-            <p className="SuccessLabel">Professional Team</p>
-          </div>
-        </div>
+        <SuccessStats />
       </div>
     </main>
   );

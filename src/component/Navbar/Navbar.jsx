@@ -3,14 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 
 const navLinks = [
@@ -24,7 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [highlightStyle, setHighlightStyle] = useState({});
   const [isMobile, setIsMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +40,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Sliding highlight recalculation
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   useEffect(() => {
     function recalcHighlight() {
       const el = itemRefs.current[activePage];
@@ -66,7 +64,6 @@ export default function Navbar() {
         width: `${Math.round(rect.width)}px`,
         transform: `translateX(${Math.round(leftWithinParent)}px) translateY(-50%)`,
         top: "50%",
-        // full height of the pill container
         height: "100%",
       });
     }
@@ -83,6 +80,8 @@ export default function Navbar() {
     };
   }, [activePage, isMobile]);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <AppBar
       position="fixed"
@@ -95,7 +94,6 @@ export default function Navbar() {
         zIndex: 1100,
       }}
     >
-      {/* ── Desktop Navbar ── */}
       {!isMobile && (
         <div
           className="navbar-desktop"
@@ -114,7 +112,6 @@ export default function Navbar() {
             boxSizing: "border-box",
           }}
         >
-          {/* LEFT: Logo — 250px wide */}
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link
               href="/"
@@ -128,7 +125,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* CENTER: Nav Pill */}
           <div
             className="navbar-pill"
             style={{
@@ -142,7 +138,6 @@ export default function Navbar() {
               overflow: "hidden",
             }}
           >
-            {/* Sliding White Highlight */}
             <div
               style={{
                 position: "absolute",
@@ -156,7 +151,6 @@ export default function Navbar() {
               }}
             />
 
-            {/* Nav Items */}
             {navLinks.map(({ label, href }) => {
               const isActive = activePage === label;
               return (
@@ -166,7 +160,6 @@ export default function Navbar() {
                   ref={(el) => (itemRefs.current[label] = el)}
                   className="buttonnavbar"
                   style={{
-                    /* full pill height, no extra padding, let flex center vertically */
                     height: "100%",
                     display: "flex",
                     alignItems: "center",
@@ -200,7 +193,6 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* RIGHT: Contact Us Button */}
           <div
             style={{
               display: "flex",
@@ -219,7 +211,6 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* ── Mobile Top Bar ── */}
       {isMobile && (
         <div
           className="navbar-mobile-bar"
@@ -239,6 +230,7 @@ export default function Navbar() {
           <Link
             href="/"
             style={{ display: "inline-flex", alignItems: "center" }}
+            onClick={closeMenu}
           >
             <img
               src="/Images/Navbar/Logo.svg"
@@ -246,110 +238,79 @@ export default function Navbar() {
               className="navbar-mobile-logo"
             />
           </Link>
-          <IconButton
-            onClick={() => setDrawerOpen(true)}
-            sx={{
-              backgroundColor: "rgba(255,255,255,0.08)",
-              color: "#fff",
-              padding: "8px",
-              borderRadius: "10px",
-              border: "1px solid rgba(255,255,255,0.1)",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.14)" },
-            }}
+
+          <button
+            type="button"
+            className={`navbar-menu-toggle${menuOpen ? " open" : ""}`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
           >
-            <MenuIcon fontSize="small" />
-          </IconButton>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       )}
 
-      {/* ── Mobile Drawer ── */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        PaperProps={{
-          sx: {
-            bgcolor: "#0a0900",
-            width: "280px",
-            paddingTop: "16px",
-            borderLeft: "1px solid rgba(255,255,255,0.07)",
-          },
-        }}
+      <div
+        className={`navbar-fullscreen-menu${menuOpen ? " open" : ""}`}
+        aria-hidden={!menuOpen}
       >
-        {/* Drawer Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0 16px 20px",
-            borderBottom: "1px solid rgba(255,255,255,0.07)",
-          }}
-        >
-          <img
-            src="/Images/Navbar/Logo.svg"
-            alt="Surtaal Entertainment"
-            style={{ width: "140px", height: "auto", objectFit: "contain" }}
-          />
-          <IconButton
-            onClick={() => setDrawerOpen(false)}
-            sx={{
-              color: "#fff",
-              "&:hover": { bgcolor: "rgba(255,255,255,0.08)" },
-            }}
-          >
-            <CloseIcon fontSize="small" />
-          </IconButton>
-        </div>
+        <div className="navbar-fullscreen-backdrop" onClick={closeMenu} />
 
-        {/* Drawer Nav Items */}
-        <List sx={{ px: 1, pt: 1 }}>
-          {navLinks.map(({ label, href }) => {
-            const isActive = activePage === label;
-            return (
-              <ListItem key={label} disablePadding sx={{ mb: 0.5 }}>
-                <ListItemButton
-                  component={Link}
+        <div className="navbar-fullscreen-panel">
+          <div className="navbar-fullscreen-header">
+            <img
+              src="/Images/Navbar/Logo.svg"
+              alt="Surtaal Entertainment"
+              className="navbar-fullscreen-logo"
+            />
+            <button
+              type="button"
+              className="navbar-fullscreen-close"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              ×
+            </button>
+          </div>
+
+          <nav className="navbar-fullscreen-nav">
+            {navLinks.map(({ label, href }, index) => {
+              const isActive = activePage === label;
+              return (
+                <Link
+                  key={label}
                   href={href}
-                  onClick={() => setDrawerOpen(false)}
-                  sx={{
-                    borderRadius: "10px",
-                    bgcolor: isActive ? "#ffffff" : "transparent",
-                    py: 1.4,
-                    px: 2,
-                  }}
+                  className={`navbar-fullscreen-link${isActive ? " active" : ""}`}
+                  style={{ animationDelay: `${0.08 + index * 0.07}s` }}
+                  onClick={closeMenu}
                 >
-                  <ListItemText
-                    primary={label}
-                    primaryTypographyProps={{
-                      fontSize: "15px",
-                      fontWeight: isActive ? 600 : 400,
-                      fontFamily: isActive
-                        ? "Sora-SemiBold, sans-serif"
-                        : "Sora-Regular, sans-serif",
-                      color: isActive ? "#BD0040" : "#ffffff",
-                    }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            );
-          })}
-        </List>
+                  <span className="navbar-fullscreen-link-num">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="navbar-fullscreen-link-text">{label}</span>
+                </Link>
+              );
+            })}
+          </nav>
 
-        {/* Drawer Contact Us */}
-        <div style={{ padding: "16px" }}>
-          <button
-            className="contact-btn"
-            style={{ width: "100%" }}
-            onClick={() => {
-              setDrawerOpen(false);
-              router.push("/contact-us");
-            }}
-          >
-            Contact Us
-          </button>
+          <div className="navbar-fullscreen-footer">
+            <button
+              type="button"
+              className="contact-btn navbar-fullscreen-contact"
+              onClick={() => {
+                closeMenu();
+                router.push("/contact-us");
+              }}
+            >
+              Contact Us
+              <img src="/Images/Navbar/arrow.svg" alt="" />
+            </button>
+          </div>
         </div>
-      </Drawer>
+      </div>
     </AppBar>
   );
 }

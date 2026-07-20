@@ -1,4 +1,6 @@
 import "../globals.css";
+import ElevatingSection from "../../component/ElevatingSection/ElevatingSection";
+import SuccessStats from "../../component/SuccessStats/SuccessStats";
 
 export default function AboutUsPage() {
   return (
@@ -68,55 +70,7 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      <div className="elevatingdiv">
-        <div className="elevatingdivheader">
-          <div className="linediv"></div>
-          <div className="elevatedivmain">
-            <img
-              src="/Images/AboutUs/arrow.svg"
-              className="arrowdivabout"
-              alt=""
-            />
-            <p className="elevatingText">ELEVATING ENTERTAINMENT</p>
-          </div>
-          <div className="linediv"></div>
-          <p className="elevatingText-normal-new">ELEVATING ENTERTAINMENT</p>
-          <div className="linediv"></div>
-        </div>
-        <div className="acrossnorthdiv">
-          <div
-            className="ServicesDiv"
-            style={{
-              background: "#FFFFFF1C",
-              boxShadow: "0px 4px 15px 0px #00000040",
-            }}
-          >
-            <div className="CircleServices"></div>
-            <p className="ServicesText" style={{ color: "#FFFFFF" }}>
-              our services
-            </p>
-          </div>
-          <p className="ElevatingEntertainmentText">
-            Elevating <span>Entertainment</span>
-          </p>
-          <p className="AboutUSDesc-new">
-            We specialize in Corporate and Commercial Events, Concerts, Musical
-            Events and talent shows in North America, to bring together
-            audiences and the entertainment culture.
-            <br />
-            With A-list superstars, World-Class musicians and emerging talent
-            under our roster, Surtaal Entertainment USA aims to deliver a
-            seamless experience for artists, fans, audiences and clients
-            involved.
-            <br />
-            Our commitment to providing exceptional customer service means we
-            offer a range of VIP packages and perks to enhance your experience
-            even further. From meet-and-greets with the artists to exclusive
-            access to soundchecks and more, we strive to make every event an
-            unforgettable experience for our valued patrons.
-          </p>
-        </div>
-      </div>
+      <ElevatingSection />
       <div className="OurStorySection">
         <div className="storyDiv" style={{ width: "fit-content" }}>
           <div className="CircleServices"></div>
@@ -130,32 +84,7 @@ export default function AboutUsPage() {
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>
-        <div className="SuccessContainer">
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              7<span>+</span>
-            </p>
-            <p className="SuccessLabel">Years Experience</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              100<span>+</span>
-            </p>
-            <p className="SuccessLabel">Successful Event</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              50<span>+</span>
-            </p>
-            <p className="SuccessLabel">Exclusive Artists</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              60<span>+</span>
-            </p>
-            <p className="SuccessLabel">Professional Team</p>
-          </div>
-        </div>
+        <SuccessStats />
       </div>
     </main>
   );

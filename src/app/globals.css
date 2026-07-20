@@ -411,7 +411,6 @@ html {
   flex-direction: row;
   align-items: center;
   width: 100%;
-  /* margin-top: 40px; */
 }
 
 .eventDateCol {
@@ -490,6 +489,7 @@ html {
 }
 
 .BuyTicketsbtn {
+  white-space: nowrap;
   height: 86px;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
@@ -2039,6 +2039,70 @@ html {
   align-items: start;
   gap: 41px;
   margin-right: 104px;
+}
+
+.elevating-tabs-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  width: 100%;
+}
+
+.elevating-tab {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2.8vw, 41.77px);
+  line-height: 1.15;
+  color: #555454;
+  text-transform: capitalize;
+  transition:
+    color 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elevating-tab-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 27.27px;
+}
+
+.elevating-tab:hover {
+  color: #8d0432;
+  transform: translateX(6px);
+}
+
+.elevating-tab.active {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #bd0040;
+}
+
+.elevating-tab-line {
+  width: 100%;
+  max-width: 712px;
+}
+
+.elevating-content-panel {
+  animation: elevatingContentIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes elevatingContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ElevatingEntertainmentText {
@@ -7547,7 +7611,7 @@ color: #272727;
 }
 
 .Divmainrow:hover .imageWrapper {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .aristimage {
@@ -7555,7 +7619,7 @@ color: #272727;
 }
 
 .Divmainrow:hover .aristimage {
-  transform: scale(1.05);
+  transform: rotate(-2.5deg) scale(1.02);
 }
 
 /* ── Slider buttons ── */
@@ -7681,18 +7745,7 @@ color: #272727;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Event rows (home page) ── */
-.MainEventDiv {
-  transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.4s ease,
-    background-color 0.35s ease;
-}
-
-.MainEventDiv:hover {
-  transform: translateX(6px);
-  box-shadow: -4px 0 0 #bd0040;
-}
+/* ── Event rows — per-item hover only (see .eventdetail) ── */
 
 /* ── CTA arrows stay proportional at every breakpoint ── */
 .SeeHowbtn img,

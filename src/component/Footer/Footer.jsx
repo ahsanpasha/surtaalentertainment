@@ -61,38 +61,41 @@ const Footer = () => {
               <span>Follow Us On:</span>
               <div className="SocialIcons">
                 <div className="SocialIcon">
-                  <RiTwitterXFill color="#BD0040" />
+                  <RiTwitterXFill color="currentColor" />
                 </div>
                 <div className="SocialIcon">
-                  <FaInstagram color="#BD0040" />
+                  <FaInstagram color="currentColor" />
                 </div>
                 <div className="SocialIcon">
-                  <FaFacebook color="#BD0040" />
+                  <FaFacebook color="currentColor" />
                 </div>
                 <div className="SocialIcon">
-                  <FaMeta color="#BD0040" />
+                  <FaMeta color="currentColor" />
                 </div>
               </div>
             </div>
           </div>
 
           <div className="FooterMiddle">
-            <div className="ContactItem">
+            <a href="tel:+13214222223" className="ContactItem ContactItem-link">
               <img src="/Images/Footer/PhoneIcon.svg" alt="" />
               <div className="ContactText">
                 <span className="ContactLabel">Phone</span>
                 <span className="ContactValue">+1-321-422-2223</span>
               </div>
-            </div>
+            </a>
             <div className="ContactDivider"></div>
-            <div className="ContactItem">
+            <a
+              href="mailto:info@surtaalusa.com"
+              className="ContactItem ContactItem-link"
+            >
               <img src="/Images/Footer/Email.svg" alt="" />
 
               <div className="ContactText">
                 <span className="ContactLabel">Email</span>
                 <span className="ContactValue">info@surtaalusa.com</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

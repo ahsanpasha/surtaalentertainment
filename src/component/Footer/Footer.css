@@ -166,6 +166,42 @@
   border-color: transparent;
 }
 
+.SocialIcon:hover svg {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.ContactItem-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: -8px -12px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.ContactItem-link:hover {
+  transform: translateY(-3px);
+  background-color: rgba(189, 0, 64, 0.06);
+  box-shadow: 0 8px 24px rgba(189, 0, 64, 0.1);
+}
+
+.ContactItem-link:hover .ContactValue {
+  color: #bd0040;
+}
+
+.ContactItem-link:hover img {
+  transform: scale(1.06);
+}
+
+.ContactItem-link img {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .FooterMiddle {
   display: flex;
   align-items: center;

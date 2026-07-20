@@ -5,6 +5,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
+import SuccessStats from "../../component/SuccessStats/SuccessStats";
 import "../globals.css";
 
 export default function TicketsPage() {
@@ -183,32 +184,7 @@ export default function TicketsPage() {
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>
-        <div className="SuccessContainer">
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              7<span>+</span>
-            </p>
-            <p className="SuccessLabel">Years Experience</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              100<span>+</span>
-            </p>
-            <p className="SuccessLabel">Successful Event</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              50<span>+</span>
-            </p>
-            <p className="SuccessLabel">Exclusive Artists</p>
-          </div>
-          <div className="SuccessDiv">
-            <p className="SuccessNum">
-              60<span>+</span>
-            </p>
-            <p className="SuccessLabel">Professional Team</p>
-          </div>
-        </div>
+        <SuccessStats />
       </div>
 
 

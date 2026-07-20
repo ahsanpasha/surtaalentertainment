@@ -392,3 +392,200 @@
   width: clamp(7px, 0.56em, 14px) !important;
   height: clamp(7px, 0.56em, 14px) !important;
 }
+
+/* ── Hamburger toggle ── */
+.navbar-menu-toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease,
+    width 0.35s ease;
+}
+
+.navbar-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(1.04);
+}
+
+.navbar-menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.navbar-menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ── Fullscreen classic menu ── */
+.navbar-fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.navbar-fullscreen-menu.open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.navbar-fullscreen-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.navbar-fullscreen-menu.open .navbar-fullscreen-backdrop {
+  opacity: 1;
+}
+
+.navbar-fullscreen-panel {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #0a0900 0%, #1a0a10 55%, #0d0808 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 28px 32px;
+  transform: translateY(-100%);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y: auto;
+}
+
+.navbar-fullscreen-menu.open .navbar-fullscreen-panel {
+  transform: translateY(0);
+}
+
+.navbar-fullscreen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.navbar-fullscreen-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar-fullscreen-close {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar-fullscreen-close:hover {
+  background: rgba(189, 0, 64, 0.35);
+  transform: rotate(90deg);
+}
+
+.navbar-fullscreen-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.navbar-fullscreen-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    padding-left 0.3s ease;
+}
+
+.navbar-fullscreen-menu.open .navbar-fullscreen-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-fullscreen-link:hover {
+  padding-left: 12px;
+}
+
+.navbar-fullscreen-link-num {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-size: 13px;
+  color: rgba(189, 0, 64, 0.85);
+  letter-spacing: 0.1em;
+  min-width: 28px;
+}
+
+.navbar-fullscreen-link-text {
+  font-family: "Georama-Regular", sans-serif;
+  font-size: clamp(28px, 7vw, 42px);
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.navbar-fullscreen-link:hover .navbar-fullscreen-link-text,
+.navbar-fullscreen-link.active .navbar-fullscreen-link-text {
+  color: #ffffff;
+}
+
+.navbar-fullscreen-link.active .navbar-fullscreen-link-text {
+  font-family: "Georama-SemiBold", sans-serif;
+  color: #bd0040;
+}
+
+.navbar-fullscreen-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-fullscreen-contact {
+  width: 100%;
+  max-width: 280px;
+}
