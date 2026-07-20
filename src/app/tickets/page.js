@@ -1,4 +1,6 @@
+"use client";
 
+import { useState } from "react";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
@@ -6,8 +8,27 @@ import { FaMeta } from "react-icons/fa6";
 import "../globals.css";
 
 export default function TicketsPage() {
+  const artistFilters = [
+    "All Artists",
+    "Zain Zohaib",
+    "Asim Azhar",
+    "Fariha Pervez",
+    "Asif Ali Khan Santoo",
+  ];
+  const [activeFilter, setActiveFilter] = useState("All Artists");
+
   return (
     <main>
+      <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
+        <defs>
+          <clipPath id="ticket-media-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
+          </clipPath>
+          <clipPath id="ticket-media-clip-inner" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
+          </clipPath>
+        </defs>
+      </svg>
 
 
       <div className="AboutusMain">
@@ -24,9 +45,71 @@ export default function TicketsPage() {
       </div>
 
 
-<div className="discoverlivemusic">
+      <div className="discoverlivemusic">
+      <div className="ServicesDiv">
+          <div className="CircleServices"></div>
+          <p className="ServicesText">Upcoming Events</p>
+        </div>
+        <p className="WhatWeOffer">
+        Discover <span>Live Music Events</span>Across the <span>USA</span>
+        </p>
+        <p className="ServiceDescTop">
+        Discover our latest concerts and live performances happening across the USA. Select an event below to view details, seating options, and ticket availability.
+        </p>
 
-</div>
+        <div className="artist-filter-bar">
+          {artistFilters.map((artist) => (
+            <button
+              key={artist}
+              type="button"
+              className={`artist-filter-tab${
+                activeFilter === artist ? " active" : ""
+              }`}
+              onClick={() => setActiveFilter(artist)}
+            >
+              {artist}
+            </button>
+          ))}
+        </div>
+<div className="ticket-card-media">
+        <div className="ticket-event-card">
+          <div className="ticket-card-date">
+            <p className="ticket-day-num">21</p>
+            <div className="ticket-month-day">
+              <p className="ticket-month">May</p>
+              <p className="ticket-weekday">Sun</p>
+            </div>
+          </div>
+
+          <div className="ticket-card-divider"></div>
+
+          <div className="ticket-card-info">
+            <p className="ticket-artist-name">Asim Azhar</p>
+            <p className="ticket-city">Dallas, TX</p>
+            <p className="ticket-venue">
+              Hill Performance Hall, Eisemann Centre
+              <br />
+              2351 Performance Dr, Richardson, TX 75082
+            </p>
+            <button type="button" className="ticket-buy-btn">
+              Buy Tickets Now
+              <img src="/Images/Navbar/arrow.svg" alt="" />
+            </button>
+          </div>
+
+         
+        </div>
+        <div >
+            <div className="ticket-card-media-inner">
+              <img
+                src="/Images/EventinSurtaal/arist06.webp"
+                alt="Asim Azhar"
+                className="ticket-card-image"
+              />
+            </div>
+          </div>
+          </div>
+      </div>
 
 
 

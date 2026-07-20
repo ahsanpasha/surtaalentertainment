@@ -648,9 +648,9 @@ body {
 .SuccessNum span {
   font-family: "Georama-Bold", sans-serif;
   font-weight: 700;
-  font-size: 105px;
-  line-height: 54.22px;
-  letter-spacing: 0.05em;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
   vertical-align: middle;
   background: #ffffff;
   -webkit-background-clip: text;
@@ -1007,7 +1007,8 @@ body {
     padding: 0px 71px 0px 63.8px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 95.7px;
     line-height: 95.7px;
   }
@@ -1273,7 +1274,8 @@ body {
     padding: 0px 67.08px 0px 60.2px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 90.3px;
     line-height: 90.3px;
   }
@@ -1539,7 +1541,8 @@ body {
     padding: 0px 63.18px 0px 56.7px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 85.05px;
     line-height: 85.05px;
   }
@@ -1808,7 +1811,8 @@ body {
     padding: 0px 58.5px 0px 52px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 78.79px;
     line-height: 80px;
   }
@@ -3496,7 +3500,8 @@ body {
     padding: 0 54.8px 0 48.8px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 73.9px;
     line-height: 75px;
   }
@@ -4100,7 +4105,8 @@ body {
     padding: 0 50.7px 0 45.1px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 68.4px;
     line-height: 69.4px;
   }
@@ -4706,7 +4712,8 @@ body {
     padding: 0 42.6px 0 37.9px;
   }
 
-  .SuccessNum {
+  .SuccessNum,
+  .SuccessNum span {
     font-size: 57.5px;
     line-height: 58.3px;
   }
@@ -5989,4 +5996,279 @@ body {
   .eventDay {
     font-size: 14px;
   }
+}
+
+/* tickets page - discover live music */
+.discoverlivemusic {
+  background-color: #fff;
+  padding: 72px 77px 97px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discover-badge {
+  margin-bottom: 42px;
+}
+
+.discover-heading {
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 74px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: capitalize;
+  color: #272727;
+  margin: 0 0 32px;
+  max-width: 1100px;
+}
+
+.discover-heading span {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #bd0040;
+}
+
+.discover-desc {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  color: #272727;
+  max-width: 952px;
+  margin: 0 0 48px;
+}
+
+.artist-filter-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #00000014;
+  box-shadow: 0px 4px 5px 0px #00000014;
+
+  margin-bottom: 73px;
+}
+
+.artist-filter-tab {
+  border: none;
+  background: transparent;
+  padding: 23px 36px;
+  border-radius: 13.45px;
+  font-family: Montserrat-Medium;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 26px;
+  leading-trim: CAP_HEIGHT;
+  line-height: 28px;
+  letter-spacing: 2%;
+  text-align: center;
+color: #272727;  
+  cursor: pointer;
+  white-space: nowrap;
+
+}
+
+.artist-filter-tab.active {
+  background: linear-gradient(177.7deg, #BD0040 -1.74%, #890531 98.07%);
+  font-weight: 700;
+  font-style: Bold;
+  font-family: Montserrat-Bold;
+  color: #ffffff;
+}
+
+.ticket-event-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  position: relative;
+  background-image:
+    repeating-linear-gradient(90deg, #919191 0 18px, transparent 18px 26px),
+    repeating-linear-gradient(90deg, #919191 0 18px, transparent 18px 26px),
+    repeating-linear-gradient(180deg, #919191 0 18px, transparent 18px 26px),
+    repeating-linear-gradient(180deg, #919191 0 18px, transparent 18px 26px);
+  background-size:
+    100% 1.5px,
+    100% 1.5px,
+    1.5px 100%,
+    1.5px 100%;
+  background-position:
+    top left,
+    bottom left,
+    top left,
+    top right;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+.ticket-card-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 36px 48px 36px;
+  flex-shrink: 0;
+}
+
+.ticket-day-num {
+  font-family: "Georama-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 1;
+  color: #272727;
+  margin: 0;
+}
+
+.ticket-month-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.ticket-month {
+  font-family: "Georama-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #bd0040;
+  margin: 0;
+}
+
+.ticket-weekday {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: #4b4b4b;
+  margin: 0;
+}
+
+.ticket-card-divider {
+  width: 1.5px;
+  align-self: stretch;
+  margin: 36px 0;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #919191 0,
+    #919191 18px,
+    transparent 18px,
+    transparent 26px
+  );
+}
+
+.ticket-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding: 37px 47px;
+  gap: 0;
+}
+
+.ticket-artist-name {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #272727;
+  margin: 0 0 46px;
+}
+
+.ticket-city {
+  font-family: "Georama-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  color: #bd0040;
+  margin: 0 0 32px;
+}
+
+.ticket-venue {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  color: #272727;
+  margin: 0 0 45px;
+}
+
+.ticket-buy-btn {
+  width: fit-content;
+  height: 70px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13.45px;
+
+  border-radius: 13.45px;
+  background: linear-gradient(177.7deg, #bd0040 -1.74%, #890531 98.07%);
+  font-family: "Montserrat-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.ticket-buy-btn img {
+  width: 12px;
+  height: 12px;
+}
+
+.ticket-card-media {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  overflow: visible;
+  align-self: stretch;
+}
+
+.ticket-card-media-inner {
+  --ticket-border: 8px;
+  position: relative;
+  height: 373px;
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--ticket-border);
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
+  clip-path: url(#ticket-media-clip);
+  -webkit-clip-path: url(#ticket-media-clip);
+  line-height: 0;
+  font-size: 0;
+  flex-shrink: 0;
+}
+
+.ticket-card-image {
+  display: block;
+  height: calc(373px - (var(--ticket-border) * 2));
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: cover;
+  object-position: center center;
+  clip-path: url(#ticket-media-clip-inner);
+  -webkit-clip-path: url(#ticket-media-clip-inner);
+  vertical-align: top;
 }

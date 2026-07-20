@@ -565,17 +565,20 @@
 }
 
 @media (max-width: 1050px) {
-  .galleryRow {
-    flex-direction: column;
-  }
-
-  .galleryRow:first-child .imageBox,
-  .galleryRow:last-child .imageBox {
-    width: 100%;
-  }
-
   .imageBox {
     height: 260px;
+  }
+
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
   }
 
   .FooterInfoContainer {
@@ -602,6 +605,18 @@
 }
 
 @media (max-width: 950px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
     height: 220px;
   }
@@ -629,8 +644,20 @@
 }
 
 @media (max-width: 768px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
-    height: 200px;
+    height: 180px;
   }
 
   .FooterTop img {
@@ -661,8 +688,20 @@
 }
 
 @media (max-width: 600px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
-    height: 180px;
+    height: 150px;
   }
 
   .FooterInfoContainer {
@@ -697,8 +736,20 @@
 }
 
 @media (max-width: 500px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
-    height: 160px;
+    height: 130px;
   }
 
   .FooterBottomLeft,
@@ -713,8 +764,20 @@
 }
 
 @media (max-width: 440px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
-    height: 150px;
+    height: 120px;
   }
 
   .FooterTop img {
@@ -729,6 +792,22 @@
 }
 
 @media (max-width: 390px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
+  .imageBox {
+    height: 110px;
+  }
+
   .FooterInfoContainer {
     padding: 12px 14px 18px;
   }
@@ -748,8 +827,20 @@
 }
 
 @media (max-width: 350px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+  }
+
   .imageBox {
-    height: 140px;
+    height: 100px;
   }
 
   .FooterTop img {
