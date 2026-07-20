@@ -17,7 +17,7 @@
   font-family: "Sora-Regular", sans-serif;
   font-weight: 400;
   line-height: 100%;
-  color: #ffffff;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -82,7 +82,7 @@
   left: 0;
   width: 100%;
   z-index: 1100;
-  background: transparent;
+  background: white;
   border-bottom: 1px solid transparent;
   transition:
     background-color 0.35s ease,
@@ -91,10 +91,10 @@
 }
 
 .navbar-root.is-scrolled {
-  background: rgba(8, 6, 0, 0.88);
+  background: white;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom-color: rgba(255, 255, 255, 0.07);
+  border-bottom-color: rgba(0, 0, 0, 0.07);
 }
 
 .navbar-brand-link {
@@ -468,14 +468,128 @@
   }
 }
 
+/* Vertical line */
+.navbar-vertical-line {
+  display: none;
+}
+
+/* Call Now Button */
+.call-now-btn {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .navbar-mobile-bar {
+    padding: 14px 20px;
+  }
+}
+
+/* Menu toggle styles for all mobile sizes */
+.navbar-menu-toggle {
+  border: none;
+  background: transparent;
+}
+
+.navbar-menu-toggle span {
+  background: #000000;
+}
+
+.navbar-menu-toggle:hover {
+  background: transparent;
+  transform: none;
+}
+
+.navbar-menu-toggle.open {
+  background: transparent;
+  border-color: transparent;
+}
+
+.navbar-menu-toggle.open span {
+  background: #ffffff;
+}
+
 @media (max-width: 440px) {
   .navbar-mobile-bar {
-    padding: 10px 12px;
+    padding: 12px 17px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+  }
+
+  .navbar-menu-toggle {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .navbar-menu-toggle span {
+    background: #000000;
+  }
+
+  .navbar-vertical-line {
+    display: block;
+    width: 2px;
+    height: 38px;
+    background: #5454544D;
+    margin-left: 19px;
+    flex-shrink: 0;
   }
 
   .navbar-mobile-logo {
-    width: 108px;
+    width: auto;
+    height: 38px;
+    margin-left: 12px;
   }
+
+  .call-now-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.46px;
+    height: 38px;
+    padding: 0 24px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 99.63px;
+    font-family: "FONTSPRING DEMO - Organetto Cnd Bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 29.74px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: auto;
+    min-width: 120px;
+  }
+
+  .call-now-btn img {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Make contact us button bigger in fullscreen menu */
+.navbar-fullscreen-contact {
+  height: 70px;
+  font-size: 24px;
+  padding: 0 40px;
+  gap: 16px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.navbar-fullscreen-contact img {
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 390px) {
@@ -535,7 +649,7 @@
   display: block;
   width: 20px;
   height: 1.75px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 2px;
   transform-origin: center;
   transition:
@@ -637,7 +751,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: clamp(36px, 8vh, 64px);
   opacity: 0;
   transform: translateY(-12px);

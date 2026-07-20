@@ -150,18 +150,6 @@ export default function Navbar() {
 
       {/* Mobile bar — always in DOM, CSS hides on desktop */}
       <div className="navbar-mobile-bar">
-        <Link href="/" className="navbar-brand-link" onClick={closeMenu}>
-          <img
-            src="/Images/Navbar/Logo.svg"
-            alt="Surtaal Entertainment"
-            className="navbar-mobile-logo"
-            width={160}
-            height={40}
-            fetchPriority="high"
-            decoding="async"
-          />
-        </Link>
-
         <button
           type="button"
           className={`navbar-menu-toggle${menuOpen && !closing ? " open" : ""}${closing ? " closing" : ""}`}
@@ -172,6 +160,26 @@ export default function Navbar() {
           <span />
           <span />
           <span />
+        </button>
+        <div className="navbar-vertical-line" aria-hidden="true" />
+        <Link href="/" className="navbar-brand-link" onClick={closeMenu}>
+          <img
+            src="/Images/Navbar/mobilelogo.svg"
+            alt="Surtaal Entertainment"
+            className="navbar-mobile-logo"
+            width={160}
+            height={40}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </Link>
+        <button
+          type="button"
+          className="call-now-btn"
+          onClick={() => router.push("/contact-us")}
+        >
+          <img src="/Images/Navbar/callnow.svg" alt="" />
+          Call Now
         </button>
       </div>
 
@@ -187,22 +195,13 @@ export default function Navbar() {
 
           <div className="navbar-fullscreen-header">
             <img
-              src="/Images/Navbar/Logo.svg"
+              src="/Images/Navbar/mobilelogo.svg"
               alt="Surtaal Entertainment"
               className="navbar-fullscreen-logo"
               width={150}
               height={40}
               decoding="async"
             />
-            <button
-              type="button"
-              className="navbar-fullscreen-close"
-              onClick={closeMenu}
-              aria-label="Close menu"
-            >
-              <span className="navbar-close-line" />
-              <span className="navbar-close-line" />
-            </button>
           </div>
 
           <nav className="navbar-fullscreen-nav">
@@ -229,9 +228,6 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-fullscreen-footer">
-            <p className="navbar-fullscreen-tagline">
-              Feel the Rhythm with Surtaal
-            </p>
             <button
               type="button"
               className="contact-btn navbar-fullscreen-contact"
