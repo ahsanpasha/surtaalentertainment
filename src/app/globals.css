@@ -2539,7 +2539,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 53.4px 72.2px 71.3px 72.2px;
+    padding: 53.4px 0 0;
   }
 }
 
@@ -2576,7 +2576,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 49px 66.2px 65.3px 66.2px;
+    padding: 49px 0 0;
   }
 }
 
@@ -2613,7 +2613,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 46px 62.1px 61.4px 62.1px;
+    padding: 46px 0 0;
   }
 }
 
@@ -2650,7 +2650,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 43px 57px 57px 57px;
+    padding: 43px 0 0;
   }
 }
 
@@ -3816,7 +3816,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 40.3px 53.4px 53.4px;
+    padding: 40.3px 0 0;
   }
 
   .ourteammaxwidth {
@@ -4430,7 +4430,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 37.3px 49.5px 49.5px;
+    padding: 37.3px 0 0;
   }
 
   /* artists */
@@ -5006,7 +5006,7 @@ img {
   }
 
   .ourteamdiv {
-    padding: 31.3px 24px 41.5px;
+    padding: 31.3px 0 0;
   }
 
   /* artists */
@@ -5638,7 +5638,7 @@ img {
 
   .ourteamdiv {
     padding-top: 40px;
-    padding-bottom: 48px;
+    padding-bottom: 0;
   }
 
   .SecondAbout,
