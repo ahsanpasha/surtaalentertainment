@@ -346,7 +346,7 @@ body {
   flex-direction: row;
 }
 
-.AboutDiv > img {
+.AboutDiv>img {
   width: 842px;
   height: auto;
   object-fit: cover;
@@ -613,13 +613,11 @@ body {
   inset: 0;
   border-radius: 20px;
   padding: 0.9px;
-  background: linear-gradient(
-    137.92deg,
-    rgba(189, 0, 64, 0.175) 12.07%,
-    rgba(189, 0, 64, 0.7) 39.55%,
-    rgba(141, 4, 50, 0.7) 63.36%,
-    rgba(141, 4, 50, 0.245) 92.67%
-  );
+  background: linear-gradient(137.92deg,
+      rgba(189, 0, 64, 0.175) 12.07%,
+      rgba(189, 0, 64, 0.7) 39.55%,
+      rgba(141, 4, 50, 0.7) 63.36%,
+      rgba(141, 4, 50, 0.245) 92.67%);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -676,6 +674,7 @@ body {
   justify-content: space-between;
   gap: 63px;
 }
+
 .SurtaalMainCol {
   display: flex;
   flex-direction: column;
@@ -704,11 +703,13 @@ body {
   background-color: #ffffff2b;
   height: 1px;
 }
+
 .straightlinediv {
   height: 100%;
   width: 1px;
   background-color: #ffffff2b;
-  position: relative; /* important */
+  position: relative;
+  /* important */
 }
 
 .circleentertainment {
@@ -722,6 +723,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .entertainmentartistbox {
   padding: 0px 109px 0px 94px;
   display: flex;
@@ -774,7 +776,8 @@ body {
 
 .imageWrapper {
   display: inline-block;
-  padding: 2px; /* border thickness */
+  padding: 2px;
+  /* border thickness */
   border-radius: 20px;
   background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
 }
@@ -800,211 +803,262 @@ body {
   .MainHome {
     padding: 232px 20px 213px;
   }
+
   .Celebrate {
     padding: 10.94px 25px;
     margin-bottom: 38.2px;
   }
+
   .CircleDiv {
     height: 12.7px;
     width: 12.7px;
   }
+
   .Celebratetext {
     font-size: 21.8px;
     line-height: 26.9px;
   }
+
   .FeelText {
     font-size: 80.2px;
     margin-bottom: 47.4px;
     line-height: 89.5px;
   }
+
   .Leteverytext {
     font-size: 20px;
     line-height: 31px;
     margin-bottom: 48.3px;
     max-width: 867px;
   }
+
   .SeeHowbtn {
     height: 67.4px;
     gap: 12.2px;
     font-size: 21.8px;
   }
+
   .SeeHowbtn img {
     width: 12.1px;
     height: 12.1px;
   }
+
   .ourServices {
     padding: 51px 77.4px 93.6px 77.4px;
   }
+
   .ServicesDiv {
     height: 40.3px;
     padding: 0 21.6px;
     margin-bottom: 38.2px;
   }
+
   .CircleServices {
     height: 10.4px;
     width: 10.4px;
   }
+
   .ServicesText {
     font-size: 17.9px;
     line-height: 22px;
     letter-spacing: 7.4px;
   }
+
   .WhatWeOffer,
   .WhatWeOffer span {
     font-size: 61.9px;
     line-height: 63.8px;
     margin-bottom: 34.6px;
   }
+
   .ServiceDescTop {
     max-width: 867px;
     font-size: 18.2px;
     line-height: 31px;
     margin-bottom: 52.8px;
   }
+
   .ServiceCardsDiv {
     padding: 0 12.7px;
   }
+
   .ServiceCardsDiv img {
     width: 366.4px;
     margin-bottom: 45.5px;
   }
+
   .Servicename {
     font-size: 38.2px;
     line-height: 41.9px;
     margin-bottom: 34.6px;
   }
+
   .ServiceDesc {
     font-size: 18.2px;
     line-height: 21.8px;
   }
-  .AboutDiv > img {
+
+  .AboutDiv>img {
     width: 767px;
   }
+
   .SecondAbout {
     padding: 57.4px 65.6px 56.5px 51.9px;
   }
+
   .BringingText {
     font-size: 61.9px;
     line-height: 77.4px;
     margin-top: 21.8px;
     margin-bottom: 29.1px;
   }
+
   .AboutDesc {
     font-size: 18.2px;
     line-height: 31px;
     margin-bottom: 36.4px;
   }
+
   .Oureventdiv {
     padding: 56.5px 77.4px 61.6px;
   }
+
   .MainEventDiv {
     padding: 65.6px 62.4px 52.8px;
   }
+
   .event21 {
     font-size: 83.8px;
   }
+
   .eventMonth {
     font-size: 43.7px;
   }
+
   .littleline {
     height: 120.3px;
   }
+
   .eventCity {
     font-size: 43.7px;
   }
+
   .eventAddress {
     font-size: 25.5px;
     line-height: 34.6px;
   }
+
   .eventLocationCol {
     gap: 29.1px;
     max-width: 781px;
   }
+
   .eventDateCol {
     margin-right: 45.5px;
     gap: 18.2px;
   }
+
   .BuyTicketsbtn {
     height: 78.3px;
     font-size: 25.4px;
     padding: 0 39.9px;
   }
+
   .BuyTicketsbtn img {
     height: 15.1px;
     width: 15.1px;
   }
+
   .linetour {
     margin-bottom: 36.4px;
   }
+
   .OurStorySection {
     padding: 52.8px 76.5px 49.2px;
   }
+
   .storyDiv {
     height: 40px;
     padding: 0 20px;
     gap: 14.9px;
   }
+
   .storytext {
     font-size: 17.9px;
     letter-spacing: 7.4px;
   }
+
   .storyline,
   .storyline span {
     font-size: 61.9px;
     line-height: 63.8px;
   }
+
   .foundedtext {
     max-width: 983px;
     margin-bottom: 46.4px;
   }
+
   .SuccessDiv {
     height: 254px;
     padding: 0px 71px 0px 63.8px;
   }
+
   .SuccessNum {
     font-size: 95.7px;
     line-height: 95.7px;
   }
+
   .SuccessLabel {
     margin-top: 27.3px;
     font-size: 28.2px;
   }
+
   .EntertainmentDiv {
     padding: 50.1px 103.9px 41px;
   }
+
   .Surtaalpara {
     font-size: 18.2px;
     line-height: 31px;
     max-width: 754px;
   }
+
   .SurtaalMainCol {
     gap: 10.9px;
   }
+
   .starrrname {
     font-size: 71.1px;
     line-height: 72.9px;
     max-width: 391.9px;
   }
+
   .entertainmentartistbox {
     gap: 86.6px;
     padding: 0px 99.3px 0px 85.6px;
   }
+
   .booknowbtn {
     height: 67.4px;
     padding: 0 39.4px;
     font-size: 21.8px;
   }
+
   .booknowbtn img {
     height: 12.1px;
     width: 12.1px;
   }
+
   .aristimage {
     height: 414.7px;
   }
+
   .circleentertainment {
     height: 19.1px;
     width: 19.1px;
   }
+
   .Divmainrow {
     padding-top: 74.7px;
     padding-bottom: 74.7px;
@@ -1015,211 +1069,262 @@ body {
   .MainHome {
     padding: 219px 20px 201px;
   }
+
   .Celebrate {
     padding: 10.32px 23.65px;
     margin-bottom: 36.12px;
   }
+
   .CircleDiv {
     height: 12.04px;
     width: 12.04px;
   }
+
   .Celebratetext {
     font-size: 20.64px;
     line-height: 25.44px;
   }
+
   .FeelText {
     font-size: 75.68px;
     margin-bottom: 44.72px;
     line-height: 84.48px;
   }
+
   .Leteverytext {
     font-size: 18.92px;
     line-height: 29.24px;
     margin-bottom: 45.58px;
     max-width: 818.72px;
   }
+
   .SeeHowbtn {
     height: 63.64px;
     gap: 11.57px;
     font-size: 20.64px;
   }
+
   .SeeHowbtn img {
     width: 11.45px;
     height: 11.45px;
   }
+
   .ourServices {
     padding: 48.16px 73.1px 88.38px 73.1px;
   }
+
   .ServicesDiv {
     height: 38.04px;
     padding: 0 20.43px;
     margin-bottom: 36.12px;
   }
+
   .CircleServices {
     height: 9.86px;
     width: 9.86px;
   }
+
   .ServicesText {
     font-size: 16.91px;
     line-height: 20.84px;
     letter-spacing: 7.04px;
   }
+
   .WhatWeOffer,
   .WhatWeOffer span {
     font-size: 58.48px;
     line-height: 60.2px;
     margin-bottom: 32.68px;
   }
+
   .ServiceDescTop {
     max-width: 818.72px;
     font-size: 17.2px;
     line-height: 29.24px;
     margin-bottom: 49.88px;
   }
+
   .ServiceCardsDiv {
     padding: 0 12.04px;
   }
+
   .ServiceCardsDiv img {
     width: 345.72px;
     margin-bottom: 43px;
   }
+
   .Servicename {
     font-size: 36.12px;
     line-height: 39.56px;
     margin-bottom: 32.68px;
   }
+
   .ServiceDesc {
     font-size: 17.2px;
     line-height: 20.64px;
   }
-  .AboutDiv > img {
+
+  .AboutDiv>img {
     width: 724.12px;
   }
+
   .SecondAbout {
     padding: 54.18px 61.92px 53.32px 49.02px;
   }
+
   .BringingText {
     font-size: 58.48px;
     line-height: 73.1px;
     margin-top: 20.64px;
     margin-bottom: 27.52px;
   }
+
   .AboutDesc {
     font-size: 17.2px;
     line-height: 29.24px;
     margin-bottom: 34.4px;
   }
+
   .Oureventdiv {
     padding: 53.32px 73.1px 58.17px;
   }
+
   .MainEventDiv {
     padding: 61.92px 58.91px 49.88px;
   }
+
   .event21 {
     font-size: 79.12px;
   }
+
   .eventMonth {
     font-size: 41.28px;
   }
+
   .littleline {
     height: 113.52px;
   }
+
   .eventCity {
     font-size: 41.28px;
   }
+
   .eventAddress {
     font-size: 24.08px;
     line-height: 32.68px;
   }
+
   .eventLocationCol {
     gap: 27.52px;
     max-width: 737.02px;
   }
+
   .eventDateCol {
     margin-right: 43px;
     gap: 17.2px;
   }
+
   .BuyTicketsbtn {
     height: 73.96px;
     font-size: 24.02px;
     padding: 0 37.65px;
   }
+
   .BuyTicketsbtn img {
     height: 14.32px;
     width: 14.32px;
   }
+
   .linetour {
     margin-bottom: 34.4px;
   }
+
   .OurStorySection {
     padding: 49.88px 72.24px 46.44px;
   }
+
   .storyDiv {
     height: 37.84px;
     padding: 0 18.92px;
     gap: 14.09px;
   }
+
   .storytext {
     font-size: 16.91px;
     letter-spacing: 7.04px;
   }
+
   .storyline,
   .storyline span {
     font-size: 58.48px;
     line-height: 60.2px;
   }
+
   .foundedtext {
     max-width: 927.94px;
     margin-bottom: 43.86px;
   }
+
   .SuccessDiv {
     height: 239.94px;
     padding: 0px 67.08px 0px 60.2px;
   }
+
   .SuccessNum {
     font-size: 90.3px;
     line-height: 90.3px;
   }
+
   .SuccessLabel {
     margin-top: 25.8px;
     font-size: 26.66px;
   }
+
   .EntertainmentDiv {
     padding: 47.3px 98.04px 38.7px;
   }
+
   .Surtaalpara {
     font-size: 17.2px;
     line-height: 29.24px;
     max-width: 712.08px;
   }
+
   .SurtaalMainCol {
     gap: 10.32px;
   }
+
   .starrrname {
     font-size: 67.08px;
     line-height: 68.8px;
     max-width: 369.8px;
   }
+
   .entertainmentartistbox {
     gap: 81.7px;
     padding: 0px 93.74px 0px 80.84px;
   }
+
   .booknowbtn {
     height: 63.64px;
     padding: 0 37.19px;
     font-size: 20.64px;
   }
+
   .booknowbtn img {
     height: 11.45px;
     width: 11.45px;
   }
+
   .aristimage {
     height: 391.3px;
   }
+
   .circleentertainment {
     height: 18.06px;
     width: 18.06px;
   }
+
   .Divmainrow {
     padding-top: 70.52px;
     padding-bottom: 70.52px;
@@ -1230,211 +1335,262 @@ body {
   .MainHome {
     padding: 206px 20px 189.3px;
   }
+
   .Celebrate {
     padding: 9.72px 22.28px;
     margin-bottom: 34.02px;
   }
+
   .CircleDiv {
     height: 11.34px;
     width: 11.34px;
   }
+
   .Celebratetext {
     font-size: 19.44px;
     line-height: 23.96px;
   }
+
   .FeelText {
     font-size: 71.28px;
     margin-bottom: 42.12px;
     line-height: 79.57px;
   }
+
   .Leteverytext {
     font-size: 17.82px;
     line-height: 27.54px;
     margin-bottom: 42.93px;
     max-width: 771.12px;
   }
+
   .SeeHowbtn {
     height: 59.94px;
     gap: 10.9px;
     font-size: 19.44px;
   }
+
   .SeeHowbtn img {
     width: 10.78px;
     height: 10.78px;
   }
+
   .ourServices {
     padding: 45.36px 68.85px 83.24px 68.85px;
   }
+
   .ServicesDiv {
     height: 35.83px;
     padding: 0 19.24px;
     margin-bottom: 34.02px;
   }
+
   .CircleServices {
     height: 9.29px;
     width: 9.29px;
   }
+
   .ServicesText {
     font-size: 15.92px;
     line-height: 19.63px;
     letter-spacing: 6.63px;
   }
+
   .WhatWeOffer,
   .WhatWeOffer span {
     font-size: 55.08px;
     line-height: 56.7px;
     margin-bottom: 30.78px;
   }
+
   .ServiceDescTop {
     max-width: 771.12px;
     font-size: 16.2px;
     line-height: 27.54px;
     margin-bottom: 46.98px;
   }
+
   .ServiceCardsDiv {
     padding: 0 11.34px;
   }
+
   .ServiceCardsDiv img {
     width: 325.62px;
     margin-bottom: 40.5px;
   }
+
   .Servicename {
     font-size: 34.02px;
     line-height: 37.26px;
     margin-bottom: 30.78px;
   }
+
   .ServiceDesc {
     font-size: 16.2px;
     line-height: 19.44px;
   }
-  .AboutDiv > img {
+
+  .AboutDiv>img {
     width: 682.02px;
   }
+
   .SecondAbout {
     padding: 51.03px 58.32px 50.22px 46.17px;
   }
+
   .BringingText {
     font-size: 55.08px;
     line-height: 68.85px;
     margin-top: 19.44px;
     margin-bottom: 25.92px;
   }
+
   .AboutDesc {
     font-size: 16.2px;
     line-height: 27.54px;
     margin-bottom: 32.4px;
   }
+
   .Oureventdiv {
     padding: 50.22px 68.85px 54.79px;
   }
+
   .MainEventDiv {
     padding: 58.32px 55.49px 46.98px;
   }
+
   .event21 {
     font-size: 74.52px;
   }
+
   .eventMonth {
     font-size: 38.88px;
   }
+
   .littleline {
     height: 106.92px;
   }
+
   .eventCity {
     font-size: 38.88px;
   }
+
   .eventAddress {
     font-size: 22.68px;
     line-height: 30.78px;
   }
+
   .eventLocationCol {
     gap: 25.92px;
     max-width: 694.17px;
   }
+
   .eventDateCol {
     margin-right: 40.5px;
     gap: 16.2px;
   }
+
   .BuyTicketsbtn {
     height: 69.66px;
     font-size: 22.62px;
     padding: 0 35.46px;
   }
+
   .BuyTicketsbtn img {
     height: 13.49px;
     width: 13.49px;
   }
+
   .linetour {
     margin-bottom: 32.4px;
   }
+
   .OurStorySection {
     padding: 46.98px 68.04px 43.74px;
   }
+
   .storyDiv {
     height: 35.64px;
     padding: 0 17.82px;
     gap: 13.27px;
   }
+
   .storytext {
     font-size: 15.92px;
     letter-spacing: 6.63px;
   }
+
   .storyline,
   .storyline span {
     font-size: 55.08px;
     line-height: 56.7px;
   }
+
   .foundedtext {
     max-width: 873.99px;
     margin-bottom: 41.31px;
   }
+
   .SuccessDiv {
     height: 225.99px;
     padding: 0px 63.18px 0px 56.7px;
   }
+
   .SuccessNum {
     font-size: 85.05px;
     line-height: 85.05px;
   }
+
   .SuccessLabel {
     margin-top: 24.3px;
     font-size: 25.11px;
   }
+
   .EntertainmentDiv {
     padding: 44.55px 92.34px 36.45px;
   }
+
   .Surtaalpara {
     font-size: 16.2px;
     line-height: 27.54px;
     max-width: 670.68px;
   }
+
   .SurtaalMainCol {
     gap: 9.72px;
   }
+
   .starrrname {
     font-size: 63.18px;
     line-height: 64.8px;
     max-width: 348.3px;
   }
+
   .entertainmentartistbox {
     gap: 76.95px;
     padding: 0px 88.29px 0px 76.14px;
   }
+
   .booknowbtn {
     height: 59.94px;
     padding: 0 35.02px;
     font-size: 19.44px;
   }
+
   .booknowbtn img {
     height: 10.78px;
     width: 10.78px;
   }
+
   .aristimage {
     height: 368.55px;
   }
+
   .circleentertainment {
     height: 17.01px;
     width: 17.01px;
   }
+
   .Divmainrow {
     padding-top: 66.42px;
     padding-bottom: 66.42px;
@@ -1445,213 +1601,264 @@ body {
   .MainHome {
     padding: 190px 20px 175px;
   }
+
   .Celebrate {
     padding: 8.76px 20.63px;
     margin-bottom: 31.51px;
     gap: 12px;
   }
+
   .CircleDiv {
     height: 10.5px;
     width: 10.5px;
   }
+
   .Celebratetext {
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 7.5px;
   }
+
   .FeelText {
     font-size: 66.03px;
     margin-bottom: 39px;
     line-height: 70px;
   }
+
   .Leteverytext {
     font-size: 16.51px;
     line-height: 20px;
     margin-bottom: 39px;
     max-width: 714px;
   }
+
   .SeeHowbtn {
     height: 55.53px;
     gap: 10px;
     font-size: 18.01px;
   }
+
   .SeeHowbtn img {
     width: 10px;
     height: 10px;
   }
+
   .ourServices {
     padding: 43.52px 63.78px 77.15px 63.78px;
   }
+
   .ServicesDiv {
     height: 33.19px;
     padding: 0 17.82px;
     margin-bottom: 31.51px;
     gap: 12px;
   }
+
   .CircleServices {
     height: 8.6px;
     width: 8.6px;
   }
+
   .ServicesText {
     font-size: 14.75px;
     line-height: 18px;
     letter-spacing: 6.15px;
   }
+
   .WhatWeOffer,
   .WhatWeOffer span {
     font-size: 51.02px;
     line-height: 55px;
     margin-bottom: 28.51px;
   }
+
   .ServiceDescTop {
     max-width: 714.34px;
     font-size: 15.01px;
     line-height: 18px;
     margin-bottom: 43.52px;
   }
+
   .ServiceCardsDiv {
     padding: 0 10.5px;
   }
+
   .ServiceCardsDiv img {
     width: 301.64px;
     margin-bottom: 37.52px;
   }
+
   .Servicename {
     font-size: 31.51px;
     line-height: 34px;
     margin-bottom: 28.51px;
   }
+
   .ServiceDesc {
     font-size: 15.01px;
     line-height: 18px;
   }
-  .AboutDiv > img {
+
+  .AboutDiv>img {
     width: 631.8px;
   }
+
   .SecondAbout {
     padding: 47.27px 54.03px 47.66px 42.77px;
   }
+
   .BringingText {
     font-size: 51.02px;
     line-height: 54px;
     margin-top: 0px;
     margin-bottom: 28.51px;
   }
+
   .AboutDesc {
     font-size: 15.01px;
     line-height: 24px;
     margin-bottom: 28.51px;
   }
+
   .Oureventdiv {
     padding: 46.52px 63.78px 50.75px;
   }
+
   .MainEventDiv {
     padding: 50px 51px 8px;
   }
+
   .event21 {
     font-size: 69.03px;
   }
+
   .eventMonth {
     font-size: 36.02px;
   }
+
   .littleline {
     height: 99px;
   }
+
   .eventCity {
     font-size: 36.02px;
   }
+
   .eventAddress {
     font-size: 21.01px;
     line-height: 24px;
   }
+
   .eventLocationCol {
     gap: 24px;
     max-width: 643.05px;
   }
+
   .eventDateCol {
     margin-right: 30px;
     gap: 18px;
   }
+
   .BuyTicketsbtn {
     height: 64.53px;
     font-size: 20.96px;
     padding: 0 32px;
   }
+
   .BuyTicketsbtn img {
     height: 12.5px;
     width: 12.5px;
   }
+
   .linetour {
     margin-bottom: 30px;
   }
+
   .OurStorySection {
     padding: 43px 62px 40px;
   }
+
   .storyDiv {
     height: 33.02px;
     padding: 0 16.5px;
     gap: 12px;
   }
+
   .storytext {
     font-size: 14.75px;
     letter-spacing: 6.15px;
   }
+
   .storyline,
   .storyline span {
     font-size: 51.02px;
     line-height: 54px;
   }
+
   .foundedtext {
     max-width: 809.63px;
     margin-bottom: 38.51px;
   }
+
   .SuccessDiv {
     height: 209.35px;
     padding: 0px 58.5px 0px 52px;
   }
+
   .SuccessNum {
     font-size: 78.79px;
     line-height: 80px;
   }
+
   .SuccessLabel {
     margin-top: 36px;
     font-size: 23.26px;
   }
+
   .EntertainmentDiv {
     padding: 41px 85px 48px;
   }
+
   .Surtaalpara {
     font-size: 15.01px;
     line-height: 24px;
     max-width: 620px;
   }
+
   .SurtaalMainCol {
     gap: 0px;
   }
+
   .starrrname {
     font-size: 58.53px;
     line-height: 60px;
     max-width: 320px;
   }
+
   .entertainmentartistbox {
     gap: 80px;
   }
+
   .booknowbtn {
     height: 55.53px;
     padding: 0 32px;
     font-size: 18.01px;
   }
+
   .booknowbtn img {
     height: 10px;
     width: 10px;
   }
+
   .aristimage {
     height: 341.41px;
   }
+
   .circleentertainment {
     height: 15.76px;
     width: 15.76px;
   }
+
   .entertainmentartistbox {
     padding: 0px 80px 0px 70px;
   }
@@ -1758,6 +1965,7 @@ body {
   vertical-align: middle;
   color: #bd0040;
 }
+
 .elevatedivmain {
   display: flex;
   flex-direction: row;
@@ -1777,15 +1985,14 @@ body {
   text-transform: capitalize;
   color: #555454;
 }
+
 .acrossnorthdiv {
   padding: 36px 84px 63px 62px;
   background:
     linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    linear-gradient(
-      113.72deg,
+    linear-gradient(113.72deg,
       rgba(39, 39, 39, 0.5) 2.87%,
-      rgba(0, 0, 0, 0.5) 92.4%
-    ),
+      rgba(0, 0, 0, 0.5) 92.4%),
     url("/Images/AboutUs/mic.webp");
   background-size: 100% 100%;
   background-position: center;
@@ -1822,6 +2029,7 @@ body {
   text-shadow: 0px 4px 25px #000000a6;
   margin-bottom: 38px;
 }
+
 .ElevatingEntertainmentText span {
   font-family: "Georama-SemiBold", sans-serif;
   font-weight: 600;
@@ -1832,45 +2040,56 @@ body {
   .AboutusMain {
     padding: 235px 20px 140px;
   }
+
   .elevatingdiv {
     padding-left: 96px;
   }
+
   .elevatingText,
   .elevatingText-normal-new {
     font-size: 39.15px;
     line-height: 40px;
   }
+
   .elevatingdivheader {
     gap: 38.4px;
     margin-right: 97.5px;
   }
+
   .linediv {
     width: 667.5px;
   }
+
   .ElevatingEntertainmentText,
   .ArtisticText {
     font-size: 63.75px;
     line-height: 79.7px;
     margin-bottom: 35.6px;
   }
+
   .AboutUSDesc-new {
     font-size: 18.75px;
     line-height: 31.9px;
   }
+
   .acrossnorthdiv {
     padding: 33.7px 78.7px 59px 58.1px;
   }
+
   .aboutimage {
     max-width: 703px;
   }
+
   .AboutUSDesc {
     font-size: 18.75px;
     line-height: 31.9px;
   }
+
   .aboutuslower {
     gap: 84px;
     padding: 69.4px 100px;
   }
+
   .aboutuspara {
     font-size: 20.6px;
     line-height: 30px;
@@ -1882,45 +2101,56 @@ body {
   .AboutusMain {
     padding: 221px 20px 132px;
   }
+
   .elevatingdiv {
     padding-left: 88.5px;
   }
+
   .elevatingText,
   .elevatingText-normal-new {
     font-size: 35.9px;
     line-height: 36.6px;
   }
+
   .elevatingdivheader {
     gap: 35.2px;
     margin-right: 89.3px;
   }
+
   .linediv {
     width: 611.6px;
   }
+
   .ElevatingEntertainmentText,
   .ArtisticText {
     font-size: 58.4px;
     line-height: 73px;
     margin-bottom: 32.6px;
   }
+
   .AboutUSDesc-new {
     font-size: 17.2px;
     line-height: 29.2px;
   }
+
   .acrossnorthdiv {
     padding: 30.9px 72.1px 54.1px 53.2px;
   }
+
   .aboutimage {
     max-width: 644px;
   }
+
   .AboutUSDesc {
     font-size: 17.2px;
     line-height: 29.2px;
   }
+
   .aboutuslower {
     gap: 77.3px;
     padding: 63.5px 92px;
   }
+
   .aboutuspara {
     font-size: 18.9px;
     line-height: 27.5px;
@@ -1932,45 +2162,56 @@ body {
   .AboutusMain {
     padding: 208px 20px 124.4px;
   }
+
   .elevatingdiv {
     padding-left: 83px;
   }
+
   .elevatingText,
   .elevatingText-normal-new {
     font-size: 33.7px;
     line-height: 34.3px;
   }
+
   .elevatingdivheader {
     gap: 33px;
     margin-right: 84px;
   }
+
   .linediv {
     width: 574.5px;
   }
+
   .ElevatingEntertainmentText,
   .ArtisticText {
     font-size: 54.8px;
     line-height: 68.5px;
     margin-bottom: 30.6px;
   }
+
   .AboutUSDesc-new {
     font-size: 16.1px;
     line-height: 27.4px;
   }
+
   .acrossnorthdiv {
     padding: 29px 67.7px 50.8px 50px;
   }
+
   .aboutimage {
     max-width: 605px;
   }
+
   .AboutUSDesc {
     font-size: 16.1px;
     line-height: 27.4px;
   }
+
   .aboutuslower {
     gap: 72.6px;
     padding: 59.7px 86.3px;
   }
+
   .aboutuspara {
     font-size: 17.7px;
     line-height: 25.8px;
@@ -1982,45 +2223,57 @@ body {
   .AboutusMain {
     padding: 193px 20px 115.2px;
   }
+
   .elevatingdiv {
     padding-left: 77px;
   }
+
   .elevatingText,
   .elevatingText-normal-new {
     font-size: 31px;
     line-height: 35px;
   }
+
   .elevatingdivheader {
     gap: 33px;
     margin-right: 77px;
   }
+
   .linediv {
     width: 530px;
   }
+
   .ElevatingEntertainmentText,
   .ArtisticText {
     font-size: 51px;
     line-height: 55px;
     margin-bottom: 28px;
   }
+
   .AboutUSDesc-new {
     font-size: 15px;
     line-height: 26px;
   }
+
   .acrossnorthdiv {
     padding: 27px 63px 47px 46px;
   }
+
   .aboutimage {
     max-width: 562.76px;
   }
+
   .AboutUSDesc {
     font-size: 15px;
     line-height: 26px;
   }
+
+
   .aboutuslower {
     gap: 50px;
     padding: 55px 80px;
   }
+
   .aboutuspara {
     font-size: 16.51px;
     line-height: 25.5px;
@@ -2111,27 +2364,33 @@ body {
     height: 300px;
     width: 300px;
   }
+
   .teamdiv {
     gap: 51.6px;
   }
+
   .teamname {
     font-size: 35.6px;
     line-height: 37.5px;
     margin-bottom: 21.6px;
   }
+
   .teamposition {
     font-size: 22.5px;
     line-height: 28.1px;
     margin-bottom: 21.6px;
   }
+
   .teamdesc {
     font-size: 18.8px;
     line-height: 28.1px;
     max-width: 346.9px;
   }
+
   .teamdivmain {
     gap: 65.6px;
   }
+
   .ourteamdiv {
     padding: 53.4px 72.2px 71.3px 72.2px;
   }
@@ -2142,27 +2401,33 @@ body {
     height: 275px;
     width: 275px;
   }
+
   .teamdiv {
     gap: 47.2px;
   }
+
   .teamname {
     font-size: 32.6px;
     line-height: 34.4px;
     margin-bottom: 19.8px;
   }
+
   .teamposition {
     font-size: 20.6px;
     line-height: 25.8px;
     margin-bottom: 19.8px;
   }
+
   .teamdesc {
     font-size: 17.2px;
     line-height: 25.8px;
     max-width: 317.8px;
   }
+
   .teamdivmain {
     gap: 60.1px;
   }
+
   .ourteamdiv {
     padding: 49px 66.2px 65.3px 66.2px;
   }
@@ -2173,27 +2438,33 @@ body {
     height: 258.2px;
     width: 258.2px;
   }
+
   .teamdiv {
     gap: 44.4px;
   }
+
   .teamname {
     font-size: 30.7px;
     line-height: 32.3px;
     margin-bottom: 18.6px;
   }
+
   .teamposition {
     font-size: 19.4px;
     line-height: 24.2px;
     margin-bottom: 18.6px;
   }
+
   .teamdesc {
     font-size: 16.1px;
     line-height: 24.2px;
     max-width: 298.6px;
   }
+
   .teamdivmain {
     gap: 56.5px;
   }
+
   .ourteamdiv {
     padding: 46px 62.1px 61.4px 62.1px;
   }
@@ -2204,27 +2475,33 @@ body {
     height: 240px;
     width: 240px;
   }
+
   .teamdiv {
     gap: 41px;
   }
+
   .teamname {
     font-size: 28.5px;
     line-height: 30px;
     margin-bottom: 17.25px;
   }
+
   .teamposition {
     font-size: 18px;
     line-height: 22.5px;
     margin-bottom: 17.25px;
   }
+
   .teamdesc {
     font-size: 15px;
     line-height: 22.5px;
     max-width: 277.5px;
   }
+
   .teamdivmain {
     gap: 52.5px;
   }
+
   .ourteamdiv {
     padding: 43px 57px 57px 57px;
   }
@@ -2273,6 +2550,7 @@ body {
   gap: 18px;
   padding: 58px 85px 81px 85px;
 }
+
 .artist-card {
   position: relative;
   width: 458px;
@@ -2298,11 +2576,9 @@ body {
   align-items: center;
   gap: 10px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.85) 100%);
 }
 
 /* TEXT */
@@ -2344,10 +2620,12 @@ body {
 .offerartistimg {
   max-width: 859px;
 }
+
 .tick {
   height: 25px;
   width: 25px;
 }
+
 .points {
   display: flex;
   flex-direction: row;
@@ -2380,31 +2658,39 @@ body {
   .artist-header {
     padding: 54.4px 79.7px 75.9px 79.7px;
   }
+
   .artist-row {
     padding-left: 79.7px;
     padding-bottom: 59.1px;
     gap: 20.6px;
   }
+
   .artist-card {
     width: 429.4px;
   }
+
   .offerartistimg {
     max-width: 805.3px;
   }
+
   .livetext {
     font-size: 20.6px;
     line-height: 31.9px;
   }
+
   .mainpointdiv {
     gap: 26.3px;
   }
+
   .tick {
     height: 23.4px;
     width: 23.4px;
   }
+
   .SecondAboutartist {
     padding: 47.8px 116.3px 47.8px 75px;
   }
+
   .sliderbtn,
   .sliderbtngoaway {
     height: 76.9px;
@@ -2416,31 +2702,39 @@ body {
   .artist-header {
     padding: 49.8px 73.1px 69.6px 73.1px;
   }
+
   .artist-row {
     padding-left: 73.1px;
     padding-bottom: 54.2px;
     gap: 18.9px;
   }
+
   .artist-card {
     width: 393.8px;
   }
+
   .offerartistimg {
     max-width: 738.5px;
   }
+
   .livetext {
     font-size: 18.9px;
     line-height: 29.3px;
   }
+
   .mainpointdiv {
     gap: 24.1px;
   }
+
   .tick {
     height: 21.5px;
     width: 21.5px;
   }
+
   .SecondAboutartist {
     padding: 43.8px 106.7px 43.8px 68.8px;
   }
+
   .sliderbtn,
   .sliderbtngoaway {
     height: 70.5px;
@@ -2452,31 +2746,39 @@ body {
   .artist-header {
     padding: 46.8px 68.6px 65.3px 68.6px;
   }
+
   .artist-row {
     padding-left: 68.6px;
     padding-bottom: 50.9px;
     gap: 17.8px;
   }
+
   .artist-card {
     width: 369.9px;
   }
+
   .offerartistimg {
     max-width: 693.1px;
   }
+
   .livetext {
     font-size: 17.8px;
     line-height: 27.5px;
   }
+
   .mainpointdiv {
     gap: 22.6px;
   }
+
   .tick {
     height: 20.2px;
     width: 20.2px;
   }
+
   .SecondAboutartist {
     padding: 41.1px 100.1px 41.1px 64.5px;
   }
+
   .sliderbtn,
   .sliderbtngoaway {
     height: 66.2px;
@@ -2488,28 +2790,35 @@ body {
   .artist-header {
     padding: 43px 63px 60px 63px;
   }
+
   .artist-row {
     padding-left: 63px;
     padding-bottom: 47px;
     gap: 16.5px;
   }
+
   .artist-card {
     width: 343.5px;
   }
+
   .offerartistimg {
     max-width: 644.25px;
   }
+
   .livetext {
     font-size: 16.5px;
     line-height: 25.5px;
   }
+
   .mainpointdiv {
     gap: 21px;
   }
+
   .tick {
     height: 18.75px;
     width: 18.75px;
   }
+
   .SecondAboutartist {
     padding: 38.25px 93px 38.25px 60px;
   }
@@ -2523,6 +2832,7 @@ body {
   align-items: center;
   gap: 135px;
 }
+
 .AboutDesc {
   max-width: 778px;
 }
@@ -2576,6 +2886,7 @@ body {
   margin-top: 51px;
   margin-bottom: 51px;
 }
+
 .form-border {
   padding: 10px;
   border-radius: 28px;
@@ -2584,7 +2895,8 @@ body {
 }
 
 .contact-form {
-  border-radius: 18px; /* 28 - 10 */
+  border-radius: 18px;
+  /* 28 - 10 */
   background: #000;
 
   padding: 46px 40px 26px 40px;
@@ -2647,11 +2959,9 @@ body {
 .inputbox {
   height: 90px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(41, 40, 40, 0.5) 0%,
-    rgba(31, 31, 31, 0.5) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(41, 40, 40, 0.5) 0%,
+      rgba(31, 31, 31, 0.5) 100%);
   border: 1px solid #5a5a5ab2;
   border-radius: 15px;
   padding: 35.5px 32px 37.5px 32px;
@@ -2667,6 +2977,7 @@ body {
   color: #fff;
   outline: none;
 }
+
 .inputbox:placeholder {
   color: #4d5561;
 }
@@ -2677,6 +2988,7 @@ body {
   align-items: center;
   gap: 25px;
 }
+
 .newinputdivmine {
   display: flex;
   flex-direction: column;
@@ -2746,7 +3058,8 @@ body {
 
 .fillcolor {
   font-size: 32px;
-  fill: url(#iconGradient); /* 👈 yahan gradient apply hoga */
+  fill: url(#iconGradient);
+  /* 👈 yahan gradient apply hoga */
 }
 
 .fillcolor {
@@ -2771,43 +3084,87 @@ body {
     padding: 49px 60px 54px 108px;
     gap: 100px;
   }
+
   .linenew {
     max-width: 606.06px;
     margin-top: 38px;
     margin-bottom: 38px;
   }
+
   .contact-itemlabel {
     font-size: 18px;
   }
+
   .contact-itemvalue {
     font-size: 22.5px;
   }
+
   .contact-div-new {
     gap: 5.25px;
   }
+
   .contact-item-my {
     gap: 16.5px;
   }
+
   .socials {
     gap: 19.5px;
   }
+
   .followtext {
     font-size: 19.5px;
   }
+
   .maindivstructure {
     gap: 39px;
   }
+
   .icons {
     gap: 15px;
   }
+
   .socialicondiv {
     width: 56.25px;
     height: 56.25px;
     border-radius: 12.75px;
     border: 2.05px solid #bd0040bf;
   }
+
   .phoneicon {
     height: 63.57px;
     width: 63.57px;
+  }
+
+  .contact-form {
+    padding: 34px 30px 19.5px;
+  }
+
+  .leaveamessage {
+    font-size: 39px;
+    line-height: 40px;
+    margin-bottom: 28px;
+  }
+
+  .form-sub {
+    font-size: 15px;
+    margin-bottom: 31px;
+  }
+
+  .labelofinput {
+    font-size: 18px;
+  }
+
+  .inputdivnew {
+    gap: 11px;
+  }
+
+  .inputbox {
+    font-size: 18px;
+    padding: 26px 24px;
+  }
+
+  .sendmessage {
+    font-size: 19.5px;
+    height: 65.34px;
   }
 }
