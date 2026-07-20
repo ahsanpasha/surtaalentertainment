@@ -158,6 +158,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/artist01.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -182,6 +184,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/arist02.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -206,6 +210,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/arist03.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -230,6 +236,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/arist04.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -254,6 +262,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/arist05.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -278,6 +288,8 @@ export default function HomePage() {
                 src="/Images/EventinSurtaal/arist06.webp"
                 className="aristimage"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

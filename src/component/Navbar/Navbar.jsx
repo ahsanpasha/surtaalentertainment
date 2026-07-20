@@ -1,8 +1,8 @@
 "use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import AppBar from "@mui/material/AppBar";
 import "./Navbar.css";
 
 const navLinks = [
@@ -17,26 +17,19 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [highlightStyle, setHighlightStyle] = useState({});
-  const [isMobile, setIsMobile] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const [highlightStyle, setHighlightStyle] = useState({ opacity: 0 });
   const [scrolled, setScrolled] = useState(false);
   const itemRefs = useRef({});
+  const closeTimer = useRef(null);
 
   const activePage =
     navLinks.find((l) => l.href === pathname)?.label || null;
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1050);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -50,7 +43,7 @@ export default function Navbar() {
   useEffect(() => {
     function recalcHighlight() {
       const el = itemRefs.current[activePage];
-      if (!el) {
+      if (!el || window.innerWidth <= 1050) {
         setHighlightStyle({ opacity: 0 });
         return;
       }
@@ -73,198 +66,133 @@ export default function Navbar() {
       document.fonts.ready.then(recalcHighlight).catch(() => {});
     }
     window.addEventListener("resize", recalcHighlight);
-    window.addEventListener("orientationchange", recalcHighlight);
-    return () => {
-      window.removeEventListener("resize", recalcHighlight);
-      window.removeEventListener("orientationchange", recalcHighlight);
-    };
-  }, [activePage, isMobile]);
+    return () => window.removeEventListener("resize", recalcHighlight);
+  }, [activePage, pathname]);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setClosing(false);
+    setMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    if (!menuOpen || closing) return;
+    setClosing(true);
+    closeTimer.current = setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 480);
+  };
+
+  const toggleMenu = () => {
+    if (menuOpen) closeMenu();
+    else openMenu();
+  };
+
+  const menuVisible = menuOpen || closing;
 
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        bgcolor: "transparent",
-        boxShadow: "none",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 1100,
-      }}
-    >
-      {!isMobile && (
-        <div
-          className="navbar-desktop"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto 1fr",
-            alignItems: "center",
-            width: "100%",
-            backgroundColor: scrolled ? "rgba(8,6,0,0.88)" : "transparent",
-            backdropFilter: scrolled ? "blur(18px)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
-            borderBottom: scrolled
-              ? "1px solid rgba(255,255,255,0.07)"
-              : "1px solid transparent",
-            transition: "background-color 0.4s ease, border-color 0.4s ease",
-            boxSizing: "border-box",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Link
-              href="/"
-              style={{ display: "inline-flex", alignItems: "center" }}
-            >
+    <header className={`navbar-root${scrolled ? " is-scrolled" : ""}`}>
+      {/* Desktop — always in DOM, CSS hides on mobile */}
+      <div className="navbar-desktop">
+        <div className="navbar-desktop-inner">
+          <div className="navbar-brand">
+            <Link href="/" className="navbar-brand-link">
               <img
                 src="/Images/Navbar/Logo.svg"
                 alt="Surtaal Entertainment"
                 className="navbar-logo"
+                width={250}
+                height={60}
+                fetchPriority="high"
+                decoding="async"
               />
             </Link>
           </div>
 
-          <div
-            className="navbar-pill"
-            style={{
-              backgroundColor: "#FFFFFF14",
-              borderRadius: "50px",
-              display: "flex",
-              alignItems: "center",
-              gap: "0px",
-              padding: "0",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                left: "0px",
-                backgroundColor: "#FFFFFF",
-                borderRadius: "50px",
-                transition:
-                  "transform 0.35s cubic-bezier(0.4,0,0.2,1), width 0.35s cubic-bezier(0.4,0,0.2,1)",
-                zIndex: 0,
-                ...highlightStyle,
-              }}
-            />
-
+          <div className="navbar-pill">
+            <div className="navbar-pill-highlight" style={highlightStyle} />
             {navLinks.map(({ label, href }) => {
               const isActive = activePage === label;
               return (
                 <Link
                   key={label}
                   href={href}
-                  ref={(el) => (itemRefs.current[label] = el)}
-                  className="buttonnavbar"
-                  style={{
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "50px",
-                    cursor: "pointer",
-                    zIndex: 1,
-                    position: "relative",
-                    whiteSpace: "nowrap",
-                    textDecoration: "none",
-                    padding: "0 28px",
+                  ref={(el) => {
+                    itemRefs.current[label] = el;
                   }}
+                  className={`buttonnavbar${isActive ? " is-active" : ""}`}
                 >
-                  <span
-                    className="navbar-link-text"
-                    style={{
-                      fontFamily: isActive
-                        ? "Sora-SemiBold, sans-serif"
-                        : "Sora-Regular, sans-serif",
-                      fontWeight: isActive ? 600 : 400,
-                      lineHeight: "100%",
-                      letterSpacing: "0%",
-                      textAlign: "center",
-                      color: isActive ? "#BD0040" : "#FFFFFF",
-                    }}
-                  >
-                    {label}
-                  </span>
+                  <span className="navbar-link-text">{label}</span>
                 </Link>
               );
             })}
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-            }}
-          >
+          <div className="navbar-desktop-cta">
             <button
+              type="button"
               className="contact-btn"
               onClick={() => router.push("/contact-us")}
             >
               Contact Us
-              <img src="/Images/Navbar/arrow.svg" alt="Arrow" />
+              <img src="/Images/Navbar/arrow.svg" alt="" />
             </button>
           </div>
         </div>
-      )}
+      </div>
 
-      {isMobile && (
-        <div
-          className="navbar-mobile-bar"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            backgroundColor: scrolled ? "rgba(8,6,0,0.9)" : "transparent",
-            backdropFilter: scrolled ? "blur(16px)" : "none",
-            borderBottom: scrolled
-              ? "1px solid rgba(255,255,255,0.06)"
-              : "1px solid transparent",
-            transition: "background-color 0.4s ease",
-          }}
+      {/* Mobile bar — always in DOM, CSS hides on desktop */}
+      <div className="navbar-mobile-bar">
+        <Link href="/" className="navbar-brand-link" onClick={closeMenu}>
+          <img
+            src="/Images/Navbar/Logo.svg"
+            alt="Surtaal Entertainment"
+            className="navbar-mobile-logo"
+            width={160}
+            height={40}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </Link>
+
+        <button
+          type="button"
+          className={`navbar-menu-toggle${menuOpen && !closing ? " open" : ""}${closing ? " closing" : ""}`}
+          onClick={toggleMenu}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen && !closing}
         >
-          <Link
-            href="/"
-            style={{ display: "inline-flex", alignItems: "center" }}
-            onClick={closeMenu}
-          >
-            <img
-              src="/Images/Navbar/Logo.svg"
-              alt="Surtaal Entertainment"
-              className="navbar-mobile-logo"
-            />
-          </Link>
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
 
-          <button
-            type="button"
-            className={`navbar-menu-toggle${menuOpen ? " open" : ""}`}
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      )}
-
+      {/* Classic fullscreen menu */}
       <div
-        className={`navbar-fullscreen-menu${menuOpen ? " open" : ""}`}
-        aria-hidden={!menuOpen}
+        className={`navbar-fullscreen-menu${menuVisible ? " open" : ""}${closing ? " is-closing" : ""}`}
+        aria-hidden={!menuVisible}
       >
         <div className="navbar-fullscreen-backdrop" onClick={closeMenu} />
 
         <div className="navbar-fullscreen-panel">
+          <div className="navbar-fullscreen-grain" aria-hidden="true" />
+
           <div className="navbar-fullscreen-header">
             <img
               src="/Images/Navbar/Logo.svg"
               alt="Surtaal Entertainment"
               className="navbar-fullscreen-logo"
+              width={150}
+              height={40}
+              decoding="async"
             />
             <button
               type="button"
@@ -272,7 +200,8 @@ export default function Navbar() {
               onClick={closeMenu}
               aria-label="Close menu"
             >
-              ×
+              <span className="navbar-close-line" />
+              <span className="navbar-close-line" />
             </button>
           </div>
 
@@ -284,25 +213,31 @@ export default function Navbar() {
                   key={label}
                   href={href}
                   className={`navbar-fullscreen-link${isActive ? " active" : ""}`}
-                  style={{ animationDelay: `${0.08 + index * 0.07}s` }}
+                  style={{ "--i": index }}
                   onClick={closeMenu}
                 >
                   <span className="navbar-fullscreen-link-num">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="navbar-fullscreen-link-text">{label}</span>
+                  <span className="navbar-fullscreen-link-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </Link>
               );
             })}
           </nav>
 
           <div className="navbar-fullscreen-footer">
+            <p className="navbar-fullscreen-tagline">
+              Feel the Rhythm with Surtaal
+            </p>
             <button
               type="button"
               className="contact-btn navbar-fullscreen-contact"
               onClick={() => {
                 closeMenu();
-                router.push("/contact-us");
+                setTimeout(() => router.push("/contact-us"), 200);
               }}
             >
               Contact Us
@@ -311,6 +246,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </AppBar>
+    </header>
   );
 }

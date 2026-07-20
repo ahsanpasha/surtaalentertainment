@@ -1,6 +1,7 @@
 import "./globals.css";
-import DynamicNavbar from "@/component/Navbar/DynamicNavbar";
+import Navbar from "@/component/Navbar/Navbar";
 import Footer from "@/component/Footer/Footer";
+import SmoothScrollProvider from "@/component/SmoothScroll/SmoothScrollProvider";
 
 export const metadata = {
   title: "Surtaal Entertainment",
@@ -10,12 +11,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/Images/Navbar/Logo.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href="/Images/EventinSurtaal/homepage_3x.webp"
+          as="image"
+          type="image/webp"
+        />
+      </head>
       <body>
-        {/* <div className="main-wrapper"> */}
-        <DynamicNavbar />
-        {children}
-        <Footer />
-        {/* </div> */}
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
