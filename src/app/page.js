@@ -83,7 +83,7 @@ export default function HomePage() {
       </div>
 
       {/* About */}
-      <div className="AboutDiv">
+      <div className="AboutDiv" style={{backgroundColor: "#E6E6E5"}}>
         <img src="/Images/EventinSurtaal/about.webp" alt="About Surtaal" />
         <div className="SecondAbout">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>

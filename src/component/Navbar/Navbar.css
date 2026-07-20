@@ -22,15 +22,32 @@
   cursor: pointer;
   white-space: nowrap;
   transition:
-    opacity 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.25s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
   box-shadow: 0 4px 24px rgba(189, 0, 64, 0.35);
 }
 
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(189, 0, 64, 0.42);
+  background: linear-gradient(177.7deg, #d40048 -1.74%, #9a0638 98.07%);
+}
+
+.contact-btn:active {
+  transform: translateY(-1px);
+}
+
 .contact-btn img {
-  width: 13.45px;
-  height: 13.45px;
+  width: clamp(7px, 0.56em, 14px);
+  height: clamp(7px, 0.56em, 14px);
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-btn:hover img {
+  transform: translateX(5px);
 }
 
 /* Desktop navbar base (1920px spec) */
@@ -42,14 +59,26 @@
   width: 250px !important;
   height: auto !important;
   object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
 }
 
-.navbar-pill {
-  height: 61.23px !important;
+.navbar-logo:hover,
+.navbar-mobile-logo:hover {
+  transform: scale(1.03);
+}
+
+.navbar-mobile-logo {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .navbar-link-text {
   font-size: 22px !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-pill {
+  height: 61.23px !important;
 }
 
 .buttonnavbar {
@@ -357,4 +386,9 @@
     font-size: 13px;
     padding: 0 16px;
   }
+}
+
+.contact-btn img {
+  width: clamp(7px, 0.56em, 14px) !important;
+  height: clamp(7px, 0.56em, 14px) !important;
 }
