@@ -48,7 +48,7 @@ export default function TicketsPage() {
           <p className="ServicesText">Upcoming Events</p>
         </div>
         <p className="WhatWeOffer">
-          Discover <span>Live Music Events</span>Across the <span>USA</span>
+          Discover <span>Live Music Events </span>Across the <span>USA</span>
         </p>
         <p className="ServiceDescTop">
           Discover our latest concerts and live performances happening across the USA. Select an event below to view details, seating options, and ticket availability.
