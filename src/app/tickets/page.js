@@ -24,9 +24,6 @@ export default function TicketsPage() {
           <clipPath id="ticket-media-clip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
           </clipPath>
-          <clipPath id="ticket-media-clip-inner" clipPathUnits="objectBoundingBox">
-            <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
-          </clipPath>
         </defs>
       </svg>
 
@@ -46,15 +43,15 @@ export default function TicketsPage() {
 
 
       <div className="discoverlivemusic">
-      <div className="ServicesDiv">
+        <div className="ServicesDiv">
           <div className="CircleServices"></div>
           <p className="ServicesText">Upcoming Events</p>
         </div>
         <p className="WhatWeOffer">
-        Discover <span>Live Music Events</span>Across the <span>USA</span>
+          Discover <span>Live Music Events</span>Across the <span>USA</span>
         </p>
         <p className="ServiceDescTop">
-        Discover our latest concerts and live performances happening across the USA. Select an event below to view details, seating options, and ticket availability.
+          Discover our latest concerts and live performances happening across the USA. Select an event below to view details, seating options, and ticket availability.
         </p>
 
         <div className="artist-filter-bar">
@@ -62,58 +59,107 @@ export default function TicketsPage() {
             <button
               key={artist}
               type="button"
-              className={`artist-filter-tab${
-                activeFilter === artist ? " active" : ""
-              }`}
+              className={`artist-filter-tab${activeFilter === artist ? " active" : ""
+                }`}
               onClick={() => setActiveFilter(artist)}
             >
               {artist}
             </button>
           ))}
         </div>
-<div className="ticket-card-media">
-        <div className="ticket-event-card">
-          <div className="ticket-card-date">
-            <p className="ticket-day-num">21</p>
-            <div className="ticket-month-day">
-              <p className="ticket-month">May</p>
-              <p className="ticket-weekday">Sun</p>
+
+
+        <div className="ticket-card-container-new-inner-new">
+          <div className="ticket-card-container-new">
+            <div className="ticket-card-date">
+              <p className="ticket-day-num">21</p>
+              <div className="ticket-month-day">
+                <p className="ticket-month">May</p>
+                <p className="ticket-weekday">Sun</p>
+              </div>
             </div>
+            <div className="ticket-card-divider"></div>
+
+            <div className="ticket-card-info">
+              <p className="ticket-artist-name">Asim Azhar</p>
+              <p className="ticket-city">Dallas, TX</p>
+              <p className="ticket-venue">
+                Hill Performance Hall, Eisemann Centre
+                <br />
+                2351 Performance Dr, Richardson, TX 75082
+              </p>
+              <button type="button" className="ticket-buy-btn">
+                Buy Tickets Now
+                <img src="/Images/Navbar/arrow.svg" alt="" />
+              </button>
+            </div>
+
+
+
+
           </div>
-
-          <div className="ticket-card-divider"></div>
-
-          <div className="ticket-card-info">
-            <p className="ticket-artist-name">Asim Azhar</p>
-            <p className="ticket-city">Dallas, TX</p>
-            <p className="ticket-venue">
-              Hill Performance Hall, Eisemann Centre
-              <br />
-              2351 Performance Dr, Richardson, TX 75082
-            </p>
-            <button type="button" className="ticket-buy-btn">
-              Buy Tickets Now
-              <img src="/Images/Navbar/arrow.svg" alt="" />
-            </button>
+          <div className="ticket-card-media-inner">
+            <img
+              src="/Images/Tickets/asim.webp"
+              alt="Asim Azhar"
+              className="ticket-card-image"
+            />
           </div>
-
-         
         </div>
-        <div >
-            <div className="ticket-card-media-inner">
-              <img
-                src="/Images/EventinSurtaal/arist06.webp"
-                alt="Asim Azhar"
-                className="ticket-card-image"
-              />
-            </div>
-          </div>
-          </div>
+   
       </div>
 
 
 
+      <div className="offerartist">
+        <img
+          src="/Images/Tickets/choose.webp"
+          className="offerartistimg"
+          alt="About Surtaal"
+        />
+        <div className="SecondAboutartist">
+          <div className="ServicesDiv" style={{ width: "fit-content" }}>
+            <div className="CircleServices"></div>
+            <p className="ServicesText">Why Surtaal</p>
+          </div>
+          <p className="BringingText" style={{ maxWidth: "unset" }}>
+            Why Choose <span>Surtaal</span>?
+          </p>
 
+          <div className="mainpointdiv">
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Secure & hassle-free online booking</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Official event tickets</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Premium venues across the USA</p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">
+              Instant booking confirmation
+              </p>
+            </div>
+            <div className="points">
+              <img src="/Images/Artists/tick.svg" className="tick" alt="" />
+              <p className="livetext">Dedicated customer support</p>
+            </div>
+           
+          </div>
+          {/* <button
+            className="SeeHowbtn"
+            style={{ margin: 0, width: "fit-content" }}
+          >
+            Read More
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button> */}
+        </div>
+      </div>
 
 
 
