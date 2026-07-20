@@ -480,3 +480,298 @@
     padding-right: 89px;
   }
 }
+
+@media (max-width: 1350px) {
+  .imageBox {
+    height: 270px;
+  }
+
+  .FooterInfoContainer {
+    padding: 20px 34px 28px;
+    gap: 20px;
+  }
+
+  .FooterTop {
+    gap: 24px;
+  }
+
+  .FooterNavLinks {
+    gap: 20px;
+  }
+
+  .FooterLink {
+    font-size: 14px;
+  }
+
+  .FooterSocials > span {
+    font-size: 14px;
+  }
+
+  .FooterMiddle {
+    gap: 32px;
+  }
+
+  .ContactLabel,
+  .ContactValue {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .FooterBottom {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .FooterBottomLeft,
+  .FooterBottomRight {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .imageBox {
+    height: 240px;
+  }
+
+  .FooterTop {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .FooterNavLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .FooterSocials {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .FooterMiddle {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .ContactDivider {
+    display: none;
+  }
+
+  .FooterBottom {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .galleryRow {
+    flex-direction: column;
+  }
+
+  .galleryRow:first-child .imageBox,
+  .galleryRow:last-child .imageBox {
+    width: 100%;
+  }
+
+  .imageBox {
+    height: 260px;
+  }
+
+  .FooterInfoContainer {
+    padding: 18px 24px 24px;
+  }
+
+  .FooterTop,
+  .FooterMiddle,
+  .FooterBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .FooterBottom {
+    height: auto;
+    padding: 20px 24px;
+  }
+
+  .FooterBottomRight {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 950px) {
+  .imageBox {
+    height: 220px;
+  }
+
+  .FooterInfoContainer {
+    padding: 16px 20px 22px;
+  }
+
+  .FooterLogo img {
+    width: 160px;
+  }
+
+  .FooterLink {
+    font-size: 13px;
+  }
+
+  .ContactLabel,
+  .ContactValue {
+    font-size: 15px;
+  }
+
+  .ContactItem img {
+    height: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageBox {
+    height: 200px;
+  }
+
+  .FooterTop img {
+    width: 150px;
+  }
+
+  .FooterNavLinks {
+    gap: 14px;
+  }
+
+  .FooterSocials > span {
+    font-size: 13px;
+  }
+
+  .SocialIcon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .FooterBottom {
+    padding: 16px 20px;
+  }
+
+  .FooterBottomLeft,
+  .FooterBottomRight {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageBox {
+    height: 180px;
+  }
+
+  .FooterInfoContainer {
+    padding: 14px 16px 20px;
+    gap: 16px;
+  }
+
+  .FooterTop img {
+    width: 130px;
+  }
+
+  .FooterNavLinks {
+    gap: 10px 16px;
+  }
+
+  .FooterLink {
+    font-size: 12px;
+  }
+
+  .ContactItem {
+    gap: 12px;
+  }
+
+  .ContactItem img {
+    height: 32px;
+  }
+
+  .ContactLabel,
+  .ContactValue {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imageBox {
+    height: 160px;
+  }
+
+  .FooterBottomLeft,
+  .FooterBottomRight {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .FooterBottomDivider {
+    height: 16px;
+  }
+}
+
+@media (max-width: 440px) {
+  .imageBox {
+    height: 150px;
+  }
+
+  .FooterTop img {
+    width: 118px;
+  }
+
+  .FooterSocials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .FooterInfoContainer {
+    padding: 12px 14px 18px;
+  }
+
+  .FooterTop img {
+    width: 108px;
+  }
+
+  .FooterLink {
+    font-size: 11px;
+  }
+
+  .ContactLabel,
+  .ContactValue {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 350px) {
+  .imageBox {
+    height: 140px;
+  }
+
+  .FooterTop img {
+    width: 100px;
+  }
+
+  .FooterBottom {
+    padding: 14px 12px;
+  }
+
+  .FooterBottomLeft,
+  .FooterBottomRight {
+    font-size: 10px;
+  }
+
+  .SocialIcon {
+    height: 28px;
+    width: 28px;
+  }
+
+  .SocialIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+}

@@ -27,7 +27,6 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [highlightStyle, setHighlightStyle] = useState({});
   const [isMobile, setIsMobile] = useState(false);
-  const [is1440, setIs1440] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const itemRefs = useRef({});
 
@@ -36,8 +35,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 960);
-      setIs1440(window.innerWidth <= 1440);
+      setIsMobile(window.innerWidth <= 1050);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -100,14 +98,12 @@ export default function Navbar() {
       {/* ── Desktop Navbar ── */}
       {!isMobile && (
         <div
-          className={`navbar-desktop${is1440 ? " navbar-desktop-1440" : ""}`}
+          className="navbar-desktop"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr",
             alignItems: "center",
             width: "100%",
-            /* 1920px spec: padding-top 40.66px, left/right 90px */
-            padding: "40.66px 90px 25px",
             backgroundColor: scrolled ? "rgba(8,6,0,0.88)" : "transparent",
             backdropFilter: scrolled ? "blur(18px)" : "none",
             WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
@@ -127,18 +123,15 @@ export default function Navbar() {
               <img
                 src="/Images/Navbar/Logo.svg"
                 alt="Surtaal Entertainment"
-                className={is1440 ? "navbar-logo-1440" : ""}
-                style={{ width: "250px", height: "auto", objectFit: "contain" }}
+                className="navbar-logo"
               />
             </Link>
           </div>
 
           {/* CENTER: Nav Pill */}
           <div
-            className={is1440 ? "navbar-pill-1440" : ""}
+            className="navbar-pill"
             style={{
-              /* spec: height 61.23px, bg #FFFFFF14, radius 50px, no padding */
-              height: "61.234771728515625px",
               backgroundColor: "#FFFFFF14",
               borderRadius: "50px",
               display: "flex",
@@ -188,13 +181,12 @@ export default function Navbar() {
                   }}
                 >
                   <span
-                    className={is1440 ? "navbar-link-text-1440" : ""}
+                    className="navbar-link-text"
                     style={{
                       fontFamily: isActive
                         ? "Sora-SemiBold, sans-serif"
                         : "Sora-Regular, sans-serif",
                       fontWeight: isActive ? 600 : 400,
-                      fontSize: "22px",
                       lineHeight: "100%",
                       letterSpacing: "0%",
                       textAlign: "center",
@@ -217,15 +209,11 @@ export default function Navbar() {
             }}
           >
             <button
-              className={`contact-btn${is1440 ? " contact-btn-1440" : ""}`}
+              className="contact-btn"
               onClick={() => router.push("/contact-us")}
             >
               Contact Us
-              <img
-                src="/Images/Navbar/arrow.svg"
-                alt="Arrow"
-                className={is1440 ? "contact-btn-arrow-1440" : ""}
-              />
+              <img src="/Images/Navbar/arrow.svg" alt="Arrow" />
             </button>
           </div>
         </div>
@@ -234,12 +222,12 @@ export default function Navbar() {
       {/* ── Mobile Top Bar ── */}
       {isMobile && (
         <div
+          className="navbar-mobile-bar"
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            padding: "14px 20px",
             backgroundColor: scrolled ? "rgba(8,6,0,0.9)" : "transparent",
             backdropFilter: scrolled ? "blur(16px)" : "none",
             borderBottom: scrolled
@@ -255,7 +243,7 @@ export default function Navbar() {
             <img
               src="/Images/Navbar/Logo.svg"
               alt="Surtaal Entertainment"
-              style={{ width: "160px", height: "auto", objectFit: "contain" }}
+              className="navbar-mobile-logo"
             />
           </Link>
           <IconButton

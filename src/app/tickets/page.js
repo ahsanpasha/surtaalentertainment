@@ -1,152 +1,262 @@
-import "../globals.css";
 
-export const metadata = {
-  title: "Tickets | Surtaal Entertainment",
-  description: "Book your tickets for Surtaal Entertainment events",
-};
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaMeta } from "react-icons/fa6";
+import "../globals.css";
 
 export default function TicketsPage() {
   return (
     <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          backgroundColor: "#080600",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "100px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "30%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(120,80,200,0.09) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
 
-        <div
-          style={{
-            textAlign: "center",
-            padding: "0 24px",
-            zIndex: 1,
-          }}
-        >
-          <p
-            style={{
-              fontSize: "13px",
-              letterSpacing: "0.2em",
-              color: "#9A7F45",
-              textTransform: "uppercase",
-              marginBottom: "20px",
-              fontFamily: "Georama-Medium, sans-serif",
-            }}
-          >
-            Surtaal Entertainment
-          </p>
-          <h1
-            style={{
-              fontSize: "clamp(2.8rem, 6.5vw, 5rem)",
-              fontFamily: "Montserrat-Bold, sans-serif",
-              color: "#ffffff",
-              margin: "0 0 24px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
-            }}
-          >
-            Tickets
-          </h1>
-          <p
-            style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.2rem)",
-              color: "#7A7060",
-              maxWidth: "520px",
-              margin: "0 auto",
-              fontFamily: "Georama-Regular, sans-serif",
-              lineHeight: 1.75,
-            }}
-          >
-            Book your tickets for the most exciting live events and
-            performances. Limited seats available.
-          </p>
 
-          {/* Placeholder ticket cards */}
-          <div
-            style={{
-              display: "flex",
-              gap: "20px",
-              marginTop: "56px",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {["General Admission", "VIP", "Premium"].map((tier) => (
-              <div
-                key={tier}
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "16px",
-                  padding: "32px 28px",
-                  width: "220px",
-                  textAlign: "center",
-                  transition: "border-color 0.3s ease, background 0.3s ease",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: "12px",
-                    letterSpacing: "0.15em",
-                    color: "#9A7F45",
-                    textTransform: "uppercase",
-                    fontFamily: "Georama-Medium, sans-serif",
-                    marginBottom: "12px",
-                  }}
-                >
-                  {tier}
-                </p>
-                <p
-                  style={{
-                    fontSize: "28px",
-                    fontFamily: "Montserrat-Bold, sans-serif",
-                    color: "#fff",
-                    margin: "0 0 20px",
-                  }}
-                >
-                  —
-                </p>
-                <button
-                  style={{
-                    width: "100%",
-                    padding: "10px 0",
-                    borderRadius: "100px",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    backgroundColor: "transparent",
-                    color: "#CBD5E1",
-                    fontFamily: "Georama-Medium, sans-serif",
-                    fontSize: "13px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Coming Soon
-                </button>
-              </div>
-            ))}
+      <div className="AboutusMain">
+        <div className="Celebrate">
+          <div className="CircleDiv"></div>
+          <p className="Celebratetext">Tickets</p>
+        </div>
+        <p className="FeelText">
+          What is <span>Seat</span> for an <br /><span>Unforgettable</span>Experience
+        </p>
+        <p className="aboutuspara">
+          From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal USA's upcoming events.
+        </p>
+      </div>
+
+
+<div className="discoverlivemusic">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div className="OurStorySection">
+        <div className="storyDiv" style={{ width: "fit-content" }}>
+          <div className="CircleServices"></div>
+          <p className="storytext">our story</p>
+        </div>
+        <p className="storyline">
+          Music Unites Here with <span>Surtaal</span>
+        </p>
+        <p className="foundedtext">
+          Founded in 2019, Surtaal Entertainment USA came into being with the
+          sole purpose of promoting the best of the best in the music world
+          through live events in North America.
+        </p>
+        <div className="SuccessContainer">
+          <div className="SuccessDiv">
+            <p className="SuccessNum">
+              7<span>+</span>
+            </p>
+            <p className="SuccessLabel">Years Experience</p>
+          </div>
+          <div className="SuccessDiv">
+            <p className="SuccessNum">
+              100<span>+</span>
+            </p>
+            <p className="SuccessLabel">Successful Event</p>
+          </div>
+          <div className="SuccessDiv">
+            <p className="SuccessNum">
+              50<span>+</span>
+            </p>
+            <p className="SuccessLabel">Exclusive Artists</p>
+          </div>
+          <div className="SuccessDiv">
+            <p className="SuccessNum">
+              60<span>+</span>
+            </p>
+            <p className="SuccessLabel">Professional Team</p>
           </div>
         </div>
-      </section>
+      </div>
+
+
+      <div className="contact-section">
+        {/* LEFT SIDE */}
+        <div className="contact-left">
+          <div className="ServicesDiv" style={{ width: "fit-content" }}>
+            <div className="CircleServices"></div>
+            <p className="ServicesText">contact us</p>
+          </div>
+          <p className="BringingText">
+            Get In <span>Touch</span>
+          </p>
+          <p className="AboutDesc">
+            We'd love to hear from you! Reach out to explore collaboration
+            opportunities with Surtaal Entertainment. Let's bring unforgettable
+            South Asian music experiences to the world.
+          </p>
+          <div className="maindivstructure">
+            <div className="contact-item-my">
+              <img
+                src="/Images/ContactUs/phone.svg"
+                className="phoneicon"
+                alt=""
+              />
+              <div className="contact-div-new">
+                <p className="contact-itemlabel">Phone</p>
+                <p className="contact-itemvalue">+1-321-422-2223</p>
+              </div>
+            </div>
+
+            <div className="contact-item-my">
+              <img
+                src="/Images/ContactUs/email.svg"
+                className="phoneicon"
+                alt=""
+              />
+              <div className="contact-div-new">
+                <p className="contact-itemlabel">Email</p>
+                <p className="contact-itemvalue">info@surtaalusa.com</p>
+              </div>
+            </div>
+          </div>
+          <hr className="linenew" />
+
+          <div className="socials">
+            <p className="followtext">Follow Us On:</p>
+            <div className="icons">
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <RiTwitterXFill className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaInstagram className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaFacebook className="fillcolor" />
+              </div>
+
+              <div className="socialicondiv">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="iconGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#8D0432" />
+                      <stop offset="100%" stopColor="#BD0040" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <FaMeta className="fillcolor" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE FORM */}
+        <div className="form-border">
+          <div className="contact-form">
+            <div>
+              <h3 className="leaveamessage">Leave a Message</h3>
+              <p className="form-sub">
+                For assistance with inquiries or bookings, contact us directly.
+              </p>
+
+              <div className="newinputdivmine">
+                <div className="inputdivnew">
+                  <p className="labelofinput">Full Name</p>
+                  <input
+                    type="text"
+                    className="inputbox"
+                    placeholder="Enter Full Name"
+                  />
+                </div>
+
+                <div className="formrow">
+                  <div className="inputdivnew">
+                    <p className="labelofinput">Email</p>
+                    <input
+                      type="email"
+                      className="inputbox"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+                  <div className="inputdivnew">
+                    <p className="labelofinput">Phone</p>
+                    <input
+                      type="number"
+                      className="inputbox"
+                      placeholder="Enter Phone Number"
+                    />
+                  </div>
+                </div>
+                <div className="inputdivnew">
+                  <p className="labelofinput">Message</p>
+                  <textarea
+                    className="inputbox textareadesign"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <button className="sendmessage">Send Message</button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
