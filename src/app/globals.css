@@ -2421,7 +2421,15 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 57px 77px 0;
+  padding: 57px 0 0;
+}
+
+.ourteamdiv > .ServicesDiv,
+.ourteamdiv > .WhatWeOffer,
+.ourteamdiv > .ServiceDescTop {
+  padding-left: 77px;
+  padding-right: 77px;
+  box-sizing: border-box;
 }
 
 .ourteammaxwidth {
