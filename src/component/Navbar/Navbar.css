@@ -17,7 +17,7 @@
   font-family: "Sora-Regular", sans-serif;
   font-weight: 400;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
@@ -82,7 +82,7 @@
   left: 0;
   width: 100%;
   z-index: 1100;
-  background: white;
+  background: transparent;
   border-bottom: 1px solid transparent;
   transition:
     background-color 0.35s ease,
@@ -91,10 +91,21 @@
 }
 
 .navbar-root.is-scrolled {
-  background: white;
+  background: rgba(8, 6, 0, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom-color: rgba(0, 0, 0, 0.07);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 440px) {
+  .navbar-root {
+    background: white;
+  }
+
+  .navbar-root.is-scrolled {
+    background: white;
+    border-bottom-color: rgba(0, 0, 0, 0.07);
+  }
 }
 
 .navbar-brand-link {
@@ -491,7 +502,7 @@
 }
 
 .navbar-menu-toggle span {
-  background: #000000;
+  background: #ffffff;
 }
 
 .navbar-menu-toggle:hover {
@@ -506,6 +517,12 @@
 
 .navbar-menu-toggle.open span {
   background: #ffffff;
+}
+
+@media (max-width: 440px) {
+  .navbar-menu-toggle span {
+    background: #000000;
+  }
 }
 
 @media (max-width: 440px) {
