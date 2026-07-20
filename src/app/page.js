@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="ServiceCards">
           <div className="ServiceCardsDiv">
             <img
-              src="/Images/EventinSurtaal/Service1.webp"
+              src="/ImagesOpt/EventinSurtaal/Service1.webp"
               alt="Corporate Events"
             />
             <p className="Servicename">Corporate Events</p>
@@ -50,7 +50,7 @@ export default function HomePage() {
           </div>
           <div className="ServiceCardsDiv">
             <img
-              src="/Images/EventinSurtaal/Service2.webp"
+              src="/ImagesOpt/EventinSurtaal/Service2.webp"
               alt="Corporate Events"
             />
             <p className="Servicename">Corporate Events</p>
@@ -61,7 +61,7 @@ export default function HomePage() {
           </div>
           <div className="ServiceCardsDiv">
             <img
-              src="/Images/EventinSurtaal/Service3.webp"
+              src="/ImagesOpt/EventinSurtaal/Service3.webp"
               alt="Corporate Events"
             />
             <p className="Servicename">Corporate Events</p>
@@ -72,7 +72,7 @@ export default function HomePage() {
           </div>
           <div className="ServiceCardsDiv">
             <img
-              src="/Images/EventinSurtaal/Service4.webp"
+              src="/ImagesOpt/EventinSurtaal/Service4.webp"
               alt="Corporate Events"
             />
             <p className="Servicename">Corporate Events</p>
@@ -86,7 +86,7 @@ export default function HomePage() {
 
       {/* About */}
       <div className="AboutDiv" style={{backgroundColor: "#E6E6E5"}}>
-        <img src="/Images/EventinSurtaal/about.webp" alt="About Surtaal" />
+        <img src="/ImagesOpt/EventinSurtaal/about.webp" alt="About Surtaal" />
         <div className="SecondAbout">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
@@ -155,7 +155,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/artist01.webp"
+                src="/ImagesOpt/EventinSurtaal/artist01.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -181,7 +181,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/arist02.webp"
+                src="/ImagesOpt/EventinSurtaal/arist02.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -207,7 +207,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/arist03.webp"
+                src="/ImagesOpt/EventinSurtaal/arist03.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -233,7 +233,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/arist04.webp"
+                src="/ImagesOpt/EventinSurtaal/arist04.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -259,7 +259,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/arist05.webp"
+                src="/ImagesOpt/EventinSurtaal/arist05.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -285,7 +285,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/Images/EventinSurtaal/arist06.webp"
+                src="/ImagesOpt/EventinSurtaal/arist06.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"

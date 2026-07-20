@@ -8,10 +8,30 @@ export const metadata = {
   description: "Welcome to Surtaal Entertainment",
 };
 
+const CRITICAL_FONTS = [
+  "/Fonts/Georama-Regular.ttf",
+  "/Fonts/Georama-SemiBold.ttf",
+  "/Fonts/Georama-Bold.ttf",
+  "/Fonts/Montserrat-Regular.ttf",
+  "/Fonts/Montserrat-Medium.ttf",
+  "/Fonts/Sora-Regular.ttf",
+  "/Fonts/Sora-SemiBold.ttf",
+];
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {CRITICAL_FONTS.map((href) => (
+          <link
+            key={href}
+            rel="preload"
+            href={href}
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+        ))}
         <link
           rel="preload"
           href="/Images/Navbar/Logo.svg"
@@ -20,9 +40,10 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="preload"
-          href="/Images/EventinSurtaal/homepage_3x.webp"
+          href="/ImagesOpt/EventinSurtaal/homepage_3x.webp"
           as="image"
           type="image/webp"
+          fetchPriority="high"
         />
       </head>
       <body>

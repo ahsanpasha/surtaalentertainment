@@ -16,7 +16,7 @@ function initScrollReveal(observer) {
 
     if (!el.classList.contains("scroll-reveal")) {
       el.classList.add("scroll-reveal");
-      const stagger = Math.min(index % 4, 3) * 0.09;
+      const stagger = Math.min(index % 4, 3) * 0.05;
       el.style.setProperty("--reveal-delay", `${stagger}s`);
     }
 
@@ -32,18 +32,16 @@ export default function SmoothScrollProvider({ children }) {
 
     if (prefersReduced) {
       document.documentElement.classList.add("reduce-motion");
-      document.querySelectorAll(".scroll-reveal").forEach((el) => {
-        el.classList.add("is-visible");
-      });
       return;
     }
 
+    // Lighter smooth scroll — less jank on slow networks
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.1,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.2,
     });
 
     document.documentElement.classList.add("lenis-enabled");
@@ -63,30 +61,28 @@ export default function SmoothScrollProvider({ children }) {
           revealObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -4% 0px" }
     );
 
+    // Reveal immediately what's already on screen
     initScrollReveal(revealObserver);
-
-    let debounceTimer;
-    const mutationObserver = new MutationObserver(() => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => initScrollReveal(revealObserver), 120);
+    requestAnimationFrame(() => {
+      document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.95) {
+          el.classList.add("is-visible");
+          revealObserver.unobserve(el);
+        }
+      });
     });
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
 
-    const lateInit = setTimeout(() => initScrollReveal(revealObserver), 600);
+    const lateInit = setTimeout(() => initScrollReveal(revealObserver), 400);
 
     return () => {
-      clearTimeout(debounceTimer);
       clearTimeout(lateInit);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       revealObserver.disconnect();
-      mutationObserver.disconnect();
       document.documentElement.classList.remove("lenis-enabled");
     };
   }, []);

@@ -101,7 +101,7 @@ export default function TicketsPage() {
           </div>
           <div className="ticket-card-media-inner">
             <img
-              src="/Images/Tickets/asim.webp"
+              src="/ImagesOpt/Tickets/asim.webp"
               alt="Asim Azhar"
               className="ticket-card-image"
             />
@@ -114,7 +114,7 @@ export default function TicketsPage() {
 
       <div className="offerartist">
         <img
-          src="/Images/Tickets/choose.webp"
+          src="/ImagesOpt/Tickets/choose.webp"
           className="offerartistimg"
           alt="About Surtaal"
         />

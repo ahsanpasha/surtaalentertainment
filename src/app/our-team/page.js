@@ -30,7 +30,7 @@ export default function OurTeamPage() {
 
         <div className="teamdivmain">
           <div className="teamdiv">
-            <img src="/Images/OurTeam/team1.webp" className="teamimg" alt="" />
+            <img src="/ImagesOpt/OurTeam/team1.webp" className="teamimg" alt="" />
             <div
               style={{
                 display: "flex",
@@ -48,7 +48,7 @@ export default function OurTeamPage() {
             </div>
           </div>
           <div className="teamdiv">
-            <img src="/Images/OurTeam/team2.webp" className="teamimg" alt="" />
+            <img src="/ImagesOpt/OurTeam/team2.webp" className="teamimg" alt="" />
             <div>
               <p className="teamname">Anosh Vincent</p>
               <p className="teamposition">Head of Operations</p>
@@ -59,7 +59,7 @@ export default function OurTeamPage() {
             </div>
           </div>
           <div className="teamdiv">
-            <img src="/Images/OurTeam/team3.webp" className="teamimg" alt="" />
+            <img src="/ImagesOpt/OurTeam/team3.webp" className="teamimg" alt="" />
             <div>
               <p className="teamname">Rimla Qamar</p>
               <p className="teamposition">Director of Sales & Strategy</p>
@@ -70,7 +70,7 @@ export default function OurTeamPage() {
             </div>
           </div>
           <div className="teamdiv">
-            <img src="/Images/OurTeam/team4.webp" className="teamimg" alt="" />
+            <img src="/ImagesOpt/OurTeam/team4.webp" className="teamimg" alt="" />
             <div>
               <p className="teamname">Elia Ijjaaz</p>
               <p className="teamposition">Production Director</p>

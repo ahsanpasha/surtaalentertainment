@@ -10,30 +10,30 @@ const Footer = () => {
       <div className="galleryContainer">
         <div className="galleryRow">
           <div className="imageBox">
-            <img src="/Images/Footer/Footer1.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
-            <img src="/Images/Footer/FooterHover1.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/Footer1.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/FooterHover1.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
           </div>
 
           <div className="imageBox">
-            <img src="/Images/Footer/Footer2.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
-            <img src="/Images/Footer/FooterHover2.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/Footer2.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/FooterHover2.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
           </div>
         </div>
 
         <div className="galleryRow">
           <div className="imageBox">
-            <img src="/Images/Footer/Footer3.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
-            <img src="/Images/Footer/FooterHover3.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/Footer3.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/FooterHover3.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
           </div>
 
           <div className="imageBox">
-            <img src="/Images/Footer/Footer4.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
-            <img src="/Images/Footer/FooterHover4.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/Footer4.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/FooterHover4.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
           </div>
 
           <div className="imageBox">
-            <img src="/Images/Footer/Footer5.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
-            <img src="/Images/Footer/FooterHover5.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/Footer5.webp" className="imgDefault" alt="" loading="lazy" decoding="async" />
+            <img src="/ImagesOpt/Footer/FooterHover5.webp" className="imgHover" alt="" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

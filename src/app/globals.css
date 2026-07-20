@@ -51,38 +51,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ── Scroll reveal (scroll-triggered sections) ── */
+/* ── Scroll reveal — light motion only, NEVER hide content / no layout gap ── */
 .scroll-reveal {
-  opacity: 0;
-  transform: translate3d(0, 36px, 0);
-  transition:
-    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0s);
-  will-change: opacity, transform;
-  backface-visibility: hidden;
+  opacity: 1;
+  transform: none;
 }
 
 .scroll-reveal.is-visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
+  transform: none;
 }
 
 html.reduce-motion .scroll-reveal {
-  opacity: 1;
   transform: none;
   transition: none;
-}
-
-/* Performance: defer off-screen rendering */
-.entertainmentartistbox,
-.galleryContainer .imageBox,
-.OurStorySection,
-.offerartist,
-.elevatingdiv {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
 }
 
 img {
@@ -102,97 +83,97 @@ img {
 @font-face {
   font-family: "Georama-Regular";
   src: url("/Fonts/Georama-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Georama-Medium";
   src: url("/Fonts/Georama-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Georama-Bold";
   src: url("/Fonts/Georama-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Georama-SemiBold";
   src: url("/Fonts/Georama-SemiBold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Montserrat-Bold";
   src: url("/Fonts/Montserrat-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Montserrat-Medium";
   src: url("/Fonts/Montserrat-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Montserrat-Regular";
   src: url("/Fonts/Montserrat-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Montserrat-SemiBold";
   src: url("/Fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Sora-Regular";
   src: url("/Fonts/Sora-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Sora-Medium";
   src: url("/Fonts/Sora-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Sora-SemiBold";
   src: url("/Fonts/Sora-SemiBold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Sora-Bold";
   src: url("/Fonts/Sora-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Outfit-Bold";
   src: url("/Fonts/Outfit-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Outfit-Medium";
   src: url("/Fonts/Outfit-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Outfit-Regular";
   src: url("/Fonts/Outfit-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: "Outfit-SemiBold";
   src: url("/Fonts/Outfit-SemiBold.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 .MainHome {
@@ -203,7 +184,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/Images/EventinSurtaal/homepage_3x.webp");
+  background-image: url("/ImagesOpt/EventinSurtaal/homepage_3x.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1979,9 +1960,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/Images/EventinSurtaal/homepage_3x.webp");
+  background-color: #080600;
+  background-image: url("/ImagesOpt/EventinSurtaal/homepage_3x.webp");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
 }
 
@@ -2080,7 +2062,7 @@ img {
     linear-gradient(113.72deg,
       rgba(39, 39, 39, 0.5) 2.87%,
       rgba(0, 0, 0, 0.5) 92.4%),
-    url("/Images/AboutUs/mic.webp");
+    url("/ImagesOpt/AboutUs/mic.webp");
   background-size: 100% 100%;
   background-position: center;
 }
@@ -2434,12 +2416,12 @@ img {
 
 /* ourteam */
 .ourteamdiv {
-  background: linear-gradient(to bottom, #ffffff 50%, #000000 50%);
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 57px 77px 76px 77px;
+  padding: 57px 77px 0;
 }
 
 .ourteammaxwidth {
@@ -2505,9 +2487,15 @@ img {
 .teamdivmain {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 70px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #000000;
+  margin-top: 48px;
+  padding: 72px 40px 90px;
 }
 
 @media (max-width: 1800px) {

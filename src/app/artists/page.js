@@ -65,7 +65,7 @@ export default function ArtistsPage() {
         <div className="artist-row" ref={sliderRef}>
           <div className="artist-card">
             <img
-              src="/Images/Artists/a1.webp"
+              src="/ImagesOpt/Artists/a1.webp"
               className="aristimagenew"
               alt=""
             />
@@ -78,7 +78,7 @@ export default function ArtistsPage() {
 
           <div className="artist-card">
             <img
-              src="/Images/Artists/a1.webp"
+              src="/ImagesOpt/Artists/a1.webp"
               className="aristimagenew"
               alt=""
             />
@@ -91,7 +91,7 @@ export default function ArtistsPage() {
 
           <div className="artist-card">
             <img
-              src="/Images/Artists/a1.webp"
+              src="/ImagesOpt/Artists/a1.webp"
               className="aristimagenew"
               alt=""
             />
@@ -104,7 +104,7 @@ export default function ArtistsPage() {
 
           <div className="artist-card">
             <img
-              src="/Images/Artists/a1.webp"
+              src="/ImagesOpt/Artists/a1.webp"
               className="aristimagenew"
               alt=""
             />
@@ -117,7 +117,7 @@ export default function ArtistsPage() {
 
           <div className="artist-card">
             <img
-              src="/Images/Artists/a1.webp"
+              src="/ImagesOpt/Artists/a1.webp"
               className="aristimagenew"
               alt=""
             />
@@ -132,7 +132,7 @@ export default function ArtistsPage() {
 
       <div className="offerartist">
         <img
-          src="/Images/Artists/mystory.webp"
+          src="/ImagesOpt/Artists/mystory.webp"
           className="offerartistimg"
           alt="About Surtaal"
         />

@@ -32,7 +32,7 @@ export default function AboutUsPage() {
 
       <div className="aboutuslower">
         <img
-          src="/Images/AboutUs/aboususimage.webp"
+          src="/ImagesOpt/AboutUs/aboususimage.webp"
           className="aboutimage"
           alt=""
         />
