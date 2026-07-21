@@ -6105,12 +6105,17 @@ img {
 
   .storytext {
     font-size: 11px;
+    line-height: 12px;
   }
 
   .storyline {
     font-size: 32px;
     line-height: 36px;
-    margin-bottom: 25px;
+    margin: 0px;
+  }
+
+  .storyline span {
+    font-size: 32px;
   }
 
   .Surtaalpara {
@@ -6132,6 +6137,12 @@ img {
     gap: 10.66px;
     padding: 0 18.31px;
     border-width: 0.85px;
+    font-size: 10.23px;
+  }
+
+  .booknowbtn img {
+    width: 6.161531819751289px;
+    height: 6.161531819751289px;
   }
 
   .Divmainrow {
@@ -6143,6 +6154,20 @@ img {
   .entertainmentartistbox {
     padding-left: 28px;
     padding-right: 23px;
+  }
+
+  .imageWrapper {
+    border-width: 0.56px;
+  }
+
+  .straightlinediv {
+    display: flex;
+  }
+
+  .circleentertainment {
+    display: block;
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -6413,7 +6438,11 @@ img {
   .storyline {
     font-size: 32px;
     line-height: 36px;
-    margin-bottom: 25px;
+    margin: 0px;
+  }
+
+  .storyline span {
+    font-size: 32px;
   }
 
   .Surtaalpara {
@@ -6435,6 +6464,12 @@ img {
     gap: 10.66px;
     padding: 0 18.31px;
     border-width: 0.85px;
+    font-size: 10.23px;
+  }
+
+  .booknowbtn img {
+    width: 6.161531819751289px;
+    height: 6.161531819751289px;
   }
 
   .Divmainrow {
@@ -6446,6 +6481,20 @@ img {
   .entertainmentartistbox {
     padding-left: 28px;
     padding-right: 23px;
+  }
+
+  .imageWrapper {
+    border-width: 0.56px;
+  }
+
+  .straightlinediv {
+    display: flex;
+  }
+
+  .circleentertainment {
+    display: block;
+    width: 10px;
+    height: 10px;
   }
 
   .teamimg {
@@ -6752,7 +6801,11 @@ img {
   .storyline {
     font-size: 32px;
     line-height: 36px;
-    margin-bottom: 25px;
+    margin: 0px;
+  }
+
+  .storyline span {
+    font-size: 32px;
   }
 
   .Surtaalpara {
@@ -6774,6 +6827,12 @@ img {
     gap: 10.66px;
     padding: 0 18.31px;
     border-width: 0.85px;
+    font-size: 10.23px;
+  }
+
+  .booknowbtn img {
+    width: 6.161531819751289px;
+    height: 6.161531819751289px;
   }
 
   .Divmainrow {
@@ -6785,6 +6844,20 @@ img {
   .entertainmentartistbox {
     padding-left: 28px;
     padding-right: 23px;
+  }
+
+  .imageWrapper {
+    border-width: 0.56px;
+  }
+
+  .straightlinediv {
+    display: flex;
+  }
+
+  .circleentertainment {
+    display: block;
+    width: 10px;
+    height: 10px;
   }
 
   .teamimg {
