@@ -595,13 +595,13 @@
 
 /* Make contact us button bigger in fullscreen menu */
 .navbar-fullscreen-contact {
-  height: 70px;
-  font-size: 24px;
-  padding: 0 40px;
+  height: 60px;
+  font-size: 20px;
+  padding: 0 30px;
   gap: 16px;
   border-radius: 16px;
   width: 100%;
-  max-width: 400px;
+
 }
 
 .navbar-fullscreen-contact img {
@@ -643,10 +643,7 @@
 /* ── Hamburger toggle ── */
 .navbar-menu-toggle {
   position: relative;
-
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -675,15 +672,8 @@
     background 0.3s ease;
 }
 
-.navbar-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.14);
-  transform: scale(1.04);
-}
 
-.navbar-menu-toggle.open {
-  background: rgba(189, 0, 64, 0.28);
-  border-color: rgba(189, 0, 64, 0.45);
-}
+
 
 .navbar-menu-toggle.open span:nth-child(1) {
   transform: translateY(7.75px) rotate(45deg);
@@ -928,7 +918,6 @@
   z-index: 1;
   margin-top: auto;
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   opacity: 0;
   transform: translateY(16px);
   transition:
@@ -958,7 +947,6 @@
 
 .navbar-fullscreen-contact {
   width: 100%;
-  max-width: 280px;
 }
 
 @media (prefers-reduced-motion: reduce) {
