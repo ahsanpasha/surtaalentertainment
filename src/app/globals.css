@@ -9174,7 +9174,120 @@ img {
     width: 9.73270494970382px !important;
     height: 9.73270494970382px !important;
   }
+
+  /* About Us page mobile styles (under 440px) */
+  .aboutuslower {
+    padding: 32px 32px 36px 20px !important;
+    flex-direction: column-reverse !important;
+  }
+
+  .aboutuslower .ArtisticText {
+    font-size: 32px !important;
+    line-height: 42px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .AboutUSDesc {
+    font-size: 11px !important;
+    margin-bottom: 35px !important;
+  }
+
+  .elevating-tab,
+  .elevating-tab-secondary {
+    font-size: 22px !important;
+  }
+
+  .elevatingdivheader {
+    padding-top: 43px !important;
+    padding-bottom: 43px !important;
+    gap: 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .elevating-tabs-row {
+    gap: 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .elevating-tab-inner {
+    gap: 14px !important;
+  }
+
+  .elevatingdiv {
+    padding: 0px !important;
+    gap: 0px;
+  }
+
+  .ElevatingEntertainmentText {
+    font-size: 32px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .AboutUSDesc-new {
+    font-size: 11px !important;
+  }
+
+  .arrowdivabout {
+    width: 25.279085159301758px !important;
+    height: 25.279085159301758px !important;
+  }
+
+  /* Tickets page mobile styles (under 440px) */
+  .artist-filter-tab {
+    font-size: 12px !important;
+  }
+
+  .ticket-card-container-new {
+    padding: 14px 18px 14px 18px !important;
+  }
+
+  .ticket-card-date {
+    flex-direction: column !important;
+    padding: 0px 14px 0px 0px !important;
+    align-items: center !important;
+  }
+
+  .ticket-day-num {
+    font-size: 26px !important;
+  }
+
+  .ticket-month {
+    font-size: 14px !important;
+  }
+
+  .ticket-weekday {
+    font-size: 9.89px !important;
+  }
+
+  .ticket-artist-name {
+    font-size: 20px !important;
+    margin-bottom: 13px !important;
+  }
+
+  .ticket-city {
+    font-size: 14px !important;
+    margin-bottom: 9.31px !important;
+  }
+
+  .ticket-venue {
+    font-size: 8px !important;
+    margin-bottom: 13px !important;
+  }
+
+  .ticket-buy-btn {
+    font-size: 8px !important;
+    border-radius: 8px !important;
+    height: 25.270755767822266px !important;
+  }
+
+  .ticket-card-media-inner {
+    width: 142px !important;
+  }
 }
+
+
 
 /* ── Team Page Navigation Colors (Always Applicable) ── */
 .team-nav.services-nav {
