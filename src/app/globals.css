@@ -2432,7 +2432,8 @@ img {
 
 /* ourteam */
 .ourteamdiv {
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #ffffff 50%, #000000 50%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2443,8 +2444,8 @@ img {
 .ourteamdiv>.ServicesDiv,
 .ourteamdiv>.WhatWeOffer,
 .ourteamdiv>.ServiceDescTop {
-  padding-left: 77px;
-  padding-right: 77px;
+  /* padding-left: 77px;
+  padding-right: 77px; */
   box-sizing: border-box;
 }
 
@@ -2517,9 +2518,7 @@ img {
   gap: 70px;
   width: 100%;
   box-sizing: border-box;
-  background-color: #000000;
-  margin-top: 48px;
-  padding: 72px 40px 90px;
+  padding: 20px 40px 90px;
 }
 
 @media (max-width: 1800px) {
@@ -5965,7 +5964,11 @@ img {
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 51.24px;
+    margin-bottom: 18px;
+  }
+
+  .teamdivmain {
+    margin-top: 0px;
   }
 
   .WhatWeOffer span {
@@ -6312,6 +6315,162 @@ img {
     width: 10px;
     height: 10px;
   }
+
+
+
+  /* ── Contact section ── */
+  .contact-section {
+    padding: 47px 32px 45.6px 32px;
+    gap: 43px;
+    flex-direction: column;
+  }
+
+  .maindivstructure {
+    gap: 27px;
+  }
+
+  /* Contact Us badge */
+  .ServicesDiv {
+    padding-left: 10.45px;
+    padding-right: 10.45px;
+    height: 23px;
+    gap: 8.56px;
+    margin-bottom: 21.95px;
+  }
+
+  .ServicesText {
+    font-size: 11px;
+    line-height: 12.66px;
+  }
+
+  /* Get In Touch heading */
+  .BringingText {
+    font-size: 32px;
+    line-height: 40.77px;
+    margin-bottom: 21.95px;
+  }
+
+  /* Description paragraph */
+  .AboutDesc {
+    font-size: 11px;
+    margin-bottom: 26.66px;
+    max-width: 100%;
+  }
+
+  /* Phone / Email icons */
+  .phoneicon {
+    height: 47px;
+    width: 47px;
+  }
+
+  /* Contact item rows */
+  .contact-item-my {
+    gap: 11.5px;
+  }
+
+  /* Contact label */
+  .contact-itemlabel {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  /* Contact value */
+  .contact-itemvalue {
+    font-size: 12px;
+  }
+
+  /* Divider line */
+  .linenew {
+    border: 1.31px solid #0000001a;
+    width: 100%;
+    margin-top: 21.95px;
+    margin-bottom: 21.95px;
+  }
+
+  /* Follow Us On */
+  .followtext {
+    font-size: 14px;
+    line-height: 14.3px;
+    margin-bottom: 13.59px;
+  }
+
+  /* Social icon container */
+  .socialicondiv {
+    width: 38.06px;
+    height: 39.2px;
+    border-width: 1.43px;
+    border-radius: 9px;
+  }
+
+  /* Social icon fill size */
+  .fillcolor {
+    font-size: 21px;
+  }
+
+  /* Form border wrapper */
+  .form-border {
+    padding: 4.6px;
+    border-radius: 12.89px;
+
+  }
+
+  /* Contact form inner */
+  .contact-form {
+    padding: 21px 18px 12px;
+    border-radius: 12.89px;
+  }
+
+  /* Leave a Message heading */
+  .leaveamessage {
+    font-size: 23.94px;
+    line-height: 24px;
+    margin-bottom: 17px;
+  }
+
+  /* Form subtitle */
+  .form-sub {
+    font-size: 9.21px;
+    margin-bottom: 20px;
+  }
+
+  /* Input labels */
+  .labelofinput {
+    font-size: 11.05px;
+    margin-bottom: 6.91px;
+  }
+
+  /* Input boxes */
+  .inputbox {
+    font-size: 11.05px;
+    border: 0.46px solid #5a5a5ab2;
+    background: linear-gradient(90deg, rgba(41, 40, 40, 0.5) 0%, rgba(31, 31, 31, 0.5) 100%);
+    padding: 16px 14px;
+    height: 41.43222427368164px;
+    border-radius: 6.91px;
+  }
+
+  .textareadesign {
+    font-size: 11.05px;
+    border: 0.46px solid #5a5a5ab2;
+    background: linear-gradient(90deg, rgba(41, 40, 40, 0.5) 0%, rgba(31, 31, 31, 0.5) 100%);
+    padding: 13px 14px;
+    height: 73px;
+    border-radius: 6.91px;
+  }
+
+  /* Email + Phone in a row */
+  .formrow {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  /* Send Message button */
+  .sendmessage {
+    font-size: 11.97px;
+    height: 40.09px;
+    border: 0.62px solid #272727;
+    border-radius: 6.19px;
+  }
 }
 
 /* ── 390px ── */
@@ -6441,6 +6600,15 @@ img {
     font-size: 32px;
     line-height: 34px;
     margin-bottom: 0;
+  }
+
+  /* Our Team page */
+  .ourteamdiv {
+    padding: 42px 16px 54px;
+  }
+
+  .ourteamdiv .WhatWeOffer {
+    margin-bottom: 18px;
   }
 
   .eventdetail {

@@ -13,8 +13,7 @@ export default function ContactUsPage() {
           <p className="Celebratetext">Contact Us Now</p>
         </div>
         <p className="FeelText">
-          The <span> Team </span> Behind Every
-          <br /> <span> Memorable </span>Moment
+          Connect with <span> Surtaal </span> Entertainment
         </p>
       </div>
       <div className="contact-section">
