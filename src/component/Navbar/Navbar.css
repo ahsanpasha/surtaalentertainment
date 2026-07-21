@@ -183,6 +183,12 @@
   }
 }
 
+@media (max-width: 1050px) and (min-width: 441px) {
+  .navbar-mobile-bar {
+    flex-direction: row-reverse;
+  }
+}
+
 .navbar-logo {
   width: 250px;
   height: auto;
@@ -431,11 +437,13 @@
     padding: 0 24px;
     border-radius: 10px;
   }
+
 }
 
 @media (max-width: 950px) {
   .navbar-mobile-bar {
     padding: 12px 18px;
+  
   }
 
   .navbar-mobile-logo {
@@ -517,6 +525,12 @@
 
 .navbar-menu-toggle.open span {
   background: #ffffff;
+}
+
+@media (max-width: 440px) {
+  .navbar-menu-toggle.open span {
+    background: #000000;
+  }
 }
 
 @media (max-width: 440px) {
@@ -662,7 +676,7 @@
   display: block;
   width: 20px;
   height: 1.75px;
-  background: #000000;
+  background: #ffffff;
   border-radius: 2px;
   transform-origin: center;
   transition:
@@ -670,6 +684,12 @@
     opacity 0.25s ease,
     width 0.35s ease,
     background 0.3s ease;
+}
+
+@media (max-width: 440px) {
+  .navbar-menu-toggle span {
+    background: #000000;
+  }
 }
 
 
@@ -950,6 +970,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .navbar-fullscreen-panel,
   .navbar-fullscreen-backdrop,
   .navbar-fullscreen-link,
