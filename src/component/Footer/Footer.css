@@ -836,6 +836,228 @@
   }
 }
 
+@media (max-width: 415px) {
+  .galleryRow {
+    flex-direction: row;
+  }
+
+  .galleryRow:first-child .imageBox {
+    width: 50%;
+    height: 171px;
+  }
+
+  .galleryRow:last-child .imageBox {
+    width: 33.33%;
+    height: 148px;
+  }
+
+  .imageBox {
+    height: 120px;
+  }
+
+  .FooterInfoContainer {
+    padding: 41px 33px 32px;
+    gap: 0px;
+  }
+
+  .FooterTopDesktop,
+  .FooterMiddleDesktop {
+    display: none;
+  }
+
+  .FooterLogoMobile {
+    display: block;
+    margin-bottom: 42px;
+    text-align: center;
+  }
+
+  .FooterLogoMobile img {
+    display: inline-block;
+  }
+
+  .LineFooter {
+    display: block;
+    margin-bottom: 36px;
+    width: 100%;
+  }
+
+  /* Select the third .LineFooter (the one after Quick Links) */
+  .LineFooter:nth-of-type(3) {
+    margin-top: 42px;
+    margin-bottom: 28px;
+  }
+
+  .FollowUsSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .FollowUsText {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 23px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .SocialIcons {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 43px;
+    justify-content: center;
+  }
+
+  .SocialIcon {
+    width: 45.742576599121094px;
+    height: 45.742576599121094px;
+    border-radius: 50%;
+    border: 1.14px solid #bd004040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bd0040;
+  }
+
+  .SocialIcon svg {
+    width: 21.78217887878418px;
+    height: 21.78217887878418px;
+  }
+
+  .QuickLinksSection {
+    display: block;
+  }
+
+  .QuickLinksTitle {
+    font-family: Inter-Bold;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16.74px;
+    line-height: 23.71px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    display: block;
+    margin-bottom: 26px;
+  }
+
+  .FooterNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .FooterLink {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 12.17px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .ContactSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .ContactTitle {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 35px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .ContactItem {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+  }
+
+  .ContactMobileIcon {
+    /* Add styling for mobile icons if needed */
+  }
+
+  .ContactItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 4.93px;
+    align-items: flex-start;
+  }
+
+  .PhoneLabel,
+  .EmailLabel {
+    font-size: 19.85px;
+    color: #828282;
+  }
+
+  .PhoneNumber,
+  .EmailValue {
+    font-size: 19.85px;
+    color: #000000;
+  }
+
+  .FooterBottomRow {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .FooterBottom {
+    flex-direction: column;
+    padding: 16px 14px 10px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .FooterBottomLeft {
+    font-size: 10.95px;
+    line-height: 100%;
+  }
+
+  .FooterBottomRight {
+    display: flex;
+    gap: 10px;
+  }
+
+  .FooterBottomRight span {
+    font-size: 9.21px;
+    line-height: 100%;
+  }
+}
+
 @media (max-width: 440px) {
   .galleryRow {
     flex-direction: row;
@@ -1080,20 +1302,205 @@
   }
 
   .FooterInfoContainer {
-    padding: 12px 14px 18px;
+    padding: 41px 33px 32px;
+    gap: 0px;
   }
 
-  .FooterTop img {
-    width: 108px;
+  .FooterTopDesktop,
+  .FooterMiddleDesktop {
+    display: none;
+  }
+
+  .FooterLogoMobile {
+    display: block;
+    margin-bottom: 42px;
+    text-align: center;
+  }
+
+  .FooterLogoMobile img {
+    display: inline-block;
+  }
+
+  .LineFooter {
+    display: block;
+    margin-bottom: 36px;
+    width: 100%;
+  }
+
+  /* Select the third .LineFooter (the one after Quick Links) */
+  .LineFooter:nth-of-type(3) {
+    margin-top: 42px;
+    margin-bottom: 28px;
+  }
+
+  .FollowUsSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .FollowUsText {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 23px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .SocialIcons {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 43px;
+    justify-content: center;
+  }
+
+  .SocialIcon {
+    width: 45.742576599121094px;
+    height: 45.742576599121094px;
+    border-radius: 50%;
+    border: 1.14px solid #bd004040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bd0040;
+  }
+
+  .SocialIcon svg {
+    width: 21.78217887878418px;
+    height: 21.78217887878418px;
+  }
+
+  .QuickLinksSection {
+    display: block;
+  }
+
+  .QuickLinksTitle {
+    font-family: Inter-Bold;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16.74px;
+    line-height: 23.71px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    display: block;
+    margin-bottom: 26px;
+  }
+
+  .FooterNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .FooterLink {
-    font-size: 11px;
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 12.17px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
   }
 
-  .ContactLabel,
-  .ContactValue {
-    font-size: 13px;
+  .ContactSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .ContactTitle {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 35px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .ContactItem {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+  }
+
+  .ContactMobileIcon {
+    /* Add styling for mobile icons if needed */
+  }
+
+  .ContactItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 4.93px;
+    align-items: flex-start;
+  }
+
+  .PhoneLabel,
+  .EmailLabel {
+    font-size: 19.85px;
+    color: #828282;
+  }
+
+  .PhoneNumber,
+  .EmailValue {
+    font-size: 19.85px;
+    color: #000000;
+  }
+
+  .FooterBottomRow {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .FooterBottom {
+    flex-direction: column;
+    padding: 16px 14px 10px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .FooterBottomLeft {
+    font-size: 10.95px;
+    line-height: 100%;
+  }
+
+  .FooterBottomRight {
+    display: flex;
+    gap: 10px;
+  }
+
+  .FooterBottomRight span {
+    font-size: 9.21px;
+    line-height: 100%;
   }
 }
 
@@ -1116,26 +1523,205 @@
     height: 100px;
   }
 
-  .FooterTop img {
-    width: 100px;
+  .FooterInfoContainer {
+    padding: 41px 33px 32px;
+    gap: 0px;
   }
 
-  .FooterBottom {
-    padding: 14px 12px;
+  .FooterTopDesktop,
+  .FooterMiddleDesktop {
+    display: none;
   }
 
-  .FooterBottomLeft,
-  .FooterBottomRight {
-    font-size: 10px;
+  .FooterLogoMobile {
+    display: block;
+    margin-bottom: 42px;
+    text-align: center;
+  }
+
+  .FooterLogoMobile img {
+    display: inline-block;
+  }
+
+  .LineFooter {
+    display: block;
+    margin-bottom: 36px;
+    width: 100%;
+  }
+
+  /* Select the third .LineFooter (the one after Quick Links) */
+  .LineFooter:nth-of-type(3) {
+    margin-top: 42px;
+    margin-bottom: 28px;
+  }
+
+  .FollowUsSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .FollowUsText {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 23px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .SocialIcons {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 43px;
+    justify-content: center;
   }
 
   .SocialIcon {
-    height: 28px;
-    width: 28px;
+    width: 45.742576599121094px;
+    height: 45.742576599121094px;
+    border-radius: 50%;
+    border: 1.14px solid #bd004040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bd0040;
   }
 
   .SocialIcon svg {
-    width: 14px;
-    height: 14px;
+    width: 21.78217887878418px;
+    height: 21.78217887878418px;
+  }
+
+  .QuickLinksSection {
+    display: block;
+  }
+
+  .QuickLinksTitle {
+    font-family: Inter-Bold;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16.74px;
+    line-height: 23.71px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    display: block;
+    margin-bottom: 26px;
+  }
+
+  .FooterNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .FooterLink {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 12.17px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .ContactSection {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .ContactTitle {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 23.71px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 35px;
+    background: linear-gradient(180deg, #8D0432 0%, #BD0040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support background-clip: text */
+  }
+
+  .ContactItem {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+  }
+
+  .ContactMobileIcon {
+    /* Add styling for mobile icons if needed */
+  }
+
+  .ContactItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 4.93px;
+    align-items: flex-start;
+  }
+
+  .PhoneLabel,
+  .EmailLabel {
+    font-size: 19.85px;
+    color: #828282;
+  }
+
+  .PhoneNumber,
+  .EmailValue {
+    font-size: 19.85px;
+    color: #000000;
+  }
+
+  .FooterBottomRow {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .FooterBottom {
+    flex-direction: column;
+    padding: 16px 14px 10px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .FooterBottomLeft {
+    font-size: 10.95px;
+    line-height: 100%;
+  }
+
+  .FooterBottomRight {
+    display: flex;
+    gap: 10px;
+  }
+
+  .FooterBottomRight span {
+    font-size: 9.21px;
+    line-height: 100%;
   }
 }
