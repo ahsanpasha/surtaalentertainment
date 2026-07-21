@@ -5925,16 +5925,15 @@ img {
   }
 
   .ServicesDiv {
-    padding: 4.5px 11px;
-    height: 22px;
+    padding: 0 18px;
+    height: 25.100671768188477px;
     border-radius: 67.5px;
-    margin-bottom: 23.4px;
+    margin-bottom: 26px;
   }
 
   .ServicesText {
-
-    font-size: 11px;
-    line-height: 13.5px;
+    font-size: 11.21px;
+    line-height: 13.82px;
     letter-spacing: 4.56px;
     text-transform: uppercase;
   }
@@ -5948,22 +5947,92 @@ img {
     font-family: Georama-Regular;
     font-weight: 400;
     font-size: 32px;
-    line-height: 42px;
+    line-height: 34px;
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 21px;
+    margin-bottom: 51.24px;
   }
 
   .WhatWeOffer span {
     font-family: Georama-Bold;
     font-weight: 700;
     font-size: 32px;
-    line-height: 42px;
+    line-height: 34px;
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 21px;
+    margin-bottom: 0;
+  }
+
+  .eventdetail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .littleline {
+    display: none;
+  }
+
+  .eventDateCol {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+
+    justify-content: center;
+  }
+
+  .eventLocationCol,
+  .spacebtwdiv {
+    gap: 0px;
+  }
+
+  .event21 {
+    font-size: 32px;
+    line-height: 100%;
+  }
+
+  .eventMonthDayCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .eventMonth {
+    font-size: 16.69px;
+  }
+
+  .eventDay {
+    font-size: 11.83px;
+  }
+
+  .littleline {
+    display: none;
+  }
+
+  .eventCity {
+    font-size: 16.69px;
+    margin-bottom: 11.33px;
+  }
+
+  .eventAddress {
+    font-size: 9.74px;
+    line-height: 13.22px;
+    margin-bottom: 26px;
+  }
+
+  .BuyTicketsbtn {
+    padding: 0 14.85px;
+    height: 29.910724639892578px;
+    gap: 5.44px;
+    font-size: 9.72px;
+    width: fit-content;
+    border-radius: 5.44px;
+    border-width: 0.7px;
   }
 
   .ServiceDescTop {
@@ -6019,7 +6088,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+
   }
 
   .services-arrow {
@@ -6099,6 +6168,24 @@ img {
     padding-right: 30px;
   }
 
+  .Oureventdiv {
+    padding: 43px 20px 26px;
+  }
+
+
+  .SeeHowbtn {
+  width: fit-content;
+    height: 36.3934440612793px;
+    font-size: 11.8px;
+    gap: 6.61px;
+    border-radius: 6.61px;
+  }
+
+  .SeeHowbtn img {
+    width: 7.107340691046149px;
+    height: 7.107340691046149px;
+  }
+
   .EntertainmentDiv {
     padding: 39.17px 41px 52.12px 30px;
   }
@@ -6112,6 +6199,10 @@ img {
     margin-bottom: 21px;
   }
 
+  .OurStorySection {
+    padding: 49px 28px;
+  }
+
   .storytext {
     font-size: 11px;
     line-height: 12px;
@@ -6119,12 +6210,36 @@ img {
 
   .storyline {
     font-size: 32px;
-    line-height: 36px;
-    margin: 0px;
+    line-height: 34px;
+    margin-bottom: 20px;
   }
 
   .storyline span {
     font-size: 32px;
+    line-height: 34px;
+  }
+
+  .foundedtext {
+    font-size: 11px;
+    margin-bottom: 51px;
+  }
+
+  .SuccessDiv {
+    width: 247.40396118164062px;
+    border-radius: 11.37px;
+    padding: 29px 42px 34px;
+  
+  }
+
+  .SuccessNum,
+  .SuccessNum span {
+    font-size: 59.69px;
+    line-height: 60px;
+  }
+
+  .SuccessLabel {
+    font-size: 17.62px;
+    line-height: 23.31px;
   }
 
   .Surtaalpara {
@@ -6247,34 +6362,45 @@ img {
   }
 
   .SeeHowbtn {
-    height: 41.75510025024414px;
+    width: 150px;
+    height: 36.3934440612793px;
     font-family: Outfit;
     font-weight: 500;
-    font-size: 14.82px;
+    font-size: 11.8px;
     line-height: 100%;
     letter-spacing: 0%;
     padding-left: 30px;
     padding-right: 30px;
-    gap: 9px;
-    border-radius: 9.06px;
+    gap: 6.61px;
+    border-radius: 6.61px;
   }
 
+  .SeeHowbtn img {
+    width: 7.107340691046149px;
+    height: 7.107340691046149px;
+  }
+
+  .Oureventdiv {
+    padding: 43px 20px 26px;
+  }
+
+ 
   .ourServices {
     padding: 44.5px 47px 43.55px;
   }
 
   .ServicesDiv {
-    padding: 4.5px 11px;
-    height: 22px;
+    padding: 0 18px;
+    height: 25.100671768188477px;
     border-radius: 67.5px;
-    margin-bottom: 21px;
+    margin-bottom: 26px;
   }
 
   .ServicesText {
     font-family: Montserrat-SemiBold;
     font-weight: 600;
-    font-size: 11px;
-    line-height: 13.5px;
+    font-size: 11.21px;
+    line-height: 13.82px;
     letter-spacing: 4.56px;
     text-transform: uppercase;
   }
@@ -6288,16 +6414,82 @@ img {
     font-family: Georama-Regular;
     font-weight: 400;
     font-size: 32px;
-    line-height: 36px;
+    line-height: 34px;
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 21px;
+    margin-bottom: 51.24px;
   }
 
   .WhatWeOffer span {
     font-family: Georama-Bold;
     font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    margin-bottom: 0;
+  }
+
+  .eventdetail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .littleline {
+    display: none;
+  }
+
+  .eventDateCol {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    border: 0.35px solid #00000033;
+    width: 102px;
+    height: 102px;
+    justify-content: center;
+  }
+
+  .event21 {
+    font-size: 32px;
+    line-height: 100%;
+  }
+
+  .eventMonthDayCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .eventMonth {
+    font-size: 16.69px;
+  }
+
+  .eventDay {
+    font-size: 11.83px;
+  }
+
+  .littleline {
+    display: none;
+  }
+
+  .eventCity {
+    font-size: 16.69px;
+    margin-bottom: 11.33px;
+  }
+
+  .eventAddress {
+    font-size: 9.74px;
+    line-height: 13.22px;
+    margin-bottom: 26px;
+  }
+
+  .BuyTicketsbtn {
+    padding: 0 14.85px;
+    height: 29.910724639892578px;
+    gap: 5.44px;
+    font-size: 9.72px;
   }
 
   .ServiceDescTop {
@@ -6353,7 +6545,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+    
   }
 
   .services-arrow {
@@ -6446,18 +6638,46 @@ img {
     margin-bottom: 21px;
   }
 
+  .OurStorySection {
+    padding: 49px 28px;
+  }
+
   .storytext {
     font-size: 11px;
   }
 
   .storyline {
     font-size: 32px;
-    line-height: 36px;
-    margin: 0px;
+    line-height: 34px;
+    margin-bottom: 20px;
   }
 
   .storyline span {
     font-size: 32px;
+    line-height: 34px;
+  }
+
+  .foundedtext {
+    font-size: 11px;
+    margin-bottom: 51px;
+  }
+
+  .SuccessDiv {
+    width: 247.40396118164062px;
+    border-radius: 11.37px;
+    padding: 29px 42px 34px;
+    border-width: 0.51px;
+  }
+
+  .SuccessNum,
+  .SuccessNum span {
+    font-size: 59.69px;
+    line-height: 60px;
+  }
+
+  .SuccessLabel {
+    font-size: 17.62px;
+    line-height: 23.31px;
   }
 
   .Surtaalpara {
@@ -6613,34 +6833,45 @@ img {
   }
 
   .SeeHowbtn {
-    height: 41.75510025024414px;
+    width: 150px;
+    height: 36.3934440612793px;
     font-family: Outfit;
     font-weight: 500;
-    font-size: 14.82px;
+    font-size: 11.8px;
     line-height: 100%;
     letter-spacing: 0%;
     padding-left: 30px;
     padding-right: 30px;
-    gap: 9px;
-    border-radius: 9.06px;
+    gap: 6.61px;
+    border-radius: 6.61px;
   }
+
+  .SeeHowbtn img {
+    width: 7.107340691046149px;
+    height: 7.107340691046149px;
+  }
+
+  .Oureventdiv {
+    padding: 43px 20px 26px;
+  }
+
 
   .ourServices {
     padding: 44.5px 47px 43.55px;
   }
 
   .ServicesDiv {
-    padding: 4.5px 11px;
-    height: 22px;
+    padding: 0 18px;
+    height: 25.100671768188477px;
     border-radius: 67.5px;
-    margin-bottom: 21px;
+    margin-bottom: 26px;
   }
 
   .ServicesText {
     font-family: Montserrat-SemiBold;
     font-weight: 600;
-    font-size: 11px;
-    line-height: 13.5px;
+    font-size: 11.21px;
+    line-height: 13.82px;
     letter-spacing: 4.56px;
     text-transform: uppercase;
   }
@@ -6654,16 +6885,19 @@ img {
     font-family: Georama-Regular;
     font-weight: 400;
     font-size: 32px;
-    line-height: 36px;
+    line-height: 34px;
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 21px;
+    margin-bottom: 51.24px;
   }
 
   .WhatWeOffer span {
     font-family: Georama-Bold;
     font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    margin-bottom: 0;
   }
 
   .ServiceDescTop {
@@ -6719,7 +6953,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+ 
   }
 
   .services-arrow {
@@ -6812,18 +7046,46 @@ img {
     margin-bottom: 21px;
   }
 
+  .OurStorySection {
+    padding: 49px 28px;
+  }
+
   .storytext {
     font-size: 11px;
   }
 
   .storyline {
     font-size: 32px;
-    line-height: 36px;
-    margin: 0px;
+    line-height: 34px;
+    margin-bottom: 20px;
   }
 
   .storyline span {
     font-size: 32px;
+    line-height: 34px;
+  }
+
+  .foundedtext {
+    font-size: 11px;
+    margin-bottom: 51px;
+  }
+
+  .SuccessDiv {
+    width: 247.40396118164062px;
+    border-radius: 11.37px;
+    padding: 29px 42px 34px;
+    border-width: 0.51px;
+  }
+
+  .SuccessNum,
+  .SuccessNum span {
+    font-size: 59.69px;
+    line-height: 60px;
+  }
+
+  .SuccessLabel {
+    font-size: 17.62px;
+    line-height: 23.31px;
   }
 
   .Surtaalpara {

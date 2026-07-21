@@ -54,7 +54,7 @@ export default function TourEvents() {
                   <p className="eventDay">{event.weekday}</p>
                 </div>
               </div>
-              <div className="littleline"></div>
+
               <div className="spacebtwdiv">
                 <div className="eventLocationCol">
                   <p className="eventCity">{event.city}</p>
@@ -70,7 +70,7 @@ export default function TourEvents() {
                 </button>
               </div>
             </div>
-            {index < EVENTS.length - 1 && <div className="linetour"></div>}
+            {index < EVENTS.length - 0 && <div className="linetour"></div>}
           </div>
         ))}
       </div>
@@ -78,7 +78,7 @@ export default function TourEvents() {
       <button
         type="button"
         className="SeeHowbtn"
-        style={{ margin: 0, width: "fit-content" }}
+        style={{ margin: 0 }}
       >
         View All Events
         <img src="/Images/Navbar/arrow.svg" alt="" />

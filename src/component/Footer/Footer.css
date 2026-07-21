@@ -833,10 +833,12 @@
 
   .galleryRow:first-child .imageBox {
     width: 50%;
+    height: 171px;
   }
 
   .galleryRow:last-child .imageBox {
     width: 33.33%;
+    height: 148px;
   }
 
   .imageBox {
@@ -861,10 +863,12 @@
 
   .galleryRow:first-child .imageBox {
     width: 50%;
+    height: 171px;
   }
 
   .galleryRow:last-child .imageBox {
     width: 33.33%;
+    height: 148px;
   }
 
   .imageBox {
@@ -896,10 +900,12 @@
 
   .galleryRow:first-child .imageBox {
     width: 50%;
+    height: 171px;
   }
 
   .galleryRow:last-child .imageBox {
     width: 33.33%;
+    height: 148px;
   }
 
   .imageBox {
