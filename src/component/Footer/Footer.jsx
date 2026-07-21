@@ -40,7 +40,8 @@ const Footer = () => {
 
       <div className="FooterWrapper">
         <div className="FooterInfoContainer">
-          <div className="FooterTop">
+          {/* Desktop Layout */}
+          <div className="FooterTop FooterTopDesktop">
             <img src="/Images/Navbar/Logo.svg" alt="Surtaal Entertainment" />
 
             <div className="FooterNavLinks">
@@ -76,7 +77,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="FooterMiddle">
+          <div className="FooterMiddle FooterMiddleDesktop">
             <a href="tel:+13214222223" className="ContactItem ContactItem-link">
               <img src="/Images/Footer/PhoneIcon.svg" alt="" />
               <div className="ContactText">
@@ -97,6 +98,55 @@ const Footer = () => {
               </div>
             </a>
           </div>
+
+          {/* Mobile Layout */}
+          <div className="FooterLogoMobile">
+            <img src="/Images/Footer/mobilelogo.svg" alt="Surtaal Entertainment" />
+          </div>
+          <img src="/Images/Footer/linefooter.svg" alt="" className="LineFooter" />
+          <div className="FollowUsSection">
+            <span className="FollowUsText">Follow us on:</span>
+            <div className="SocialIcons">
+              <div className="SocialIcon">
+                <RiTwitterXFill color="currentColor" />
+              </div>
+              <div className="SocialIcon">
+                <FaInstagram color="currentColor" />
+              </div>
+              <div className="SocialIcon">
+                <FaFacebook color="currentColor" />
+              </div>
+              <div className="SocialIcon">
+                <FaMeta color="currentColor" />
+              </div>
+            </div>
+          </div>
+          <img src="/Images/Footer/linefooter.svg" alt="" className="LineFooter" />
+          <div className="QuickLinksSection">
+            <span className="QuickLinksTitle">Quick links</span>
+            <div className="FooterNavLinks">
+              <a href="/" className="FooterLink active">
+                Events in Surtaal
+              </a>
+              <a href="/about-us" className="FooterLink">
+                About Us
+              </a>
+              <a href="/artists" className="FooterLink">
+                Artists
+              </a>
+              <a href="/our-team" className="FooterLink">
+                Our Team
+              </a>
+            </div>
+          </div>
+          <img src="/Images/Footer/linefooter.svg" alt="" className="LineFooter" />
+          <div className="ContactSection">
+            <span className="ContactTitle">Contact Us Now</span>
+            <div className="ContactItem">
+              <span className="PhoneLabel">Phone</span>
+              <span className="PhoneNumber">+1-321-422-2223</span>
+            </div>
+          </div>
         </div>
 
         <div className="FooterBottom">
@@ -105,9 +155,8 @@ const Footer = () => {
             Reserved.
           </div>
           <div className="FooterBottomRight">
+            <span>Terms Of Services</span>
             <span>Privacy Policy</span>
-            <div className="FooterBottomDivider"></div>
-            <span>Terms of Service</span>
           </div>
         </div>
       </div>
