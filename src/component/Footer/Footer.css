@@ -1031,9 +1031,10 @@
   }
 
   .FooterBottomRow {
+    width: 100%;
+    flex-direction: row;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
   }
 
   .FooterBottom {
