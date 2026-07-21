@@ -13,18 +13,18 @@ const services = [
   },
   {
     img: "/ImagesOpt/EventinSurtaal/Service2.webp",
-    title: "Corporate Events",
-    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+    title: "Live Concerts",
+    desc: "High-energy performances by iconic and emerging South Asian artists across global stages."
   },
   {
     img: "/ImagesOpt/EventinSurtaal/Service3.webp",
-    title: "Corporate Events",
-    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+    title: "Private Events",
+    desc: "Exclusive musical moments customized for intimate gatherings, birthdays, or personal milestones."
   },
   {
     img: "/ImagesOpt/EventinSurtaal/Service4.webp",
-    title: "Corporate Events",
-    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+    title: "Wedding Shows",
+    desc: "Unforgettable wedding entertainment blending tradition & glamour with soulful performances."
   }
 ];
 
@@ -135,7 +135,7 @@ export default function HomePage() {
       </div>
 
       {/* About */}
-      <div className="AboutDiv" style={{backgroundColor: "#E6E6E5"}}>
+      <div className="AboutDiv" style={{ backgroundColor: "#E6E6E5" }}>
         <img src="/ImagesOpt/EventinSurtaal/about.webp" alt="About Surtaal" />
         <div className="SecondAbout">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
@@ -150,7 +150,7 @@ export default function HomePage() {
             and culture to life. From intimate gatherings to large-scale
             productions, we create unforgettable experiences that fuse tradition
             with contemporary artistry. Our passion lies in curating soulful
-            performances that captivate audiences across the globe. With a
+            performances that captivate audiences across the globe.<br /> With a
             diverse network of renowned musicians, dancers, and creative
             professionals, we deliver seamless, high-impact events designed to
             leave lasting impressions. Whether it’s a concert, wedding show, or
