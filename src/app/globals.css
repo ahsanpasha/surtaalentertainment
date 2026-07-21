@@ -2145,6 +2145,7 @@ img {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2425,9 +2426,9 @@ img {
   padding: 57px 0 0;
 }
 
-.ourteamdiv > .ServicesDiv,
-.ourteamdiv > .WhatWeOffer,
-.ourteamdiv > .ServiceDescTop {
+.ourteamdiv>.ServicesDiv,
+.ourteamdiv>.WhatWeOffer,
+.ourteamdiv>.ServiceDescTop {
   padding-left: 77px;
   padding-right: 77px;
   box-sizing: border-box;
@@ -3450,6 +3451,7 @@ img {
 }
 
 @media (max-width: 1350px) {
+
   /* home */
   .MainHome {
     padding: 178px 20px 164px;
@@ -3552,7 +3554,7 @@ img {
     line-height: 17px;
   }
 
-  .AboutDiv > img {
+  .AboutDiv>img {
     width: 592.3px;
   }
 
@@ -4000,7 +4002,7 @@ img {
     flex-direction: column;
   }
 
-  .AboutDiv > img,
+  .AboutDiv>img,
   .offerartistimg,
   .aboutimage {
     width: 100%;
@@ -4030,6 +4032,7 @@ img {
 }
 
 @media (max-width: 1250px) {
+
   /* home */
   .MainHome {
     padding: 165px 20px 152px;
@@ -4144,7 +4147,7 @@ img {
     flex-direction: column;
   }
 
-  .AboutDiv > img {
+  .AboutDiv>img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -4611,6 +4614,7 @@ img {
 }
 
 @media (max-width: 1050px) {
+
   /* home */
   .MainHome,
   .AboutusMain {
@@ -4760,7 +4764,7 @@ img {
     flex-direction: column;
   }
 
-  .AboutDiv > img,
+  .AboutDiv>img,
   .offerartistimg,
   .aboutimage {
     width: 100%;
@@ -5195,6 +5199,7 @@ img {
 
 /* ── Tablet & Mobile: 950px ── */
 @media (max-width: 950px) {
+
   .MainHome,
   .AboutusMain {
     padding-top: 150px;
@@ -5326,6 +5331,7 @@ img {
 
 /* ── 768px ── */
 @media (max-width: 768px) {
+
   .MainHome,
   .AboutusMain {
     padding-top: 135px;
@@ -5535,6 +5541,7 @@ img {
 
 /* ── 600px ── */
 @media (max-width: 600px) {
+
   .MainHome,
   .AboutusMain {
     padding-top: 120px;
@@ -5725,6 +5732,7 @@ img {
 
 /* ── 500px ── */
 @media (max-width: 500px) {
+
   .MainHome,
   .AboutusMain {
     padding-top: 110px;
@@ -5846,6 +5854,7 @@ img {
 
 /* ── 440px ── */
 @media (max-width: 440px) {
+
   .MainHome,
   .AboutusMain {
     padding: 167px 35px 92px;
@@ -5860,7 +5869,7 @@ img {
   }
 
   .Celebratetext {
-   
+
     font-size: 11px;
     line-height: 14.61px;
     letter-spacing: 4.94px;
@@ -5873,7 +5882,7 @@ img {
   }
 
   .FeelText {
-   
+
     font-size: 44px;
     line-height: 55px;
     letter-spacing: 1%;
@@ -5882,7 +5891,7 @@ img {
   }
 
   .FeelText span {
- 
+
     font-size: 44px;
     line-height: 55px;
     letter-spacing: 1%;
@@ -5892,7 +5901,7 @@ img {
 
   .Leteverytext {
     margin-bottom: 22px;
-   
+
     font-size: 12px;
     line-height: 22px;
     letter-spacing: 0%;
@@ -5902,7 +5911,7 @@ img {
 
   .SeeHowbtn {
     height: 48.52458953857422px;
-    
+
     font-size: 15.74px;
     line-height: 100%;
     letter-spacing: 0%;
@@ -5923,7 +5932,7 @@ img {
   }
 
   .ServicesText {
-  
+
     font-size: 11px;
     line-height: 13.5px;
     letter-spacing: 4.56px;
@@ -5949,7 +5958,7 @@ img {
   .WhatWeOffer span {
     font-family: Georama-Bold;
     font-weight: 700;
-       font-size: 32px;
+    font-size: 32px;
     line-height: 42px;
     letter-spacing: 2%;
     text-align: center;
@@ -6056,7 +6065,7 @@ img {
     flex-direction: column-reverse;
   }
 
-  .AboutDiv > img {
+  .AboutDiv>img {
     height: 383px;
     width: 100%;
     object-fit: cover;
@@ -6138,6 +6147,8 @@ img {
     padding: 0 18.31px;
     border-width: 0.85px;
     font-size: 10.23px;
+    width:110px;
+    border-radius: 5.73px;
   }
 
   .booknowbtn img {
@@ -6157,7 +6168,8 @@ img {
   }
 
   .imageWrapper {
-    border-width: 0.56px;
+    padding: 1px;
+   
   }
 
   .straightlinediv {
@@ -6173,6 +6185,7 @@ img {
 
 /* ── 390px ── */
 @media (max-width: 390px) {
+
   .MainHome,
   .AboutusMain {
     padding: 167px 35px 92px;
@@ -6384,7 +6397,7 @@ img {
     flex-direction: column-reverse;
   }
 
-  .AboutDiv > img {
+  .AboutDiv>img {
     height: 383px;
     width: 100%;
     object-fit: cover;
@@ -6536,6 +6549,7 @@ img {
 
 /* ── 350px ── */
 @media (max-width: 350px) {
+
   .MainHome,
   .AboutusMain {
     padding: 167px 35px 92px;
@@ -6747,7 +6761,7 @@ img {
     flex-direction: column-reverse;
   }
 
-  .AboutDiv > img {
+  .AboutDiv>img {
     height: 383px;
     width: 100%;
     object-fit: cover;
@@ -6998,7 +7012,7 @@ img {
   line-height: 28px;
   letter-spacing: 2%;
   text-align: center;
-color: #272727;  
+  color: #272727;
   cursor: pointer;
   white-space: nowrap;
 
@@ -7083,17 +7097,15 @@ color: #272727;
   width: 1.5px;
   align-self: stretch;
   flex-shrink: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    #00000047 0,
-    #00000047 18px,
-    transparent 18px,
-    transparent 26px
-  );
+  background: repeating-linear-gradient(to bottom,
+      #00000047 0,
+      #00000047 18px,
+      transparent 18px,
+      transparent 26px);
 }
 
 .ticket-card-info {
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8217,6 +8229,7 @@ color: #272727;
     opacity: 0;
     transform: translateY(28px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -8224,11 +8237,13 @@ color: #272727;
 }
 
 @keyframes softPulse {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.15);
     opacity: 0.85;
@@ -8239,34 +8254,35 @@ color: #272727;
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
 }
 
 /* Hero entrance — load only */
-.MainHome > *,
-.AboutusMain > * {
+.MainHome>*,
+.AboutusMain>* {
   animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.MainHome > *:nth-child(1),
-.AboutusMain > *:nth-child(1) {
+.MainHome>*:nth-child(1),
+.AboutusMain>*:nth-child(1) {
   animation-delay: 0.05s;
 }
 
-.MainHome > *:nth-child(2),
-.AboutusMain > *:nth-child(2) {
+.MainHome>*:nth-child(2),
+.AboutusMain>*:nth-child(2) {
   animation-delay: 0.15s;
 }
 
-.MainHome > *:nth-child(3),
-.AboutusMain > *:nth-child(3) {
+.MainHome>*:nth-child(3),
+.AboutusMain>*:nth-child(3) {
   animation-delay: 0.25s;
 }
 
-.MainHome > *:nth-child(4),
-.AboutusMain > *:nth-child(4) {
+.MainHome>*:nth-child(4),
+.AboutusMain>*:nth-child(4) {
   animation-delay: 0.35s;
 }
 
@@ -8521,13 +8537,13 @@ color: #272727;
 /* ── About / offer images ── */
 .aboutimage,
 .offerartistimg,
-.AboutDiv > img {
+.AboutDiv>img {
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .aboutuslower:hover .aboutimage,
 .offerartist:hover .offerartistimg,
-.AboutDiv:hover > img {
+.AboutDiv:hover>img {
   transform: scale(1.02);
 }
 
@@ -8583,6 +8599,7 @@ color: #272727;
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
