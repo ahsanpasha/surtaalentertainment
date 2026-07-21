@@ -6147,7 +6147,7 @@ img {
     padding: 0 18.31px;
     border-width: 0.85px;
     font-size: 10.23px;
-    width:110px;
+    width: 110px;
     border-radius: 5.73px;
   }
 
@@ -6169,11 +6169,13 @@ img {
 
   .imageWrapper {
     padding: 1px;
-   
+
   }
 
   .straightlinediv {
     display: flex;
+    width: 0.8px;
+    background-color: #FFFFFF2B;
   }
 
   .circleentertainment {
@@ -6502,6 +6504,8 @@ img {
 
   .straightlinediv {
     display: flex;
+    width: 0.8px;
+    background-color: #FFFFFF2B;
   }
 
   .circleentertainment {
@@ -6866,6 +6870,8 @@ img {
 
   .straightlinediv {
     display: flex;
+    width: 0.8px;
+    background-color: #FFFFFF2B;
   }
 
   .circleentertainment {
