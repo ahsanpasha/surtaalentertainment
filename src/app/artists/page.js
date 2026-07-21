@@ -1,10 +1,27 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../globals.css";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 
+const artists = [
+  { name: "Asim Azhar", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+  { name: "Atif Aslam", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+  { name: "Sajjad Ali", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+];
+
 export default function ArtistsPage() {
   const sliderRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scroll = (direction) => {
     if (sliderRef.current) {
@@ -14,6 +31,14 @@ export default function ArtistsPage() {
         behavior: "smooth",
       });
     }
+  };
+
+  const nextArtist = () => {
+    setCurrentIndex((prev) => (prev + 1) % artists.length);
+  };
+
+  const prevArtist = () => {
+    setCurrentIndex((prev) => (prev - 1 + artists.length) % artists.length);
   };
 
   return (
@@ -43,91 +68,74 @@ export default function ArtistsPage() {
               The <span>Artists</span> Behind the <span> Magic </span>
             </p>
           </div>
-          <div className="slider-btns">
-            <div
-              className="sliderbtn"
-              onClick={() => scroll("left")}
-              style={{ cursor: "pointer" }}
-            >
-              <img src="/Images/Artists/left-arrow.svg" alt="" />
+          {!isMobile && (
+            <div className="slider-btns">
+              <div
+                className="sliderbtn"
+                onClick={() => scroll("left")}
+                style={{ cursor: "pointer" }}
+              >
+                <img src="/Images/Artists/left-arrow.svg" alt="" />
+              </div>
+              <div
+                className="sliderbtngoaway"
+                onClick={() => scroll("right")}
+                style={{ cursor: "pointer" }}
+              >
+                <img src="/Images/Artists/right-arrow.svg" alt="" />
+              </div>
             </div>
-            <div
-              className="sliderbtngoaway"
-              onClick={() => scroll("right")}
-              style={{ cursor: "pointer" }}
-            >
-              <img src="/Images/Artists/right-arrow.svg" alt="" />
-            </div>
-          </div>
+          )}
         </div>
 
         {/* CARDS */}
-        <div className="artist-row" ref={sliderRef}>
-          <div className="artist-card">
-            <img
-              src="/ImagesOpt/Artists/a1.webp"
-              className="aristimagenew"
-              alt=""
-            />
-
-            <div className="artist-overlay">
-              <p className="artist-name">Asim Azhar</p>
-              <p className="artist-role">Singer</p>
+        {isMobile ? (
+          <div className="artist-mobile-container">
+            <div className="artist-card">
+              <img
+                src={artists[currentIndex].img}
+                className="aristimagenew"
+                alt=""
+              />
+              <div className="artist-overlay">
+                <p className="artist-name">{artists[currentIndex].name}</p>
+                <p className="artist-role">{artists[currentIndex].role}</p>
+              </div>
+            </div>
+            <div className="slider-btns">
+              <div
+                className="sliderbtn"
+                onClick={prevArtist}
+                style={{ cursor: "pointer" }}
+              >
+                <img src="/Images/Artists/left-arrow.svg" alt="" />
+              </div>
+              <div
+                className="sliderbtngoaway"
+                onClick={nextArtist}
+                style={{ cursor: "pointer" }}
+              >
+                <img src="/Images/Artists/right-arrow.svg" alt="" />
+              </div>
             </div>
           </div>
-
-          <div className="artist-card">
-            <img
-              src="/ImagesOpt/Artists/a1.webp"
-              className="aristimagenew"
-              alt=""
-            />
-
-            <div className="artist-overlay">
-              <p className="artist-name">Atif Aslam</p>
-              <p className="artist-role">Singer</p>
-            </div>
+        ) : (
+          <div className="artist-row" ref={sliderRef}>
+            {artists.map((artist, i) => (
+              <div className="artist-card" key={i}>
+                <img
+                  src={artist.img}
+                  className="aristimagenew"
+                  alt=""
+                />
+                <div className="artist-overlay">
+                  <p className="artist-name">{artist.name}</p>
+                  <p className="artist-role">{artist.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="artist-card">
-            <img
-              src="/ImagesOpt/Artists/a1.webp"
-              className="aristimagenew"
-              alt=""
-            />
-
-            <div className="artist-overlay">
-              <p className="artist-name">Sajjad Ali</p>
-              <p className="artist-role">Singer</p>
-            </div>
-          </div>
-
-          <div className="artist-card">
-            <img
-              src="/ImagesOpt/Artists/a1.webp"
-              className="aristimagenew"
-              alt=""
-            />
-
-            <div className="artist-overlay">
-              <p className="artist-name">Zain Zohaib</p>
-              <p className="artist-role">Singer</p>
-            </div>
-          </div>
-
-          <div className="artist-card">
-            <img
-              src="/ImagesOpt/Artists/a1.webp"
-              className="aristimagenew"
-              alt=""
-            />
-
-            <div className="artist-overlay">
-              <p className="artist-name">Zain Zohaib</p>
-              <p className="artist-role">Singer</p>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
 
       <div className="offerartist">

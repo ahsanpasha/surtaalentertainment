@@ -373,6 +373,11 @@ img {
   width: 100%;
 }
 
+.points {
+  display: flex;
+  align-items: center;
+}
+
 .ServiceCardsDiv {
   padding: 0 14px;
   display: flex;
@@ -6195,13 +6200,6 @@ img {
   }
 
 
-  .SeeHowbtn {
-    width: fit-content;
-    height: 36.3934440612793px;
-    font-size: 11.8px;
-    gap: 6.61px;
-    border-radius: 6.61px;
-  }
 
   .SeeHowbtn img {
     width: 7.107340691046149px;
@@ -9079,6 +9077,102 @@ img {
   .teamdesc {
     font-size: 12px !important;
     max-width: 100% !important;
+  }
+
+  /* Artists page mobile styles (under 440px) */
+  .artist-header {
+    padding: 50px 59px 45px !important;
+  }
+
+  .artistnew {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .artistnew .ArtisticText {
+    font-size: 32px !important;
+    line-height: 42px !important;
+    text-align: center !important;
+  }
+
+  .artist-card {
+    width: 330px !important;
+    max-width: 100% !important;
+    border-radius: 7.21px !important;
+  }
+
+  .aristimagenew {
+    width: 330px !important;
+    height: auto !important;
+    border-radius: 7.21px !important;
+  }
+
+  .artist-name {
+    font-size: 30px !important;
+  }
+
+  .artist-role {
+    font-size: 20.17px !important;
+  }
+
+  .artist-mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    padding-bottom: 45px;
+  }
+
+  .artist-mobile-container .slider-btns {
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .artist-mobile-container .sliderbtn,
+  .artist-mobile-container .sliderbtngoaway {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* Offer artist section mobile styles */
+  .offerartist {
+    flex-direction: column-reverse !important;
+  }
+
+  .SecondAboutartist {
+    padding: 37px 40px 32px 20px !important;
+    gap: 0px !important;
+  }
+
+  .livetext {
+    font-size: 12px !important;
+  }
+
+  .tick {
+    width: 12.820512771606445px !important;
+    height: 12.820512771606445px !important;
+  }
+
+  .mainpointdiv {
+    gap: 18px !important;
+  }
+
+  .SecondAboutartist .SeeHowbtn {
+    height: 41.75510025024414px !important;
+    font-size: 14.82px !important;
+    gap: 9px !important;
+  }
+
+  .SecondAboutartist .SeeHowbtn img {
+    width: 9.73270494970382px !important;
+    height: 9.73270494970382px !important;
   }
 }
 
