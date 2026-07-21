@@ -233,7 +233,13 @@
   vertical-align: middle;
   color: #828282;
 }
-
+.FooterBottomRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .ContactValue {
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
