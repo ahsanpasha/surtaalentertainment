@@ -162,7 +162,7 @@ const Footer = () => {
         <div className="FooterBottom">
           <div className="FooterBottomRow">
             <div className="FooterBottomLeft">
-              <span className="underline">Surtaal-USA</span> © 2025. All Rights
+              <span className="underline">Surtaal</span> © 2023. All Rights
               Reserved.
             </div>
             <div className="FooterBottomRight">

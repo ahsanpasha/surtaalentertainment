@@ -201,7 +201,7 @@ export default function ArtistsPage() {
           Music Unites Here with <span>Surtaal</span>
         </p>
         <p className="foundedtext">
-          Founded in 2019, Surtaal Entertainment USA came into being with the
+          Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>

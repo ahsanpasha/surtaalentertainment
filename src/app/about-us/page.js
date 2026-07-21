@@ -11,10 +11,10 @@ export default function AboutUsPage() {
           <p className="Celebratetext">About Us</p>
         </div>
         <p className="FeelText">
-          What is <span>Surtaal</span> USA?
+          What is <span>Surtaal</span> Entertainment?
         </p>
         <p className="aboutuspara">
-          Concept: Founded in 2019, Surtaal Entertainment USA came into being
+          Concept: Founded in 2019, Surtaal Entertainment came into being
           with the sole purpose of promoting the best of the best in the music
           world through live events in North America. <br />
           Events & Concerts : Our aim is to bring together talent and artists
@@ -43,7 +43,7 @@ export default function AboutUsPage() {
           </div>
           <p className="ArtisticText">
             The <span>Artistic</span> Journey of <span> Surtaal </span>
-            Entertainment<span> USA</span>
+            Entertainment
           </p>
           <p className="AboutUSDesc">
             <span style={{ fontFamily: "Montserrat-Bold" }}>
@@ -52,7 +52,7 @@ export default function AboutUsPage() {
             has been a student of music his entire life later evolving into a
             teacher of music as well. He has been on the forefront of promoting
             Arts and Culture events in the US for the past decade. He proudly
-            runs Surtaal Entertainment USA as an events company.
+            runs Surtaal Entertainment as an events company.
             <br />
             Having first performed at the age of five on Pakistan Television
             PTV, Vincent knew the journey would be never-ending. He has since
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
             Pakistani Sufi Music at the 47th annual Festival Of The Nations
             alongside 23 other nations at the Empire State Convention Center in
             2018. Vincent continues to inspire emerging talent and champion them
-            through showcases and various events. Surtaal Entertainment USA is a
+            through showcases and various events. Surtaal Entertainment is a
             testament to his respect and dedication towards the Arts & Culture
             of South Asia.
           </p>
@@ -80,7 +80,7 @@ export default function AboutUsPage() {
           Music Unites Here with <span>Surtaal</span>
         </p>
         <p className="foundedtext">
-          Founded in 2019, Surtaal Entertainment USA came into being with the
+          Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>

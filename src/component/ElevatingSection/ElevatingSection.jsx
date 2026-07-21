@@ -18,7 +18,7 @@ const TABS = {
         <br />
         <br />
         With A-list superstars, World-Class musicians and emerging talent under our
-        roster, Surtaal Entertainment USA aims to deliver a seamless experience
+        roster, Surtaal Entertainment aims to deliver a seamless experience
         for artists, fans, audiences and clients involved.
         <br />
         <br />

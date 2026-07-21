@@ -8,7 +8,7 @@ const EVENTS = [
     address: "136 Massachusetts Avenue, Boston, MA 02115",
   },
   {
-    day: "21",
+    day: "22",
     month: "May",
     weekday: "Sun",
     city: "Boston, MA",

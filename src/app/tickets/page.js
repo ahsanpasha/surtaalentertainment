@@ -38,7 +38,7 @@ export default function TicketsPage() {
           What is <span>Seat</span> for an <br /><span> Unforgettable </span>Experience
         </p>
         <p className="aboutuspara">
-          From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal USA's upcoming events.
+          From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal's upcoming events.
         </p>
       </div>
 
@@ -49,10 +49,10 @@ export default function TicketsPage() {
           <p className="ServicesText">Upcoming Events</p>
         </div>
         <p className="WhatWeOffer">
-          Discover <span>Live Music Events </span>Across the <span>USA</span>
+          Discover <span>Live Music Events </span>Across the <span>USA & Canada</span>
         </p>
         <p className="ServiceDescTop">
-          Discover our latest concerts and live performances happening across the USA. Select an event below to view details, seating options, and ticket availability.
+          Discover our latest concerts and live performances happening across the USA & Canada. Select an event below to view details, seating options, and ticket availability.
         </p>
 
         <div className="artist-filter-bar">
@@ -107,7 +107,7 @@ export default function TicketsPage() {
             />
           </div>
         </div>
-   
+
       </div>
 
 
@@ -138,19 +138,19 @@ export default function TicketsPage() {
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
-              <p className="livetext">Premium venues across the USA</p>
+              <p className="livetext">Premium venues across the USA & Canada</p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
               <p className="livetext">
-              Instant booking confirmation
+                Instant booking confirmation
               </p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
               <p className="livetext">Dedicated customer support</p>
             </div>
-           
+
           </div>
           {/* <button
             className="SeeHowbtn"
@@ -180,7 +180,7 @@ export default function TicketsPage() {
           Music Unites Here with <span>Surtaal</span>
         </p>
         <p className="foundedtext">
-          Founded in 2019, Surtaal Entertainment USA came into being with the
+          Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>

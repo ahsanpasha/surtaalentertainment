@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Ashkenaz Vincent",
     position: "Founder & CEO",
-    desc: "Visionary leader driving Surtaal USA’s mission to deliver world-class entertainment and cultural experiences.",
+    desc: "Visionary leader driving Surtaal mission to deliver world-class entertainment and cultural experiences.",
     img: "/ImagesOpt/OurTeam/team1.webp"
   },
   {
@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Rimla Qamar",
     position: "Director of Sales & Strategy",
-    desc: "Leads business growth, partnerships, and strategic initiatives to expand the Surtaal USA brand.",
+    desc: "Leads business growth, partnerships, and strategic initiatives to expand the Surtaal brand.",
     img: "/ImagesOpt/OurTeam/team3.webp"
   },
   {
@@ -72,10 +72,10 @@ export default function OurTeamPage() {
           <p className="ServicesText">Our Team</p>
         </div>
         <p className="WhatWeOffer">
-          The <span>People </span>Behind <span>Surtaal</span> USA
+          The <span>People </span>Behind <span>Surtaal</span>
         </p>
         <p className="ServiceDescTop ourteammaxwidth">
-          At Surtaal USA, our team is passionate about creating unforgettable
+          At Surtaal, our team is passionate about creating unforgettable
           entertainment experiences that bring communities together through
           music, culture, and live events.
         </p>

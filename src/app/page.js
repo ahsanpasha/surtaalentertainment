@@ -81,7 +81,7 @@ export default function HomePage() {
           what we <span>offer</span>
         </p>
         <p className="ServiceDescTop">
-          SurTaal Entertainment USA provides a platform for our audience where
+          SurTaal Entertainment provides a platform for our audience where
           they can experience live performance from their favorite Artists
         </p>
         <div className="ServiceCards">
@@ -359,7 +359,7 @@ export default function HomePage() {
           Music Unites Here with <span>Surtaal</span>
         </p>
         <p className="foundedtext">
-          Founded in 2019, Surtaal Entertainment USA came into being with the
+          Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
         </p>
