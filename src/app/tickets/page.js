@@ -35,7 +35,7 @@ export default function TicketsPage() {
           <p className="Celebratetext">Tickets</p>
         </div>
         <p className="FeelText">
-          What is <span>Seat</span> for an <br /><span>Unforgettable</span>Experience
+          What is <span>Seat</span> for an <br /><span> Unforgettable </span>Experience
         </p>
         <p className="aboutuspara">
           From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal USA's upcoming events.

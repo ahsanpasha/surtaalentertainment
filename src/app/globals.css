@@ -1962,8 +1962,8 @@ img {
   line-height: 32px;
   letter-spacing: 0%;
   text-align: center;
-  color: #ffffff;
-  box-shadow: 0px 4px 25px 0px #000000d9;
+  color: #fff;
+  text-shadow: 0 4px 25px #000000a6;
   max-width: 1261px;
 }
 
