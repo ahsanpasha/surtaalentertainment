@@ -248,6 +248,7 @@
   background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   padding: 0 122px;
 }
@@ -998,19 +999,41 @@
 
   .ContactItem {
     display: flex;
-    gap: 4.93px;
+    gap: 13px;
     align-items: center;
     justify-content: center;
+    margin-bottom: 23px;
   }
 
-  .PhoneLabel {
+  .ContactMobileIcon {
+    /* Add styling for mobile icons if needed */
+  }
+
+  .ContactItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 4.93px;
+    align-items: flex-start;
+  }
+
+  .PhoneLabel,
+  .EmailLabel {
     font-size: 19.85px;
+     line-height: 20px;
     color: #828282;
   }
 
-  .PhoneNumber {
+  .PhoneNumber,
+  .EmailValue {
     font-size: 19.85px;
+    line-height: 20px;
     color: #000000;
+  }
+
+  .FooterBottomRow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .FooterBottom {

@@ -143,20 +143,32 @@ const Footer = () => {
           <div className="ContactSection">
             <span className="ContactTitle">Contact Us Now</span>
             <div className="ContactItem">
-              <span className="PhoneLabel">Phone</span>
-              <span className="PhoneNumber">+1-321-422-2223</span>
+              <img src="/Images/Footer/phonemobile.svg" alt="" className="ContactMobileIcon" />
+              <div className="ContactItemText">
+                <span className="PhoneLabel">Phone</span>
+                <span className="PhoneNumber">+1-321-422-2223</span>
+              </div>
+            </div>
+            <div className="ContactItem">
+              <img src="/Images/Footer/emailmobile.svg" alt="" className="ContactMobileIcon" />
+              <div className="ContactItemText">
+                <span className="EmailLabel">Email</span>
+                <span className="EmailValue">info@surtaalusa.com</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="FooterBottom">
-          <div className="FooterBottomLeft">
-            <span className="underline">Surtaal-USA</span> © 2025. All Rights
-            Reserved.
-          </div>
-          <div className="FooterBottomRight">
-            <span>Terms Of Services</span>
-            <span>Privacy Policy</span>
+          <div className="FooterBottomRow">
+            <div className="FooterBottomLeft">
+              <span className="underline">Surtaal-USA</span> © 2025. All Rights
+              Reserved.
+            </div>
+            <div className="FooterBottomRight">
+              <span>Terms Of Services</span>
+              <span>Privacy Policy</span>
+            </div>
           </div>
         </div>
       </div>
