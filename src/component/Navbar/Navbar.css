@@ -643,8 +643,7 @@
 /* ── Hamburger toggle ── */
 .navbar-menu-toggle {
   position: relative;
-  width: 48px;
-  height: 48px;
+
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);

@@ -305,6 +305,7 @@ img {
 }
 
 .ServicesText {
+  white-space: nowrap;
   font-family: "Montserrat-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 19.66px;
@@ -6049,49 +6050,346 @@ img {
   .services-dot.active {
     background: #98012D;
   }
+
+  .AboutDiv {
+    flex-direction: column-reverse;
+  }
+
+  .AboutDiv > img {
+    height: 383px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .SecondAbout {
+    padding: 38px 31px 37px 26px;
+    gap: 0px;
+  }
+
+  .BringingText {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .BringingText span {
+    font-weight: 700;
+  }
+
+  .AboutDesc {
+    font-size: 11px;
+    line-height: 21px;
+  }
+
+  .SecondAbout .SeeHowbtn {
+    height: 41.75510025024414px;
+    font-size: 14.82px;
+    gap: 9px;
+    border-radius: 9.06px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .EntertainmentDiv {
+    padding: 39.17px 41px 52.12px 30px;
+  }
+
+  .storyDiv {
+    background: #FFFFFF12;
+    border: none;
+    height: 22.871673583984375px;
+    padding: 0 12px;
+    gap: 8.52px;
+    margin-bottom: 21px;
+  }
+
+  .storytext {
+    font-size: 11px;
+  }
+
+  .storyline {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+
+  .Surtaalpara {
+    font-size: 11px;
+    line-height: 21px;
+  }
 }
 
 /* ── 390px ── */
 @media (max-width: 390px) {
   .MainHome,
   .AboutusMain {
-    padding-top: 100px;
-    padding-bottom: 44px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding: 167px 35px 92px;
   }
 
-  .FeelText,
-  .BringingText,
-  .WhatWeOffer,
-  .WhatWeOffer span,
-  .ArtisticText,
-  .storyline,
-  .storyline span,
-  .ElevatingEntertainmentText {
-    font-size: 18px;
-    line-height: 24px;
+  .Celebrate {
+    border-radius: 80px;
+    padding-left: 13.58px;
+    padding-right: 13.58px;
+    height: 22.871673583984375px;
+    gap: 8px;
   }
 
-  .ourServices,
-  .Oureventdiv,
-  .OurStorySection,
-  .discoverlivemusic,
-  .artist-header,
-  .artist-row,
-  .ourteamdiv,
-  .aboutuslower,
-  .elevatingdiv,
-  .contact-section,
-  .entertainmentartistbox {
-    padding-left: 14px;
-    padding-right: 14px;
+  .Celebratetext {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14.61px;
+    letter-spacing: 4.94px;
+    text-transform: uppercase;
   }
 
-  .SecondAbout,
-  .SecondAboutartist,
-  .acrossnorthdiv {
-    padding: 24px 16px;
+  .CircleDiv {
+    width: 6.915764331817627px;
+    height: 6.915764331817627px;
+  }
+
+  .FeelText {
+    font-family: Georama-Regular;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .FeelText span {
+    font-family: Georama-Bold;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .Leteverytext {
+    margin-bottom: 21px;
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .SeeHowbtn {
+    height: 41.75510025024414px;
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 14.82px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 9px;
+    border-radius: 9.06px;
+  }
+
+  .ourServices {
+    padding: 44.5px 47px 43.55px;
+  }
+
+  .ServicesDiv {
+    height: 22.871673583984375px;
+    border-radius: 67.5px;
+    margin-bottom: 21px;
+  }
+
+  .ServicesText {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 13.5px;
+    letter-spacing: 4.56px;
+    text-transform: uppercase;
+  }
+
+  .CircleServices {
+    width: 6.38914680480957px;
+    height: 6.38914680480957px;
+  }
+
+  .WhatWeOffer {
+    font-family: Georama-Regular;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 21px;
+  }
+
+  .WhatWeOffer span {
+    font-family: Georama-Bold;
+    font-weight: 700;
+  }
+
+  .ServiceDescTop {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .ServiceCards {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .ServiceCards .ServiceCardsDiv {
+    width: 100%;
+  }
+
+  .ServiceCardsDiv img {
+    width: 271.11627197265625px;
+    height: auto;
+    margin-bottom: 33.72px;
+  }
+
+  .Servicename {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-size: 28.33px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+  }
+
+  .ServiceDesc {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 46px;
+  }
+
+  .services-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .services-arrow {
+    width: 31.897672653198242px;
+    height: 31.897672653198242px;
+    border: 0.89px solid #98012D59;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .services-arrow svg {
+    width: 7.655442714691162px;
+    height: 7.017488479614258px;
+    color: #98012D59;
+  }
+
+  .services-arrow.active svg {
+    color: #98012D;
+  }
+
+  .services-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .services-dot {
+    width: 7.655442714691162px;
+    height: 7.655442714691162px;
+    border-radius: 50%;
+    background: #98012D40;
+  }
+
+  .services-dot.active {
+    background: #98012D;
+  }
+
+  .AboutDiv {
+    flex-direction: column-reverse;
+  }
+
+  .AboutDiv > img {
+    height: 383px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .SecondAbout {
+    padding: 38px 31px 37px 26px;
+    gap: 0px;
+  }
+
+  .BringingText {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .BringingText span {
+    font-weight: 700;
+  }
+
+  .AboutDesc {
+    font-size: 11px;
+    line-height: 21px;
+  }
+
+  .SecondAbout .SeeHowbtn {
+    height: 41.75510025024414px;
+    font-size: 14.82px;
+    gap: 9px;
+    border-radius: 9.06px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .EntertainmentDiv {
+    padding: 39.17px 41px 52.12px 30px;
+  }
+
+  .storyDiv {
+    background: #FFFFFF12;
+    border: none;
+    height: 22.871673583984375px;
+    padding: 0 12px;
+    gap: 8.52px;
+    margin-bottom: 21px;
+  }
+
+  .storytext {
+    font-size: 11px;
+  }
+
+  .storyline {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+
+  .Surtaalpara {
+    font-size: 11px;
+    line-height: 21px;
   }
 
   .teamimg {
@@ -6135,78 +6433,274 @@ img {
 @media (max-width: 350px) {
   .MainHome,
   .AboutusMain {
-    padding-top: 92px;
-    padding-bottom: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .FeelText,
-  .BringingText,
-  .WhatWeOffer,
-  .WhatWeOffer span,
-  .ArtisticText,
-  .storyline,
-  .storyline span,
-  .ElevatingEntertainmentText {
-    font-size: 17px;
-    line-height: 22px;
+    padding: 167px 35px 92px;
   }
 
   .Celebrate {
-    padding: 5px 10px;
-    margin-bottom: 16px;
+    border-radius: 80px;
+    padding-left: 13.58px;
+    padding-right: 13.58px;
+    height: 22.871673583984375px;
+    gap: 8px;
   }
 
   .Celebratetext {
-    font-size: 8px;
-    letter-spacing: 1px;
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14.61px;
+    letter-spacing: 4.94px;
+    text-transform: uppercase;
   }
 
-  .Leteverytext,
-  .ServiceDescTop,
-  .AboutDesc,
-  .AboutUSDesc,
-  .AboutUSDesc-new,
-  .foundedtext,
-  .Surtaalpara,
-  .aboutuspara {
-    font-size: 12px;
-    line-height: 18px;
+  .CircleDiv {
+    width: 6.915764331817627px;
+    height: 6.915764331817627px;
   }
 
-  .ourServices,
-  .Oureventdiv,
-  .OurStorySection,
-  .discoverlivemusic,
-  .artist-header,
-  .artist-row,
-  .ourteamdiv,
-  .aboutuslower,
-  .elevatingdiv,
-  .contact-section,
-  .entertainmentartistbox,
-  .EntertainmentDiv {
-    padding-left: 12px;
-    padding-right: 12px;
+  .FeelText {
+    font-family: Georama-Regular;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .FeelText span {
+    font-family: Georama-Bold;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .Leteverytext {
+    margin-bottom: 21px;
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .SeeHowbtn {
+    height: 41.75510025024414px;
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 14.82px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 9px;
+    border-radius: 9.06px;
+  }
+
+  .ourServices {
+    padding: 44.5px 47px 43.55px;
+  }
+
+  .ServicesDiv {
+    height: 22.871673583984375px;
+    border-radius: 67.5px;
+    margin-bottom: 21px;
+  }
+
+  .ServicesText {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 13.5px;
+    letter-spacing: 4.56px;
+    text-transform: uppercase;
+  }
+
+  .CircleServices {
+    width: 6.38914680480957px;
+    height: 6.38914680480957px;
+  }
+
+  .WhatWeOffer {
+    font-family: Georama-Regular;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 21px;
+  }
+
+  .WhatWeOffer span {
+    font-family: Georama-Bold;
+    font-weight: 700;
+  }
+
+  .ServiceDescTop {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .ServiceCards {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .ServiceCards .ServiceCardsDiv {
+    width: 100%;
+  }
+
+  .ServiceCardsDiv img {
+    width: 271.11627197265625px;
+    height: auto;
+    margin-bottom: 33.72px;
   }
 
   .Servicename {
-    font-size: 18px;
-    line-height: 22px;
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-size: 28.33px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 25px;
   }
 
-  .starrrname {
-    font-size: 24px;
-    line-height: 28px;
+  .ServiceDesc {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 46px;
   }
 
-  .SeeHowbtn,
-  .booknowbtn,
-  .BuyTicketsbtn {
-    height: 40px;
-    font-size: 13px;
-    padding: 0 18px;
+  .services-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .services-arrow {
+    width: 31.897672653198242px;
+    height: 31.897672653198242px;
+    border: 0.89px solid #98012D59;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .services-arrow svg {
+    width: 7.655442714691162px;
+    height: 7.017488479614258px;
+    color: #98012D59;
+  }
+
+  .services-arrow.active svg {
+    color: #98012D;
+  }
+
+  .services-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .services-dot {
+    width: 7.655442714691162px;
+    height: 7.655442714691162px;
+    border-radius: 50%;
+    background: #98012D40;
+  }
+
+  .services-dot.active {
+    background: #98012D;
+  }
+
+  .AboutDiv {
+    flex-direction: column-reverse;
+  }
+
+  .AboutDiv > img {
+    height: 383px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .SecondAbout {
+    padding: 38px 31px 37px 26px;
+    gap: 0px;
+  }
+
+  .BringingText {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .BringingText span {
+    font-weight: 700;
+  }
+
+  .AboutDesc {
+    font-size: 11px;
+    line-height: 21px;
+  }
+
+  .SecondAbout .SeeHowbtn {
+    height: 41.75510025024414px;
+    font-size: 14.82px;
+    gap: 9px;
+    border-radius: 9.06px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .EntertainmentDiv {
+    padding: 39.17px 41px 52.12px 30px;
+  }
+
+  .storyDiv {
+    background: #FFFFFF12;
+    border: none;
+    height: 22.871673583984375px;
+    padding: 0 12px;
+    gap: 8.52px;
+    margin-bottom: 21px;
+  }
+
+  .storytext {
+    font-size: 11px;
+  }
+
+  .storyline {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+
+  .Surtaalpara {
+    font-size: 11px;
+    line-height: 21px;
   }
 
   .teamimg {
