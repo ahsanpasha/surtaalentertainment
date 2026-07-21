@@ -1,6 +1,58 @@
+'use client';
+import { useState, useEffect } from "react";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "../globals.css";
 
+const teamMembers = [
+  {
+    name: "Ashkenaz Vincent",
+    position: "Founder & CEO",
+    desc: "Visionary leader driving Surtaal USA’s mission to deliver world-class entertainment and cultural experiences.",
+    img: "/ImagesOpt/OurTeam/team1.webp"
+  },
+  {
+    name: "Anosh Vincent",
+    position: "Head of Operations",
+    desc: "Oversees event planning and operations, ensuring every production runs smoothly and successfully.",
+    img: "/ImagesOpt/OurTeam/team2.webp"
+  },
+  {
+    name: "Rimla Qamar",
+    position: "Director of Sales & Strategy",
+    desc: "Leads business growth, partnerships, and strategic initiatives to expand the Surtaal USA brand.",
+    img: "/ImagesOpt/OurTeam/team3.webp"
+  },
+  {
+    name: "Elia Ijjaaz",
+    position: "Production Director",
+    desc: "Manages production and creative execution to deliver exceptional live event experiences.",
+    img: "/ImagesOpt/OurTeam/team4.webp"
+  }
+];
+
 export default function OurTeamPage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % teamMembers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <main>
       <div className="AboutusMain">
@@ -29,58 +81,68 @@ export default function OurTeamPage() {
         </p>
 
         <div className="teamdivmain">
-          <div className="teamdiv">
-            <img src="/ImagesOpt/OurTeam/team1.webp" className="teamimg" alt="" />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <p className="teamname">Ashkenaz Vincent</p>
-              <p className="teamposition">Founder & CEO</p>
-              <p className="teamdesc">
-                Visionary leader driving Surtaal USA’s mission to deliver
-                world-class entertainment and cultural experiences.
-              </p>
+          {isMobile ? (
+            <div className="teamdiv">
+              <img src={teamMembers[currentIndex].img} className="teamimg" alt="" />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p className="teamname">{teamMembers[currentIndex].name}</p>
+                <p className="teamposition">{teamMembers[currentIndex].position}</p>
+                <p className="teamdesc">{teamMembers[currentIndex].desc}</p>
+              </div>
             </div>
-          </div>
-          <div className="teamdiv">
-            <img src="/ImagesOpt/OurTeam/team2.webp" className="teamimg" alt="" />
-            <div>
-              <p className="teamname">Anosh Vincent</p>
-              <p className="teamposition">Head of Operations</p>
-              <p className="teamdesc">
-                Oversees event planning and operations, ensuring every
-                production runs smoothly and successfully.
-              </p>
-            </div>
-          </div>
-          <div className="teamdiv">
-            <img src="/ImagesOpt/OurTeam/team3.webp" className="teamimg" alt="" />
-            <div>
-              <p className="teamname">Rimla Qamar</p>
-              <p className="teamposition">Director of Sales & Strategy</p>
-              <p className="teamdesc">
-                Leads business growth, partnerships, and strategic initiatives
-                to expand the Surtaal USA brand.
-              </p>
-            </div>
-          </div>
-          <div className="teamdiv">
-            <img src="/ImagesOpt/OurTeam/team4.webp" className="teamimg" alt="" />
-            <div>
-              <p className="teamname">Elia Ijjaaz</p>
-              <p className="teamposition">Production Director</p>
-              <p className="teamdesc">
-                Manages production and creative execution to deliver exceptional
-                live event experiences.
-              </p>
-            </div>
-          </div>
+          ) : (
+            teamMembers.map((member, i) => (
+              <div className="teamdiv" key={i}>
+                <img src={member.img} className="teamimg" alt="" />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <p className="teamname">{member.name}</p>
+                  <p className="teamposition">{member.position}</p>
+                  <p className="teamdesc">{member.desc}</p>
+                </div>
+              </div>
+            ))
+          )}
         </div>
+
+        {isMobile && (
+          <div className="services-nav team-nav">
+            <button
+              className={`services-arrow ${currentIndex > 0 ? 'active' : ''}`}
+              onClick={prevSlide}
+            >
+              <GoArrowLeft />
+            </button>
+            <div className="services-dots">
+              {teamMembers.map((_, i) => (
+                <div
+                  key={i}
+                  className={`services-dot ${i === currentIndex ? 'active' : ''}`}
+                  onClick={() => goToSlide(i)}
+                ></div>
+              ))}
+            </div>
+            <button
+              className={`services-arrow ${currentIndex < teamMembers.length - 1 ? 'active' : ''}`}
+              onClick={nextSlide}
+            >
+              <GoArrowRight />
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );

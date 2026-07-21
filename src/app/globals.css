@@ -5969,6 +5969,11 @@ img {
 
   .teamdivmain {
     margin-top: 0px;
+    padding: 0px;
+  }
+
+  .ourteamdiv {
+    padding: 42px 16px 54px;
   }
 
   .WhatWeOffer span {
@@ -9045,6 +9050,65 @@ img {
 .sliderbtngoaway img {
   width: clamp(14px, 34%, 30px) !important;
   height: clamp(14px, 34%, 30px) !important;
+}
+
+/* ── Team Page Mobile Slider Styles (440px and below) ── */
+@media (max-width: 440px) {
+  .teamimg {
+    width: 247.08860778808594px !important;
+    height: 247.08860778808594px !important;
+    padding: 9.06px !important;
+    margin-bottom: 42px !important;
+  }
+
+  .teamdiv {
+    gap: 0px !important;
+  }
+
+  .teamname {
+    font-size: 30px !important;
+    line-height: 30px !important;
+    margin-bottom: 17px !important;
+  }
+
+  .teamposition {
+    font-size: 18px !important;
+    margin-bottom: 17px !important;
+  }
+
+  .teamdesc {
+    font-size: 12px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── Team Page Navigation Colors (Always Applicable) ── */
+.team-nav.services-nav {
+  margin-top: 30px;
+}
+
+.team-nav .services-arrow {
+  border: 0.89px solid #FFFFFF59 !important;
+}
+
+.team-nav .services-arrow svg {
+  color: #FFFFFF59 !important;
+}
+
+.team-nav .services-arrow.active {
+  border-color: #FFFFFF59 !important;
+}
+
+.team-nav .services-arrow.active svg {
+  color: #FFFFFF !important;
+}
+
+.team-nav .services-dot {
+  background: #FFFFFF59 !important;
+}
+
+.team-nav .services-dot.active {
+  background: #FFFFFF !important;
 }
 
 /* ── Reduced motion ── */

@@ -31,7 +31,7 @@ export default function ArtistsPage() {
       <div className="artist-section">
         {/* HEADER */}
         <div className="artist-header">
-          <div>
+          <div className="artistnew">
             <div className="ServicesDiv">
               <div className="CircleServices"></div>
               <p className="ServicesText">our services</p>
