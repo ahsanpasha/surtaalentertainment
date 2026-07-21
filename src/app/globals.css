@@ -4425,7 +4425,6 @@ img {
 
   .teamdiv {
     gap: 35.5px;
-    width: calc(50% - 18px);
   }
 
   .teamname {
@@ -4449,6 +4448,7 @@ img {
   .teamdivmain {
     gap: 45.5px;
     flex-wrap: wrap;
+    background-color: #000;
   }
 
   .ourteamdiv {
@@ -5249,7 +5249,6 @@ img {
   .discoverlivemusic,
   .artist-header,
   .artist-row,
-  .ourteamdiv,
   .aboutuslower,
   .elevatingdiv,
   .contact-section,
@@ -5319,6 +5318,7 @@ img {
     font-size: 17px;
     padding: 0 28px;
   }
+
 
   .BuyTicketsbtn {
     height: 52px;
@@ -5975,6 +5975,7 @@ img {
   .teamdivmain {
     margin-top: 0px;
     padding: 0px;
+    background-color: transparent;
   }
 
   .ourteamdiv {
@@ -9289,6 +9290,7 @@ img {
 
 /* ── 415px Mobile Breakpoint ── */
 @media (max-width: 415px) {
+
   .MainHome,
   .AboutusMain {
     padding-left: 16px !important;
