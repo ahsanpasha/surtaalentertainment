@@ -5916,7 +5916,8 @@ img {
   }
 
   .ServicesDiv {
-    height: 24.64385414123535px;
+    padding: 4.5px 11px;
+    height: 22px;
     border-radius: 67.5px;
     margin-bottom: 23.4px;
   }
@@ -6116,6 +6117,33 @@ img {
     font-size: 11px;
     line-height: 21px;
   }
+
+  .teamname {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .divrow {
+    gap: 40px;
+  }
+
+  .booknowbtn {
+    height: 31.55038833618164px;
+    gap: 10.66px;
+    padding: 0 18.31px;
+    border-width: 0.85px;
+  }
+
+  .Divmainrow {
+    gap: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .entertainmentartistbox {
+    padding-left: 28px;
+    padding-right: 23px;
+  }
 }
 
 /* ── 390px ── */
@@ -6196,7 +6224,8 @@ img {
   }
 
   .ServicesDiv {
-    height: 22.871673583984375px;
+    padding: 4.5px 11px;
+    height: 22px;
     border-radius: 67.5px;
     margin-bottom: 21px;
   }
@@ -6390,6 +6419,33 @@ img {
   .Surtaalpara {
     font-size: 11px;
     line-height: 21px;
+  }
+
+  .teamname {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .divrow {
+    gap: 40px;
+  }
+
+  .booknowbtn {
+    height: 31.55038833618164px;
+    gap: 10.66px;
+    padding: 0 18.31px;
+    border-width: 0.85px;
+  }
+
+  .Divmainrow {
+    gap: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .entertainmentartistbox {
+    padding-left: 28px;
+    padding-right: 23px;
   }
 
   .teamimg {
@@ -6507,7 +6563,8 @@ img {
   }
 
   .ServicesDiv {
-    height: 22.871673583984375px;
+    padding: 4.5px 11px;
+    height: 22px;
     border-radius: 67.5px;
     margin-bottom: 21px;
   }
@@ -6703,13 +6760,36 @@ img {
     line-height: 21px;
   }
 
+  .teamname {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .divrow {
+    gap: 40px;
+  }
+
+  .booknowbtn {
+    height: 31.55038833618164px;
+    gap: 10.66px;
+    padding: 0 18.31px;
+    border-width: 0.85px;
+  }
+
+  .Divmainrow {
+    gap: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .entertainmentartistbox {
+    padding-left: 28px;
+    padding-right: 23px;
+  }
+
   .teamimg {
     height: 140px;
     width: 140px;
-  }
-
-  .teamname {
-    font-size: 18px;
   }
 
   .teamposition,
