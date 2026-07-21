@@ -5869,7 +5869,7 @@ img {
   }
 
   .Celebratetext {
-
+white-space: nowrap;
     font-size: 11px;
     line-height: 14.61px;
     letter-spacing: 4.94px;
