@@ -178,7 +178,7 @@ img {
 
 @font-face {
   font-family: "Inter-Bold";
-  src: url("/Fonts/Inter-Bold.ttf") format("truetype");
+  src: url("/Fonts/Inter_24pt-Bold.ttf") format("truetype");
   font-display: block;
 }
 
