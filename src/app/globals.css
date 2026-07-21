@@ -176,6 +176,20 @@ img {
   font-display: block;
 }
 
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("/Fonts/Inter-Bold.ttf") format("truetype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Organetto-Bold";
+  src: url("/Fonts/Fontspring-DEMO-organetto-bold.otf") format("truetype");
+  font-display: block;
+}
+
+
+
 .MainHome {
   padding-top: 254.33px;
   padding-bottom: 233.67px;
