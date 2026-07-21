@@ -5845,96 +5845,209 @@ img {
 
 /* ── 440px ── */
 @media (max-width: 440px) {
-  .FeelText,
-  .BringingText,
-  .WhatWeOffer,
-  .WhatWeOffer span,
-  .ArtisticText,
-  .storyline,
-  .storyline span,
-  .ElevatingEntertainmentText {
-    font-size: 20px;
-    line-height: 26px;
+  .MainHome,
+  .AboutusMain {
+    padding: 167px 35px 92px;
   }
 
   .Celebrate {
     border-radius: 80px;
+    padding-left: 13.58px;
+    padding-right: 13.58px;
+    height: 26.675090789794922px;
+    gap: 8px;
   }
 
   .Celebratetext {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-  }
-
-  .ServicesText,
-  .storytext {
+   
     font-size: 11px;
-    letter-spacing: 4px;
+    line-height: 14.61px;
+    letter-spacing: 4.94px;
+    text-transform: uppercase;
   }
 
-  .SeeHowbtn,
-  .booknowbtn,
-  .BuyTicketsbtn {
-    height: 42px;
-    font-size: 14px;
+  .CircleDiv {
+    width: 6.915764331817627px;
+    height: 6.915764331817627px;
   }
 
-  .event21 {
-    font-size: 42px;
+  .FeelText {
+   
+    font-size: 44px;
+    line-height: 55px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
   }
 
-  .eventMonth,
-  .eventCity {
-    font-size: 18px;
+  .FeelText span {
+ 
+    font-size: 44px;
+    line-height: 55px;
+    letter-spacing: 1%;
+    text-align: center;
+    text-transform: capitalize;
   }
 
-  .starrrname {
-    font-size: 26px;
-    line-height: 30px;
+  .Leteverytext {
+    margin-bottom: 22px;
+   
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 50px;
   }
 
-  .SuccessDiv {
-    padding: 24px 20px;
-    border-radius: 14px;
+  .SeeHowbtn {
+    height: 48.52458953857422px;
+    
+    font-size: 15.74px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-left: 28px;
+    padding-right: 28px;
+    gap: 8.82px;
   }
 
-  .SuccessNum,
-  .SuccessNum span {
-    font-size: 42px;
+  .ourServices {
+    padding: 44.5px 47px 43.55px;
+  }
+
+  .ServicesDiv {
+    height: 24.64385414123535px;
+    border-radius: 67.5px;
+    margin-bottom: 23.4px;
+  }
+
+  .ServicesText {
+  
+    font-size: 11px;
+    line-height: 13.5px;
+    letter-spacing: 4.56px;
+    text-transform: uppercase;
+  }
+
+  .CircleServices {
+    width: 6.38914680480957px;
+    height: 6.38914680480957px;
+  }
+
+  .WhatWeOffer {
+    font-family: Georama-Regular;
+    font-weight: 400;
+    font-size: 32px;
     line-height: 42px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 21px;
   }
 
-  .contact-item-my {
-    gap: 14px;
+  .WhatWeOffer span {
+    font-family: Georama-Bold;
+    font-weight: 700;
+       font-size: 32px;
+    line-height: 42px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 21px;
   }
 
-  .phoneicon {
-    height: 48px;
-    width: 48px;
+  .ServiceDescTop {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18.94px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 45px;
   }
 
-  .socialicondiv {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+  .ServiceCards {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
   }
 
-  .icons {
-    gap: 12px;
+  .ServiceCards .ServiceCardsDiv {
+    width: 100%;
   }
 
-  .artist-card {
-    width: 180px;
+  .ServiceCardsDiv img {
+    width: 271.11627197265625px;
+    height: auto;
+    margin-bottom: 33.72px;
   }
 
-  .slider-btns {
-    gap: 10px;
+  .Servicename {
+    font-family: Georama-SemiBold;
+    font-weight: 600;
+    font-size: 28.33px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 25px;
   }
 
-  .sliderbtn,
-  .sliderbtngoaway {
-    height: 44px;
-    width: 44px;
+  .ServiceDesc {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 13.49px;
+    line-height: 22.93px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 46px;
+  }
+
+  .services-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .services-arrow {
+    width: 31.897672653198242px;
+    height: 31.897672653198242px;
+    border: 0.89px solid #98012D59;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .services-arrow svg {
+    width: 7.655442714691162px;
+    height: 7.017488479614258px;
+    color: #98012D59;
+  }
+
+  .services-arrow.active svg {
+    color: #98012D;
+  }
+
+  .services-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .services-dot {
+    width: 7.655442714691162px;
+    height: 7.655442714691162px;
+    border-radius: 50%;
+    background: #98012D40;
+  }
+
+  .services-dot.active {
+    background: #98012D;
   }
 }
 

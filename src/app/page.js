@@ -1,8 +1,56 @@
+'use client';
 import "./globals.css";
 import TourEvents from "../component/TourEvents/TourEvents";
 import SuccessStats from "../component/SuccessStats/SuccessStats";
+import { useState, useEffect } from "react";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+
+const services = [
+  {
+    img: "/ImagesOpt/EventinSurtaal/Service1.webp",
+    title: "Corporate Events",
+    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+  },
+  {
+    img: "/ImagesOpt/EventinSurtaal/Service2.webp",
+    title: "Corporate Events",
+    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+  },
+  {
+    img: "/ImagesOpt/EventinSurtaal/Service3.webp",
+    title: "Corporate Events",
+    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+  },
+  {
+    img: "/ImagesOpt/EventinSurtaal/Service4.webp",
+    title: "Corporate Events",
+    desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
+  }
+];
 
 export default function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <main>
       <div className="MainHome">
@@ -34,54 +82,56 @@ export default function HomePage() {
         </p>
         <p className="ServiceDescTop">
           SurTaal Entertainment USA provides a platform for our audience where
-          they can experience live performance from their favorite Artists
+          they can experience live performance from their favorite Artists
         </p>
         <div className="ServiceCards">
-          <div className="ServiceCardsDiv">
-            <img
-              src="/ImagesOpt/EventinSurtaal/Service1.webp"
-              alt="Corporate Events"
-            />
-            <p className="Servicename">Corporate Events</p>
-            <p className="ServiceDesc">
-              Live musical experiences tailored to elevate galas, conferences,
-              and corporate celebrations.
-            </p>
-          </div>
-          <div className="ServiceCardsDiv">
-            <img
-              src="/ImagesOpt/EventinSurtaal/Service2.webp"
-              alt="Corporate Events"
-            />
-            <p className="Servicename">Corporate Events</p>
-            <p className="ServiceDesc">
-              Live musical experiences tailored to elevate galas, conferences,
-              and corporate celebrations.
-            </p>
-          </div>
-          <div className="ServiceCardsDiv">
-            <img
-              src="/ImagesOpt/EventinSurtaal/Service3.webp"
-              alt="Corporate Events"
-            />
-            <p className="Servicename">Corporate Events</p>
-            <p className="ServiceDesc">
-              Live musical experiences tailored to elevate galas, conferences,
-              and corporate celebrations.
-            </p>
-          </div>
-          <div className="ServiceCardsDiv">
-            <img
-              src="/ImagesOpt/EventinSurtaal/Service4.webp"
-              alt="Corporate Events"
-            />
-            <p className="Servicename">Corporate Events</p>
-            <p className="ServiceDesc">
-              Live musical experiences tailored to elevate galas, conferences,
-              and corporate celebrations.
-            </p>
-          </div>
+          {isMobile ? (
+            <div className="ServiceCardsDiv">
+              <img
+                src={services[currentIndex].img}
+                alt={services[currentIndex].title}
+              />
+              <p className="Servicename">{services[currentIndex].title}</p>
+              <p className="ServiceDesc">{services[currentIndex].desc}</p>
+            </div>
+          ) : (
+            services.map((service, i) => (
+              <div className="ServiceCardsDiv" key={i}>
+                <img
+                  src={service.img}
+                  alt={service.title}
+                />
+                <p className="Servicename">{service.title}</p>
+                <p className="ServiceDesc">{service.desc}</p>
+              </div>
+            ))
+          )}
         </div>
+        {isMobile && (
+          <div className="services-nav">
+            <button
+              className={`services-arrow ${currentIndex > 0 ? 'active' : ''}`}
+              onClick={prevSlide}
+            >
+              <GoArrowLeft />
+            </button>
+            <div className="services-dots">
+              {services.map((_, i) => (
+                <div
+                  key={i}
+                  className={`services-dot ${i === currentIndex ? 'active' : ''}`}
+                  onClick={() => goToSlide(i)}
+                ></div>
+              ))}
+            </div>
+            <button
+              className={`services-arrow ${currentIndex < services.length - 1 ? 'active' : ''}`}
+              onClick={nextSlide}
+            >
+              <GoArrowRight />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* About */}
