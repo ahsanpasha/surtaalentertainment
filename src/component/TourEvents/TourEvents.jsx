@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 const EVENTS = [
   {
     day: "21",
@@ -34,6 +36,7 @@ const EVENTS = [
 ];
 
 export default function TourEvents() {
+  const router = useRouter();
   return (
     <div className="Oureventdiv">
       <div className="ServicesDiv" style={{ width: "fit-content" }}>
