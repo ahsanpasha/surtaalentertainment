@@ -95,7 +95,7 @@ export default function TicketsPage() {
         {loading ? (
           <p style={{ textAlign: 'center', color: '#fff', marginTop: '2rem' }}>Loading tickets...</p>
         ) : filteredTickets.length === 0 ? (
-          <div style={{ textAlign: 'center', margin: '4rem auto', padding: '3rem 2rem', width: '100%', maxWidth: '600px', backgroundColor: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '20px', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ textAlign: 'center', padding: '1rem', width: '100%', maxWidth: '600px', backgroundColor: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '20px', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(141,4,50,0.1), rgba(189,0,64,0.15))', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BD0040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -105,12 +105,12 @@ export default function TicketsPage() {
                 <path d="M9 16l2 2 4-4"></path>
               </svg>
             </div>
-            <h3 style={{ color: '#fff', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
-            <p style={{ color: '#aaa', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2.5rem' }}>
-              There are currently no tickets available for <strong style={{color: '#fff'}}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
+            <h3 style={{ color: ' #000', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
+            <p style={{ color: '#000', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+              There are currently no tickets available for <strong style={{ color: '#BD0040' }}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
             </p>
             {activeFilter !== "All Artists" && (
-              <button 
+              <button
                 onClick={() => setActiveFilter("All Artists")}
                 style={{ padding: '14px 28px', background: 'linear-gradient(90deg, #8D0432, #BD0040)', color: '#fff', border: 'none', borderRadius: '10px', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 8px 20px rgba(189,0,64,0.2)' }}
                 onMouseOver={(e) => { e.target.style.transform = 'scale(1.05)'; e.target.style.boxShadow = '0 12px 25px rgba(189,0,64,0.3)'; }}
