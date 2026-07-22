@@ -53,12 +53,16 @@ body {
 
 /* ── Scroll reveal — light motion only, NEVER hide content / no layout gap ── */
 .scroll-reveal {
-  opacity: 1;
-  transform: none;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
 }
 
 .scroll-reveal.is-visible {
-  transform: none;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 html.reduce-motion .scroll-reveal {
