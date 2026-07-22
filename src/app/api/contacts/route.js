@@ -1,23 +1,21 @@
+// src/app/api/contacts/route.js
+// Firestore-backed contacts GET API — for admin dashboard
+
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { db } from "@/lib/firebase";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
-const contactsFilePath = path.join(process.cwd(), "data", "contacts.json");
+const COLLECTION = "contacts";
 
-function getContacts() {
-  if (!fs.existsSync(contactsFilePath)) {
-    return [];
-  }
-  const fileContent = fs.readFileSync(contactsFilePath, "utf8");
-  return JSON.parse(fileContent);
-}
-
+// GET /api/contacts — fetch all contact submissions ordered by newest first
 export async function GET() {
   try {
-    const contacts = getContacts();
+    const q = query(collection(db, COLLECTION), orderBy("date", "desc"));
+    const snapshot = await getDocs(q);
+    const contacts = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
     return NextResponse.json(contacts, { status: 200 });
   } catch (error) {
-    console.error("Error reading contacts:", error);
+    console.error("Error reading contacts from Firestore:", error);
     return NextResponse.json({ error: "Failed to load contacts" }, { status: 500 });
   }
 }

@@ -4,11 +4,13 @@ import "../globals.css";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 
 const artists = [
-  { name: "Asim Azhar", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
-  { name: "Atif Aslam", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
-  { name: "Sajjad Ali", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
-  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
-  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/a1.webp" },
+  { name: "Asim Azhar", role: "Singer", img: "/ImagesOpt/Artists/Asim.webp" },
+  { name: "Atif Aslam", role: "Singer", img: "/ImagesOpt/Artists/Atif.webp" },
+  { name: "Sajjad Ali", role: "Singer", img: "/ImagesOpt/Artists/Sajjad.webp" },
+  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/ZainZohaib.webp" },
+  { name: "Aima Baig", role: "Singer", img: "/ImagesOpt/Artists/Aima.webp" },
+  { name: "Asif Ali Santoo", role: "Singer", img: "/ImagesOpt/Artists/Asif.webp" },
+
 ];
 
 export default function ArtistsPage() {

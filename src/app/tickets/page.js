@@ -109,16 +109,7 @@ export default function TicketsPage() {
             <p style={{ color: '#000', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
               There are currently no tickets available for <strong style={{ color: '#BD0040' }}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
             </p>
-            {activeFilter !== "All Artists" && (
-              <button
-                onClick={() => setActiveFilter("All Artists")}
-                style={{ padding: '14px 28px', background: 'linear-gradient(90deg, #8D0432, #BD0040)', color: '#fff', border: 'none', borderRadius: '10px', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 8px 20px rgba(189,0,64,0.2)' }}
-                onMouseOver={(e) => { e.target.style.transform = 'scale(1.05)'; e.target.style.boxShadow = '0 12px 25px rgba(189,0,64,0.3)'; }}
-                onMouseOut={(e) => { e.target.style.transform = 'scale(1)'; e.target.style.boxShadow = '0 8px 20px rgba(189,0,64,0.2)'; }}
-              >
-                View All Events
-              </button>
-            )}
+
           </div>
         ) : (
           filteredTickets.map((ticket) => (
