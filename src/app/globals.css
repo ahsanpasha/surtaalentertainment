@@ -5024,7 +5024,7 @@ img {
   .teamdesc {
     font-size: 11px;
     line-height: 16.4px;
-    max-width: 100%;
+    max-width: 320px;
   }
 
   .teamdivmain {
@@ -5791,7 +5791,7 @@ img {
   .discoverlivemusic,
   .artist-header,
   .artist-row,
-  .ourteamdiv,
+
   .aboutuslower,
   .elevatingdiv,
   .contact-section {
