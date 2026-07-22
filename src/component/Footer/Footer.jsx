@@ -162,20 +162,20 @@ const Footer = () => {
           <img src="/Images/Footer/linefooter.svg" alt="" className="LineFooter" />
           <div className="ContactSection">
             <span className="ContactTitle">Contact Us Now</span>
-            <div className="ContactItem">
+            <a href="tel:+13214222223" className="ContactItem ContactItem-link" style={{ textDecoration: 'none' }}>
               <img src="/Images/Footer/phonemobile.svg" alt="" className="ContactMobileIcon" />
               <div className="ContactItemText">
                 <span className="PhoneLabel">Phone</span>
                 <span className="PhoneNumber">+1-321-422-2223</span>
               </div>
-            </div>
-            <div className="ContactItem">
+            </a>
+            <a href="mailto:info@surtaalusa.com" className="ContactItem ContactItem-link" style={{ textDecoration: 'none' }}>
               <img src="/Images/Footer/emailmobile.svg" alt="" className="ContactMobileIcon" />
               <div className="ContactItemText">
                 <span className="EmailLabel">Email</span>
                 <span className="EmailValue">info@surtaalusa.com</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

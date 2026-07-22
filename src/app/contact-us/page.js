@@ -31,7 +31,7 @@ export default function ContactUsPage() {
             South Asian music experiences to the world.
           </p>
           <div className="maindivstructure">
-            <div className="contact-item-my">
+            <a href="tel:+13214222223" className="contact-item-my" style={{ textDecoration: 'none', color: 'inherit' }}>
               <img
                 src="/Images/ContactUs/phone.svg"
                 className="phoneicon"
@@ -41,9 +41,9 @@ export default function ContactUsPage() {
                 <p className="contact-itemlabel">Phone</p>
                 <p className="contact-itemvalue">+1-321-422-2223</p>
               </div>
-            </div>
+            </a>
 
-            <div className="contact-item-my">
+            <a href="mailto:info@surtaalusa.com" className="contact-item-my" style={{ textDecoration: 'none', color: 'inherit' }}>
               <img
                 src="/Images/ContactUs/email.svg"
                 className="phoneicon"
@@ -53,7 +53,7 @@ export default function ContactUsPage() {
                 <p className="contact-itemlabel">Email</p>
                 <p className="contact-itemvalue">info@surtaalusa.com</p>
               </div>
-            </div>
+            </a>
           </div>
           <hr className="linenew" />
 

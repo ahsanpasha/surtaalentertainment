@@ -176,7 +176,7 @@ export default function Navbar() {
         <button
           type="button"
           className="call-now-btn"
-          onClick={() => router.push("/contact-us")}
+          onClick={() => window.location.href = "tel:+13214222223"}
         >
           <img src="/Images/Navbar/callnow.svg" alt="" />
           Call Now
