@@ -191,8 +191,7 @@
 
 .ContactItem-link:hover {
   transform: translateY(-3px);
-  background-color: rgba(189, 0, 64, 0.06);
-  box-shadow: 0 8px 24px rgba(189, 0, 64, 0.1);
+
 }
 
 .ContactItem-link:hover .ContactValue {
@@ -233,13 +232,15 @@
   vertical-align: middle;
   color: #828282;
 }
-.FooterBottomRow{
+
+.FooterBottomRow {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
+
 .ContactValue {
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -1576,7 +1577,7 @@
 
   .FooterBottomLeft {
     font-size: 10.95px;
-    line-height:16px;
+    line-height: 16px;
   }
 
   .FooterBottomRight {
