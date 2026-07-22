@@ -10,6 +10,13 @@ const Footer = () => {
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
 
+  const links = [
+    { href: '/', label: 'Events in Surtaal' },
+    { href: '/about-us', label: 'About Us' },
+    { href: '/artists', label: 'Artists' },
+    { href: '/our-team', label: 'Our Team' }
+  ];
+
   return (
     <div>
       <div className="galleryContainer">
@@ -50,18 +57,15 @@ const Footer = () => {
             <img src="/Images/Navbar/Logo.svg" alt="Surtaal Entertainment" />
 
             <div className="FooterNavLinks">
-              <a href="/" className="FooterLink active">
-                Events in Surtaal
-              </a>
-              <a href="/about-us" className="FooterLink">
-                About Us
-              </a>
-              <a href="/artists" className="FooterLink">
-                Artists
-              </a>
-              <a href="/our-team" className="FooterLink">
-                Our Team
-              </a>
+              {links.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`FooterLink ${pathname === link.href ? 'active' : ''}`}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
             <div className="FooterSocials">
               <span>Follow Us On:</span>
@@ -150,18 +154,15 @@ const Footer = () => {
           <div className="QuickLinksSection">
             <span className="QuickLinksTitle">Quick links</span>
             <div className="FooterNavLinks">
-              <a href="/" className="FooterLink active">
-                Events in Surtaal
-              </a>
-              <a href="/about-us" className="FooterLink">
-                About Us
-              </a>
-              <a href="/artists" className="FooterLink">
-                Artists
-              </a>
-              <a href="/our-team" className="FooterLink">
-                Our Team
-              </a>
+              {links.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`FooterLink ${pathname === link.href ? 'active' : ''}`}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
           <img src="/Images/Footer/linefooter.svg" alt="" className="LineFooter" />
@@ -186,7 +187,7 @@ const Footer = () => {
 
         <div className="FooterBottom" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
 
-          <div className="FooterBottomLeft" >
+          <div className="FooterBottomLeft">
             <span className="underline">Surtaal</span> © 2023. All Rights
             Reserved.
           </div>

@@ -1053,6 +1053,12 @@
     text-decoration: none;
   }
 
+  .FooterLink.active {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    color: #bd0040;
+  }
+
   .ContactSection {
     display: block;
     margin-bottom: 0;
@@ -1275,6 +1281,12 @@
     text-transform: capitalize;
     color: #000000;
     text-decoration: none;
+  }
+
+  .FooterLink.active {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    color: #bd0040;
   }
 
   .ContactSection {
@@ -1504,6 +1516,12 @@
     text-decoration: none;
   }
 
+  .FooterLink.active {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    color: #bd0040;
+  }
+
   .ContactSection {
     display: block;
     margin-bottom: 0;
@@ -1726,6 +1744,12 @@
     text-transform: capitalize;
     color: #000000;
     text-decoration: none;
+  }
+
+  .FooterLink.active {
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    color: #bd0040;
   }
 
   .ContactSection {
