@@ -66,7 +66,8 @@ export default function TourEvents() {
                 </div>
                 <button type="button" className="BuyTicketsbtn">
                   Buy Tickets Now
-                  <img src="/Images/Navbar/arrowred.svg" alt="" />
+                  <img src="/Images/Navbar/arrowred.svg" alt="" className="arrow-red" />
+                  <img src="/Images/Navbar/arrow.svg" alt="" className="arrow-white" />
                 </button>
               </div>
             </div>
@@ -79,6 +80,7 @@ export default function TourEvents() {
         type="button"
         className="SeeHowbtn"
         style={{ margin: 0 }}
+          onClick={() => router.push("/tickets")}
       >
         View All Events
         <img src="/Images/Navbar/arrow.svg" alt="" />

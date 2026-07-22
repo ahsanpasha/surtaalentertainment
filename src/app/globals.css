@@ -8940,6 +8940,24 @@ img {
     linear-gradient(180deg, #8d0432 0%, #bd0040 100%) border-box;
 }
 
+.BuyTicketsbtn .arrow-red,
+.BuyTicketsbtn .arrow-white {
+  width: 15.65px;
+  height: 15.65px;
+}
+
+.BuyTicketsbtn .arrow-white {
+  display: none !important;
+}
+
+.BuyTicketsbtn:hover .arrow-red {
+  display: none !important;
+}
+
+.BuyTicketsbtn:hover .arrow-white {
+  display: inline-block !important;
+}
+
 .BuyTicketsbtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(189, 0, 64, 0.22);

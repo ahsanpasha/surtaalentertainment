@@ -349,6 +349,17 @@ export default function HomePage() {
           </div>
         </div>
         <div className="DividerEntertainment"></div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "42px", marginBottom: "42px" }}>
+          <button
+            type="button"
+            className="SeeHowbtn"
+            style={{ margin: 0 }}
+            onClick={() => router.push("/tickets")}
+
+          >
+            View All Events
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button></div>
       </div>
 
       <TourEvents />
