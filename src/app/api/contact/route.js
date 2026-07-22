@@ -3,10 +3,6 @@
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { db } from "@/lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
-
-const COLLECTION = "contacts";
 
 /* ─── Shared transporter factory ─────────────────────────── */
 function createTransporter() {
@@ -197,18 +193,7 @@ export async function POST(req) {
       );
     }
 
-    // 1️⃣  Save to Firestore
-    const contactData = {
-      fullName,
-      email,
-      phone: phone || "",
-      message,
-      date: new Date().toISOString(),
-    };
-
-    await addDoc(collection(db, COLLECTION), contactData);
-
-    // 2️⃣  Send emails (admin notification + user auto-reply)
+    // 1️⃣  Send emails (admin notification + user auto-reply)
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = createTransporter();
 

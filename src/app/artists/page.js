@@ -11,6 +11,8 @@ const artists = [
   { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/ZainZohaib.webp" },
   { name: "Aima Baig", role: "Singer", img: "/ImagesOpt/Artists/Aima.webp" },
   { name: "Asif Ali Santoo", role: "Singer", img: "/ImagesOpt/Artists/Asif.webp" },
+  { name: "Fariha Pervez", role: "Singer", img: "/ImagesOpt/Artists/Fariha.webp" },
+
 ];
 
 // Duplicate artists for seamless infinite loop (clone trick)
@@ -183,13 +185,7 @@ export default function ArtistsPage() {
               <p className="livetext">Collaborative Musical Projects</p>
             </div>
           </div>
-          <button
-            className="SeeHowbtn"
-            style={{ margin: 0, width: "fit-content" }}
-          >
-            Read More
-            <img src="/Images/Navbar/arrow.svg" alt="" />
-          </button>
+
         </div>
       </div>
 
