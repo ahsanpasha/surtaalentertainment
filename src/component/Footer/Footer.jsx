@@ -184,17 +184,17 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="FooterBottom">
-          <div className="FooterBottomRow">
-            <div className="FooterBottomLeft">
-              <span className="underline">Surtaal</span> © 2023. All Rights
-              Reserved.
-            </div>
-            <div className="FooterBottomRight">
+        <div className="FooterBottom" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+
+          <div className="FooterBottomLeft" >
+            <span className="underline">Surtaal</span> © 2023. All Rights
+            Reserved.
+          </div>
+          {/* <div className="FooterBottomRight">
               <span>Terms Of Services</span>
               <span>Privacy Policy</span>
-            </div>
-          </div>
+            </div> */}
+
         </div>
       </div>
     </div>
