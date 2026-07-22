@@ -296,10 +296,17 @@ img {
 
 .ourServices {
   padding: 56px 85px 102.77px;
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-image: url("/Images/EventinSurtaal/bg (1).webp");
+  background-size: 100% 100%;
+  /* full width + height cover */
+  background-position: center;
+  /* center se align */
+  background-repeat: no-repeat;
+  /* repeat na ho */
 }
 
 .ServicesDiv {
@@ -399,13 +406,13 @@ img {
   font-family: "Georama-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 42px;
-  line-height: 46px;
+  line-height: 40px;
   letter-spacing: 0.02em;
   text-align: center;
   vertical-align: middle;
   text-transform: capitalize;
   color: #272727;
-  margin: 0 0 38px 0;
+  margin: 0 0 30px 0;
 }
 
 .ServiceDesc {
@@ -418,6 +425,7 @@ img {
   vertical-align: middle;
   color: #272727;
   margin: 0;
+  max-width: 380px;
 }
 
 .AboutDiv {
@@ -1782,7 +1790,7 @@ img {
   .Servicename {
     font-size: 31.51px;
     line-height: 34px;
-    margin-bottom: 28.51px;
+    margin-bottom: 24px;
   }
 
   .ServiceDesc {
@@ -2780,8 +2788,13 @@ img {
 
 /* ── Infinite marquee auto-scroll ── */
 @keyframes artistMarquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.3333%);
+  }
 }
 
 .artist-marquee-wrapper {
@@ -2817,11 +2830,9 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.9) 100%);
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s ease;
