@@ -1,10 +1,15 @@
+"use client";
 import React from "react";
 import "./Footer.css";
 import { FaTiktok } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
+
   return (
     <div>
       <div className="galleryContainer">

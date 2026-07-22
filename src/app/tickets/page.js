@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
@@ -17,6 +17,27 @@ export default function TicketsPage() {
     "Asif Ali Khan Santoo",
   ];
   const [activeFilter, setActiveFilter] = useState("All Artists");
+  const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchTickets() {
+      try {
+        const res = await fetch("/api/tickets");
+        const data = await res.json();
+        setTickets(data);
+      } catch (error) {
+        console.error("Failed to load tickets:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchTickets();
+  }, []);
+
+  const filteredTickets = tickets.filter(
+    (ticket) => activeFilter === "All Artists" || ticket.artistName === activeFilter
+  );
 
   return (
     <main>
@@ -71,43 +92,74 @@ export default function TicketsPage() {
         </div>
 
 
-        <div className="ticket-card-container-new-inner-new">
-          <div className="ticket-card-container-new">
-            <div className="ticket-card-date">
-              <p className="ticket-day-num">21</p>
-              <div className="ticket-month-day">
-                <p className="ticket-month">May</p>
-                <p className="ticket-weekday">Sun</p>
+        {loading ? (
+          <p style={{ textAlign: 'center', color: '#fff', marginTop: '2rem' }}>Loading tickets...</p>
+        ) : filteredTickets.length === 0 ? (
+          <div style={{ textAlign: 'center', margin: '4rem auto', padding: '3rem 2rem', width: '100%', maxWidth: '600px', backgroundColor: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '20px', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(141,4,50,0.1), rgba(189,0,64,0.15))', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem' }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BD0040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M9 16l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 style={{ color: '#fff', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
+            <p style={{ color: '#aaa', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2.5rem' }}>
+              There are currently no tickets available for <strong style={{color: '#fff'}}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
+            </p>
+            {activeFilter !== "All Artists" && (
+              <button 
+                onClick={() => setActiveFilter("All Artists")}
+                style={{ padding: '14px 28px', background: 'linear-gradient(90deg, #8D0432, #BD0040)', color: '#fff', border: 'none', borderRadius: '10px', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 8px 20px rgba(189,0,64,0.2)' }}
+                onMouseOver={(e) => { e.target.style.transform = 'scale(1.05)'; e.target.style.boxShadow = '0 12px 25px rgba(189,0,64,0.3)'; }}
+                onMouseOut={(e) => { e.target.style.transform = 'scale(1)'; e.target.style.boxShadow = '0 8px 20px rgba(189,0,64,0.2)'; }}
+              >
+                View All Events
+              </button>
+            )}
+          </div>
+        ) : (
+          filteredTickets.map((ticket) => (
+            <div key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
+              <div className="ticket-card-container-new">
+                <div className="ticket-card-date">
+                  <p className="ticket-day-num">{ticket.dayNum}</p>
+                  <div className="ticket-month-day">
+                    <p className="ticket-month">{ticket.month}</p>
+                    <p className="ticket-weekday">{ticket.weekday}</p>
+                  </div>
+                </div>
+                <div className="ticket-card-divider"></div>
+
+                <div className="ticket-card-info">
+                  <p className="ticket-artist-name">{ticket.artistName}</p>
+                  <p className="ticket-city">{ticket.city}</p>
+                  <p className="ticket-venue">
+                    {ticket.venue.split('\n').map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
+                  </p>
+                  <button type="button" className="ticket-buy-btn">
+                    Buy Tickets Now
+                    <img src="/Images/Navbar/arrow.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+              <div className="ticket-card-media-inner">
+                <img
+                  src={ticket.imageUrl}
+                  alt={ticket.artistName}
+                  className="ticket-card-image"
+                />
               </div>
             </div>
-            <div className="ticket-card-divider"></div>
-
-            <div className="ticket-card-info">
-              <p className="ticket-artist-name">Asim Azhar</p>
-              <p className="ticket-city">Dallas, TX</p>
-              <p className="ticket-venue">
-                Hill Performance Hall, Eisemann Centre
-                <br />
-                2351 Performance Dr, Richardson, TX 75082
-              </p>
-              <button type="button" className="ticket-buy-btn">
-                Buy Tickets Now
-                <img src="/Images/Navbar/arrow.svg" alt="" />
-              </button>
-            </div>
-
-
-
-
-          </div>
-          <div className="ticket-card-media-inner">
-            <img
-              src="/ImagesOpt/Tickets/asim.webp"
-              alt="Asim Azhar"
-              className="ticket-card-image"
-            />
-          </div>
-        </div>
+          ))
+        )}
 
       </div>
 

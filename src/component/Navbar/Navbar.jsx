@@ -97,6 +97,8 @@ export default function Navbar() {
 
   const menuVisible = menuOpen || closing;
 
+  if (pathname.startsWith("/admin")) return null;
+
   return (
     <header className={`navbar-root${scrolled ? " is-scrolled" : ""}`}>
       {/* Desktop — always in DOM, CSS hides on mobile */}

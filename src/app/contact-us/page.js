@@ -1,9 +1,46 @@
+"use client";
+import { useState } from "react";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 
 import "../globals.css";
 
 export default function ContactUsPage() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ fullName: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+  };
+
   return (
     <main>
       <div className="AboutusMain">
@@ -101,7 +138,7 @@ export default function ContactUsPage() {
 
         {/* RIGHT SIDE FORM */}
         <div className="form-border">
-          <div className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div>
               <h3 className="leaveamessage">Leave a Message</h3>
               <p className="form-sub">
@@ -113,8 +150,12 @@ export default function ContactUsPage() {
                   <p className="labelofinput">Full Name</p>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     className="inputbox"
                     placeholder="Enter Full Name"
+                    required
                   />
                 </div>
 
@@ -123,30 +164,46 @@ export default function ContactUsPage() {
                     <p className="labelofinput">Email</p>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="inputbox"
                       placeholder="Enter Email"
+                      required
                     />
                   </div>
                   <div className="inputdivnew">
                     <p className="labelofinput">Phone</p>
                     <input
                       type="number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="inputbox"
                       placeholder="Enter Phone Number"
+                      required
                     />
                   </div>
                 </div>
                 <div className="inputdivnew">
                   <p className="labelofinput">Message</p>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="inputbox textareadesign"
                     placeholder="How can we help you?"
+                    required
                   ></textarea>
                 </div>
               </div>
             </div>
-            <button className="sendmessage">Send Message</button>
-          </div>
+            {status === "success" && <p style={{ color: "#00C853", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Message sent successfully!</p>}
+            {status === "error" && <p style={{ color: "#ff4444", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Failed to send message. Please try again.</p>}
+            <button type="submit" className="sendmessage" disabled={status === "loading"}>
+              {status === "loading" ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
       </div>
     </main>
