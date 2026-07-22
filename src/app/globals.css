@@ -2728,6 +2728,9 @@ img {
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
+  /* Fix corner radius bleeding on Safari/Chrome during animations */
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .aristimagenew {
@@ -2750,6 +2753,12 @@ img {
   background: linear-gradient(180deg,
       rgba(0, 0, 0, 0) 40%,
       rgba(0, 0, 0, 0.85) 100%);
+  transition: opacity 0.35s ease;
+}
+
+.artist-card:hover .artist-overlay {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* TEXT */
@@ -2765,6 +2774,117 @@ img {
   color: #d7d7d7;
 }
 
+/* ── Infinite marquee auto-scroll ── */
+@keyframes artistMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.artist-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 63px;
+}
+
+.artist-marquee-track {
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  padding-left: 85px;
+  width: max-content;
+  animation: artistMarquee 28s linear infinite;
+}
+
+.artist-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Hoverable card ── */
+.artist-card-hoverable {
+  cursor: pointer;
+}
+
+/* ── Hover full overlay ── */
+.artist-hover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+}
+
+.artist-hover-overlay.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artist-hover-name {
+  font-family: Georama-Medium;
+  font-size: 28px;
+  color: #fff;
+  margin: 0;
+}
+
+.artist-hover-role {
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.artist-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 13px 30px;
+  background: #fff;
+  color: #BD0040;
+  border: none;
+  border-radius: 50px;
+  font-family: Montserrat-Regular;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.artist-book-btn:hover {
+  background: #BD0040;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(189, 0, 64, 0.45);
+}
+
+.artist-book-arrow {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.artist-book-btn:hover .artist-book-arrow {
+  transform: translateX(4px);
+}
+
+/* Legacy artist-row (kept for mobile fallback) */
 .artist-row {
   display: flex;
   flex-direction: row;
@@ -2830,10 +2950,19 @@ img {
     padding: 54.4px 79.7px 75.9px 79.7px;
   }
 
-  .artist-row {
+  .artist-row,
+  .artist-marquee-track {
     padding-left: 79.7px;
     padding-bottom: 59.1px;
     gap: 20.6px;
+  }
+
+  .artist-marquee-wrapper {
+    padding-bottom: 59.1px;
+  }
+
+  .artist-marquee-track {
+    padding-bottom: 0;
   }
 
   .artist-card {
@@ -8838,7 +8967,7 @@ img {
 }
 
 .artist-card:hover .aristimagenew {
-  transform: scale(1.06);
+  transform: scale(1);
 }
 
 /* ── Ticket card ── */

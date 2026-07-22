@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import "../globals.css";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 
@@ -10,13 +11,16 @@ const artists = [
   { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/ZainZohaib.webp" },
   { name: "Aima Baig", role: "Singer", img: "/ImagesOpt/Artists/Aima.webp" },
   { name: "Asif Ali Santoo", role: "Singer", img: "/ImagesOpt/Artists/Asif.webp" },
-
 ];
 
+// Duplicate artists for seamless infinite loop (clone trick)
+const infiniteArtists = [...artists, ...artists, ...artists];
+
 export default function ArtistsPage() {
-  const sliderRef = useRef(null);
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 440);
@@ -24,16 +28,6 @@ export default function ArtistsPage() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const scroll = (direction) => {
-    if (sliderRef.current) {
-      const scrollAmount = 458 + 22; // width of card (458) + gap (22)
-      sliderRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
 
   const nextArtist = () => {
     setCurrentIndex((prev) => (prev + 1) % artists.length);
@@ -56,7 +50,7 @@ export default function ArtistsPage() {
       </div>
 
       <div className="artist-section">
-        {/* HEADER */}
+        {/* HEADER — no manual buttons needed for desktop (auto-scroll) */}
         <div className="artist-header">
           <div className="artistnew">
             <div className="ServicesDiv">
@@ -67,27 +61,9 @@ export default function ArtistsPage() {
               className="ArtisticText"
               style={{ maxWidth: "unset", marginBottom: "0px" }}
             >
-              The <span>Artists</span> Behind the <span> Magic </span>
+              The <span>Artists</span> Behind the <span>Magic </span>
             </p>
           </div>
-          {!isMobile && (
-            <div className="slider-btns">
-              <div
-                className="sliderbtn"
-                onClick={() => scroll("left")}
-                style={{ cursor: "pointer" }}
-              >
-                <img src="/Images/Artists/left-arrow.svg" alt="" />
-              </div>
-              <div
-                className="sliderbtngoaway"
-                onClick={() => scroll("right")}
-                style={{ cursor: "pointer" }}
-              >
-                <img src="/Images/Artists/right-arrow.svg" alt="" />
-              </div>
-            </div>
-          )}
         </div>
 
         {/* CARDS */}
@@ -97,7 +73,7 @@ export default function ArtistsPage() {
               <img
                 src={artists[currentIndex].img}
                 className="aristimagenew"
-                alt=""
+                alt={artists[currentIndex].name}
               />
               <div className="artist-overlay">
                 <p className="artist-name">{artists[currentIndex].name}</p>
@@ -122,20 +98,43 @@ export default function ArtistsPage() {
             </div>
           </div>
         ) : (
-          <div className="artist-row" ref={sliderRef}>
-            {artists.map((artist, i) => (
-              <div className="artist-card" key={i}>
-                <img
-                  src={artist.img}
-                  className="aristimagenew"
-                  alt=""
-                />
-                <div className="artist-overlay">
-                  <p className="artist-name">{artist.name}</p>
-                  <p className="artist-role">{artist.role}</p>
+          /* ── Infinite auto-scroll marquee ── */
+          <div className="artist-marquee-wrapper">
+            <div className="artist-marquee-track">
+              {infiniteArtists.map((artist, i) => (
+                <div
+                  className="artist-card artist-card-hoverable"
+                  key={i}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <img
+                    src={artist.img}
+                    className="aristimagenew"
+                    alt={artist.name}
+                  />
+
+                  {/* Default bottom gradient overlay */}
+                  <div className="artist-overlay">
+                    <p className="artist-name">{artist.name}</p>
+                    <p className="artist-role">{artist.role}</p>
+                  </div>
+
+                  {/* Hover full overlay with Book Now button */}
+                  <div className={`artist-hover-overlay${hoveredIndex === i ? " visible" : ""}`}>
+                    <p className="artist-hover-name">{artist.name}</p>
+                    <p className="artist-hover-role">{artist.role}</p>
+                    <button
+                      className="artist-book-btn"
+                      onClick={() => router.push("/contact-us")}
+                    >
+                      Book Now
+                      <span className="artist-book-arrow">→</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -163,7 +162,7 @@ export default function ArtistsPage() {
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
-              <p className="livetext">Cultural & Community Events</p>
+              <p className="livetext">Cultural &amp; Community Events</p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
@@ -172,12 +171,12 @@ export default function ArtistsPage() {
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
               <p className="livetext">
-                Private Celebrations & Special Occasions
+                Private Celebrations &amp; Special Occasions
               </p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
-              <p className="livetext">Artist Development & Promotion</p>
+              <p className="livetext">Artist Development &amp; Promotion</p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
