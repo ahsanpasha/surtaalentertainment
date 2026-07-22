@@ -797,7 +797,7 @@ img {
 }
 
 .straightlinediv {
-  height: 100%;
+  align-self: stretch;
   width: 1px;
   background-color: #ffffff2b;
   position: relative;
