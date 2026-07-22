@@ -99,6 +99,7 @@
 .FooterNavLinks {
   display: flex;
   gap: 40px;
+  margin-left: 70px;
 }
 
 .FooterLink {
@@ -128,7 +129,7 @@
 .FooterSocials {
   display: flex;
   align-items: center;
-  gap: 17.83px;
+  gap: 11px;
 }
 
 .FooterSocials>span {
@@ -325,6 +326,8 @@
 
   .FooterNavLinks {
     gap: 36.4px;
+      margin-left: 50px;
+
   }
 
   .FooterSocials>span {
@@ -650,6 +653,8 @@
 
   .FooterNavLinks {
     gap: 20px;
+      margin-left: 0px;
+
   }
 
   .FooterLink {
