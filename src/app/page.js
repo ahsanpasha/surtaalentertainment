@@ -161,9 +161,10 @@ export default function HomePage() {
           </p>
           <button
             className="SeeHowbtn"
+            onClick={() => router.push("/contact-us")}
             style={{ margin: 0, width: "fit-content" }}
           >
-            Read More
+            Contact Us
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>
@@ -202,7 +203,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Zain Zohaib</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
@@ -228,7 +229,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Asif Ali Khan Santoo</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
@@ -254,7 +255,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Shafqat Amanat Ali</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
@@ -280,7 +281,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Aima Baig</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
@@ -306,7 +307,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Fariha Pervez</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>
@@ -332,7 +333,7 @@ export default function HomePage() {
           <div className="Divmainrow">
             <div className="divrow">
               <p className="starrrname">Asim Azhar</p>
-              <button className="booknowbtn">
+              <button className="booknowbtn" onClick={() => router.push("/contact-us")}>
                 Book Now <img src="/Images/Navbar/arrow.svg" alt="" />
               </button>
             </div>

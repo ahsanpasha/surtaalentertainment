@@ -99,7 +99,7 @@ const Footer = () => {
               href="mailto:info@surtaalusa.com"
               className="ContactItem ContactItem-link"
             >
-              <img src="/Images/Footer/Email.svg" alt="" />
+              <img src="/Images/Footer/email.svg" alt="" />
 
               <div className="ContactText">
                 <span className="ContactLabel">Email</span>
