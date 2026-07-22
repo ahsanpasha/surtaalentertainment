@@ -10,26 +10,26 @@ const EVENTS = [
   {
     day: "22",
     month: "May",
-    weekday: "Sun",
-    city: "Boston, MA",
-    venue: "Berklee Performing Arts Centre",
-    address: "136 Massachusetts Avenue, Boston, MA 02115",
+    weekday: "Mon",
+    city: "Long Island, NY",
+    venue: "Adam’s Playhouse Theatre",
+    address: "118 Hofstra University, Hempstead, NY 11549",
   },
   {
-    day: "21",
+    day: "23",
     month: "May",
-    weekday: "Sun",
-    city: "Boston, MA",
-    venue: "Berklee Performing Arts Centre",
-    address: "136 Massachusetts Avenue, Boston, MA 02115",
+    weekday: "Tue",
+    city: "Atlanta, GA",
+    venue: "Center Stage Theater",
+    address: "1374 West Peachtree Street NW, Atlanta, GA 30309",
   },
   {
-    day: "21",
+    day: "24",
     month: "May",
-    weekday: "Sun",
-    city: "Boston, MA",
-    venue: "Berklee Performing Arts Centre",
-    address: "136 Massachusetts Avenue, Boston, MA 02115",
+    weekday: "Wed",
+    city: "Dallas, TX",
+    venue: "Hill Performance Hall, Eisemann Centre",
+    address: "2351 Performance Dr, Richardson, TX 75082",
   },
 ];
 
@@ -48,13 +48,14 @@ export default function TourEvents() {
           <div key={index}>
             <div className="eventdetail">
               <div className="eventDateCol">
+              
                 <p className="event21">{event.day}</p>
                 <div className="eventMonthDayCol">
                   <p className="eventMonth">{event.month}</p>
                   <p className="eventDay">{event.weekday}</p>
                 </div>
               </div>
-
+  <img src="/Images/EventinSurtaal/linesmall.svg" className="linetourrrrrr" alt="" />
               <div className="spacebtwdiv">
                 <div className="eventLocationCol">
                   <p className="eventCity">{event.city}</p>

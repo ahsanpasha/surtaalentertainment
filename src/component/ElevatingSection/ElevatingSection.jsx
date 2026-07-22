@@ -68,30 +68,57 @@ export default function ElevatingSection() {
     <div className="elevatingdiv">
       <div className="elevatingdivheader">
         <div className="linediv"></div>
+
         <div className="elevating-tabs-row">
+          
+          {/* Entertainment Tab */}
           <button
             type="button"
-            className={`elevating-tab${activeTab === "entertainment" ? " active" : ""}`}
+            className={`elevating-tab ${
+              activeTab === "entertainment" ? " active" : ""
+            }`}
             onClick={() => setActiveTab("entertainment")}
           >
             <span className="elevating-tab-inner">
-              <img
-                src="/Images/AboutUs/arrow.svg"
-                className="arrowdivabout"
-                alt=""
-              />
+              
+              {activeTab === "entertainment" && (
+                <img
+                  src="/Images/AboutUs/arrow.svg"
+                  className="arrowdivabout"
+                  alt=""
+                />
+              )}
+
               <span>{TABS.entertainment.label}</span>
             </span>
           </button>
+
           <div className="linediv elevating-tab-line"></div>
+
+          {/* Academy Tab */}
           <button
             type="button"
-            className={`elevating-tab elevating-tab-secondary${activeTab === "academy" ? " active" : ""}`}
+            className={`elevating-tab elevating-tab-secondary ${
+              activeTab === "academy" ? " active" : ""
+            }`}
             onClick={() => setActiveTab("academy")}
           >
-            {TABS.academy.label}
+            <span className="elevating-tab-inner">
+              
+              {activeTab === "academy" && (
+                <img
+                  src="/Images/AboutUs/arrow.svg"
+                  className="arrowdivabout"
+                  alt=""
+                />
+              )}
+
+              <span>{TABS.academy.label}</span>
+            </span>
           </button>
+
         </div>
+
         <div className="linediv"></div>
       </div>
 
