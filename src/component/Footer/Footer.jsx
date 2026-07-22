@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.css";
-import { RiTwitterXFill } from "react-icons/ri";
+import { FaTiktok } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-import { FaMeta } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
@@ -60,19 +60,28 @@ const Footer = () => {
             </div>
             <div className="FooterSocials">
               <span>Follow Us On:</span>
-              <div className="SocialIcons">
-                <div className="SocialIcon">
-                  <RiTwitterXFill color="currentColor" />
-                </div>
-                <div className="SocialIcon">
+              <div className="SocialIcon">
+                <a href="https://www.tiktok.com/@surtaalentusa" target="_blank" rel="noopener noreferrer">
+                  <FaTiktok color="currentColor" />
+                </a>
+              </div>
+
+              <div className="SocialIcon">
+                <a href="https://www.instagram.com/surtaalentertainment/?hl=en" target="_blank" rel="noopener noreferrer">
                   <FaInstagram color="currentColor" />
-                </div>
-                <div className="SocialIcon">
+                </a>
+              </div>
+
+              <div className="SocialIcon">
+                <a href="https://www.facebook.com/SurTaalUSA/" target="_blank" rel="noopener noreferrer">
                   <FaFacebook color="currentColor" />
-                </div>
-                <div className="SocialIcon">
-                  <FaMeta color="currentColor" />
-                </div>
+                </a>
+              </div>
+
+              <div className="SocialIcon">
+                <a href="https://www.youtube.com/@SurtaalEntertainmentUSA" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube color="currentColor" />
+                </a>
               </div>
             </div>
           </div>
@@ -108,16 +117,27 @@ const Footer = () => {
             <span className="FollowUsText">Follow us on:</span>
             <div className="SocialIcons">
               <div className="SocialIcon">
-                <RiTwitterXFill color="currentColor" />
+                <a href="https://www.tiktok.com/@surtaalentusa" target="_blank" rel="noopener noreferrer">
+                  <FaTiktok color="currentColor" />
+                </a>
               </div>
+
               <div className="SocialIcon">
-                <FaInstagram color="currentColor" />
+                <a href="https://www.instagram.com/surtaalentertainment/?hl=en" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram color="currentColor" />
+                </a>
               </div>
+
               <div className="SocialIcon">
-                <FaFacebook color="currentColor" />
+                <a href="https://www.facebook.com/SurTaalUSA/" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook color="currentColor" />
+                </a>
               </div>
+
               <div className="SocialIcon">
-                <FaMeta color="currentColor" />
+                <a href="https://www.youtube.com/@SurtaalEntertainmentUSA" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube color="currentColor" />
+                </a>
               </div>
             </div>
           </div>

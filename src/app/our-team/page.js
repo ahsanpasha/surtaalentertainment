@@ -7,25 +7,25 @@ const teamMembers = [
   {
     name: "Ashkenaz Vincent",
     position: "Founder & CEO",
-    desc: "Visionary leader driving Surtaal mission to deliver world-class entertainment and cultural experiences.",
+    desc: "Leads organizational vision, drives strategic growth, and builds lasting partnerships to shape the company’s future.",
     img: "/ImagesOpt/OurTeam/team1.webp"
   },
   {
     name: "Anosh Vincent",
     position: "Head of Operations",
-    desc: "Oversees event planning and operations, ensuring every production runs smoothly and successfully.",
+    desc: "Oversees daily operations, streamlines workflows, and ensures seamless execution across teams with operational excellence.",
     img: "/ImagesOpt/OurTeam/team2.webp"
   },
   {
     name: "Rimla Qamar",
-    position: "Director of Sales & Strategy",
-    desc: "Leads business growth, partnerships, and strategic initiatives to expand the Surtaal brand.",
+    position: "Director of Operations & Strategy",
+    desc: "Develops strategic initiatives, optimizes operations, handles ticketing, and aligns organizational goals with sustainable long-term growth.",
     img: "/ImagesOpt/OurTeam/team3.webp"
   },
   {
     name: "Elia Ijjaaz",
-    position: "Production Director",
-    desc: "Manages production and creative execution to deliver exceptional live event experiences.",
+    position: "Director of Marketing & Communications",
+    desc: " Leads brand strategy, marketing campaigns, and communications to strengthen audience engagement and business visibility.",
     img: "/ImagesOpt/OurTeam/team4.webp"
   }
 ];

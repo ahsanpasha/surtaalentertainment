@@ -1,7 +1,6 @@
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-import { FaMeta } from "react-icons/fa6";
+
 import "../globals.css";
 
 export default function ContactUsPage() {
@@ -61,81 +60,41 @@ export default function ContactUsPage() {
           <div className="socials">
             <p className="followtext">Follow Us On:</p>
             <div className="icons">
-              <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
 
-                <RiTwitterXFill className="fillcolor" />
+              {/* Gradient (sirf ek dafa define karo) */}
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient id="iconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#8D0432" />
+                    <stop offset="100%" stopColor="#BD0040" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div className="socialicondiv">
+                <a href="https://www.tiktok.com/@surtaalentusa" target="_blank" rel="noopener noreferrer">
+                  <FaTiktok className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaInstagram className="fillcolor" />
+                <a href="https://www.instagram.com/surtaalentertainment/?hl=en" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaFacebook className="fillcolor" />
+                <a href="https://www.facebook.com/SurTaalUSA/" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaMeta className="fillcolor" />
+                <a href="https://www.youtube.com/@SurtaalEntertainmentUSA" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube className="fillcolor" />
+                </a>
               </div>
+
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaInstagram } from "react-icons/fa6";
+
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-import { FaMeta } from "react-icons/fa6";
+
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 import "../globals.css";
 
@@ -49,7 +49,8 @@ export default function TicketsPage() {
           <p className="ServicesText">Upcoming Events</p>
         </div>
         <p className="WhatWeOffer">
-          Discover <span>Live Music Events </span>Across the <span>USA & Canada</span>
+          Discover <span>Live Music Events </span>Across the
+          <br /><span>USA & Canada</span>
         </p>
         <p className="ServiceDescTop">
           Discover our latest concerts and live performances happening across the USA & Canada. Select an event below to view details, seating options, and ticket availability.
@@ -196,12 +197,10 @@ export default function TicketsPage() {
             <p className="ServicesText">contact us</p>
           </div>
           <p className="BringingText">
-            Get In <span>Touch</span>
+            Need <span>Assistance</span>?
           </p>
           <p className="AboutDesc">
-            We'd love to hear from you! Reach out to explore collaboration
-            opportunities with Surtaal Entertainment. Let's bring unforgettable
-            South Asian music experiences to the world.
+            We'd love to hear from you! Reach out to explore collaboration opportunities with Surtaal Entertainment. Let's bring unforgettable South Asian music experiences to the world.
           </p>
           <div className="maindivstructure">
             <div className="contact-item-my">
@@ -233,81 +232,41 @@ export default function TicketsPage() {
           <div className="socials">
             <p className="followtext">Follow Us On:</p>
             <div className="icons">
-              <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
 
-                <RiTwitterXFill className="fillcolor" />
+              {/* Gradient (sirf ek dafa define karo) */}
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient id="iconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#8D0432" />
+                    <stop offset="100%" stopColor="#BD0040" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div className="socialicondiv">
+                <a href="https://www.tiktok.com/@surtaalentusa" target="_blank" rel="noopener noreferrer">
+                  <FaTiktok className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaInstagram className="fillcolor" />
+                <a href="https://www.instagram.com/surtaalentertainment/?hl=en" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaFacebook className="fillcolor" />
+                <a href="https://www.facebook.com/SurTaalUSA/" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook className="fillcolor" />
+                </a>
               </div>
 
               <div className="socialicondiv">
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#8D0432" />
-                      <stop offset="100%" stopColor="#BD0040" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <FaMeta className="fillcolor" />
+                <a href="https://www.youtube.com/@SurtaalEntertainmentUSA" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube className="fillcolor" />
+                </a>
               </div>
+
             </div>
           </div>
         </div>

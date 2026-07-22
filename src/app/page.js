@@ -4,7 +4,7 @@ import TourEvents from "../component/TourEvents/TourEvents";
 import SuccessStats from "../component/SuccessStats/SuccessStats";
 import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-
+import { useRouter } from "next/navigation";
 const services = [
   {
     img: "/ImagesOpt/EventinSurtaal/Service1.webp",
@@ -31,7 +31,7 @@ const services = [
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 440);
     handleResize();
@@ -65,8 +65,11 @@ export default function HomePage() {
           Let every beat inspire your soul as Surtaal brings music, energy, and
           passion together in perfect harmony.
         </p>
-        <button className="SeeHowbtn">
-          See How it Works
+        <button
+          className="SeeHowbtn"
+          onClick={() => router.push("/tickets")}
+        >
+          Buy Tickets
           <img src="/Images/Navbar/arrow.svg" alt="" />
         </button>
       </div>
