@@ -9709,3 +9709,61 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Zain Zohaib Canada Heading ── */
+.zain-canada-heading {
+  font-family: "Georama-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 57px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.zain-red {
+  color: #BD0040;
+}
+
+.zain-dark {
+  color: #272727;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .zain-canada-heading {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 768px) {
+  .zain-canada-heading {
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.015em;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  .zain-canada-heading {
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Extra small */
+@media (max-width: 360px) {
+  .zain-canada-heading {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}

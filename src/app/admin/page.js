@@ -23,6 +23,7 @@ export default function AdminPage() {
     city: "",
     venue: "",
     imageUrl: "",
+    link: "",
   });
   const [addStatus, setAddStatus] = useState(null);
 
@@ -106,6 +107,7 @@ export default function AdminPage() {
           city: "",
           venue: "",
           imageUrl: "",
+          link: "",
         });
         fetchDashboardData(); // Refresh list
         setTimeout(() => setAddStatus(null), 3000);
@@ -459,6 +461,11 @@ export default function AdminPage() {
                             <div>
                                 <p style={{ color: "#aaa", fontSize: "0.85rem", fontWeight: "600", marginBottom: "6px" }}>Cover Image URL</p>
                                 <input type="text" name="imageUrl" value={formData.imageUrl} onChange={handleChange} className="admin-input" placeholder="e.g. /ImagesOpt/Tickets/asim.webp" required />
+                            </div>
+
+                            <div>
+                                <p style={{ color: "#aaa", fontSize: "0.85rem", fontWeight: "600", marginBottom: "6px" }}>Ticket Purchase Link</p>
+                                <input type="url" name="link" value={formData.link} onChange={handleChange} className="admin-input" placeholder="e.g. https://www.ticketmaster.com/..." />
                             </div>
 
                             <button type="submit" disabled={addStatus === "loading"} className="admin-btn-primary" style={{ marginTop: "10px", opacity: addStatus === "loading" ? 0.7 : 1 }}>

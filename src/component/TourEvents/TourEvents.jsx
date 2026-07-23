@@ -1,40 +1,45 @@
 "use client"
-import { useRouter } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 const EVENTS = [
   {
-    day: "21",
-    month: "May",
+    day: "01",
+    month: "Oct",
+    weekday: "Thu",
+    city: "Toronto, ON",
+    venue: "Queen Elizabeth Theatre",
+    address: "190 Princes' Blvd Toronto, ON M6K 3C3",
+    link: "https://admitone.com/events/zain-zohaib-toronto-171655",
+  },
+  {
+    day: "02",
+    month: "Oct",
+    weekday: "Fri",
+    city: "TBD",
+    venue: "",
+    address: "",
+    link: "",
+  },
+  {
+    day: "03",
+    month: "Oct",
+    weekday: "Sat",
+    city: "Calgary, AB",
+    venue: "Bella Concert Hall",
+    address: "18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
+    link: "",
+  },
+  {
+    day: "04",
+    month: "Oct",
     weekday: "Sun",
-    city: "Boston, MA",
-    venue: "Berklee Performing Arts Centre",
-    address: "136 Massachusetts Avenue, Boston, MA 02115",
-  },
-  {
-    day: "22",
-    month: "May",
-    weekday: "Mon",
-    city: "Long Island, NY",
-    venue: "Adam’s Playhouse Theatre",
-    address: "118 Hofstra University, Hempstead, NY 11549",
-  },
-  {
-    day: "23",
-    month: "May",
-    weekday: "Tue",
-    city: "Atlanta, GA",
-    venue: "Center Stage Theater",
-    address: "1374 West Peachtree Street NW, Atlanta, GA 30309",
-  },
-  {
-    day: "24",
-    month: "May",
-    weekday: "Wed",
-    city: "Dallas, TX",
-    venue: "Hill Performance Hall, Eisemann Centre",
-    address: "2351 Performance Dr, Richardson, TX 75082",
+    city: "Vancouver, BC",
+    venue: "Bell Performing Arts Centre",
+    address: "6250 144 St, Surrey, BC V3X 1A2",
+    link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
   },
 ];
 
@@ -47,6 +52,7 @@ export default function TourEvents() {
       once: true,
     });
   }, []);
+
   return (
     <div className="Oureventdiv">
       <div className="ServicesDiv" style={{ width: "fit-content" }} data-aos="fade-down">
@@ -54,14 +60,13 @@ export default function TourEvents() {
         <p className="ServicesText">our events</p>
       </div>
       <p className="WhatWeOffer" data-aos="fade-down">
-        <span>Zain Zohaib</span> USA Tour <span>2026</span>
+        <span>Zain Zohaib</span> Canada Tour <span>2026</span>
       </p>
       <div className="MainEventDiv">
         {EVENTS.map((event, index) => (
           <div key={index} data-aos="fade-right">
             <div className="eventdetail">
               <div className="eventDateCol">
-
                 <p className="event21">{event.day}</p>
                 <div className="eventMonthDayCol">
                   <p className="eventMonth">{event.month}</p>
@@ -74,18 +79,27 @@ export default function TourEvents() {
                   <p className="eventCity">{event.city}</p>
                   <p className="eventAddress">
                     {event.venue}
-                    <br />
+                    {event.venue && event.address && <br />}
                     {event.address}
                   </p>
                 </div>
-                <button type="button" className="BuyTicketsbtn">
-                  Buy Tickets Now
-                  <img src="/Images/Navbar/arrowred.svg" alt="" className="arrow-red" />
-                  <img src="/Images/Navbar/arrow.svg" alt="" className="arrow-white" />
-                </button>
+                {event.link && (
+                  <a
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <button type="button" className="BuyTicketsbtn">
+                      Buy Tickets Now
+                      <img src="/Images/Navbar/arrowred.svg" alt="" className="arrow-red" />
+                      <img src="/Images/Navbar/arrow.svg" alt="" className="arrow-white" />
+                    </button>
+                  </a>
+                )}
               </div>
             </div>
-            {index < EVENTS.length - 0 && <div className="linetour"></div>}
+            {index < EVENTS.length - 1 && <div className="linetour"></div>}
           </div>
         ))}
       </div>

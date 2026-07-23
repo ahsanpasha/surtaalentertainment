@@ -36,7 +36,7 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { artistName, dayNum, month, weekday, city, venue, imageUrl } = body;
+    const { artistName, dayNum, month, weekday, city, venue, imageUrl, link } = body;
 
     if (!artistName || !dayNum || !month || !city || !venue) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -51,6 +51,7 @@ export async function POST(req) {
       city,
       venue,
       imageUrl: imageUrl || "",
+      link: link || "",
       createdAt: new Date().toISOString(),
     };
 

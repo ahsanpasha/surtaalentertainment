@@ -117,47 +117,67 @@ export default function TicketsPage() {
 
           </div>
         ) : (
-          filteredTickets.map((ticket) => (
-            <div
-              data-aos="fade-right"
-              key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
-              <div className="ticket-card-container-new">
-                <div className="ticket-card-date">
-                  <p className="ticket-day-num">{ticket.dayNum}</p>
-                  <div className="ticket-month-day">
-                    <p className="ticket-month">{ticket.month}</p>
-                    <p className="ticket-weekday">{ticket.weekday}</p>
+          <>
+            {/* Special heading for Zain Zohaib */}
+            {filteredTickets.some((t) => t.artistName === "Zain Zohaib") && (
+              <h2 className="zain-canada-heading" style={{ color: "#272727" }} data-aos="fade-down">
+                <span className="zain-red">Zain Zohaib </span>Live in
+                <br />
+                <span className="zain-red">Canada </span>2026
+              </h2>
+            )}
+            {filteredTickets.map((ticket) => (
+              <div
+                data-aos="fade-right"
+                key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
+                <div className="ticket-card-container-new">
+                  <div className="ticket-card-date">
+                    <p className="ticket-day-num">{ticket.dayNum}</p>
+                    <div className="ticket-month-day">
+                      <p className="ticket-month">{ticket.month}</p>
+                      <p className="ticket-weekday">{ticket.weekday}</p>
+                    </div>
+                  </div>
+                  <div className="ticket-card-divider"></div>
+
+                  <div className="ticket-card-info">
+                    <p className="ticket-artist-name">{ticket.artistName}</p>
+                    <p className="ticket-city">{ticket.city}</p>
+                    <p className="ticket-venue">
+                      {ticket.venue.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </p>
+                    {ticket.link && (
+                      <a
+                        href={ticket.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <button type="button" className="ticket-buy-btn">
+                          Buy Tickets Now
+                          <img src="/Images/Navbar/arrow.svg" alt="" />
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
-                <div className="ticket-card-divider"></div>
-
-                <div className="ticket-card-info">
-                  <p className="ticket-artist-name">{ticket.artistName}</p>
-                  <p className="ticket-city">{ticket.city}</p>
-                  <p className="ticket-venue">
-                    {ticket.venue.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}
-                  </p>
-                  <button type="button" className="ticket-buy-btn">
-                    Buy Tickets Now
-                    <img src="/Images/Navbar/arrow.svg" alt="" />
-                  </button>
+                <div className="ticket-card-media-inner">
+                  <img
+                    src={ticket.imageUrl}
+                    alt={ticket.artistName}
+                    className="ticket-card-image"
+                  />
                 </div>
               </div>
-              <div className="ticket-card-media-inner">
-                <img
-                  src={ticket.imageUrl}
-                  alt={ticket.artistName}
-                  className="ticket-card-image"
-                />
-              </div>
-            </div>
-          ))
+            ))}
+          </>
         )}
+
 
       </div>
 
