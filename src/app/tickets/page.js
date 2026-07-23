@@ -75,8 +75,8 @@ export default function TicketsPage() {
           <p className="ServicesText">Upcoming Events</p>
         </div>
         <p className="WhatWeOffer" data-aos="fade-down">
-          Discover <span>Live Music Events </span>Across the
-          <br /><span>USA & Canada</span>
+          Discover <span>Live Music Events </span>
+          {/* Across the          <br /><span>USA & Canada</span> */}
         </p>
         <p className="ServiceDescTop" data-aos="fade-down">
           Discover our latest concerts and live performances happening across the USA & Canada. Select an event below to view details, seating options, and ticket availability.
@@ -230,13 +230,13 @@ export default function TicketsPage() {
           <p className="storytext">our story</p>
         </div>
         <p
-        data-aos="fade-down"
-        className="storyline">
+          data-aos="fade-down"
+          className="storyline">
           Music Unites Here with <span>Surtaal</span>
         </p>
         <p
-        data-aos="fade-down"
-        className="foundedtext">
+          data-aos="fade-down"
+          className="foundedtext">
           Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
