@@ -5,6 +5,8 @@ import SuccessStats from "../component/SuccessStats/SuccessStats";
 import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useRouter } from "next/navigation";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const services = [
   {
     img: "/ImagesOpt/EventinSurtaal/Service1.webp",
@@ -51,21 +53,37 @@ export default function HomePage() {
     setCurrentIndex(index);
   };
 
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main>
       <div className="MainHome">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">Celebrate Culture & Music</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           Feel the Rhythm with <span>Surtaal</span>.
         </p>
-        <p className="Leteverytext">
+        <p className="Leteverytext" data-aos="fade-down" data-aos-delay="400">
           Let every beat inspire your soul as Surtaal brings music, energy, and
           passion together in perfect harmony.
         </p>
         <button
+          data-aos="fade-down" data-aos-delay="600"
           className="SeeHowbtn"
           onClick={() => router.push("/tickets")}
         >
@@ -76,18 +94,18 @@ export default function HomePage() {
 
       {/* what we offer */}
       <div className="ourServices">
-        <div className="ServicesDiv">
+        <div className="ServicesDiv" data-aos="fade-down">
           <div className="CircleServices"></div>
           <p className="ServicesText">our services</p>
         </div>
-        <p className="WhatWeOffer">
+        <p className="WhatWeOffer" data-aos="fade-down" >
           what we <span>offer</span>
         </p>
-        <p className="ServiceDescTop">
+        <p className="ServiceDescTop" data-aos="fade-down" >
           SurTaal Entertainment provides a platform for our audience where
           they can experience live performance from their favorite Artists
         </p>
-        <div className="ServiceCards">
+        <div className="ServiceCards" data-aos="fade-right" >
           {isMobile ? (
             <div className="ServiceCardsDiv">
               <img
@@ -111,7 +129,7 @@ export default function HomePage() {
           )}
         </div>
         {isMobile && (
-          <div className="services-nav">
+          <div className="services-nav" data-aos="fade-down" data-aos-delay="400">
             <button
               className={`services-arrow ${currentIndex > 0 ? 'active' : ''}`}
               onClick={prevSlide}
@@ -138,17 +156,17 @@ export default function HomePage() {
       </div>
 
       {/* About */}
-      <div className="AboutDiv" style={{ backgroundColor: "#E6E6E5" }}>
+      <div className="AboutDiv" style={{ backgroundColor: "#E6E6E5" }} >
         <img src="/ImagesOpt/EventinSurtaal/about.webp" alt="About Surtaal" />
-        <div className="SecondAbout">
-          <div className="ServicesDiv" style={{ width: "fit-content" }}>
+        <div className="SecondAbout" data-aos="fade-down" data-aos-delay="100">
+          <div className="ServicesDiv" style={{ width: "fit-content" }} >
             <div className="CircleServices"></div>
             <p className="ServicesText">About Surtaal Entertainment</p>
           </div>
           <p className="BringingText">
             We are bringing <span>Culture</span> & <span>Music</span> to Life
           </p>
-          <p className="AboutDesc">
+          <p className="AboutDesc" >
             Surtaal Entertainment brings the vibrant energy of South Asian music
             and culture to life. From intimate gatherings to large-scale
             productions, we create unforgettable experiences that fuse tradition
@@ -160,7 +178,8 @@ export default function HomePage() {
             corporate gala — Surtaal turns every moment into a celebration.
           </p>
           <button
-            className="SeeHowbtn"
+
+            className="SeeHowbtn contactbtn"
             onClick={() => router.push("/contact-us")}
             style={{ margin: 0, width: "fit-content" }}
           >
@@ -173,7 +192,7 @@ export default function HomePage() {
       {/* entertainment club */}
       <div>
         <div className="EntertainmentDiv">
-          <div className="SurtaalMainRow">
+          <div className="SurtaalMainRow" data-aos="fade-down">
             <div className="SurtaalMainCol">
               <div className="storyDiv" style={{ width: "fit-content" }}>
                 <div className="CircleServices"></div>
@@ -195,7 +214,7 @@ export default function HomePage() {
 
         <div className="DividerEntertainment"></div>
         {/* artist01 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -221,7 +240,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
 
         {/* artist02 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -247,7 +266,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
 
         {/* artist03 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -273,7 +292,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
 
         {/* artist04 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -299,7 +318,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
 
         {/* artist05 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -325,7 +344,7 @@ export default function HomePage() {
         <div className="DividerEntertainment"></div>
 
         {/* artist06 */}
-        <div className="entertainmentartistbox">
+        <div className="entertainmentartistbox" data-aos="fade-right">
           <div className="straightlinediv">
             <div className="circleentertainment"></div>
           </div>
@@ -366,14 +385,14 @@ export default function HomePage() {
 
       {/* story */}
       <div className="OurStorySection">
-        <div className="storyDiv" style={{ width: "fit-content" }}>
+        <div className="storyDiv" style={{ width: "fit-content" }} data-aos="fade-down">
           <div className="CircleServices"></div>
           <p className="storytext">our story</p>
         </div>
-        <p className="storyline">
+        <p className="storyline" data-aos="fade-down">
           Music Unites Here with <span>Surtaal</span>
         </p>
-        <p className="foundedtext">
+        <p className="foundedtext" data-aos="fade-down">
           Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.

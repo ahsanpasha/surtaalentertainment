@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Footer.css";
 import { FaTiktok } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Footer = () => {
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
@@ -16,6 +19,13 @@ const Footer = () => {
     { href: '/artists', label: 'Artists' },
     { href: '/our-team', label: 'Our Team' }
   ];
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
   return (
     <div>
@@ -51,7 +61,7 @@ const Footer = () => {
       </div>
 
       <div className="FooterWrapper">
-        <div className="FooterInfoContainer">
+        <div className="FooterInfoContainer" data-aos="fade-up">
           {/* Desktop Layout */}
           <div className="FooterTop FooterTopDesktop">
             <img src="/Images/Navbar/Logo.svg" alt="Surtaal Entertainment" />

@@ -1,5 +1,8 @@
 "use client"
 import { useRouter } from "next/navigation";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const EVENTS = [
   {
     day: "21",
@@ -37,28 +40,35 @@ const EVENTS = [
 
 export default function TourEvents() {
   const router = useRouter();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
     <div className="Oureventdiv">
-      <div className="ServicesDiv" style={{ width: "fit-content" }}>
+      <div className="ServicesDiv" style={{ width: "fit-content" }} data-aos="fade-down">
         <div className="CircleServices"></div>
         <p className="ServicesText">our events</p>
       </div>
-      <p className="WhatWeOffer">
+      <p className="WhatWeOffer" data-aos="fade-down">
         <span>Zain Zohaib</span> USA Tour <span>2026</span>
       </p>
       <div className="MainEventDiv">
         {EVENTS.map((event, index) => (
-          <div key={index}>
+          <div key={index} data-aos="fade-right">
             <div className="eventdetail">
               <div className="eventDateCol">
-              
+
                 <p className="event21">{event.day}</p>
                 <div className="eventMonthDayCol">
                   <p className="eventMonth">{event.month}</p>
                   <p className="eventDay">{event.weekday}</p>
                 </div>
               </div>
-  <img src="/Images/EventinSurtaal/linesmall.svg" className="linetourrrrrr" alt="" />
+              <img src="/Images/EventinSurtaal/linesmall.svg" className="linetourrrrrr" alt="" />
               <div className="spacebtwdiv">
                 <div className="eventLocationCol">
                   <p className="eventCity">{event.city}</p>
@@ -83,8 +93,9 @@ export default function TourEvents() {
       <button
         type="button"
         className="SeeHowbtn"
+        data-aos="fade-down"
         style={{ margin: 0 }}
-          onClick={() => router.push("/tickets")}
+        onClick={() => router.push("/tickets")}
       >
         View All Events
         <img src="/Images/Navbar/arrow.svg" alt="" />

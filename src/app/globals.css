@@ -52,7 +52,7 @@ body {
 }
 
 /* ── Scroll reveal — light motion only, NEVER hide content / no layout gap ── */
-.scroll-reveal {
+/* .scroll-reveal {
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
@@ -63,7 +63,7 @@ body {
 .scroll-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 html.reduce-motion .scroll-reveal {
   transform: none;
@@ -2012,10 +2012,13 @@ img {
 }
 
 .aboutuslower {
-   background-image: url("/Images/EventinSurtaal/bg (1).webp");
-  background-size: 100% 100%;       /* full width + height cover */
-  background-position: center;  /* center se align */
-  background-repeat: no-repeat; /* repeat na ho */
+  background-image: url("/Images/EventinSurtaal/bg (1).webp");
+  background-size: 100% 100%;
+  /* full width + height cover */
+  background-position: center;
+  /* center se align */
+  background-repeat: no-repeat;
+  /* repeat na ho */
   padding: 74px 107px;
   display: flex;
   flex-direction: row;
@@ -5003,7 +5006,8 @@ img {
     gap: 17.5px;
     max-width: 100%;
   }
-  .spacebtwdiv{
+
+  .spacebtwdiv {
     margin-left: 0px;
   }
 
@@ -6189,9 +6193,11 @@ img {
   .spacebtwdiv {
     gap: 0px;
   }
-.linetourrrrrr{
-  display:flex ;
-}
+
+  .linetourrrrrr {
+    display: flex;
+  }
+
   .event21 {
     font-size: 32px;
     line-height: 100%;
@@ -6270,13 +6276,13 @@ img {
     letter-spacing: 2%;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
 
   .ServiceDesc {
     font-family: Montserrat-Regular;
     font-weight: 400;
-    font-size: 13.49px;
+    font-size: 12px;
     line-height: 22.93px;
     letter-spacing: 0%;
     text-align: center;
@@ -8887,8 +8893,8 @@ img {
   }
 }
 
-/* Hero entrance — load only */
-.MainHome>*,
+
+/* .MainHome>*,
 .AboutusMain>* {
   animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -8911,7 +8917,7 @@ img {
 .MainHome>*:nth-child(4),
 .AboutusMain>*:nth-child(4) {
   animation-delay: 0.35s;
-}
+} */
 
 /* Badge dot pulse — hero only */
 .MainHome .CircleDiv,
@@ -9184,9 +9190,7 @@ img {
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.aboutuslower:hover .aboutimage,
-.offerartist:hover .offerartistimg,
-.AboutDiv:hover>img {
+.aboutuslower:hover .aboutimage {
   transform: scale(1.02);
 }
 

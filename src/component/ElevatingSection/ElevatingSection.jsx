@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TABS = {
   entertainment: {
@@ -64,9 +66,16 @@ export default function ElevatingSection() {
   const [activeTab, setActiveTab] = useState("entertainment");
   const content = TABS[activeTab];
 
+useEffect(() => {
+  AOS.init({
+    duration: 800, 
+    once: true,  
+  });
+}, []);
+
   return (
     <div className="elevatingdiv">
-      <div className="elevatingdivheader">
+      <div className="elevatingdivheader" data-aos="fade-down">
         <div className="linediv"></div>
 
         <div className="elevating-tabs-row">
@@ -122,13 +131,14 @@ export default function ElevatingSection() {
         <div className="linediv"></div>
       </div>
 
-      <div className="acrossnorthdiv">
+      <div className="acrossnorthdiv" data-aos="fade-down">
         <div
           className="ServicesDiv"
           style={{
             background: "#FFFFFF1C",
             boxShadow: "0px 4px 15px 0px #00000040",
           }}
+       
         >
           <div className="CircleServices"></div>
           <p className="ServicesText" style={{ color: "#FFFFFF" }}>
@@ -136,7 +146,9 @@ export default function ElevatingSection() {
           </p>
         </div>
 
-        <div className="elevating-content-panel" key={activeTab}>
+        <div 
+       
+        className="elevating-content-panel" key={activeTab}>
           <p className="ElevatingEntertainmentText">{content.title}</p>
           <p className="AboutUSDesc-new">{content.body}</p>
         </div>

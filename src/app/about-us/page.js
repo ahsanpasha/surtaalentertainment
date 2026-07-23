@@ -1,19 +1,32 @@
+"use client";
 import "../globals.css";
 import ElevatingSection from "../../component/ElevatingSection/ElevatingSection";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AboutUsPage() {
+
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+  }, []);
   return (
     <main>
       <div className="AboutusMain">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">About Us</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           What is <span>Surtaal</span> Entertainment?
         </p>
-        <p className="aboutuspara">
+        <p className="aboutuspara" data-aos="fade-down" data-aos-delay="400">
           Concept: Founded in 2019, Surtaal Entertainment came into being
           with the sole purpose of promoting the best of the best in the music
           world through live events in North America. <br />
@@ -32,11 +45,12 @@ export default function AboutUsPage() {
 
       <div className="aboutuslower">
         <img
+          data-aos="fade-right"
           src="/ImagesOpt/AboutUs/aboususimage.webp"
           className="aboutimage"
           alt=""
         />
-        <div>
+        <div data-aos="fade-down"  >
           <div className="ServicesDiv">
             <div className="CircleServices"></div>
             <p className="ServicesText">our services</p>
@@ -71,15 +85,21 @@ export default function AboutUsPage() {
       </div>
 
       <ElevatingSection />
-      <div className="OurStorySection">
-        <div className="storyDiv" style={{ width: "fit-content" }}>
+      <div className="OurStorySection" >
+        <div
+          data-aos="fade-down"
+          className="storyDiv" style={{ width: "fit-content" }}>
           <div className="CircleServices"></div>
           <p className="storytext">our story</p>
         </div>
-        <p className="storyline">
+        <p
+          data-aos="fade-down"
+          className="storyline">
           Music Unites Here with <span>Surtaal</span>
         </p>
-        <p className="foundedtext">
+        <p
+          data-aos="fade-down"
+          className="foundedtext">
           Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.

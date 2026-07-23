@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-
 import "../globals.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -41,20 +42,27 @@ export default function ContactUsPage() {
     }
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
     <main>
       <div className="AboutusMain">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">Contact Us Now</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           Connect with <span> Surtaal </span><br /> Entertainment
         </p>
       </div>
       <div className="contact-section">
         {/* LEFT SIDE */}
-        <div className="contact-left">
+        <div className="contact-left" data-aos="fade-right">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
             <p className="ServicesText">contact us</p>
@@ -137,7 +145,7 @@ export default function ContactUsPage() {
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <div className="form-border">
+        <div className="form-border" data-aos="fade-left">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div>
               <h3 className="leaveamessage">Leave a Message</h3>

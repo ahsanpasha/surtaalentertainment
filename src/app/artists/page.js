@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import "../globals.css";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const artists = [
   { name: "Asim Azhar", role: "Singer", img: "/ImagesOpt/Artists/Asim.webp" },
@@ -39,14 +41,29 @@ export default function ArtistsPage() {
     setCurrentIndex((prev) => (prev - 1 + artists.length) % artists.length);
   };
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <main>
       <div className="AboutusMain">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">Artists</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           Where <span>Music</span> Meets the magic
         </p>
       </div>
@@ -54,7 +71,7 @@ export default function ArtistsPage() {
       <div className="artist-section">
         {/* HEADER — no manual buttons needed for desktop (auto-scroll) */}
         <div className="artist-header">
-          <div className="artistnew">
+          <div className="artistnew" data-aos="fade-down">
             <div className="ServicesDiv">
               <div className="CircleServices"></div>
               <p className="ServicesText">our services</p>
@@ -70,7 +87,7 @@ export default function ArtistsPage() {
 
         {/* CARDS */}
         {isMobile ? (
-          <div className="artist-mobile-container">
+          <div className="artist-mobile-container" data-aos="fade-down">
             <div className="artist-card">
               <img
                 src={artists[currentIndex].img}
@@ -147,7 +164,7 @@ export default function ArtistsPage() {
           className="offerartistimg"
           alt="About Surtaal"
         />
-        <div className="SecondAboutartist">
+        <div className="SecondAboutartist" data-aos="fade-down">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
             <p className="ServicesText">what we offer</p>
@@ -190,14 +207,14 @@ export default function ArtistsPage() {
       </div>
 
       <div className="OurStorySection">
-        <div className="storyDiv" style={{ width: "fit-content" }}>
+        <div className="storyDiv" style={{ width: "fit-content" }} data-aos="fade-down">
           <div className="CircleServices"></div>
           <p className="storytext">our story</p>
         </div>
-        <p className="storyline">
+        <p className="storyline" data-aos="fade-down">
           Music Unites Here with <span>Surtaal</span>
         </p>
-        <p className="foundedtext">
+        <p className="foundedtext" data-aos="fade-down">
           Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.

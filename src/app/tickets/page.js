@@ -1,12 +1,11 @@
 "use client";
-
 import { useState, useEffect } from "react";
-
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 import "../globals.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function TicketsPage() {
   const artistFilters = [
@@ -39,9 +38,15 @@ export default function TicketsPage() {
     (ticket) => activeFilter === "All Artists" || ticket.artistName === activeFilter
   );
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
     <main>
-      <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
+      < svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
         <defs>
           <clipPath id="ticket-media-clip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
@@ -51,29 +56,29 @@ export default function TicketsPage() {
 
 
       <div className="AboutusMain">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">Tickets</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           What is <span>Seat</span> for an <br /><span> Unforgettable </span>Experience
         </p>
-        <p className="aboutuspara">
+        <p className="aboutuspara" data-aos="fade-down" data-aos-delay="400">
           From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal's upcoming events.
         </p>
       </div>
 
 
       <div className="discoverlivemusic">
-        <div className="ServicesDiv">
+        <div className="ServicesDiv" data-aos="fade-down">
           <div className="CircleServices"></div>
           <p className="ServicesText">Upcoming Events</p>
         </div>
-        <p className="WhatWeOffer">
+        <p className="WhatWeOffer" data-aos="fade-down">
           Discover <span>Live Music Events </span>Across the
           <br /><span>USA & Canada</span>
         </p>
-        <p className="ServiceDescTop">
+        <p className="ServiceDescTop" data-aos="fade-down">
           Discover our latest concerts and live performances happening across the USA & Canada. Select an event below to view details, seating options, and ticket availability.
         </p>
 
@@ -113,7 +118,9 @@ export default function TicketsPage() {
           </div>
         ) : (
           filteredTickets.map((ticket) => (
-            <div key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
               <div className="ticket-card-container-new">
                 <div className="ticket-card-date">
                   <p className="ticket-day-num">{ticket.dayNum}</p>
@@ -162,7 +169,7 @@ export default function TicketsPage() {
           className="offerartistimg"
           alt="About Surtaal"
         />
-        <div className="SecondAboutartist">
+        <div className="SecondAboutartist" data-aos="fade-down" >
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
             <p className="ServicesText">Why Surtaal</p>
@@ -215,15 +222,21 @@ export default function TicketsPage() {
 
 
 
-      <div className="OurStorySection">
-        <div className="storyDiv" style={{ width: "fit-content" }}>
+      <div className="OurStorySection" >
+        <div
+          data-aos="fade-down"
+          className="storyDiv" style={{ width: "fit-content" }}>
           <div className="CircleServices"></div>
           <p className="storytext">our story</p>
         </div>
-        <p className="storyline">
+        <p
+        data-aos="fade-down"
+        className="storyline">
           Music Unites Here with <span>Surtaal</span>
         </p>
-        <p className="foundedtext">
+        <p
+        data-aos="fade-down"
+        className="foundedtext">
           Founded in 2019, Surtaal Entertainment came into being with the
           sole purpose of promoting the best of the best in the music world
           through live events in North America.
@@ -234,7 +247,7 @@ export default function TicketsPage() {
 
       <div className="contact-section">
         {/* LEFT SIDE */}
-        <div className="contact-left">
+        <div className="contact-left" data-aos="fade-right" >
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
             <div className="CircleServices"></div>
             <p className="ServicesText">contact us</p>
@@ -315,7 +328,7 @@ export default function TicketsPage() {
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <div className="form-border">
+        <div className="form-border" data-aos="fade-left" >
           <div className="contact-form">
             <div>
               <h3 className="leaveamessage">Leave a Message</h3>

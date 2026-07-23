@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "../globals.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const teamMembers = [
   {
@@ -53,28 +55,40 @@ export default function OurTeamPage() {
     setCurrentIndex(index);
   };
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 440);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <main>
       <div className="AboutusMain">
-        <div className="Celebrate">
+        <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
           <p className="Celebratetext">Behind Surtaal</p>
         </div>
-        <p className="FeelText">
+        <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
           The <span> Team </span> Behind Every
           <br /> <span> Memorable </span>Moment
         </p>
       </div>
       {/* ourteamdiv */}
       <div className="ourteamdiv">
-        <div className="ServicesDiv" style={{ width: "fit-content" }}>
+        <div className="ServicesDiv" style={{ width: "fit-content" }} data-aos="fade-down">
           <div className="CircleServices"></div>
           <p className="ServicesText">Our Team</p>
         </div>
-        <p className="WhatWeOffer">
+        <p className="WhatWeOffer" data-aos="fade-down">
           The <span>People </span>Behind <span>Surtaal</span>
         </p>
-        <p className="ServiceDescTop ourteammaxwidth">
+        <p className="ServiceDescTop ourteammaxwidth" data-aos="fade-down">
           At Surtaal, our team is passionate about creating unforgettable
           entertainment experiences that bring communities together through
           music, culture, and live events.
@@ -82,7 +96,7 @@ export default function OurTeamPage() {
 
         <div className="teamdivmain">
           {isMobile ? (
-            <div className="teamdiv">
+            <div className="teamdiv" data-aos="fade-down">
               <img src={teamMembers[currentIndex].img} className="teamimg" alt="" />
               <div
                 style={{
@@ -99,7 +113,9 @@ export default function OurTeamPage() {
             </div>
           ) : (
             teamMembers.map((member, i) => (
-              <div className="teamdiv" key={i}>
+              <div className="teamdiv"
+                data-aos="fade-down"
+                key={i}>
                 <img src={member.img} className="teamimg" alt="" />
                 <div
                   style={{
