@@ -24,7 +24,7 @@ const services = [
     desc: "Exclusive musical moments customized for intimate gatherings, birthdays, or personal milestones."
   },
   {
-    img: "/ImagesOpt/EventinSurtaal/Service4.webp",
+    img: "/Images/EventinSurtaal/asim.webp",
     title: "Wedding Shows",
     desc: "Unforgettable wedding entertainment blending tradition & glamour with soulful performances."
   }
