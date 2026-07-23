@@ -2463,7 +2463,13 @@ img {
 
 /* ourteam */
 .ourteamdiv {
-  background: linear-gradient(to bottom, #ffffff 50%, #000000 50%);
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #000 50%),
+    url("/Images/EventinSurtaal/bg (1).webp");
+
+  background-size: 100% 100%, cover;
+  background-repeat: no-repeat;
+  background-position: top, center;
 
   display: flex;
   flex-direction: column;
@@ -2539,6 +2545,13 @@ img {
 
   padding: 10px;
   background: linear-gradient(180deg, #8d0432 0%, #bd0040 100%);
+}
+
+.contact-section {
+  background-image: url("/Images/EventinSurtaal/bg (1).webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .teamdivmain {
@@ -2704,10 +2717,7 @@ img {
   }
 }
 
-/* artist page */
-.artist-section {
-  background-color: #fff;
-}
+
 
 .sliderbtn {
   background-color: #00000014;
@@ -3154,7 +3164,7 @@ img {
 }
 
 .contact-section {
-  background-color: #ffffff;
+
   padding: 66px 80px 72px 145px;
   display: flex;
   flex-direction: row;
@@ -3403,6 +3413,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.artist-section {
+  background-image: url("/Images/EventinSurtaal/bg (1).webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .fillcolor {
@@ -7568,7 +7585,13 @@ img {
 
 /* tickets page - discover live music */
 .discoverlivemusic {
-  background-color: #fff;
+  background-image: url("/Images/EventinSurtaal/bg (1).webp");
+  background-size: 100% 100%;
+  /* full width + height cover */
+  background-position: center;
+  /* center se align */
+  background-repeat: no-repeat;
+  /* repeat na ho */
   padding: 72px 77px 97px;
   display: flex;
   flex-direction: column;
