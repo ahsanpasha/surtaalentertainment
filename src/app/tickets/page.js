@@ -40,7 +40,7 @@ const TICKETS = [
     city: "Calgary, AB",
     venue: "Bella Concert Hall\n18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
     imageUrl: "/Images/Tickets/zain.webp",
-    link: "https://tickets.mru.ca/SurtaalEntertainment",
+    link: "http://tickets.mru.ca/SurtaalEntertainment",
   },
   {
     id: "104",

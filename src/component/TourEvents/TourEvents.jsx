@@ -30,7 +30,7 @@ const EVENTS = [
     city: "Calgary, AB",
     venue: "Bella Concert Hall",
     address: "18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
-    link: "https://tickets.mru.ca/SurtaalEntertainment",
+    link: "http://tickets.mru.ca/SurtaalEntertainment",
   },
   {
     day: "04",
