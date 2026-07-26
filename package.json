@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "compress:images": "node scripts/compress-images.js",
     "lint": "eslint"
   },
   "dependencies": {

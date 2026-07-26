@@ -46,9 +46,11 @@ export default function AboutUsPage() {
       <div className="aboutuslower">
         <img
           data-aos="fade-right"
-          src="/ImagesOpt/AboutUs/aboususimage.webp"
+          src="/Images/AboutUs/aboususimage.webp"
           className="aboutimage"
           alt=""
+          loading="lazy"
+          decoding="async"
         />
         <div data-aos="fade-down"  >
           <div className="ServicesDiv">

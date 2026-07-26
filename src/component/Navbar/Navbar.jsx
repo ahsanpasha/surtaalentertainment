@@ -23,8 +23,12 @@ export default function Navbar() {
   const itemRefs = useRef({});
   const closeTimer = useRef(null);
 
+  // Normalize pathname: strip .html suffix for static export compatibility
+  const normalizedPathname = pathname.replace(/\.html$/, "");
+
   const activePage =
-    navLinks.find((l) => l.href === pathname)?.label || null;
+    navLinks.find((l) => l.href === normalizedPathname)?.label || null;
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -67,7 +71,8 @@ export default function Navbar() {
     }
     window.addEventListener("resize", recalcHighlight);
     return () => window.removeEventListener("resize", recalcHighlight);
-  }, [activePage, pathname]);
+  }, [activePage, normalizedPathname]);
+
 
   useEffect(() => {
     return () => {

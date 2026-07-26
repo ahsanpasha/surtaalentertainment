@@ -172,7 +172,7 @@ export default function AdminPage() {
         alignItems: "center", 
         justifyContent: "center", 
         backgroundColor: "#050505", 
-        backgroundImage: "url('/ImagesOpt/EventinSurtaal/homepage_3x.webp')",
+        backgroundImage: "url('/Images/EventinSurtaal/homepage_3x.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -460,7 +460,7 @@ export default function AdminPage() {
 
                             <div>
                                 <p style={{ color: "#aaa", fontSize: "0.85rem", fontWeight: "600", marginBottom: "6px" }}>Cover Image URL</p>
-                                <input type="text" name="imageUrl" value={formData.imageUrl} onChange={handleChange} className="admin-input" placeholder="e.g. /ImagesOpt/Tickets/asim.webp" required />
+                                <input type="text" name="imageUrl" value={formData.imageUrl} onChange={handleChange} className="admin-input" placeholder="e.g. /Images/Tickets/asim.webp" required />
                             </div>
 
                             <div>

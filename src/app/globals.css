@@ -202,7 +202,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/ImagesOpt/EventinSurtaal/homepage_3x.webp");
+  background-image: url("/Images/EventinSurtaal/homepage_3x.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2001,7 +2001,7 @@ img {
   flex-direction: column;
   align-items: center;
   background-color: #080600;
-  background-image: url("/ImagesOpt/EventinSurtaal/homepage_3x.webp");
+  background-image: url("/Images/EventinSurtaal/homepage_3x.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2108,7 +2108,7 @@ img {
     linear-gradient(113.72deg,
       rgba(39, 39, 39, 0.5) 2.87%,
       rgba(0, 0, 0, 0.5) 92.4%),
-    url("/ImagesOpt/AboutUs/mic.webp");
+    url("/Images/AboutUs/mic.webp");
   background-size: 100% 100%;
   background-position: center;
 }
@@ -9766,4 +9766,38 @@ img {
     font-size: 22px;
     line-height: 28px;
   }
-}
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+  }
+}

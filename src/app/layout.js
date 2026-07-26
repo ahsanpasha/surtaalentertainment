@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/component/Navbar/Navbar";
 import Footer from "@/component/Footer/Footer";
+import WhatsAppButton from "@/component/WhatsAppButton/WhatsAppButton";
 import SmoothScrollProvider from "@/component/SmoothScroll/SmoothScrollProvider";
 
 export const metadata = {
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="preload"
-          href="/ImagesOpt/EventinSurtaal/homepage_3x.webp"
+          href="/Images/EventinSurtaal/homepage_3x.webp"
           as="image"
           type="image/webp"
           fetchPriority="high"
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
     </html>

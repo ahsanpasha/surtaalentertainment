@@ -1,8 +1,11 @@
 // src/app/api/contact/route.js
 // Contact form POST handler — saves to Firestore + sends email notification
 
+export const dynamic = "force-static";
+
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
 
 /* ─── Shared transporter factory ─────────────────────────── */
 function createTransporter() {

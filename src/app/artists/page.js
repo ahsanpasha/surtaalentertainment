@@ -7,13 +7,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const artists = [
-  { name: "Asim Azhar", role: "Singer", img: "/ImagesOpt/Artists/Asim.webp" },
-  { name: "Atif Aslam", role: "Singer", img: "/ImagesOpt/Artists/Atif.webp" },
-  { name: "Sajjad Ali", role: "Singer", img: "/ImagesOpt/Artists/Sajjad.webp" },
-  { name: "Zain Zohaib", role: "Singer", img: "/ImagesOpt/Artists/ZainZohaib.webp" },
-  { name: "Aima Baig", role: "Singer", img: "/ImagesOpt/Artists/Aima.webp" },
-  { name: "Asif Ali Santoo", role: "Singer", img: "/ImagesOpt/Artists/Asif.webp" },
-  { name: "Fariha Pervez", role: "Singer", img: "/ImagesOpt/Artists/Fariha.webp" },
+  { name: "Asim Azhar", role: "Singer", img: "/Images/Artists/Asim.webp" },
+  { name: "Atif Aslam", role: "Singer", img: "/Images/Artists/Atif.webp" },
+  { name: "Sajjad Ali", role: "Singer", img: "/Images/Artists/Sajjad.webp" },
+  { name: "Zain Zohaib", role: "Singer", img: "/Images/Artists/ZainZohaib.webp" },
+  { name: "Aima Baig", role: "Singer", img: "/Images/Artists/Aima.webp" },
+  { name: "Asif Ali Santoo", role: "Singer", img: "/Images/Artists/Asif.webp" },
+  { name: "Fariha Pervez", role: "Singer", img: "/Images/Artists/Fariha.webp" },
 
 ];
 
@@ -160,9 +160,11 @@ export default function ArtistsPage() {
 
       <div className="offerartist">
         <img
-          src="/ImagesOpt/Artists/mystory.webp"
+          src="/Images/Artists/mystory.webp"
           className="offerartistimg"
           alt="About Surtaal"
+          loading="lazy"
+          decoding="async"
         />
         <div className="SecondAboutartist" data-aos="fade-down">
           <div className="ServicesDiv" style={{ width: "fit-content" }}>

@@ -1,6 +1,8 @@
 // src/app/api/contacts/route.js
 // Mock contacts GET API — for admin dashboard (Firebase removed)
 
+export const dynamic = "force-static";
+
 import { NextResponse } from "next/server";
 
 // GET /api/contacts — fetch all contact submissions

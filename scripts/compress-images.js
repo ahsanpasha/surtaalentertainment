@@ -2,21 +2,28 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const SRC = path.join(__dirname, "..", "public", "Images");
-const DEST = path.join(__dirname, "..", "public", "ImagesOpt");
+const IMAGES = path.join(__dirname, "..", "public", "Images");
+const IMAGES_OPT = path.join(__dirname, "..", "public", "ImagesOpt");
 
 const TARGETS = [
   { rel: "EventinSurtaal/homepage_3x.webp", width: 1920, quality: 78 },
   { rel: "EventinSurtaal/about.webp", width: 1600, quality: 78 },
+  { rel: "EventinSurtaal/bg (1).webp", width: 1920, quality: 75 },
+  { rel: "EventinSurtaal/asim.webp", width: 700, quality: 80 },
   { rel: "AboutUs/mic.webp", width: 1400, quality: 78 },
   { rel: "AboutUs/aboususimage.webp", width: 1200, quality: 78 },
   { rel: "Tickets/choose.webp", width: 1400, quality: 78 },
   { rel: "Tickets/asim.webp", width: 900, quality: 80 },
+  { rel: "Tickets/zain.png", width: 900, quality: 82, outRel: "Tickets/zain.webp" },
   { rel: "Artists/mystory.webp", width: 1400, quality: 78 },
   { rel: "Artists/a1.webp", width: 800, quality: 80 },
-  { rel: "Artists/a2.webp", width: 800, quality: 80 },
-  { rel: "Artists/a3.webp", width: 800, quality: 80 },
-  { rel: "Artists/a4.webp", width: 800, quality: 80 },
+  { rel: "Artists/Asim.webp", width: 800, quality: 80 },
+  { rel: "Artists/Atif.webp", width: 800, quality: 80 },
+  { rel: "Artists/Sajjad.webp", width: 800, quality: 80 },
+  { rel: "Artists/ZainZohaib.webp", width: 800, quality: 80 },
+  { rel: "Artists/Aima.webp", width: 800, quality: 80 },
+  { rel: "Artists/Asif.webp", width: 800, quality: 80 },
+  { rel: "Artists/Fariha.webp", width: 800, quality: 80 },
   { rel: "EventinSurtaal/artist01.webp", width: 900, quality: 80 },
   { rel: "EventinSurtaal/arist02.webp", width: 900, quality: 80 },
   { rel: "EventinSurtaal/arist03.webp", width: 900, quality: 80 },
@@ -40,35 +47,78 @@ const TARGETS = [
   { rel: "OurTeam/team1.webp", width: 500, quality: 80 },
   { rel: "OurTeam/team2.webp", width: 500, quality: 80 },
   { rel: "OurTeam/team3.webp", width: 500, quality: 80 },
+  { rel: "OurTeam/team4.webp", width: 500, quality: 80 },
 ];
 
-async function compressOne({ rel, width, quality }) {
-  const inputPath = path.join(SRC, rel);
-  if (!fs.existsSync(inputPath)) {
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+async function compressOne({ rel, width, quality, outRel }) {
+  const inputPath = path.join(IMAGES, rel);
+  const optPath = path.join(IMAGES_OPT, rel);
+  const sourcePath = fs.existsSync(inputPath)
+    ? inputPath
+    : fs.existsSync(optPath)
+      ? optPath
+      : null;
+
+  if (!sourcePath) {
     console.log("skip missing", rel);
     return;
   }
-  const outPath = path.join(DEST, rel);
+
+  const outputRel = outRel || rel.replace(/\.png$/i, ".webp");
+  const outPath = path.join(IMAGES, outputRel);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  const before = fs.statSync(inputPath).size;
-  const input = fs.readFileSync(inputPath);
+
+  const before = fs.statSync(sourcePath).size;
+  const input = fs.readFileSync(sourcePath);
   const buf = await sharp(input)
     .rotate()
     .resize({ width, withoutEnlargement: true })
     .webp({ quality, effort: 4 })
     .toBuffer();
+
   fs.writeFileSync(outPath, buf);
   console.log(
-    `OK  ${rel}  ${(before / 1e6).toFixed(2)}MB → ${(buf.length / 1e6).toFixed(2)}MB`
+    `OK  ${outputRel}  ${(before / 1e6).toFixed(2)}MB → ${(buf.length / 1e6).toFixed(2)}MB`
   );
 }
 
 (async () => {
-  for (const t of TARGETS) {
+  console.log("Merging optimized assets into public/Images...");
+  copyDir(IMAGES_OPT, IMAGES);
+
+  console.log("Compressing heavy images in place...");
+  for (const target of TARGETS) {
     try {
-      await compressOne(t);
-    } catch (e) {
-      console.error("FAIL", t.rel, e.message);
+      await compressOne(target);
+    } catch (error) {
+      console.error("FAIL", target.rel, error.message);
     }
   }
+
+  if (fs.existsSync(IMAGES_OPT)) {
+    fs.rmSync(IMAGES_OPT, { recursive: true, force: true });
+    console.log("Removed public/ImagesOpt");
+  }
+
+  const zainPng = path.join(IMAGES, "Tickets", "zain.png");
+  if (fs.existsSync(zainPng)) {
+    fs.unlinkSync(zainPng);
+    console.log("Removed heavy Tickets/zain.png");
+  }
+
+  console.log("Done.");
 })();

@@ -7,6 +7,54 @@ import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// ─── Static tickets data (no API needed) ──────────────────────────────────────
+const TICKETS = [
+  {
+    id: "101",
+    artistName: "Zain Zohaib",
+    dayNum: "01",
+    month: "Oct",
+    weekday: "Thu",
+    city: "Toronto, ON",
+    venue: "Queen Elizabeth Theatre\n190 Princes' Blvd Toronto, ON M6K 3C3",
+    imageUrl: "/Images/Tickets/zain.webp",
+    link: "https://admitone.com/events/zain-zohaib-toronto-171655",
+  },
+  {
+    id: "102",
+    artistName: "Zain Zohaib",
+    dayNum: "02",
+    month: "Oct",
+    weekday: "Fri",
+    city: "TBD",
+    venue: "",
+    imageUrl: "/Images/Tickets/zain.webp",
+    link: "",
+  },
+  {
+    id: "103",
+    artistName: "Zain Zohaib",
+    dayNum: "03",
+    month: "Oct",
+    weekday: "Sat",
+    city: "Calgary, AB",
+    venue: "Bella Concert Hall\n18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
+    imageUrl: "/Images/Tickets/zain.webp",
+    link: "https://tickets.mru.ca/SurtaalEntertainment",
+  },
+  {
+    id: "104",
+    artistName: "Zain Zohaib",
+    dayNum: "04",
+    month: "Oct",
+    weekday: "Sun",
+    city: "Vancouver, BC",
+    venue: "Bell Performing Arts Centre\n6250 144 St, Surrey, BC V3X 1A2",
+    imageUrl: "/Images/Tickets/zain.webp",
+    link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
+  },
+];
+
 export default function TicketsPage() {
   const artistFilters = [
     "All Artists",
@@ -16,25 +64,8 @@ export default function TicketsPage() {
     "Asif Ali Khan Santoo",
   ];
   const [activeFilter, setActiveFilter] = useState("All Artists");
-  const [tickets, setTickets] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchTickets() {
-      try {
-        const res = await fetch("/api/tickets");
-        const data = await res.json();
-        setTickets(data);
-      } catch (error) {
-        console.error("Failed to load tickets:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchTickets();
-  }, []);
-
-  const filteredTickets = tickets.filter(
+  const filteredTickets = TICKETS.filter(
     (ticket) => activeFilter === "All Artists" || ticket.artistName === activeFilter
   );
 
@@ -42,11 +73,15 @@ export default function TicketsPage() {
     AOS.init({
       duration: 800,
       once: true,
+      offset: 0,
+      easing: "ease-out-cubic",
     });
+    AOS.refresh();
   }, []);
+
   return (
     <main>
-      < svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
+      <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
         <defs>
           <clipPath id="ticket-media-clip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0 H 1 V 0.373 A 0.09,0.126 0 0,0 1,0.627 V 1 H 0 Z" />
@@ -76,10 +111,9 @@ export default function TicketsPage() {
         </div>
         <p className="WhatWeOffer" data-aos="fade-down">
           Discover <span>Live Music Events </span>
-          {/* Across the          <br /><span>USA & Canada</span> */}
         </p>
         <p className="ServiceDescTop" data-aos="fade-down">
-          Discover our latest concerts and live performances happening across the USA & Canada. Select an event below to view details, seating options, and ticket availability.
+          Discover our latest concerts and live performances happening across the USA &amp; Canada. Select an event below to view details, seating options, and ticket availability.
         </p>
 
         <div className="artist-filter-bar">
@@ -87,8 +121,7 @@ export default function TicketsPage() {
             <button
               key={artist}
               type="button"
-              className={`artist-filter-tab${activeFilter === artist ? " active" : ""
-                }`}
+              className={`artist-filter-tab${activeFilter === artist ? " active" : ""}`}
               onClick={() => setActiveFilter(artist)}
             >
               {artist}
@@ -97,9 +130,7 @@ export default function TicketsPage() {
         </div>
 
 
-        {loading ? (
-          <p style={{ textAlign: 'center', color: '#fff', marginTop: '2rem' }}>Loading tickets...</p>
-        ) : filteredTickets.length === 0 ? (
+        {filteredTickets.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '1rem', width: '100%', maxWidth: '600px', backgroundColor: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '20px', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(141,4,50,0.1), rgba(189,0,64,0.15))', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BD0040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -110,11 +141,10 @@ export default function TicketsPage() {
                 <path d="M9 16l2 2 4-4"></path>
               </svg>
             </div>
-            <h3 style={{ color: ' #000', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
+            <h3 style={{ color: '#000', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
             <p style={{ color: '#000', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
               There are currently no tickets available for <strong style={{ color: '#BD0040' }}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
             </p>
-
           </div>
         ) : (
           <>
@@ -128,7 +158,6 @@ export default function TicketsPage() {
             )}
             {filteredTickets.map((ticket) => (
               <div
-                data-aos="fade-right"
                 key={ticket.id} className="ticket-card-container-new-inner-new" style={{ marginBottom: "2rem" }}>
                 <div className="ticket-card-container-new">
                   <div className="ticket-card-date">
@@ -178,16 +207,18 @@ export default function TicketsPage() {
           </>
         )}
 
-
       </div>
+
 
 
 
       <div className="offerartist">
         <img
-          src="/ImagesOpt/Tickets/choose.webp"
+          src="/Images/Tickets/choose.webp"
           className="offerartistimg"
           alt="About Surtaal"
+          loading="lazy"
+          decoding="async"
         />
         <div className="SecondAboutartist" data-aos="fade-down" >
           <div className="ServicesDiv" style={{ width: "fit-content" }}>
@@ -201,7 +232,7 @@ export default function TicketsPage() {
           <div className="mainpointdiv">
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
-              <p className="livetext">Secure & hassle-free online booking</p>
+              <p className="livetext">Secure &amp; hassle-free online booking</p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
@@ -209,7 +240,7 @@ export default function TicketsPage() {
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
-              <p className="livetext">Premium venues across the USA & Canada</p>
+              <p className="livetext">Premium venues across the USA &amp; Canada</p>
             </div>
             <div className="points">
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
@@ -221,25 +252,9 @@ export default function TicketsPage() {
               <img src="/Images/Artists/tick.svg" className="tick" alt="" />
               <p className="livetext">Dedicated customer support</p>
             </div>
-
           </div>
-          {/* <button
-            className="SeeHowbtn"
-            style={{ margin: 0, width: "fit-content" }}
-          >
-            Read More
-            <img src="/Images/Navbar/arrow.svg" alt="" />
-          </button> */}
         </div>
       </div>
-
-
-
-
-
-
-
-
 
 
       <div className="OurStorySection" >
@@ -308,8 +323,6 @@ export default function TicketsPage() {
           <div className="socials">
             <p className="followtext">Follow Us On:</p>
             <div className="icons">
-
-              {/* Gradient (sirf ek dafa define karo) */}
               <svg width="0" height="0">
                 <defs>
                   <linearGradient id="iconGradient" x1="0%" y1="0%" x2="0%" y2="100%">

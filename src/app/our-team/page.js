@@ -10,25 +10,25 @@ const teamMembers = [
     name: "Ashkenaz Vincent",
     position: "Founder & CEO",
     desc: "Leads organizational vision, drives strategic growth, and builds lasting partnerships to shape the company’s future.",
-    img: "/ImagesOpt/OurTeam/team1.webp"
+    img: "/Images/OurTeam/team1.webp"
   },
   {
     name: "Anosh Vincent",
     position: "Head of Operations",
     desc: "Oversees daily operations, streamlines workflows, and ensures seamless execution across teams with operational excellence.",
-    img: "/ImagesOpt/OurTeam/team2.webp"
+    img: "/Images/OurTeam/team2.webp"
   },
   {
     name: "Rimla Qamar",
     position: "Director of Operations & Strategy",
     desc: "Develops strategic initiatives, optimizes operations, handles ticketing, and aligns organizational goals with sustainable long-term growth.",
-    img: "/ImagesOpt/OurTeam/team3.webp"
+    img: "/Images/OurTeam/team3.webp"
   },
   {
     name: "Elia Ijjaaz",
     position: "Director of Marketing & Communications",
     desc: " Leads brand strategy, marketing campaigns, and communications to strengthen audience engagement and business visibility.",
-    img: "/ImagesOpt/OurTeam/team4.webp"
+    img: "/Images/OurTeam/team4.webp"
   }
 ];
 
@@ -97,7 +97,7 @@ export default function OurTeamPage() {
         <div className="teamdivmain">
           {isMobile ? (
             <div className="teamdiv" data-aos="fade-down">
-              <img src={teamMembers[currentIndex].img} className="teamimg" alt="" />
+              <img src={teamMembers[currentIndex].img} className="teamimg" alt="" loading="lazy" decoding="async" />
               <div
                 style={{
                   display: "flex",
@@ -116,7 +116,7 @@ export default function OurTeamPage() {
               <div className="teamdiv"
                 data-aos="fade-down"
                 key={i}>
-                <img src={member.img} className="teamimg" alt="" />
+                <img src={member.img} className="teamimg" alt="" loading="lazy" decoding="async" />
                 <div
                   style={{
                     display: "flex",

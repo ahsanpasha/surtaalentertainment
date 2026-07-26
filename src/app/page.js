@@ -9,17 +9,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 const services = [
   {
-    img: "/ImagesOpt/EventinSurtaal/Service1.webp",
+    img: "/Images/EventinSurtaal/Service1.webp",
     title: "Corporate Events",
     desc: "Live musical experiences tailored to elevate galas, conferences, and corporate celebrations."
   },
   {
-    img: "/ImagesOpt/EventinSurtaal/Service2.webp",
+    img: "/Images/EventinSurtaal/Service2.webp",
     title: "Live Concerts",
     desc: "High-energy performances by iconic and emerging South Asian artists across global stages."
   },
   {
-    img: "/ImagesOpt/EventinSurtaal/Service3.webp",
+    img: "/Images/EventinSurtaal/Service3.webp",
     title: "Private Events",
     desc: "Exclusive musical moments customized for intimate gatherings, birthdays, or personal milestones."
   },
@@ -111,6 +111,8 @@ export default function HomePage() {
               <img
                 src={services[currentIndex].img}
                 alt={services[currentIndex].title}
+                loading="lazy"
+                decoding="async"
               />
               <p className="Servicename">{services[currentIndex].title}</p>
               <p className="ServiceDesc">{services[currentIndex].desc}</p>
@@ -121,6 +123,8 @@ export default function HomePage() {
                 <img
                   src={service.img}
                   alt={service.title}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <p className="Servicename">{service.title}</p>
                 <p className="ServiceDesc">{service.desc}</p>
@@ -157,7 +161,7 @@ export default function HomePage() {
 
       {/* About */}
       <div className="AboutDiv" style={{ backgroundColor: "#E6E6E5" }} >
-        <img src="/ImagesOpt/EventinSurtaal/about.webp" alt="About Surtaal" />
+        <img src="/Images/EventinSurtaal/about.webp" alt="About Surtaal" loading="lazy" decoding="async" />
         <div className="SecondAbout" data-aos="fade-down" data-aos-delay="100">
           <div className="ServicesDiv" style={{ width: "fit-content" }} >
             <div className="CircleServices"></div>
@@ -228,7 +232,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/artist01.webp"
+                src="/Images/EventinSurtaal/artist01.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -254,7 +258,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/arist02.webp"
+                src="/Images/EventinSurtaal/arist02.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -280,7 +284,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/arist03.webp"
+                src="/Images/EventinSurtaal/arist03.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -306,7 +310,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/arist04.webp"
+                src="/Images/EventinSurtaal/arist04.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -332,7 +336,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/arist05.webp"
+                src="/Images/EventinSurtaal/arist05.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
@@ -358,7 +362,7 @@ export default function HomePage() {
             </div>
             <div className="imageWrapper">
               <img
-                src="/ImagesOpt/EventinSurtaal/arist06.webp"
+                src="/Images/EventinSurtaal/arist06.webp"
                 className="aristimage"
                 alt=""
                 loading="lazy"
