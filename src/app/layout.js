@@ -49,10 +49,12 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SmoothScrollProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <WhatsAppButton />
+          <div className="main-wrapper">
+            <Navbar />
+            {children}
+            <Footer />
+            <WhatsAppButton />
+          </div>
         </SmoothScrollProvider>
       </body>
     </html>

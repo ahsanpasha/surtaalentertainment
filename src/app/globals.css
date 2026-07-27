@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Hide scrollbar globally */
+* {
+  scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
 :root {
   --background: #080600;
   --foreground: #ffffff;
@@ -11,17 +19,24 @@
   --color-foreground: var(--foreground);
 }
 
-html,
-body {
-  /* background-color: #ffffff; */
+html {
   background-color: #080600;
   background: #080600;
   color: var(--foreground);
   font-family: "Georama-Regular";
+}
+
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   max-width: 100%;
+}
+
+.main-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
 html {

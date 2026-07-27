@@ -23,8 +23,8 @@ export default function Navbar() {
   const itemRefs = useRef({});
   const closeTimer = useRef(null);
 
-  // Normalize pathname: strip .html suffix for static export compatibility
-  const normalizedPathname = pathname.replace(/\.html$/, "");
+  // Normalize pathname: strip .html suffix and trailing slash for static export compatibility
+  const normalizedPathname = pathname.toLowerCase().replace(/\.html$/, "").replace(/\/$/, "") || "/";
 
   const activePage =
     navLinks.find((l) => l.href === normalizedPathname)?.label || null;
