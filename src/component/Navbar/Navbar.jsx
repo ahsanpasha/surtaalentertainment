@@ -67,7 +67,7 @@ export default function Navbar() {
 
     recalcHighlight();
     if (document.fonts?.ready) {
-      document.fonts.ready.then(recalcHighlight).catch(() => {});
+      document.fonts.ready.then(recalcHighlight).catch(() => { });
     }
     window.addEventListener("resize", recalcHighlight);
     return () => window.removeEventListener("resize", recalcHighlight);
