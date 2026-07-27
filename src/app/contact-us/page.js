@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import emailjs from '@emailjs/browser';
 
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
@@ -32,20 +33,27 @@ function ContactFormContent() {
         recaptchaToken = await executeRecaptcha("contact_form");
       }
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
-      });
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
-      if (res.ok) {
+      const templateParams = {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      };
+
+      const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      if (res.status === 200) {
         setStatus("success");
         setFormData({ fullName: "", email: "", phone: "", message: "" });
       } else {
         setStatus("error");
       }
     } catch (error) {
-      console.error(error);
+      console.error("EmailJS Error:", error);
       setStatus("error");
     }
   };
