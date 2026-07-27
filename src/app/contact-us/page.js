@@ -185,6 +185,7 @@ function ContactFormContent() {
                       onChange={handleChange}
                       className="inputbox"
                       placeholder="Enter Email"
+                      style={{ textTransform: 'none' }}
                       required
                     />
                   </div>
