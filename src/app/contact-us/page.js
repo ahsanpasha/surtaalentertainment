@@ -6,7 +6,10 @@ import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function ContactUsPage() {
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
+function ContactFormContent() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -24,10 +27,15 @@ export default function ContactUsPage() {
     setStatus("loading");
 
     try {
+      let recaptchaToken = "";
+      if (executeRecaptcha) {
+        recaptchaToken = await executeRecaptcha("contact_form");
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       if (res.ok) {
@@ -183,7 +191,7 @@ export default function ContactUsPage() {
                   <div className="inputdivnew">
                     <p className="labelofinput">Phone</p>
                     <input
-                      type="number"
+                      type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
@@ -215,5 +223,14 @@ export default function ContactUsPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function ContactUsPage() {
+  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "dummy_key";
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
+      <ContactFormContent />
+    </GoogleReCaptchaProvider>
   );
 }

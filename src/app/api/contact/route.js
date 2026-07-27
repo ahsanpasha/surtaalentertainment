@@ -10,10 +10,15 @@ import nodemailer from "nodemailer";
 /* ─── Shared transporter factory ─────────────────────────── */
 function createTransporter() {
   return nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.SMTP_HOST || "smtp.office365.com",
+    port: parseInt(process.env.SMTP_PORT || "587"),
+    secure: false, // true for 465, false for other ports
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS, // Gmail App Password (not account password)
+      pass: process.env.EMAIL_PASS,
+    },
+    tls: {
+      ciphers: "SSLv3",
     },
   });
 }
@@ -186,7 +191,7 @@ function buildUserReplyEmail({ fullName, message }) {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { fullName, email, phone, message } = body;
+    const { fullName, email, phone, message, recaptchaToken } = body;
 
     // Validation
     if (!fullName || !email || !message) {
@@ -194,6 +199,31 @@ export async function POST(req) {
         { error: "Missing required fields: fullName, email, message" },
         { status: 400 }
       );
+    }
+
+    if (!recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
+      return NextResponse.json(
+        { error: "Missing reCAPTCHA token. Please try again." },
+        { status: 400 }
+      );
+    }
+
+    // Verify reCAPTCHA token if keys are set
+    if (process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
+      const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+      const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
+      const recaptchaData = await recaptchaRes.json();
+
+      if (!recaptchaData.success || recaptchaData.score < 0.5) {
+        console.error("reCAPTCHA failed:", recaptchaData);
+        return NextResponse.json(
+          {
+            error: "Bot detected or reCAPTCHA verification failed. Please try again.",
+            details: recaptchaData // Send details to help debug 
+          },
+          { status: 403 }
+        );
+      }
     }
 
     // 1️⃣  Send emails (admin notification + user auto-reply)

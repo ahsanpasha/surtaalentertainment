@@ -9771,7 +9771,7 @@ img {
 .whatsapp-float {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -9795,9 +9795,26 @@ img {
 @media (max-width: 480px) {
   .whatsapp-float {
     bottom: 16px;
-    right: 16px;
+    left: 16px;
     width: 50px;
     height: 50px;
     font-size: 26px;
+  }
+}
+/* Mobile Form Responsive Fix */
+@media (max-width: 768px) {
+  .contact-form {
+    height: auto !important;
+  }
+  .formrow {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+  .inputdivnew {
+    width: 100% !important;
+  }
+  .textareadesign {
+    height: 120px !important;
   }
 }
