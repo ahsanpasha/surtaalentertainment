@@ -3,6 +3,7 @@ import Navbar from "@/component/Navbar/Navbar";
 import Footer from "@/component/Footer/Footer";
 import WhatsAppButton from "@/component/WhatsAppButton/WhatsAppButton";
 import SmoothScrollProvider from "@/component/SmoothScroll/SmoothScrollProvider";
+import Script from "next/script";
 
 export const metadata = {
   title: "Surtaal Entertainment",
@@ -56,6 +57,19 @@ export default function RootLayout({ children }) {
             <WhatsAppButton />
           </div>
         </SmoothScrollProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MNH7GZH17Z"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MNH7GZH17Z');
+          `}
+        </Script>
+
       </body>
     </html>
   );
