@@ -27,21 +27,6 @@ export default function AdminPage() {
   });
   const [addStatus, setAddStatus] = useState(null);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchDashboardData();
-    }
-  }, [isLoggedIn]);
-
-  // Lock scroll when sidebar is open on mobile
-  useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isSidebarOpen]);
-
   const fetchDashboardData = async () => {
     setLoadingData(true);
     try {
@@ -63,6 +48,21 @@ export default function AdminPage() {
       setLoadingData(false);
     }
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      queueMicrotask(() => fetchDashboardData());
+    }
+  }, [isLoggedIn]);
+
+  // Lock scroll when sidebar is open on mobile
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isSidebarOpen]);
 
   const handleLoginChange = (e) => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
@@ -372,7 +372,7 @@ export default function AdminPage() {
                 {activeTab === "overview" && (
                 <div className="admin-fade-in">
                     <h2 style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)", marginBottom: "0.5rem", fontWeight: "700" }}>Welcome back, <span style={gradientText}>Admin</span></h2>
-                    <p style={{ color: "#888", marginBottom: "3rem", fontSize: "1.05rem", fontWeight: "500" }}>Here is what's happening with your platform today.</p>
+                    <p style={{ color: "#888", marginBottom: "3rem", fontSize: "1.05rem", fontWeight: "500" }}>Here is what&apos;s happening with your platform today.</p>
                     
                     <div className="admin-stats-grid">
                         <div style={metricCardStyle}>

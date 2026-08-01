@@ -44,6 +44,8 @@ export default function SmoothScrollProvider({ children }) {
       touchMultiplier: 1.2,
     });
 
+    window.lenis = lenis;
+
     document.documentElement.classList.add("lenis-enabled");
 
     let rafId = 0;
@@ -84,6 +86,7 @@ export default function SmoothScrollProvider({ children }) {
       lenis.destroy();
       revealObserver.disconnect();
       document.documentElement.classList.remove("lenis-enabled");
+      if (window.lenis === lenis) delete window.lenis;
     };
   }, []);
 

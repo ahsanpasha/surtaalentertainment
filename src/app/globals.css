@@ -286,6 +286,109 @@ img {
   margin: 0 auto 53px auto;
 }
 
+.TourHeadingText {
+  font-family: "Georama-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.7);
+  margin: 0 auto 18px auto;
+}
+
+.TourHeadingText span {
+  color: #bd0040;
+}
+
+.TourBuyBtn {
+  margin: 0 auto;
+}
+
+.TourBuyBtn img {
+  width: 15.06px;
+  height: 15.06px;
+}
+
+/* 1800px */
+@media (max-width: 1800px) {
+  .TourHeadingText { font-size: 36.4px; margin-bottom: 16.4px; }
+  .TourBuyBtn img { width: 13.6px; height: 13.6px; }
+}
+
+/* 1650px */
+@media (max-width: 1650px) {
+  .TourHeadingText { font-size: 34.4px; margin-bottom: 15.5px; }
+  .TourBuyBtn img { width: 12.8px; height: 12.8px; }
+}
+
+/* 1550px */
+@media (max-width: 1550px) {
+  .TourHeadingText { font-size: 32.8px; margin-bottom: 14.8px; }
+  .TourBuyBtn img { width: 12.2px; height: 12.2px; }
+}
+
+/* 1440px */
+@media (max-width: 1440px) {
+  .TourHeadingText { font-size: 31px; margin-bottom: 14px; }
+  .TourBuyBtn img { width: 11.5px; height: 11.5px; }
+}
+
+/* 1350px */
+@media (max-width: 1350px) {
+  .TourHeadingText { font-size: 29.2px; margin-bottom: 13.2px; }
+  .TourBuyBtn img { width: 10.8px; height: 10.8px; }
+}
+
+/* 1250px */
+@media (max-width: 1250px) {
+  .TourHeadingText { font-size: 27.4px; margin-bottom: 12.3px; }
+  .TourBuyBtn img { width: 10.1px; height: 10.1px; }
+}
+
+/* 1050px */
+@media (max-width: 1050px) {
+  .TourHeadingText { font-size: 25.6px; margin-bottom: 11.5px; }
+  .TourBuyBtn img { width: 9.4px; height: 9.4px; }
+}
+
+/* 950px */
+@media (max-width: 950px) {
+  .TourHeadingText { font-size: 23.8px; margin-bottom: 10.8px; }
+  .TourBuyBtn img { width: 8.8px; height: 8.8px; }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .TourHeadingText { font-size: 26px; margin-bottom: 14px; }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+  .TourHeadingText { font-size: 22px; margin-bottom: 12px; }
+}
+
+/* 500px */
+@media (max-width: 500px) {
+  .TourHeadingText { font-size: 19px; margin-bottom: 10px; }
+}
+
+/* 440px */
+@media (max-width: 440px) {
+  .TourHeadingText { font-size: 17px; margin-bottom: 9px; }
+}
+
+/* 390px */
+@media (max-width: 390px) {
+  .TourHeadingText { font-size: 15px; margin-bottom: 8px; }
+}
+
+/* 350px */
+@media (max-width: 350px) {
+  .TourHeadingText { font-size: 13px; margin-bottom: 7px; }
+}
+
 .SeeHowbtn {
   height: 74px;
   background: linear-gradient(177.7deg, #bd0040 -1.74%, #890531 98.07%);

@@ -77,6 +77,21 @@ export default function TicketsPage() {
       easing: "ease-out-cubic",
     });
     AOS.refresh();
+
+    if (typeof window !== "undefined" && window.location.hash === "#artist-filter-bar") {
+      const target = document.getElementById("artist-filter-bar");
+      if (target) {
+        setTimeout(() => {
+          const rect = target.getBoundingClientRect();
+          const scrollToY = window.scrollY + rect.top - 24;
+          if (window.lenis && typeof window.lenis.scrollTo === "function") {
+            window.lenis.scrollTo(scrollToY, { duration: 1.2 });
+          } else {
+            window.scrollTo({ top: scrollToY, behavior: "smooth" });
+          }
+        }, 350);
+      }
+    }
   }, []);
 
   return (
@@ -99,7 +114,7 @@ export default function TicketsPage() {
           What is <span>Seat</span> for an <br /><span> Unforgettable </span>Experience
         </p>
         <p className="aboutuspara" data-aos="fade-down" data-aos-delay="400">
-          From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal's upcoming events.
+          From sold-out concerts to unforgettable cultural celebrations, reserve your seat for Surtaal&apos;s upcoming events.
         </p>
       </div>
 
@@ -116,7 +131,7 @@ export default function TicketsPage() {
           Discover our latest concerts and live performances happening across the USA &amp; Canada. Select an event below to view details, seating options, and ticket availability.
         </p>
 
-        <div className="artist-filter-bar">
+        <div className="artist-filter-bar" id="artist-filter-bar">
           {artistFilters.map((artist) => (
             <button
               key={artist}
@@ -291,7 +306,7 @@ export default function TicketsPage() {
             Need <span>Assistance</span>?
           </p>
           <p className="AboutDesc">
-            We'd love to hear from you! Reach out to explore collaboration opportunities with Surtaal Entertainment. Let's bring unforgettable South Asian music experiences to the world.
+            We&apos;d love to hear from you! Reach out to explore collaboration opportunities with Surtaal Entertainment. Let&apos;s bring unforgettable South Asian music experiences to the world.
           </p>
           <div className="maindivstructure">
             <a href="tel:+13214222223" className="contact-item-my" style={{ textDecoration: 'none', color: 'inherit' }}>

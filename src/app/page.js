@@ -68,6 +68,7 @@ export default function HomePage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const newLocal = "/tickets";
   return (
     <main>
       <div className="MainHome">
@@ -82,10 +83,17 @@ export default function HomePage() {
           Let every beat inspire your soul as Surtaal brings music, energy, and
           passion together in perfect harmony.
         </p>
+        <p
+          className="TourHeadingText"
+          data-aos="fade-down"
+          data-aos-delay="500"
+        >
+          <span>Zain Zohaib</span> Canada Tour 2026
+        </p>
         <button
           data-aos="fade-down" data-aos-delay="600"
-          className="SeeHowbtn"
-          onClick={() => router.push("/tickets")}
+          className="SeeHowbtn TourBuyBtn"
+          onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
         >
           Buy Tickets
           <img src="/Images/Navbar/arrow.svg" alt="" />

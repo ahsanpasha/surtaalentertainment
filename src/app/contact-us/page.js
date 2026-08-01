@@ -87,8 +87,8 @@ function ContactFormContent() {
             Get In <span>Touch</span>
           </p>
           <p className="AboutDesc">
-            We'd love to hear from you! Reach out to explore collaboration
-            opportunities with Surtaal Entertainment. Let's bring unforgettable
+            We&apos;d love to hear from you! Reach out to explore collaboration
+            opportunities with Surtaal Entertainment. Let&apos;s bring unforgettable
             South Asian music experiences to the world.
           </p>
           <div className="maindivstructure">

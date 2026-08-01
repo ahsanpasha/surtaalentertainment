@@ -11,7 +11,6 @@ import "aos/dist/aos.css";
 
 const Footer = () => {
   const pathname = usePathname();
-  if (pathname.startsWith("/admin")) return null;
 
   const links = [
     { href: '/', label: 'Events in Surtaal' },
@@ -26,6 +25,8 @@ const Footer = () => {
       once: true,
     });
   }, []);
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <div>
