@@ -1,24 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+/* ═══════════════════════════════════════════════════════════
+   ADDED: import useRef (for captcha widget ref),
+          ReCAPTCHA (v2 checkbox widget),
+          emailjs (@emailjs/browser for client-side email send)
+   ═══════════════════════════════════════════════════════════ */
+import { useEffect, useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "@emailjs/browser";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import emailjs from '@emailjs/browser';
 import { trackContactFormConversion } from "@/lib/googleAds";
 
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
-
-function isValidV3Key(key) {
-  if (!key || typeof key !== "string") return false;
-  if (key === "dummy_key" || key === "YOUR_RECAPTCHA_SITE_KEY") return false;
-  // Google reCAPTCHA keys always start with "6L" and are ~40 chars alphanumeric + _ -
-  return /^6[L-Re][a-zA-Z0-9_-]{38,}$/.test(key);
-}
-
-function ContactFormInner() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -26,134 +22,104 @@ function ContactFormInner() {
     message: "",
   });
   const [status, setStatus] = useState(null);
-  const [recaptchaReady, setRecaptchaReady] = useState(true);
+
+  /* ─── ADDED: Captcha ref + captcha error state ───────────── */
+  const recaptchaRef = useRef(null);
+  const [captchaError, setCaptchaError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  /* ═══════════════════════════════════════════════════════════
+     UPDATED: handleSubmit — new flow:
+       (a) Validate reCAPTCHA v2 (client-side token check)
+       (b) Send via EmailJS (client-side)
+       (c) POST to existing /api/contact (with captcha token for server verify)
+       Reset captcha + form on success, show errors if any fails
+     ═══════════════════════════════════════════════════════════ */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
+    setCaptchaError(false);
 
     try {
-      let recaptchaToken = "";
-      try {
-        if (executeRecaptcha && recaptchaReady) {
-          recaptchaToken = await Promise.race([
-            executeRecaptcha("contact_form"),
-            new Promise((_, rej) =>
-              setTimeout(() => rej(new Error("reCAPTCHA timeout")), 4000)
-            ),
-          ]);
-        }
-      } catch (recaptchaErr) {
-        console.warn(
-          "[ContactUs] reCAPTCHA skipped (invalid/blocked/timeout):",
-          recaptchaErr?.message || recaptchaErr
-        );
-        setRecaptchaReady(false);
-        recaptchaToken = "";
+      /* ── (a) reCAPTCHA v2 check ──────────────────────── */
+      const captchaToken = recaptchaRef.current?.getValue();
+      if (!captchaToken) {
+        setCaptchaError(true);
+        setStatus(null);
+        return;
       }
 
-      let sentOk = false;
-      let needsEmailjsFallback = true;
+      let emailjsOk = false;
+      let apiOk = false;
 
+      /* ── (b) EmailJS send (client-side) ─────────────────── */
+      try {
+        const templateParams = {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        };
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        );
+        emailjsOk = true;
+      } catch (err) {
+        console.error("EmailJS send failed:", err);
+      }
+
+      /* ── (c) Existing /api/contact call (with captcha token) ── */
       try {
         const apiRes = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, recaptchaToken }),
+          body: JSON.stringify({ ...formData, captchaToken }),
         });
         const apiData = await apiRes.json().catch(() => ({}));
         if (apiRes.ok && (apiData.success === true || apiData.message)) {
-          if (apiData.via === "smtp") {
-            sentOk = true;
-            needsEmailjsFallback = false;
-          } else {
-            console.info(
-              "[ContactUs] API route accepted but SMTP not configured — trying EmailJS."
-            );
-          }
-        } else if (apiRes.status === 403 && apiData.error) {
-          // Bot detection → show as error so user can retry
-          throw new Error(apiData.error || "Spam detected");
+          apiOk = true;
         } else {
           console.warn(
-            "[ContactUs] API route failed, falling back to EmailJS:",
+            "Contact form API failed:",
             apiData?.error || `HTTP ${apiRes.status}`
           );
         }
-      } catch (apiErr) {
-        if (apiErr?.message?.includes("Spam") || apiErr?.message?.includes("Bot")) {
-          throw apiErr;
-        }
-        console.warn(
-          "[ContactUs] API route error, falling back to EmailJS:",
-          apiErr?.message || apiErr
-        );
+      } catch (err) {
+        console.error("Contact form API error:", err);
       }
 
-      if (needsEmailjsFallback) {
-        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-        if (
-          serviceId &&
-          templateId &&
-          publicKey &&
-          serviceId !== "YOUR_SERVICE_ID" &&
-          templateId !== "YOUR_TEMPLATE_ID" &&
-          publicKey !== "YOUR_PUBLIC_KEY"
-        ) {
-          const templateParams = {
-            fullName: formData.fullName,
-            email: formData.email,
-            phone: formData.phone,
-            message: formData.message,
-          };
-          const res = await emailjs.send(
-            serviceId,
-            templateId,
-            templateParams,
-            { publicKey }
-          );
-          if (res.status === 200) {
-            sentOk = true;
-            console.info("[ContactUs] EmailJS direct send succeeded.");
-          }
-        } else if (!sentOk) {
-          throw new Error(
-            "EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)"
-          );
-        }
-      }
-
-      if (sentOk) {
+      /* ── Outcome ──────────────────────────────────────── */
+      if (emailjsOk || apiOk) {
         setStatus("success");
         setFormData({ fullName: "", email: "", phone: "", message: "" });
-        trackContactFormConversion();
+        recaptchaRef.current?.reset();
+        if (emailjsOk && apiOk) {
+          trackContactFormConversion();
+        } else if (!emailjsOk) {
+          console.warn("EmailJS failed, but API succeeded — still tracking conversion");
+          trackContactFormConversion();
+        }
       } else {
         setStatus("error");
+        recaptchaRef.current?.reset();
       }
     } catch (error) {
-      console.error("[ContactUs] Send error:", error);
+      console.error("Contact form send error:", error);
       setStatus("error");
+      recaptchaRef.current?.reset();
     }
   };
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
-
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (publicKey && publicKey !== "YOUR_PUBLIC_KEY") {
-      try {
-        emailjs.init({ publicKey });
-      } catch (e) {
-        console.warn("[ContactUs] EmailJS init warning:", e?.message || e);
-      }
-    }
   }, []);
 
   return (
@@ -342,6 +308,39 @@ function ContactFormInner() {
                 </div>
               </div>
             </div>
+
+            {/* ══════════════════════════════════════════════
+                ADDED: Google reCAPTCHA v2 widget (above submit button)
+                ══════════════════════════════════════════════ */}
+            <div
+              className="recaptcha-wrapper"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "1.5rem 0 0.5rem",
+              }}
+            >
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={() => setCaptchaError(false)}
+              />
+            </div>
+            {captchaError && (
+              <p
+                style={{
+                  color: "#ff4444",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  fontSize: "14px",
+                }}
+              >
+                Please verify that you are not a robot.
+              </p>
+            )}
+            {/* ══════════════════════════════════════════════ */}
+
             {status === "success" && (
               <p
                 style={{
@@ -378,52 +377,5 @@ function ContactFormInner() {
         </div>
       </div>
     </main>
-  );
-}
-
-export default function ContactUsPage() {
-  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
-  const keyValid = isValidV3Key(reCaptchaKey);
-
-  if (typeof window !== "undefined") {
-    console.info("[ContactUs] Config check:", {
-      reCaptchaEnabled: keyValid,
-      reCaptchaKeyPreview: reCaptchaKey
-        ? reCaptchaKey.slice(0, 8) + "…" + reCaptchaKey.slice(-4)
-        : "(empty)",
-      keyFormat: keyValid ? "valid (v3 pattern)" : "SKIPPED — invalid/empty key",
-      emailjsService: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ? "set" : "MISSING",
-      emailjsTemplate: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ? "set" : "MISSING",
-      emailjsPublicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? "set" : "MISSING",
-    });
-  }
-
-  if (!keyValid) {
-    // reCAPTCHA key missing or invalid — render form without protection
-    console.warn(
-      "[ContactUs] reCAPTCHA disabled — NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set or invalid format."
-    );
-    return <ContactFormInner />;
-  }
-
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={reCaptchaKey}
-      container={{ parameters: { hl: "en" } }}
-      scriptProps={{
-        async: true,
-        defer: true,
-        appendTo: "head",
-        onError: () => {
-          console.warn(
-            "[ContactUs] reCAPTCHA script failed to load. This usually means the" +
-              " site key is not registered for this domain in Google reCAPTCHA Admin." +
-              " Form will still work without bot protection."
-          );
-        },
-      }}
-    >
-      <ContactFormInner />
-    </GoogleReCaptchaProvider>
   );
 }

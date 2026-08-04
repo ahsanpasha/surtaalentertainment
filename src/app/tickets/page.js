@@ -1,12 +1,18 @@
 "use client";
-import { useState, useEffect } from "react";
+/* ═══════════════════════════════════════════════════════════
+   ADDED: useRef (captcha ref), ReCAPTCHA (v2 widget),
+          emailjs (@emailjs/browser), trackContactFormConversion
+   ═══════════════════════════════════════════════════════════ */
+import { useState, useEffect, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "@emailjs/browser";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import SuccessStats from "../../component/SuccessStats/SuccessStats";
 import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { trackPurchaseConversion, buildTransactionId } from "@/lib/googleAds";
+import { trackPurchaseConversion, buildTransactionId, trackContactFormConversion } from "@/lib/googleAds";
 
 // ─── Static tickets data (no API needed) ──────────────────────────────────────
 const TICKETS = [
@@ -69,6 +75,95 @@ export default function TicketsPage() {
   const filteredTickets = TICKETS.filter(
     (ticket) => activeFilter === "All Artists" || ticket.artistName === activeFilter
   );
+
+  /* ─── ADDED: Contact form state + captcha ref ─────────── */
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null);
+  const recaptchaRef = useRef(null);
+  const [captchaError, setCaptchaError] = useState(false);
+
+  const handleFormChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  /* ─── ADDED: Contact form submit handler ────────────────
+     Flow: (a) reCAPTCHA v2 check
+           (b) EmailJS send
+           (c) /api/contact POST
+     Fail-safe: success if EITHER EmailJS OR API succeeds
+  ──────────────────────────────────────────────────────── */
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    setCaptchaError(false);
+
+    try {
+      const captchaToken = recaptchaRef.current?.getValue();
+      if (!captchaToken) {
+        setCaptchaError(true);
+        setStatus(null);
+        return;
+      }
+
+      let emailjsOk = false;
+      let apiOk = false;
+
+      try {
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          {
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          },
+          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
+        );
+        emailjsOk = true;
+      } catch (err) {
+        console.error("[tickets] EmailJS send failed:", err);
+      }
+
+      try {
+        const apiRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, captchaToken }),
+        });
+        const apiData = await apiRes.json().catch(() => ({}));
+        if (apiRes.ok && (apiData.success === true || apiData.message)) {
+          apiOk = true;
+        } else {
+          console.warn(
+            "[tickets] Contact form API failed:",
+            apiData?.error || `HTTP ${apiRes.status}`
+          );
+        }
+      } catch (err) {
+        console.error("[tickets] Contact form API error:", err);
+      }
+
+      if (emailjsOk || apiOk) {
+        setStatus("success");
+        setFormData({ fullName: "", email: "", phone: "", message: "" });
+        recaptchaRef.current?.reset();
+        trackContactFormConversion();
+      } else {
+        setStatus("error");
+        recaptchaRef.current?.reset();
+      }
+    } catch (error) {
+      console.error("[tickets] Contact form error:", error);
+      setStatus("error");
+      recaptchaRef.current?.reset();
+    }
+  };
 
   const handleBuyTicketsClick = (ticket, e) => {
     if (ticket.link) {
@@ -394,7 +489,7 @@ export default function TicketsPage() {
 
         {/* RIGHT SIDE FORM */}
         <div className="form-border" data-aos="fade-left" >
-          <div className="contact-form">
+          <form className="contact-form" onSubmit={handleFormSubmit}>
             <div>
               <h3 className="leaveamessage">Leave a Message</h3>
               <p className="form-sub">
@@ -406,8 +501,12 @@ export default function TicketsPage() {
                   <p className="labelofinput">Full Name</p>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleFormChange}
                     className="inputbox"
                     placeholder="Enter Full Name"
+                    required
                   />
                 </div>
 
@@ -416,30 +515,105 @@ export default function TicketsPage() {
                     <p className="labelofinput">Email</p>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
                       className="inputbox"
                       placeholder="Enter Email"
+                      style={{ textTransform: "none" }}
+                      required
                     />
                   </div>
                   <div className="inputdivnew">
                     <p className="labelofinput">Phone</p>
                     <input
-                      type="number"
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleFormChange}
                       className="inputbox"
                       placeholder="Enter Phone Number"
+                      required
                     />
                   </div>
                 </div>
                 <div className="inputdivnew">
                   <p className="labelofinput">Message</p>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
                     className="inputbox textareadesign"
                     placeholder="How can we help you?"
+                    required
                   ></textarea>
                 </div>
               </div>
             </div>
-            <button className="sendmessage">Send Message</button>
-          </div>
+
+            {/* ══════════════════════════════════════════════
+                ADDED: Google reCAPTCHA v2 widget
+                ══════════════════════════════════════════════ */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "1.5rem 0 0.5rem",
+              }}
+            >
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={() => setCaptchaError(false)}
+              />
+            </div>
+            {captchaError && (
+              <p
+                style={{
+                  color: "#ff4444",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  fontSize: "14px",
+                }}
+              >
+                Please verify that you are not a robot.
+              </p>
+            )}
+
+            {status === "success" && (
+              <p
+                style={{
+                  color: "#00C853",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                }}
+              >
+                Message sent successfully!
+              </p>
+            )}
+            {status === "error" && (
+              <p
+                style={{
+                  color: "#ff4444",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                }}
+              >
+                Failed to send message. Please try again or email
+                info@surtaalusa.com directly.
+              </p>
+            )}
+            <button
+              type="submit"
+              className="sendmessage"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
       </div>
     </main>
