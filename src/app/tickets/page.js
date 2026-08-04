@@ -6,6 +6,7 @@ import SuccessStats from "../../component/SuccessStats/SuccessStats";
 import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { trackPurchaseConversion, buildTransactionId } from "@/lib/googleAds";
 
 // ─── Static tickets data (no API needed) ──────────────────────────────────────
 const TICKETS = [
@@ -68,6 +69,25 @@ export default function TicketsPage() {
   const filteredTickets = TICKETS.filter(
     (ticket) => activeFilter === "All Artists" || ticket.artistName === activeFilter
   );
+
+  const handleBuyTicketsClick = (ticket, e) => {
+    if (ticket.link) {
+      e.preventDefault();
+      trackPurchaseConversion({
+        value: 1.0,
+        currency: "USD",
+        transactionId: buildTransactionId(`ticket_${ticket.id}`),
+        ticket_id: ticket.id,
+        artist: ticket.artistName,
+        city: ticket.city,
+      });
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          window.open(ticket.link, "_blank", "noopener,noreferrer");
+        }
+      }, 150);
+    }
+  };
 
   useEffect(() => {
     AOS.init({
@@ -196,17 +216,14 @@ export default function TicketsPage() {
                       ))}
                     </p>
                     {ticket.link && (
-                      <a
-                        href={ticket.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <button type="button" className="ticket-buy-btn">
+                        <button
+                          type="button"
+                          className="ticket-buy-btn"
+                          onClick={(e) => handleBuyTicketsClick(ticket, e)}
+                        >
                           Buy Tickets Now
                           <img src="/Images/Navbar/arrow.svg" alt="" />
                         </button>
-                      </a>
                     )}
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 // src/app/api/contact/route.js
 // Contact form POST handler — saves to Firestore + sends email notification
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
@@ -201,28 +201,38 @@ export async function POST(req) {
       );
     }
 
-    if (!recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
-      return NextResponse.json(
-        { error: "Missing reCAPTCHA token. Please try again." },
-        { status: 400 }
-      );
-    }
+    // Verify reCAPTCHA token if keys are set AND token was provided
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
+      try {
+        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+        const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
+        const recaptchaData = await recaptchaRes.json();
 
-    // Verify reCAPTCHA token if keys are set
-    if (process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
-      const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
-      const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
-      const recaptchaData = await recaptchaRes.json();
+        // Only block if it's a clear bot detection (score too low with success=true)
+        // For config errors (missing-input-secret, invalid-input-secret, timeout-or-duplicate etc),
+        // we still allow the submission through and just log a warning.
+        const configErrorCodes = [
+          "missing-input-secret", "invalid-input-secret",
+          "missing-input-response", "invalid-input-response",
+          "bad-request", "timeout-or-duplicate"
+        ];
+        const hasConfigError = recaptchaData["error-codes"]?.some(c => configErrorCodes.includes(c));
 
-      if (!recaptchaData.success || recaptchaData.score < 0.5) {
-        console.error("reCAPTCHA failed:", recaptchaData);
-        return NextResponse.json(
-          {
-            error: "Bot detected or reCAPTCHA verification failed. Please try again.",
-            details: recaptchaData // Send details to help debug 
-          },
-          { status: 403 }
-        );
+        if (!recaptchaData.success && hasConfigError) {
+          console.warn("reCAPTCHA config error (allowing submission):", recaptchaData);
+        } else if (recaptchaData.success && recaptchaData.score < 0.5) {
+          console.error("reCAPTCHA bot detection (score too low):", recaptchaData);
+          return NextResponse.json(
+            {
+              error: "Bot detected or reCAPTCHA verification failed. Please try again.",
+            },
+            { status: 403 }
+          );
+        } else if (!recaptchaData.success) {
+          console.warn("reCAPTCHA verify failed (allowing submission):", recaptchaData);
+        }
+      } catch (recaptchaErr) {
+        console.warn("reCAPTCHA verify threw error (allowing submission):", recaptchaErr?.message || recaptchaErr);
       }
     }
 

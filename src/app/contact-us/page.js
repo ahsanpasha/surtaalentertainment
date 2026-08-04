@@ -6,6 +6,7 @@ import "../globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import emailjs from '@emailjs/browser';
+import { trackContactFormConversion } from "@/lib/googleAds";
 
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
@@ -18,6 +19,7 @@ function ContactFormContent() {
     message: "",
   });
   const [status, setStatus] = useState(null);
+  const [recaptchaReady, setRecaptchaReady] = useState(true);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,31 +31,70 @@ function ContactFormContent() {
 
     try {
       let recaptchaToken = "";
-      if (executeRecaptcha) {
-        recaptchaToken = await executeRecaptcha("contact_form");
+      try {
+        if (executeRecaptcha && recaptchaReady) {
+          recaptchaToken = await Promise.race([
+            executeRecaptcha("contact_form"),
+            new Promise((_, rej) => setTimeout(() => rej(new Error("reCAPTCHA timeout")), 3000)),
+          ]);
+        }
+      } catch (recaptchaErr) {
+        console.warn("reCAPTCHA skipped (invalid/blocked/timeout):", recaptchaErr?.message || recaptchaErr);
+        setRecaptchaReady(false);
+        recaptchaToken = "";
       }
 
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+      let sentOk = false;
 
-      const templateParams = {
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-      };
+      try {
+        const apiRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, recaptchaToken }),
+        });
+        const apiData = await apiRes.json().catch(() => ({}));
+        if (apiRes.ok && (apiData.success === true || apiData.message)) {
+          sentOk = true;
+        } else {
+          console.warn("API route send failed, falling back to EmailJS:", apiData?.error || `HTTP ${apiRes.status}`);
+        }
+      } catch (apiErr) {
+        console.warn("API route send error, falling back to EmailJS:", apiErr?.message || apiErr);
+      }
 
-      const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      if (!sentOk) {
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      if (res.status === 200) {
+        if (serviceId && templateId && publicKey &&
+            serviceId !== "YOUR_SERVICE_ID" &&
+            templateId !== "YOUR_TEMPLATE_ID" &&
+            publicKey !== "YOUR_PUBLIC_KEY") {
+          const templateParams = {
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          };
+          const res = await emailjs.send(serviceId, templateId, templateParams, { publicKey });
+          if (res.status === 200) {
+            sentOk = true;
+          }
+        } else {
+          throw new Error("EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)");
+        }
+      }
+
+      if (sentOk) {
         setStatus("success");
         setFormData({ fullName: "", email: "", phone: "", message: "" });
+        trackContactFormConversion();
       } else {
         setStatus("error");
       }
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Contact form send error:", error);
       setStatus("error");
     }
   };
@@ -63,6 +104,15 @@ function ContactFormContent() {
       duration: 800,
       once: true,
     });
+
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (publicKey && publicKey !== "YOUR_PUBLIC_KEY") {
+      try {
+        emailjs.init({ publicKey });
+      } catch (e) {
+        console.warn("EmailJS init warning:", e?.message || e);
+      }
+    }
   }, []);
 
   return (
@@ -224,7 +274,7 @@ function ContactFormContent() {
               </div>
             </div>
             {status === "success" && <p style={{ color: "#00C853", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Message sent successfully!</p>}
-            {status === "error" && <p style={{ color: "#ff4444", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Failed to send message. Please try again.</p>}
+            {status === "error" && <p style={{ color: "#ff4444", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Failed to send message. Please try again or email info@surtaalusa.com directly.</p>}
             <button type="submit" className="sendmessage" disabled={status === "loading"}>
               {status === "loading" ? "Sending..." : "Send Message"}
             </button>
@@ -236,9 +286,18 @@ function ContactFormContent() {
 }
 
 export default function ContactUsPage() {
-  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "dummy_key";
+  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+  const hasRecaptcha = Boolean(reCaptchaKey && reCaptchaKey !== "dummy_key");
+
+  if (!hasRecaptcha) {
+    return <ContactFormContent />;
+  }
+
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
+    <GoogleReCaptchaProvider
+      reCaptchaKey={reCaptchaKey}
+      container={{ parameters: { hl: "en" } }}
+    >
       <ContactFormContent />
     </GoogleReCaptchaProvider>
   );

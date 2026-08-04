@@ -47,6 +47,22 @@ export default function RootLayout({ children }) {
           type="image/webp"
           fetchPriority="high"
         />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18343375825"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18343375825');
+            gtag('config', 'G-MNH7GZH17Z');
+          `}
+        </Script>
       </head>
       <body>
         <SmoothScrollProvider>
@@ -57,28 +73,6 @@ export default function RootLayout({ children }) {
             <WhatsAppButton />
           </div>
         </SmoothScrollProvider>
-      
-      
-    <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MNH7GZH17Z"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-tag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            // GA4
-            gtag('config', 'G-MNH7GZH17Z');
-
-            // Google Ads
-            gtag('config', 'AW-18343375825');
-          `}
-        </Script>
-
-
       </body>
     </html>
   );
