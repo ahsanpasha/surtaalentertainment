@@ -1,7 +1,10 @@
 // src/app/api/contact/route.js
 // Contact form POST handler — reCAPTCHA v2 verify + SMTP via Nodemailer
+// Note: When using output: 'export' (static), this route won't be served.
+//       Client-side automatically falls back to EmailJS direct submission.
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
+export const revalidate = false;
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
@@ -341,4 +344,11 @@ export async function POST(req) {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  return NextResponse.json(
+    { message: "Contact API — use POST to submit form. In static export mode, client submits directly via EmailJS." },
+    { status: 200 }
+  );
 }

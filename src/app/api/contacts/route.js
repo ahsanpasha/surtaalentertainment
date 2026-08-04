@@ -1,7 +1,9 @@
 // src/app/api/contacts/route.js
 // Mock contacts GET API — for admin dashboard (Firebase removed)
+// Note: When using output: 'export' (static), this route won't be served.
 
 export const dynamic = "force-static";
+export const revalidate = false;
 
 import { NextResponse } from "next/server";
 
