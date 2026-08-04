@@ -45,6 +45,7 @@ function ContactFormContent() {
       }
 
       let sentOk = false;
+      let needsEmailjsFallback = true;
 
       try {
         const apiRes = await fetch("/api/contact", {
@@ -54,7 +55,15 @@ function ContactFormContent() {
         });
         const apiData = await apiRes.json().catch(() => ({}));
         if (apiRes.ok && (apiData.success === true || apiData.message)) {
-          sentOk = true;
+          // API route returns success, but check if it actually sent mail via SMTP
+          // (via: "smtp" means nodemailer delivered; via: "pending-emailjs-fallback" means SMTP not configured
+          // and we should try client-side EmailJS now)
+          if (apiData.via === "smtp") {
+            sentOk = true;
+            needsEmailjsFallback = false;
+          } else {
+            console.info("API route success but SMTP not configured — trying EmailJS now.");
+          }
         } else {
           console.warn("API route send failed, falling back to EmailJS:", apiData?.error || `HTTP ${apiRes.status}`);
         }
@@ -62,7 +71,7 @@ function ContactFormContent() {
         console.warn("API route send error, falling back to EmailJS:", apiErr?.message || apiErr);
       }
 
-      if (!sentOk) {
+      if (needsEmailjsFallback) {
         const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
         const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
         const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -80,9 +89,12 @@ function ContactFormContent() {
           const res = await emailjs.send(serviceId, templateId, templateParams, { publicKey });
           if (res.status === 200) {
             sentOk = true;
+            console.info("EmailJS direct send succeeded.");
           }
         } else {
-          throw new Error("EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)");
+          if (!sentOk) {
+            throw new Error("EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)");
+          }
         }
       }
 
@@ -287,7 +299,23 @@ function ContactFormContent() {
 
 export default function ContactUsPage() {
   const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
-  const hasRecaptcha = Boolean(reCaptchaKey && reCaptchaKey !== "dummy_key");
+  const hasRecaptcha = Boolean(
+    reCaptchaKey &&
+      reCaptchaKey !== "dummy_key" &&
+      reCaptchaKey !== "YOUR_RECAPTCHA_SITE_KEY"
+  );
+
+  if (typeof window !== "undefined") {
+    console.info("[ContactUs] Env check:", {
+      hasRecaptcha,
+      reCaptchaKeyPreview: reCaptchaKey
+        ? reCaptchaKey.slice(0, 8) + "…" + reCaptchaKey.slice(-4)
+        : "(empty)",
+      emailjsService: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ? "set" : "MISSING",
+      emailjsTemplate: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ? "set" : "MISSING",
+      emailjsPublicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? "set" : "MISSING",
+    });
+  }
 
   if (!hasRecaptcha) {
     return <ContactFormContent />;
@@ -297,6 +325,15 @@ export default function ContactUsPage() {
     <GoogleReCaptchaProvider
       reCaptchaKey={reCaptchaKey}
       container={{ parameters: { hl: "en" } }}
+      scriptProps={{
+        async: true,
+        defer: true,
+        onError: () => {
+          console.warn(
+            "[ContactUs] reCAPTCHA script failed to load — form will proceed without token."
+          );
+        },
+      }}
     >
       <ContactFormContent />
     </GoogleReCaptchaProvider>

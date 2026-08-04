@@ -193,6 +193,16 @@ export async function POST(req) {
     const body = await req.json();
     const { fullName, email, phone, message, recaptchaToken } = body;
 
+    console.info("[api/contact] Incoming submission:", {
+      nameLen: fullName?.length || 0,
+      email: email || "(missing)",
+      hasRecaptchaToken: Boolean(recaptchaToken),
+      recaptchaTokenLen: recaptchaToken?.length || 0,
+      // env status (without exposing secrets)
+      hasSmtpCreds: Boolean(process.env.EMAIL_USER && process.env.EMAIL_PASS),
+      recaptchaSecretSet: Boolean(process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== "your_recaptcha_secret_key_here"),
+    });
+
     // Validation
     if (!fullName || !email || !message) {
       return NextResponse.json(
@@ -208,9 +218,6 @@ export async function POST(req) {
         const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
         const recaptchaData = await recaptchaRes.json();
 
-        // Only block if it's a clear bot detection (score too low with success=true)
-        // For config errors (missing-input-secret, invalid-input-secret, timeout-or-duplicate etc),
-        // we still allow the submission through and just log a warning.
         const configErrorCodes = [
           "missing-input-secret", "invalid-input-secret",
           "missing-input-response", "invalid-input-response",
@@ -219,9 +226,9 @@ export async function POST(req) {
         const hasConfigError = recaptchaData["error-codes"]?.some(c => configErrorCodes.includes(c));
 
         if (!recaptchaData.success && hasConfigError) {
-          console.warn("reCAPTCHA config error (allowing submission):", recaptchaData);
+          console.warn("[api/contact] reCAPTCHA config error (allowing submission):", recaptchaData);
         } else if (recaptchaData.success && recaptchaData.score < 0.5) {
-          console.error("reCAPTCHA bot detection (score too low):", recaptchaData);
+          console.error("[api/contact] reCAPTCHA bot detection (score too low):", recaptchaData);
           return NextResponse.json(
             {
               error: "Bot detected or reCAPTCHA verification failed. Please try again.",
@@ -229,22 +236,24 @@ export async function POST(req) {
             { status: 403 }
           );
         } else if (!recaptchaData.success) {
-          console.warn("reCAPTCHA verify failed (allowing submission):", recaptchaData);
+          console.warn("[api/contact] reCAPTCHA verify failed (allowing submission):", recaptchaData);
+        } else {
+          console.info("[api/contact] reCAPTCHA verified, score:", recaptchaData.score);
         }
       } catch (recaptchaErr) {
-        console.warn("reCAPTCHA verify threw error (allowing submission):", recaptchaErr?.message || recaptchaErr);
+        console.warn("[api/contact] reCAPTCHA verify threw error (allowing submission):", recaptchaErr?.message || recaptchaErr);
       }
     }
 
-    // 1️⃣  Send emails (admin notification + user auto-reply)
+    // Send emails via nodemailer (admin notification + user auto-reply)
+    // If SMTP credentials are not set, we still return success so the client
+    // shows "sent" — the real delivery is handled by client-side EmailJS fallback
+    // which is the primary path when SMTP is unavailable.
+    let smtpSent = false;
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = createTransporter();
 
-      // Verify connection (optional — remove in production if too slow)
-      // await transporter.verify();
-
       const emailPromises = [
-        // Admin notification
         transporter.sendMail({
           from: `"Surtaal Entertainment" <${process.env.EMAIL_USER}>`,
           to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
@@ -254,7 +263,6 @@ export async function POST(req) {
           html: buildAdminEmail({ fullName, email, phone, message }),
         }),
 
-        // Auto-reply to the user
         transporter.sendMail({
           from: `"Surtaal Entertainment" <${process.env.EMAIL_USER}>`,
           to: email,
@@ -264,25 +272,33 @@ export async function POST(req) {
         }),
       ];
 
-      // Run both sends in parallel; catch individually so one failure won't block the other
       const results = await Promise.allSettled(emailPromises);
+      const adminOk = results[0]?.status === "fulfilled";
+      const userOk = results[1]?.status === "fulfilled";
+      smtpSent = adminOk || userOk;
       results.forEach((result, i) => {
         if (result.status === "rejected") {
-          console.error(`Email #${i + 1} failed:`, result.reason);
+          console.error(`[api/contact] SMTP email #${i + 1} failed:`, result.reason);
         }
       });
+      console.info("[api/contact] SMTP result:", { adminOk, userOk });
     } else {
       console.warn(
-        "⚠️  EMAIL_USER / EMAIL_PASS not set in .env.local — email skipped."
+        "[api/contact] SMTP not configured (EMAIL_USER/EMAIL_PASS missing) — returning success, " +
+        "client-side EmailJS fallback is responsible for actual delivery."
       );
     }
 
     return NextResponse.json(
-      { success: true, message: "Your message has been sent successfully!" },
+      {
+        success: true,
+        message: "Your message has been sent successfully!",
+        via: smtpSent ? "smtp" : "pending-emailjs-fallback",
+      },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact form handler error:", error);
+    console.error("[api/contact] Handler error:", error);
     return NextResponse.json(
       { error: "Failed to process your request. Please try again later." },
       { status: 500 }
