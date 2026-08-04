@@ -193,14 +193,19 @@ export async function POST(req) {
     const body = await req.json();
     const { fullName, email, phone, message, recaptchaToken } = body;
 
+    const hasSecret = Boolean(
+      process.env.RECAPTCHA_SECRET_KEY &&
+        process.env.RECAPTCHA_SECRET_KEY !== "your_recaptcha_secret_key_here" &&
+        /^6[L-Re][a-zA-Z0-9_-]{38,}$/.test(process.env.RECAPTCHA_SECRET_KEY || "")
+    );
+
     console.info("[api/contact] Incoming submission:", {
       nameLen: fullName?.length || 0,
       email: email || "(missing)",
       hasRecaptchaToken: Boolean(recaptchaToken),
       recaptchaTokenLen: recaptchaToken?.length || 0,
-      // env status (without exposing secrets)
+      recaptchaSecretSet: hasSecret,
       hasSmtpCreds: Boolean(process.env.EMAIL_USER && process.env.EMAIL_PASS),
-      recaptchaSecretSet: Boolean(process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== "your_recaptcha_secret_key_here"),
     });
 
     // Validation
@@ -211,44 +216,68 @@ export async function POST(req) {
       );
     }
 
-    // Verify reCAPTCHA token if keys are set AND token was provided
-    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'your_recaptcha_secret_key_here') {
+    // Verify reCAPTCHA token if both secret and token are present
+    if (recaptchaToken && hasSecret) {
       try {
         const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
         const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
         const recaptchaData = await recaptchaRes.json();
 
+        // Config errors → don't block, just log
         const configErrorCodes = [
-          "missing-input-secret", "invalid-input-secret",
-          "missing-input-response", "invalid-input-response",
-          "bad-request", "timeout-or-duplicate"
+          "missing-input-secret",
+          "invalid-input-secret",
+          "missing-input-response",
+          "invalid-input-response",
+          "bad-request",
+          "timeout-or-duplicate",
         ];
-        const hasConfigError = recaptchaData["error-codes"]?.some(c => configErrorCodes.includes(c));
+        const hasConfigError = recaptchaData["error-codes"]?.some((c) =>
+          configErrorCodes.includes(c)
+        );
 
         if (!recaptchaData.success && hasConfigError) {
-          console.warn("[api/contact] reCAPTCHA config error (allowing submission):", recaptchaData);
+          console.warn(
+            "[api/contact] reCAPTCHA config error (ALLOWING submission):",
+            recaptchaData
+          );
         } else if (recaptchaData.success && recaptchaData.score < 0.5) {
-          console.error("[api/contact] reCAPTCHA bot detection (score too low):", recaptchaData);
+          // CONFIRMED bot → BLOCK
+          console.error(
+            "[api/contact] reCAPTCHA bot detection blocked:",
+            recaptchaData
+          );
           return NextResponse.json(
             {
-              error: "Bot detected or reCAPTCHA verification failed. Please try again.",
+              error:
+                "Bot detected. Please try again, or contact us directly at info@surtaalusa.com.",
             },
             { status: 403 }
           );
         } else if (!recaptchaData.success) {
-          console.warn("[api/contact] reCAPTCHA verify failed (allowing submission):", recaptchaData);
+          console.warn(
+            "[api/contact] reCAPTCHA verify failed (ALLOWING submission):",
+            recaptchaData
+          );
         } else {
-          console.info("[api/contact] reCAPTCHA verified, score:", recaptchaData.score);
+          console.info(
+            "[api/contact] reCAPTCHA verified — score:",
+            recaptchaData.score
+          );
         }
       } catch (recaptchaErr) {
-        console.warn("[api/contact] reCAPTCHA verify threw error (allowing submission):", recaptchaErr?.message || recaptchaErr);
+        console.warn(
+          "[api/contact] reCAPTCHA verify error (ALLOWING submission):",
+          recaptchaErr?.message || recaptchaErr
+        );
       }
+    } else if (recaptchaToken && !hasSecret) {
+      console.warn(
+        "[api/contact] Client sent reCAPTCHA token but RECAPTCHA_SECRET_KEY is missing/invalid on server — skipping verify."
+      );
     }
 
     // Send emails via nodemailer (admin notification + user auto-reply)
-    // If SMTP credentials are not set, we still return success so the client
-    // shows "sent" — the real delivery is handled by client-side EmailJS fallback
-    // which is the primary path when SMTP is unavailable.
     let smtpSent = false;
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = createTransporter();
@@ -284,8 +313,7 @@ export async function POST(req) {
       console.info("[api/contact] SMTP result:", { adminOk, userOk });
     } else {
       console.warn(
-        "[api/contact] SMTP not configured (EMAIL_USER/EMAIL_PASS missing) — returning success, " +
-        "client-side EmailJS fallback is responsible for actual delivery."
+        "[api/contact] SMTP not configured (EMAIL_USER/EMAIL_PASS missing) — client-side EmailJS fallback will send."
       );
     }
 

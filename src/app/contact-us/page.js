@@ -10,7 +10,14 @@ import { trackContactFormConversion } from "@/lib/googleAds";
 
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-function ContactFormContent() {
+function isValidV3Key(key) {
+  if (!key || typeof key !== "string") return false;
+  if (key === "dummy_key" || key === "YOUR_RECAPTCHA_SITE_KEY") return false;
+  // Google reCAPTCHA keys always start with "6L" and are ~40 chars alphanumeric + _ -
+  return /^6[L-Re][a-zA-Z0-9_-]{38,}$/.test(key);
+}
+
+function ContactFormInner() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -35,11 +42,16 @@ function ContactFormContent() {
         if (executeRecaptcha && recaptchaReady) {
           recaptchaToken = await Promise.race([
             executeRecaptcha("contact_form"),
-            new Promise((_, rej) => setTimeout(() => rej(new Error("reCAPTCHA timeout")), 3000)),
+            new Promise((_, rej) =>
+              setTimeout(() => rej(new Error("reCAPTCHA timeout")), 4000)
+            ),
           ]);
         }
       } catch (recaptchaErr) {
-        console.warn("reCAPTCHA skipped (invalid/blocked/timeout):", recaptchaErr?.message || recaptchaErr);
+        console.warn(
+          "[ContactUs] reCAPTCHA skipped (invalid/blocked/timeout):",
+          recaptchaErr?.message || recaptchaErr
+        );
         setRecaptchaReady(false);
         recaptchaToken = "";
       }
@@ -55,20 +67,31 @@ function ContactFormContent() {
         });
         const apiData = await apiRes.json().catch(() => ({}));
         if (apiRes.ok && (apiData.success === true || apiData.message)) {
-          // API route returns success, but check if it actually sent mail via SMTP
-          // (via: "smtp" means nodemailer delivered; via: "pending-emailjs-fallback" means SMTP not configured
-          // and we should try client-side EmailJS now)
           if (apiData.via === "smtp") {
             sentOk = true;
             needsEmailjsFallback = false;
           } else {
-            console.info("API route success but SMTP not configured — trying EmailJS now.");
+            console.info(
+              "[ContactUs] API route accepted but SMTP not configured — trying EmailJS."
+            );
           }
+        } else if (apiRes.status === 403 && apiData.error) {
+          // Bot detection → show as error so user can retry
+          throw new Error(apiData.error || "Spam detected");
         } else {
-          console.warn("API route send failed, falling back to EmailJS:", apiData?.error || `HTTP ${apiRes.status}`);
+          console.warn(
+            "[ContactUs] API route failed, falling back to EmailJS:",
+            apiData?.error || `HTTP ${apiRes.status}`
+          );
         }
       } catch (apiErr) {
-        console.warn("API route send error, falling back to EmailJS:", apiErr?.message || apiErr);
+        if (apiErr?.message?.includes("Spam") || apiErr?.message?.includes("Bot")) {
+          throw apiErr;
+        }
+        console.warn(
+          "[ContactUs] API route error, falling back to EmailJS:",
+          apiErr?.message || apiErr
+        );
       }
 
       if (needsEmailjsFallback) {
@@ -76,25 +99,34 @@ function ContactFormContent() {
         const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
         const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-        if (serviceId && templateId && publicKey &&
-            serviceId !== "YOUR_SERVICE_ID" &&
-            templateId !== "YOUR_TEMPLATE_ID" &&
-            publicKey !== "YOUR_PUBLIC_KEY") {
+        if (
+          serviceId &&
+          templateId &&
+          publicKey &&
+          serviceId !== "YOUR_SERVICE_ID" &&
+          templateId !== "YOUR_TEMPLATE_ID" &&
+          publicKey !== "YOUR_PUBLIC_KEY"
+        ) {
           const templateParams = {
             fullName: formData.fullName,
             email: formData.email,
             phone: formData.phone,
             message: formData.message,
           };
-          const res = await emailjs.send(serviceId, templateId, templateParams, { publicKey });
+          const res = await emailjs.send(
+            serviceId,
+            templateId,
+            templateParams,
+            { publicKey }
+          );
           if (res.status === 200) {
             sentOk = true;
-            console.info("EmailJS direct send succeeded.");
+            console.info("[ContactUs] EmailJS direct send succeeded.");
           }
-        } else {
-          if (!sentOk) {
-            throw new Error("EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)");
-          }
+        } else if (!sentOk) {
+          throw new Error(
+            "EmailJS keys not configured in .env.local (NEXT_PUBLIC_EMAILJS_SERVICE_ID / _TEMPLATE_ID / _PUBLIC_KEY)"
+          );
         }
       }
 
@@ -106,23 +138,20 @@ function ContactFormContent() {
         setStatus("error");
       }
     } catch (error) {
-      console.error("Contact form send error:", error);
+      console.error("[ContactUs] Send error:", error);
       setStatus("error");
     }
   };
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
 
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
     if (publicKey && publicKey !== "YOUR_PUBLIC_KEY") {
       try {
         emailjs.init({ publicKey });
       } catch (e) {
-        console.warn("EmailJS init warning:", e?.message || e);
+        console.warn("[ContactUs] EmailJS init warning:", e?.message || e);
       }
     }
   }, []);
@@ -135,7 +164,8 @@ function ContactFormContent() {
           <p className="Celebratetext">Contact Us Now</p>
         </div>
         <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
-          Connect with <span> Surtaal </span><br /> Entertainment
+          Connect with <span> Surtaal </span>
+          <br /> Entertainment
         </p>
       </div>
       <div className="contact-section">
@@ -154,7 +184,11 @@ function ContactFormContent() {
             South Asian music experiences to the world.
           </p>
           <div className="maindivstructure">
-            <a href="tel:+13214222223" className="contact-item-my" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <a
+              href="tel:+13214222223"
+              className="contact-item-my"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <img
                 src="/Images/ContactUs/phone.svg"
                 className="phoneicon"
@@ -166,7 +200,11 @@ function ContactFormContent() {
               </div>
             </a>
 
-            <a href="mailto:info@surtaalusa.com" className="contact-item-my" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <a
+              href="mailto:info@surtaalusa.com"
+              className="contact-item-my"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <img
                 src="/Images/ContactUs/email.svg"
                 className="phoneicon"
@@ -183,11 +221,15 @@ function ContactFormContent() {
           <div className="socials">
             <p className="followtext">Follow Us On:</p>
             <div className="icons">
-
-              {/* Gradient (sirf ek dafa define karo) */}
               <svg width="0" height="0">
                 <defs>
-                  <linearGradient id="iconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient
+                    id="iconGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#8D0432" />
                     <stop offset="100%" stopColor="#BD0040" />
                   </linearGradient>
@@ -195,29 +237,44 @@ function ContactFormContent() {
               </svg>
 
               <div className="socialicondiv">
-                <a href="https://www.tiktok.com/@surtaalentusa" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.tiktok.com/@surtaalentusa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaTiktok className="fillcolor" />
                 </a>
               </div>
 
               <div className="socialicondiv">
-                <a href="https://www.instagram.com/surtaalentertainment/?hl=en" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.instagram.com/surtaalentertainment/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram className="fillcolor" />
                 </a>
               </div>
 
               <div className="socialicondiv">
-                <a href="https://www.facebook.com/SurTaalUSA/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.facebook.com/SurTaalUSA/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaFacebook className="fillcolor" />
                 </a>
               </div>
 
               <div className="socialicondiv">
-                <a href="https://www.youtube.com/@SurtaalEntertainmentUSA" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.youtube.com/@SurtaalEntertainmentUSA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaYoutube className="fillcolor" />
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -255,7 +312,7 @@ function ContactFormContent() {
                       onChange={handleChange}
                       className="inputbox"
                       placeholder="Enter Email"
-                      style={{ textTransform: 'none' }}
+                      style={{ textTransform: "none" }}
                       required
                     />
                   </div>
@@ -285,9 +342,36 @@ function ContactFormContent() {
                 </div>
               </div>
             </div>
-            {status === "success" && <p style={{ color: "#00C853", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Message sent successfully!</p>}
-            {status === "error" && <p style={{ color: "#ff4444", marginBottom: "1rem", fontWeight: "600", textAlign: "center" }}>Failed to send message. Please try again or email info@surtaalusa.com directly.</p>}
-            <button type="submit" className="sendmessage" disabled={status === "loading"}>
+            {status === "success" && (
+              <p
+                style={{
+                  color: "#00C853",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                }}
+              >
+                Message sent successfully!
+              </p>
+            )}
+            {status === "error" && (
+              <p
+                style={{
+                  color: "#ff4444",
+                  marginBottom: "1rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                }}
+              >
+                Failed to send message. Please try again or email
+                info@surtaalusa.com directly.
+              </p>
+            )}
+            <button
+              type="submit"
+              className="sendmessage"
+              disabled={status === "loading"}
+            >
               {status === "loading" ? "Sending..." : "Send Message"}
             </button>
           </form>
@@ -299,26 +383,27 @@ function ContactFormContent() {
 
 export default function ContactUsPage() {
   const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
-  const hasRecaptcha = Boolean(
-    reCaptchaKey &&
-      reCaptchaKey !== "dummy_key" &&
-      reCaptchaKey !== "YOUR_RECAPTCHA_SITE_KEY"
-  );
+  const keyValid = isValidV3Key(reCaptchaKey);
 
   if (typeof window !== "undefined") {
-    console.info("[ContactUs] Env check:", {
-      hasRecaptcha,
+    console.info("[ContactUs] Config check:", {
+      reCaptchaEnabled: keyValid,
       reCaptchaKeyPreview: reCaptchaKey
         ? reCaptchaKey.slice(0, 8) + "…" + reCaptchaKey.slice(-4)
         : "(empty)",
+      keyFormat: keyValid ? "valid (v3 pattern)" : "SKIPPED — invalid/empty key",
       emailjsService: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ? "set" : "MISSING",
       emailjsTemplate: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ? "set" : "MISSING",
       emailjsPublicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? "set" : "MISSING",
     });
   }
 
-  if (!hasRecaptcha) {
-    return <ContactFormContent />;
+  if (!keyValid) {
+    // reCAPTCHA key missing or invalid — render form without protection
+    console.warn(
+      "[ContactUs] reCAPTCHA disabled — NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set or invalid format."
+    );
+    return <ContactFormInner />;
   }
 
   return (
@@ -328,14 +413,17 @@ export default function ContactUsPage() {
       scriptProps={{
         async: true,
         defer: true,
+        appendTo: "head",
         onError: () => {
           console.warn(
-            "[ContactUs] reCAPTCHA script failed to load — form will proceed without token."
+            "[ContactUs] reCAPTCHA script failed to load. This usually means the" +
+              " site key is not registered for this domain in Google reCAPTCHA Admin." +
+              " Form will still work without bot protection."
           );
         },
       }}
     >
-      <ContactFormContent />
+      <ContactFormInner />
     </GoogleReCaptchaProvider>
   );
 }
