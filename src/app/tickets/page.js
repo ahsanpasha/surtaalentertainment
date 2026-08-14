@@ -34,7 +34,7 @@ const TICKETS = [
     month: "Oct",
     weekday: "Fri",
     city: "Montreal, QC",
-    venue: "Oscar Peterson Concert Hall\n18 Concordia University, 7141 Sherbrooke Street West, Montreal, Quebec H4B 1R",
+    venue: "Oscar Peterson Concert Hall\n Concordia University, 7141 Sherbrooke Street West, Montreal, Quebec H4B 1R",
     imageUrl: "/Images/Tickets/zain.webp",
     link: "https://sulekha.com/ZainZohaibQC",
   },
