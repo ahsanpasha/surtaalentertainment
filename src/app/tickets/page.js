@@ -33,10 +33,10 @@ const TICKETS = [
     dayNum: "02",
     month: "Oct",
     weekday: "Fri",
-    city: "TBD",
-    venue: "",
+    city: "Montreal, QC",
+    venue: "Oscar Peterson Concert Hall\n18 Concordia University, 7141 Sherbrooke Street West, Montreal, Quebec H4B 1R",
     imageUrl: "/Images/Tickets/zain.webp",
-    link: "",
+    link: "https://sulekha.com/ZainZohaibQC",
   },
   {
     id: "103",
@@ -311,14 +311,14 @@ export default function TicketsPage() {
                       ))}
                     </p>
                     {ticket.link && (
-                        <button
-                          type="button"
-                          className="ticket-buy-btn"
-                          onClick={(e) => handleBuyTicketsClick(ticket, e)}
-                        >
-                          Buy Tickets Now
-                          <img src="/Images/Navbar/arrow.svg" alt="" />
-                        </button>
+                      <button
+                        type="button"
+                        className="ticket-buy-btn"
+                        onClick={(e) => handleBuyTicketsClick(ticket, e)}
+                      >
+                        Buy Tickets Now
+                        <img src="/Images/Navbar/arrow.svg" alt="" />
+                      </button>
                     )}
                   </div>
                 </div>
