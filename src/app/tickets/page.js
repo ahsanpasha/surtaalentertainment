@@ -35,7 +35,7 @@ const TICKETS = [
     weekday: "Fri",
     city: "Montreal, QC",
     venue: "Oscar Peterson Concert Hall\n Concordia University, 7141 Sherbrooke Street West, Montreal, Quebec H4B 1R",
-    imageUrl: "/Images/Tickets/zain.webp",
+    imageUrl: "/Images/Tickets/01.webp",
     link: "https://sulekha.com/ZainZohaibQC",
   },
   {
@@ -46,7 +46,7 @@ const TICKETS = [
     weekday: "Sat",
     city: "Calgary, AB",
     venue: "Bella Concert Hall\n18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
-    imageUrl: "/Images/Tickets/zain.webp",
+    imageUrl: "/Images/Tickets/ZainZohaib3.webp",
     link: "http://tickets.mru.ca/SurtaalEntertainment",
   },
   {
@@ -57,7 +57,7 @@ const TICKETS = [
     weekday: "Sun",
     city: "Vancouver, BC",
     venue: "Bell Performing Arts Centre\n6250 144 St, Surrey, BC V3X 1A2",
-    imageUrl: "/Images/Tickets/zain.webp",
+    imageUrl: "/Images/Tickets/03.webp",
     link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
   },
 ];

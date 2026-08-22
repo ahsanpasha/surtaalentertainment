@@ -15,6 +15,9 @@ const TARGETS = [
   { rel: "Tickets/choose.webp", width: 1400, quality: 78 },
   { rel: "Tickets/asim.webp", width: 900, quality: 80 },
   { rel: "Tickets/zain.png", width: 900, quality: 82, outRel: "Tickets/zain.webp" },
+  { rel: "Tickets/01.png", width: 900, quality: 82, outRel: "Tickets/01.webp" },
+  { rel: "Tickets/ZainZohaib3.png", width: 900, quality: 82, outRel: "Tickets/ZainZohaib3.webp" },
+  { rel: "Tickets/03.png", width: 900, quality: 82, outRel: "Tickets/03.webp" },
   { rel: "Artists/mystory.webp", width: 1400, quality: 78 },
   { rel: "Artists/a1.webp", width: 800, quality: 80 },
   { rel: "Artists/Asim.webp", width: 800, quality: 80 },
@@ -114,10 +117,18 @@ async function compressOne({ rel, width, quality, outRel }) {
     console.log("Removed public/ImagesOpt");
   }
 
-  const zainPng = path.join(IMAGES, "Tickets", "zain.png");
-  if (fs.existsSync(zainPng)) {
-    fs.unlinkSync(zainPng);
-    console.log("Removed heavy Tickets/zain.png");
+  const heavyPngs = [
+    "Tickets/zain.png",
+    "Tickets/01.png",
+    "Tickets/ZainZohaib3.png",
+    "Tickets/03.png",
+  ];
+  for (const png of heavyPngs) {
+    const pngPath = path.join(IMAGES, png);
+    if (fs.existsSync(pngPath)) {
+      fs.unlinkSync(pngPath);
+      console.log(`Removed heavy ${png}`);
+    }
   }
 
   console.log("Done.");
