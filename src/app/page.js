@@ -102,7 +102,7 @@ export default function HomePage() {
             className="SeeHowbtn TourBuyBtn TourMeetGreetBtn"
             onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
           >
-            Buy Meet and Greet
+            Buy Meet and Greet Tickets
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>
