@@ -302,6 +302,20 @@ img {
   color: #bd0040;
 }
 
+.HeroBtnGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.HeroBtnGroup .TourBuyBtn {
+  margin: 0;
+}
+
 .TourBuyBtn {
   margin: 0 auto;
 }
@@ -362,21 +376,25 @@ img {
 /* 768px */
 @media (max-width: 768px) {
   .TourHeadingText { font-size: 26px; margin-bottom: 14px; }
+  .HeroBtnGroup { gap: 14px; }
 }
 
 /* 600px */
 @media (max-width: 600px) {
   .TourHeadingText { font-size: 22px; margin-bottom: 12px; }
+  .HeroBtnGroup { gap: 12px; }
 }
 
 /* 500px */
 @media (max-width: 500px) {
   .TourHeadingText { font-size: 19px; margin-bottom: 10px; }
+  .HeroBtnGroup { gap: 10px; }
 }
 
 /* 440px */
 @media (max-width: 440px) {
   .TourHeadingText { font-size: 17px; margin-bottom: 9px; }
+  .HeroBtnGroup { gap: 8px; }
 }
 
 /* 390px */
@@ -7922,6 +7940,18 @@ img {
   margin: 0 0 45px;
 }
 
+.ticket-btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ticket-btn-group .ticket-buy-btn {
+  margin: 0;
+}
+
 .ticket-buy-btn {
   width: fit-content;
   height: 70px;
@@ -7945,6 +7975,12 @@ img {
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.35s ease;
+}
+
+.ticket-buy-btn img {
+  width: 15.06px;
+  height: 15.06px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -8686,6 +8722,15 @@ img {
     padding: 0 20px;
   }
 
+  .ticket-btn-group {
+    gap: 10px;
+  }
+
+  .ticket-buy-btn img {
+    width: 9px;
+    height: 9px;
+  }
+
   .ticket-card-media-inner {
     width: 180px;
     --ticket-border: 4px;
@@ -8749,6 +8794,15 @@ img {
     height: 42px;
     font-size: 13px;
     padding: 0 16px;
+  }
+
+  .ticket-btn-group {
+    gap: 8px;
+  }
+
+  .ticket-buy-btn img {
+    width: 8px;
+    height: 8px;
   }
 
   .ticket-card-media-inner {
@@ -8864,6 +8918,15 @@ img {
   .ticket-buy-btn {
     height: 38px;
     font-size: 11px;
+  }
+
+  .ticket-btn-group {
+    gap: 6px;
+  }
+
+  .ticket-buy-btn img {
+    width: 7px;
+    height: 7px;
   }
 
   .ticket-card-media-inner {

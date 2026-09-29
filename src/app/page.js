@@ -90,14 +90,22 @@ export default function HomePage() {
         >
           <span>Zain Zohaib</span> Canada Tour 2026
         </p>
-        <button
-          data-aos="fade-down" data-aos-delay="600"
-          className="SeeHowbtn TourBuyBtn"
-          onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
-        >
-          Buy Tickets
-          <img src="/Images/Navbar/arrow.svg" alt="" />
-        </button>
+        <div className="HeroBtnGroup" data-aos="fade-down" data-aos-delay="600">
+          <button
+            className="SeeHowbtn TourBuyBtn"
+            onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
+          >
+            Buy Tickets
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button>
+          <button
+            className="SeeHowbtn TourBuyBtn TourMeetGreetBtn"
+            onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
+          >
+            Buy Meet and Greet
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       {/* what we offer */}

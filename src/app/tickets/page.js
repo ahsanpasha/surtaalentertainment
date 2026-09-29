@@ -26,6 +26,7 @@ const TICKETS = [
     venue: "Queen Elizabeth Theatre\n190 Princes' Blvd Toronto, ON M6K 3C3",
     imageUrl: "/Images/Tickets/zain.webp",
     link: "https://admitone.com/events/zain-zohaib-toronto-171655",
+    meetGreetLink: "https://admitone.com/events/toronto/pro/other/queen-elizabeth-theatre/artist/zain-zohaib-qawwali-night/6a514af01958457b970e107f",
   },
   {
     id: "102",
@@ -37,6 +38,7 @@ const TICKETS = [
     venue: "Oscar Peterson Concert Hall\n Concordia University, 7141 Sherbrooke Street West, Montreal, Quebec H4B 1R",
     imageUrl: "/Images/Tickets/01.webp",
     link: "https://sulekha.com/ZainZohaibQC",
+    meetGreetLink: "https://events.sulekha.com/zain-zohaib-qawwali-night_event-in_montreal-qc_401321",
   },
   {
     id: "103",
@@ -48,6 +50,7 @@ const TICKETS = [
     venue: "Bella Concert Hall\n18 Mt Royal Cir SW, Calgary, AB T3E 7N5",
     imageUrl: "/Images/Tickets/ZainZohaib3.webp",
     link: "http://tickets.mru.ca/SurtaalEntertainment",
+    meetGreetLink: "https://tickets.mru.ca/orderticketsarea.asp?p=1992&a=2730&src=default",
   },
   {
     id: "104",
@@ -59,6 +62,7 @@ const TICKETS = [
     venue: "Bell Performing Arts Centre\n6250 144 St, Surrey, BC V3X 1A2",
     imageUrl: "/Images/Tickets/03.webp",
     link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
+    meetGreetLink: "https://www.bellperformingartscentre.com/choose-seats/?id=58401",
   },
 ];
 
@@ -181,6 +185,27 @@ export default function TicketsPage() {
           window.open(ticket.link, "_blank", "noopener,noreferrer");
         }
       }, 150);
+    }
+  };
+
+  const handleBuyMeetGreetClick = (ticket, e) => {
+    if (ticket.meetGreetLink && ticket.meetGreetLink.trim() !== "" && ticket.meetGreetLink !== "#") {
+      e.preventDefault();
+      trackPurchaseConversion({
+        value: 1.0,
+        currency: "USD",
+        transactionId: buildTransactionId(`meet_greet_${ticket.id}`),
+        ticket_id: ticket.id,
+        artist: ticket.artistName,
+        city: ticket.city,
+      });
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          window.open(ticket.meetGreetLink, "_blank", "noopener,noreferrer");
+        }
+      }, 150);
+    } else {
+      e.preventDefault();
     }
   };
 
@@ -310,16 +335,26 @@ export default function TicketsPage() {
                         </span>
                       ))}
                     </p>
-                    {ticket.link && (
+                    <div className="ticket-btn-group">
+                      {ticket.link && (
+                        <button
+                          type="button"
+                          className="ticket-buy-btn"
+                          onClick={(e) => handleBuyTicketsClick(ticket, e)}
+                        >
+                          Buy Tickets Now
+                          <img src="/Images/Navbar/arrow.svg" alt="" />
+                        </button>
+                      )}
                       <button
                         type="button"
-                        className="ticket-buy-btn"
-                        onClick={(e) => handleBuyTicketsClick(ticket, e)}
+                        className="ticket-buy-btn ticket-meet-greet-btn"
+                        onClick={(e) => handleBuyMeetGreetClick(ticket, e)}
                       >
-                        Buy Tickets Now
+                        Buy Meet and Greet Ticket Now
                         <img src="/Images/Navbar/arrow.svg" alt="" />
                       </button>
-                    )}
+                    </div>
                   </div>
                 </div>
                 <div className="ticket-card-media-inner">
