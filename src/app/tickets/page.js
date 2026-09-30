@@ -62,7 +62,7 @@ const TICKETS = [
     venue: "Bell Performing Arts Centre\n6250 144 St, Surrey, BC V3X 1A2",
     imageUrl: "/Images/Tickets/03.webp",
     link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
-    meetGreetLink: "https://www.bellperformingartscentre.com/choose-seats/?id=58401",
+    meetGreetLink: "https://www.bellperformingartscentre.com/events/zain-zohaib-meet-greet-only-2026/",
   },
 ];
 
