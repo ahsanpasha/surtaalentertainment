@@ -1,6 +1,7 @@
 'use client';
 import "./globals.css";
 import TourEvents from "../component/TourEvents/TourEvents";
+import PastEvents from "../component/PastEvents/PastEvents";
 import SuccessStats from "../component/SuccessStats/SuccessStats";
 import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
@@ -209,6 +210,8 @@ export default function HomePage() {
         </div>
       </div>
 
+      <PastEvents />
+
       {/* entertainment club */}
       <div>
         <div className="EntertainmentDiv">
@@ -400,8 +403,6 @@ export default function HomePage() {
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button></div>
       </div>
-
-      <TourEvents />
 
       {/* story */}
       <div className="OurStorySection">

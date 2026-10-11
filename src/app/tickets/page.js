@@ -15,7 +15,9 @@ import "aos/dist/aos.css";
 import { trackPurchaseConversion, buildTransactionId, trackContactFormConversion } from "@/lib/googleAds";
 
 // ─── Static tickets data (no API needed) ──────────────────────────────────────
+// Zain Zohaib Live in Canada 2026 tour completed - shows commented out to display "No Events Scheduled" empty state
 const TICKETS = [
+  /*
   {
     id: "101",
     artistName: "Zain Zohaib",
@@ -64,6 +66,7 @@ const TICKETS = [
     link: "https://www.bellperformingartscentre.com/events/zain-zohaib-qawwali-night-2026",
     meetGreetLink: "https://www.bellperformingartscentre.com/events/zain-zohaib-meet-greet-only-2026/",
   },
+  */
 ];
 
 export default function TicketsPage() {
@@ -286,9 +289,47 @@ export default function TicketsPage() {
 
 
         {filteredTickets.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '1rem', width: '100%', maxWidth: '600px', backgroundColor: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '20px', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(141,4,50,0.1), rgba(189,0,64,0.15))', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BD0040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <div
+            style={{
+              textAlign: "center",
+              padding: "3.5rem 2rem",
+              width: "100%",
+              maxWidth: "680px",
+              margin: "20px auto 40px",
+              backgroundColor: "rgba(255, 255, 255, 0.85)",
+              border: "1px solid rgba(0, 0, 0, 0.08)",
+              borderRadius: "24px",
+              boxShadow: "0 12px 36px rgba(0, 0, 0, 0.05)",
+              backdropFilter: "blur(12px)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+            data-aos="fade-up"
+          >
+            <div
+              style={{
+                width: "84px",
+                height: "84px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, rgba(141,4,50,0.12), rgba(189,0,64,0.18))",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: "1.5rem",
+                border: "1px solid rgba(189,0,64,0.2)",
+              }}
+            >
+              <svg
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#BD0040"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
                 <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -296,9 +337,32 @@ export default function TicketsPage() {
                 <path d="M9 16l2 2 4-4"></path>
               </svg>
             </div>
-            <h3 style={{ color: '#000', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: '600' }}>No Events Scheduled</h3>
-            <p style={{ color: '#000', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
-              There are currently no tickets available for <strong style={{ color: '#BD0040' }}>{activeFilter === "All Artists" ? "any artist" : activeFilter}</strong>. Please check back later.
+            <h3
+              style={{
+                color: "#272727",
+                fontSize: "2rem",
+                marginBottom: "0.85rem",
+                fontWeight: "600",
+                fontFamily: "Georama-SemiBold, sans-serif",
+              }}
+            >
+              No Events Scheduled
+            </h3>
+            <p
+              style={{
+                color: "#4b4b4b",
+                fontSize: "1.05rem",
+                lineHeight: "1.6",
+                marginBottom: "1.5rem",
+                maxWidth: "520px",
+                fontFamily: "Montserrat-Regular, sans-serif",
+              }}
+            >
+              There are currently no tickets available for{" "}
+              <strong style={{ color: "#BD0040" }}>
+                {activeFilter === "All Artists" ? "any artist" : activeFilter}
+              </strong>
+              . Please check back soon for upcoming tour dates.
             </p>
           </div>
         ) : (
