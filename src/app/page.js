@@ -83,7 +83,7 @@ export default function HomePage() {
           Let every beat inspire your soul as Surtaal brings music, energy, and
           passion together in perfect harmony.
         </p>
-        <p
+        {/* <p
           className="TourHeadingText"
           data-aos="fade-down"
           data-aos-delay="500"
@@ -105,7 +105,7 @@ export default function HomePage() {
             Buy Meet and Greet Tickets
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* what we offer */}
