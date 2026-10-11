@@ -406,6 +406,9 @@
   .past-event-month {
     font-size: 28px;
   }
+  .past-event-year {
+    font-size: 19px;
+  }
   .past-event-city {
     font-size: 28px;
   }
@@ -439,6 +442,9 @@
   }
   .past-event-month {
     font-size: 24px;
+  }
+  .past-event-year {
+    font-size: 16px;
   }
   .past-event-city {
     font-size: 24px;
@@ -522,6 +528,9 @@
   }
   .past-event-month {
     font-size: 20px;
+  }
+  .past-event-year {
+    font-size: 14px;
   }
   .past-event-weekday {
     font-size: 15px;
