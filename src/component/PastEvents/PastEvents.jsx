@@ -97,7 +97,7 @@ export default function PastEvents() {
       {/* Featured Tour Banner */}
       <div className="past-events-tour-banner" data-aos="fade-up">
         <div className="tour-banner-left">
-          <div className="tour-pulse-dot"></div>
+          {/* <div className="tour-pulse-dot"></div> */}
           <h3 className="tour-banner-title">
             <span>Zain Zohaib</span> Live in Canada 2026
           </h3>
