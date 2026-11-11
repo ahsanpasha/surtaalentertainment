@@ -10,20 +10,23 @@ export const metadata = {
   description: "Welcome to Surtaal Entertainment",
 };
 
+// Only preload critical above-the-fold fonts (heading + body)
 const CRITICAL_FONTS = [
-  "/Fonts/Georama-Regular.ttf",
   "/Fonts/Georama-SemiBold.ttf",
-  "/Fonts/Georama-Bold.ttf",
   "/Fonts/Montserrat-Regular.ttf",
-  "/Fonts/Montserrat-Medium.ttf",
-  "/Fonts/Sora-Regular.ttf",
-  "/Fonts/Sora-SemiBold.ttf",
 ];
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to external third-party origins */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+        {/* Preload only critical fonts */}
         {CRITICAL_FONTS.map((href) => (
           <link
             key={href}
@@ -34,11 +37,14 @@ export default function RootLayout({ children }) {
             crossOrigin="anonymous"
           />
         ))}
+
+        {/* Preload above-the-fold logo and hero background */}
         <link
           rel="preload"
           href="/Images/Navbar/Logo.svg"
           as="image"
           type="image/svg+xml"
+          fetchPriority="high"
         />
         <link
           rel="preload"
@@ -48,12 +54,13 @@ export default function RootLayout({ children }) {
           fetchPriority="high"
         />
 
+        {/* Non-blocking lazyOnload third-party analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18343375825"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
-        <Script id="google-tag" strategy="afterInteractive">
+        <Script id="google-tag" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -64,7 +71,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

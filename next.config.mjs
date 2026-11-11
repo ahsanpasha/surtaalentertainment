@@ -7,6 +7,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    optimizePackageImports: [
+      'react-icons',
+      '@mui/icons-material',
+      '@mui/material',
+      'lenis',
+    ],
+  },
 };
 
 export default nextConfig;

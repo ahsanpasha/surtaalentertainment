@@ -35,25 +35,30 @@ export default function SmoothScrollProvider({ children }) {
       return;
     }
 
-    // Lighter smooth scroll — less jank on slow networks
-    const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.2,
-    });
+    const isTouch = window.innerWidth <= 768 || "ontouchstart" in window;
 
-    window.lenis = lenis;
-
-    document.documentElement.classList.add("lenis-enabled");
-
+    let lenis = null;
     let rafId = 0;
-    const raf = (time) => {
-      lenis.raf(time);
+
+    // Run Lenis smooth scrolling only on desktop mouse devices to keep mobile 120Hz native & ultra-responsive
+    if (!isTouch) {
+      lenis = new Lenis({
+        duration: 0.9,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 0,
+      });
+
+      window.lenis = lenis;
+      document.documentElement.classList.add("lenis-enabled");
+
+      const raf = (time) => {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      };
       rafId = requestAnimationFrame(raf);
-    };
-    rafId = requestAnimationFrame(raf);
+    }
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -66,7 +71,6 @@ export default function SmoothScrollProvider({ children }) {
       { threshold: 0.05, rootMargin: "0px 0px -4% 0px" }
     );
 
-    // Reveal immediately what's already on screen
     initScrollReveal(revealObserver);
     requestAnimationFrame(() => {
       document.querySelectorAll(".scroll-reveal").forEach((el) => {
@@ -82,11 +86,13 @@ export default function SmoothScrollProvider({ children }) {
 
     return () => {
       clearTimeout(lateInit);
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenis) {
+        lenis.destroy();
+        document.documentElement.classList.remove("lenis-enabled");
+        if (window.lenis === lenis) delete window.lenis;
+      }
       revealObserver.disconnect();
-      document.documentElement.classList.remove("lenis-enabled");
-      if (window.lenis === lenis) delete window.lenis;
     };
   }, []);
 

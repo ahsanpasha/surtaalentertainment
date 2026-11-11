@@ -97,7 +97,6 @@ export default function PastEvents() {
       {/* Featured Tour Banner */}
       <div className="past-events-tour-banner" data-aos="fade-up">
         <div className="tour-banner-left">
-          {/* <div className="tour-pulse-dot"></div> */}
           <h3 className="tour-banner-title">
             <span>Zain Zohaib</span> Live in Canada 2026
           </h3>
@@ -105,6 +104,14 @@ export default function PastEvents() {
         <div className="tour-banner-stats">
           <span className="tour-stat-pill">4 Landmark Cities</span>
           <span className="tour-stat-pill">100% Sold Out Tour</span>
+          <button
+            type="button"
+            className="tour-banner-gallery-btn"
+            onClick={() => router.push("/gallery")}
+          >
+            <span>View Tour Gallery</span>
+            <img src="/Images/Navbar/arrow.svg" alt="" />
+          </button>
         </div>
       </div>
 
@@ -167,6 +174,14 @@ export default function PastEvents() {
 
       {/* CTA Section */}
       <div className="past-events-bottom-cta" data-aos="fade-up">
+        <button
+          type="button"
+          className="past-events-gallery-btn"
+          onClick={() => router.push("/gallery")}
+        >
+          View Tour Gallery
+          <img src="/Images/Navbar/arrow.svg" alt="" />
+        </button>
         <button
           type="button"
           className="past-events-contact-btn"
