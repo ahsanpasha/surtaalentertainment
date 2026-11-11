@@ -120,18 +120,18 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
       {/* Top Badge */}
       <div className="ServicesDiv" style={{ width: "fit-content" }} data-aos="fade-down">
         <div className="CircleServices"></div>
-        <p className="ServicesText">Live Tour Moments</p>
+        <p className="ServicesText">Meet &amp; Greet Moments</p>
       </div>
 
       {/* Main Heading */}
       <h2 className="WhatWeOffer" data-aos="fade-down">
-        Tour <span>Photo Gallery</span>
+        Tour <span>Meet &amp; Greet Moments</span>
       </h2>
 
       {/* Description */}
       <p className="ServiceDescTop" data-aos="fade-down">
-        Experience high-energy live moments and soul-stirring qawwali performances from
-        Surtaal&apos;s sold-out tour across North America. Every frame captured live on stage.
+        Exclusive fan interactions, memorable artist sessions, and intimate backstage moments with
+        Zain Zohaib during Surtaal&apos;s sold-out tour across North America.
       </p>
 
       {/* Featured Tour Banner */}
@@ -139,11 +139,11 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
         <div className="gallery-banner-left">
           <div className="gallery-pulse-dot"></div>
           <h3 className="gallery-banner-title">
-            <span>Zain Zohaib</span> Live in Canada 2026 Tour
+            <span>Zain Zohaib</span> Meet &amp; Greet Canada 2026 Tour
           </h3>
         </div>
         <div className="gallery-banner-stats">
-          <span className="gallery-stat-pill">99 Live Photographs</span>
+          <span className="gallery-stat-pill">99 Moments</span>
           <span className="gallery-stat-pill">4 Landmark Cities</span>
           <span className="gallery-stat-pill">100% Sold Out Tour</span>
         </div>
@@ -189,7 +189,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
 
           return (
             <div key={city.id} id={city.id} className="gallery-city-section" data-aos="fade-up">
-              {/* City Section Heading */}
+              {/* City Section Heading - e.g. Toronto Meet and Greet Moments */}
               <div className="gallery-city-header">
                 <div className="gallery-city-header-left">
                   <div className="gallery-city-badge">
@@ -197,10 +197,10 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
                     <span>{city.city}</span>
                   </div>
                   <h3 className="gallery-city-heading">
-                    {city.name} <span>Moments</span>
+                    {city.name} <span>Meet &amp; Greet Moments</span>
                   </h3>
                   <p className="gallery-city-venue">
-                    <strong>{city.venue}</strong> • 100% Attendance • Full House
+                    <strong>{city.venue}</strong> • Meet &amp; Greet Session • Full Attendance
                   </p>
                 </div>
 
@@ -222,7 +222,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
                     <div className="gallery-img-wrapper">
                       <img
                         src={item.thumb}
-                        alt={`${city.name} Concert Moment ${index + 1}`}
+                        alt={`${city.name} Meet and Greet Moment ${index + 1}`}
                         className="gallery-img"
                         loading="lazy"
                         decoding="async"
@@ -247,7 +247,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
                       <div className="gallery-card-caption">
                         <div className="gallery-card-city-badge">
                           <span className="gallery-card-city-badge-dot"></span>
-                          {city.name}
+                          {city.name} Meet &amp; Greet
                         </div>
                         <p className="gallery-card-venue">{city.venue}</p>
                       </div>
@@ -266,7 +266,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
                   >
                     {isExpanded
                       ? `Show Less ${city.name} Moments`
-                      : `View All ${city.count} ${city.name} Moments`}
+                      : `View All ${city.count} ${city.name} Meet & Greet Moments`}
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
@@ -286,7 +286,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
             className="gallery-load-more-btn"
             onClick={() => router.push("/gallery")}
           >
-            Explore Full Tour Gallery (99 Photos)
+            Explore Full Meet &amp; Greet Gallery (99 Photos)
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>
@@ -323,7 +323,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
             {/* Header with counter and close button */}
             <div className="gallery-lightbox-header">
               <div className="gallery-lightbox-counter">
-                {currentLightboxItem.categoryName} • Photo <span>{lightboxState.index + 1}</span> of {currentCityItems.length}
+                {currentLightboxItem.categoryName} Meet &amp; Greet • Photo <span>{lightboxState.index + 1}</span> of {currentCityItems.length}
               </div>
               <div className="gallery-lightbox-actions">
                 <button
@@ -356,7 +356,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
             <div className="gallery-lightbox-image-stage">
               <img
                 src={currentLightboxItem.src}
-                alt={`${currentLightboxItem.categoryName} Concert Highlight`}
+                alt={`${currentLightboxItem.categoryName} Meet and Greet Highlight`}
                 className="gallery-lightbox-image"
               />
             </div>
@@ -377,10 +377,10 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
             <div className="gallery-lightbox-footer">
               <div className="gallery-lightbox-footer-info">
                 <p className="gallery-lightbox-city">
-                  <span>{currentLightboxItem.categoryName}</span> • {currentLightboxItem.city}
+                  <span>{currentLightboxItem.categoryName}</span> • Meet &amp; Greet Session
                 </p>
                 <p className="gallery-lightbox-venue">
-                  {currentLightboxItem.venue} — Zain Zohaib Live in Canada 2026
+                  {currentLightboxItem.venue} — Zain Zohaib Meet &amp; Greet Canada 2026
                 </p>
               </div>
               <a

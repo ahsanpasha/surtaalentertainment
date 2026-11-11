@@ -22,19 +22,18 @@ export default function GalleryPage() {
       <div className="AboutusMain">
         <div className="Celebrate" data-aos="fade-down">
           <div className="CircleDiv"></div>
-          <p className="Celebratetext">Gallery</p>
+          <p className="Celebratetext">Meet &amp; Greet</p>
         </div>
         <p className="FeelText" data-aos="fade-down" data-aos-delay="200">
-          Capturing <span>Moments</span>, Living the <span>Music</span>
+          Unforgettable <span>Meet &amp; Greet</span> Moments
         </p>
         <p className="aboutuspara" data-aos="fade-down" data-aos-delay="400">
-          Relive the magic, soul-stirring energy, and passionate crowds of Surtaal&apos;s live concerts.
-          Explore live high-resolution photographs from sold-out stages across Montreal, Toronto, Vancouver, and Niagara Falls.
+          Relive exclusive fan interactions, intimate artist sessions, and memorable backstage memories with Zain Zohaib across Toronto, Vancouver, Montreal, and Niagara Falls.
         </p>
       </div>
 
       {/* Full Gallery Section */}
-      <GallerySection isHomePage={false} initialLimit={24} />
+      <GallerySection isHomePage={false} initialLimitPerCity={8} />
 
       {/* Story & Success Stats Section */}
       <div className="OurStorySection">
@@ -55,4 +54,3 @@ export default function GalleryPage() {
     </main>
   );
 }
-

@@ -109,7 +109,7 @@ export default function PastEvents() {
             className="tour-banner-gallery-btn"
             onClick={() => router.push("/gallery")}
           >
-            <span>View Tour Gallery</span>
+            <span>Meet &amp; Greet Gallery</span>
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>
@@ -179,7 +179,7 @@ export default function PastEvents() {
           className="past-events-gallery-btn"
           onClick={() => router.push("/gallery")}
         >
-          View Tour Gallery
+          Meet &amp; Greet Gallery
           <img src="/Images/Navbar/arrow.svg" alt="" />
         </button>
         <button
