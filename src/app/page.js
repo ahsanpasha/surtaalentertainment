@@ -2,6 +2,7 @@
 import "./globals.css";
 import TourEvents from "../component/TourEvents/TourEvents";
 import PastEvents from "../component/PastEvents/PastEvents";
+import GallerySection from "../component/GallerySection/GallerySection";
 import SuccessStats from "../component/SuccessStats/SuccessStats";
 import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
@@ -211,6 +212,8 @@ export default function HomePage() {
       </div>
 
       <PastEvents />
+
+      <GallerySection isHomePage={true} />
 
       {/* entertainment club */}
       <div>

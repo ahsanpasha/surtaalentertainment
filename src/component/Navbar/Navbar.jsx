@@ -8,6 +8,7 @@ import "./Navbar.css";
 const navLinks = [
   { label: "Events in Surtaal", href: "/" },
   { label: "Tickets", href: "/tickets" },
+  { label: "Gallery", href: "/gallery" },
   { label: "About Us", href: "/about-us" },
   { label: "Artists", href: "/artists" },
   { label: "Our Team", href: "/our-team" },

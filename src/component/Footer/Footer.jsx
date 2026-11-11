@@ -14,6 +14,8 @@ const Footer = () => {
 
   const links = [
     { href: '/', label: 'Events in Surtaal' },
+    { href: '/tickets', label: 'Tickets' },
+    { href: '/gallery', label: 'Gallery' },
     { href: '/about-us', label: 'About Us' },
     { href: '/artists', label: 'Artists' },
     { href: '/our-team', label: 'Our Team' }
