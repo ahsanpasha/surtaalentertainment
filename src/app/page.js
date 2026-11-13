@@ -90,7 +90,8 @@ export default function HomePage() {
           <button
             className="SeeHowbtn TourBuyBtn TourMeetGreetBtn"
             onClick={() => router.push("/gallery")}          >
-            Meet & Greet Pictures            <img src="/Images/Navbar/arrow.svg" alt="" />
+            Meet & Greet Pictures
+            <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>
       </div>
