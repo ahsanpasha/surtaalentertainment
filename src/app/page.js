@@ -84,29 +84,15 @@ export default function HomePage() {
           Let every beat inspire your soul as Surtaal brings music, energy, and
           passion together in perfect harmony.
         </p>
-        {/* <p
-          className="TourHeadingText"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
-          <span>Zain Zohaib</span> Canada Tour 2026
-        </p>
+
         <div className="HeroBtnGroup" data-aos="fade-down" data-aos-delay="600">
-          <button
-            className="SeeHowbtn TourBuyBtn"
-            onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
-          >
-            Buy Tickets
-            <img src="/Images/Navbar/arrow.svg" alt="" />
-          </button>
+
           <button
             className="SeeHowbtn TourBuyBtn TourMeetGreetBtn"
-            onClick={() => router.push(`${newLocal}#artist-filter-bar`)}
-          >
-            Buy Meet and Greet Tickets
-            <img src="/Images/Navbar/arrow.svg" alt="" />
+            onClick={() => router.push("/gallery")}          >
+            Meet & Greet Pictures            <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
-        </div> */}
+        </div>
       </div>
 
       {/* what we offer */}
