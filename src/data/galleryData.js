@@ -1,5 +1,4 @@
 // Optimized gallery data with instant-loading WebP thumbnails and crisp full-res views
-// Generated automatically with responsive image pipeline
 export const GALLERY_CATEGORIES = [
   {
     "id": "toronto",
@@ -49,7 +48,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 30476,
-    "originalSrc": "/images/Gallery New/Toronto-New/2.png",
     "thumbSizeKB": 44,
     "fullSizeKB": 272
   },
@@ -66,7 +64,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 31988,
-    "originalSrc": "/images/Gallery New/Toronto-New/3.png",
     "thumbSizeKB": 44,
     "fullSizeKB": 256
   },
@@ -83,7 +80,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 33302,
-    "originalSrc": "/images/Gallery New/Toronto-New/5.png",
     "thumbSizeKB": 43,
     "fullSizeKB": 289
   },
@@ -100,7 +96,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 6278,
-    "originalSrc": "/images/Gallery New/Toronto-New/31.jpg",
     "thumbSizeKB": 40,
     "fullSizeKB": 234
   },
@@ -117,7 +112,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5535,
-    "originalSrc": "/images/Gallery New/Toronto-New/32.jpg",
     "thumbSizeKB": 34,
     "fullSizeKB": 196
   },
@@ -134,7 +128,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 6587,
-    "originalSrc": "/images/Gallery New/Toronto-New/33.jpg",
     "thumbSizeKB": 42,
     "fullSizeKB": 229
   },
@@ -151,7 +144,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 7067,
-    "originalSrc": "/images/Gallery New/Toronto-New/34.jpg",
     "thumbSizeKB": 41,
     "fullSizeKB": 239
   },
@@ -168,7 +160,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5082,
-    "originalSrc": "/images/Gallery New/Toronto-New/35.jpg",
     "thumbSizeKB": 36,
     "fullSizeKB": 160
   },
@@ -185,7 +176,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 20135,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00052.jpg",
     "thumbSizeKB": 54,
     "fullSizeKB": 516
   },
@@ -202,7 +192,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 16279,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00053.jpg",
     "thumbSizeKB": 43,
     "fullSizeKB": 377
   },
@@ -219,7 +208,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18050,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00057.jpg",
     "thumbSizeKB": 50,
     "fullSizeKB": 394
   },
@@ -236,7 +224,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 16968,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00060.jpg",
     "thumbSizeKB": 44,
     "fullSizeKB": 355
   },
@@ -253,7 +240,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 16696,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00063.jpg",
     "thumbSizeKB": 42,
     "fullSizeKB": 384
   },
@@ -270,7 +256,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19802,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00066.jpg",
     "thumbSizeKB": 46,
     "fullSizeKB": 399
   },
@@ -287,7 +272,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 31053,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00070.png",
     "thumbSizeKB": 37,
     "fullSizeKB": 207
   },
@@ -304,7 +288,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18279,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00077.jpg",
     "thumbSizeKB": 46,
     "fullSizeKB": 374
   },
@@ -321,7 +304,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19621,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00079.jpg",
     "thumbSizeKB": 46,
     "fullSizeKB": 406
   },
@@ -338,7 +320,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18855,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00081.jpg",
     "thumbSizeKB": 54,
     "fullSizeKB": 443
   },
@@ -355,7 +336,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19901,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00083.jpg",
     "thumbSizeKB": 50,
     "fullSizeKB": 406
   },
@@ -372,7 +352,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19564,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00089.jpg",
     "thumbSizeKB": 52,
     "fullSizeKB": 437
   },
@@ -389,7 +368,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18463,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00094.jpg",
     "thumbSizeKB": 50,
     "fullSizeKB": 382
   },
@@ -406,7 +384,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19212,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00096.jpg",
     "thumbSizeKB": 46,
     "fullSizeKB": 412
   },
@@ -423,7 +400,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 21373,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00101.jpg",
     "thumbSizeKB": 48,
     "fullSizeKB": 389
   },
@@ -440,7 +416,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 23278,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00103.jpg",
     "thumbSizeKB": 50,
     "fullSizeKB": 356
   },
@@ -457,7 +432,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18758,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00107.jpg",
     "thumbSizeKB": 53,
     "fullSizeKB": 389
   },
@@ -474,7 +448,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 22879,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00113.jpg",
     "thumbSizeKB": 49,
     "fullSizeKB": 358
   },
@@ -491,7 +464,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 20052,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00119.jpg",
     "thumbSizeKB": 43,
     "fullSizeKB": 356
   },
@@ -508,7 +480,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 20212,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00121.jpg",
     "thumbSizeKB": 47,
     "fullSizeKB": 412
   },
@@ -525,7 +496,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 21474,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00122.jpg",
     "thumbSizeKB": 46,
     "fullSizeKB": 356
   },
@@ -542,7 +512,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 23106,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00128.jpg",
     "thumbSizeKB": 53,
     "fullSizeKB": 363
   },
@@ -559,7 +528,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 21156,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00131.jpg",
     "thumbSizeKB": 45,
     "fullSizeKB": 265
   },
@@ -576,7 +544,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 23855,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00132.jpg",
     "thumbSizeKB": 51,
     "fullSizeKB": 352
   },
@@ -593,7 +560,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 19436,
-    "originalSrc": "/images/Gallery New/Toronto-New/DSC00135.jpg",
     "thumbSizeKB": 40,
     "fullSizeKB": 289
   },
@@ -610,7 +576,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 17304,
-    "originalSrc": "/images/Gallery New/Vancouver-New/1.jpg",
     "thumbSizeKB": 33,
     "fullSizeKB": 171
   },
@@ -627,7 +592,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 20472,
-    "originalSrc": "/images/Gallery New/Vancouver-New/2.jpg",
     "thumbSizeKB": 43,
     "fullSizeKB": 240
   },
@@ -644,7 +608,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 17975,
-    "originalSrc": "/images/Gallery New/Vancouver-New/3.jpg",
     "thumbSizeKB": 43,
     "fullSizeKB": 229
   },
@@ -661,7 +624,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 18802,
-    "originalSrc": "/images/Gallery New/Vancouver-New/4.jpg",
     "thumbSizeKB": 42,
     "fullSizeKB": 235
   },
@@ -678,7 +640,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10198,
-    "originalSrc": "/images/Gallery New/Vancouver-New/5.jpg",
     "thumbSizeKB": 41,
     "fullSizeKB": 231
   },
@@ -695,7 +656,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10341,
-    "originalSrc": "/images/Gallery New/Vancouver-New/6.jpg",
     "thumbSizeKB": 38,
     "fullSizeKB": 189
   },
@@ -712,7 +672,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10106,
-    "originalSrc": "/images/Gallery New/Vancouver-New/7.jpg",
     "thumbSizeKB": 37,
     "fullSizeKB": 196
   },
@@ -729,7 +688,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10017,
-    "originalSrc": "/images/Gallery New/Vancouver-New/8.jpg",
     "thumbSizeKB": 41,
     "fullSizeKB": 199
   },
@@ -746,7 +704,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 9977,
-    "originalSrc": "/images/Gallery New/Vancouver-New/9.jpg",
     "thumbSizeKB": 43,
     "fullSizeKB": 216
   },
@@ -763,7 +720,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 11761,
-    "originalSrc": "/images/Gallery New/Vancouver-New/10.jpg",
     "thumbSizeKB": 44,
     "fullSizeKB": 239
   },
@@ -780,7 +736,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10096,
-    "originalSrc": "/images/Gallery New/Vancouver-New/11.jpg",
     "thumbSizeKB": 42,
     "fullSizeKB": 197
   },
@@ -797,7 +752,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 9994,
-    "originalSrc": "/images/Gallery New/Vancouver-New/12.jpg",
     "thumbSizeKB": 40,
     "fullSizeKB": 185
   },
@@ -814,7 +768,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 8934,
-    "originalSrc": "/images/Gallery New/Vancouver-New/13.jpg",
     "thumbSizeKB": 37,
     "fullSizeKB": 173
   },
@@ -831,7 +784,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 9497,
-    "originalSrc": "/images/Gallery New/Vancouver-New/14.jpg",
     "thumbSizeKB": 36,
     "fullSizeKB": 173
   },
@@ -848,7 +800,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10506,
-    "originalSrc": "/images/Gallery New/Vancouver-New/15.jpg",
     "thumbSizeKB": 38,
     "fullSizeKB": 195
   },
@@ -865,7 +816,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5992,
-    "originalSrc": "/images/Gallery New/Montreal-New/1.jpg",
     "thumbSizeKB": 40,
     "fullSizeKB": 175
   },
@@ -882,7 +832,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5283,
-    "originalSrc": "/images/Gallery New/Montreal-New/2.jpg",
     "thumbSizeKB": 25,
     "fullSizeKB": 116
   },
@@ -899,7 +848,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4635,
-    "originalSrc": "/images/Gallery New/Montreal-New/3.jpg",
     "thumbSizeKB": 28,
     "fullSizeKB": 119
   },
@@ -916,7 +864,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5467,
-    "originalSrc": "/images/Gallery New/Montreal-New/4.jpg",
     "thumbSizeKB": 27,
     "fullSizeKB": 125
   },
@@ -933,7 +880,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5708,
-    "originalSrc": "/images/Gallery New/Montreal-New/5.jpg",
     "thumbSizeKB": 31,
     "fullSizeKB": 143
   },
@@ -950,7 +896,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4571,
-    "originalSrc": "/images/Gallery New/Montreal-New/6.jpg",
     "thumbSizeKB": 22,
     "fullSizeKB": 95
   },
@@ -967,7 +912,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4459,
-    "originalSrc": "/images/Gallery New/Montreal-New/7.jpg",
     "thumbSizeKB": 22,
     "fullSizeKB": 97
   },
@@ -984,7 +928,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4707,
-    "originalSrc": "/images/Gallery New/Montreal-New/8.jpg",
     "thumbSizeKB": 22,
     "fullSizeKB": 97
   },
@@ -1001,7 +944,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5329,
-    "originalSrc": "/images/Gallery New/Montreal-New/9.jpg",
     "thumbSizeKB": 25,
     "fullSizeKB": 115
   },
@@ -1018,7 +960,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4660,
-    "originalSrc": "/images/Gallery New/Montreal-New/10.jpg",
     "thumbSizeKB": 20,
     "fullSizeKB": 98
   },
@@ -1035,7 +976,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5022,
-    "originalSrc": "/images/Gallery New/Montreal-New/11.jpg",
     "thumbSizeKB": 21,
     "fullSizeKB": 101
   },
@@ -1052,7 +992,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4915,
-    "originalSrc": "/images/Gallery New/Montreal-New/12.jpg",
     "thumbSizeKB": 38,
     "fullSizeKB": 168
   },
@@ -1069,7 +1008,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 6242,
-    "originalSrc": "/images/Gallery New/Montreal-New/13.jpg",
     "thumbSizeKB": 29,
     "fullSizeKB": 142
   },
@@ -1086,7 +1024,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4429,
-    "originalSrc": "/images/Gallery New/Montreal-New/14.jpg",
     "thumbSizeKB": 21,
     "fullSizeKB": 89
   },
@@ -1103,7 +1040,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5603,
-    "originalSrc": "/images/Gallery New/Montreal-New/15.jpg",
     "thumbSizeKB": 32,
     "fullSizeKB": 156
   },
@@ -1120,7 +1056,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5770,
-    "originalSrc": "/images/Gallery New/Montreal-New/16.jpg",
     "thumbSizeKB": 33,
     "fullSizeKB": 157
   },
@@ -1137,7 +1072,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5465,
-    "originalSrc": "/images/Gallery New/Montreal-New/17.jpg",
     "thumbSizeKB": 25,
     "fullSizeKB": 116
   },
@@ -1154,7 +1088,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5267,
-    "originalSrc": "/images/Gallery New/Montreal-New/18.jpg",
     "thumbSizeKB": 25,
     "fullSizeKB": 112
   },
@@ -1171,7 +1104,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5486,
-    "originalSrc": "/images/Gallery New/Montreal-New/19.jpg",
     "thumbSizeKB": 27,
     "fullSizeKB": 120
   },
@@ -1188,7 +1120,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5893,
-    "originalSrc": "/images/Gallery New/Montreal-New/20.jpg",
     "thumbSizeKB": 31,
     "fullSizeKB": 148
   },
@@ -1205,7 +1136,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5407,
-    "originalSrc": "/images/Gallery New/Montreal-New/21.jpg",
     "thumbSizeKB": 26,
     "fullSizeKB": 112
   },
@@ -1222,7 +1152,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5659,
-    "originalSrc": "/images/Gallery New/Montreal-New/22.jpg",
     "thumbSizeKB": 27,
     "fullSizeKB": 121
   },
@@ -1239,7 +1168,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5308,
-    "originalSrc": "/images/Gallery New/Montreal-New/23.jpg",
     "thumbSizeKB": 26,
     "fullSizeKB": 123
   },
@@ -1256,7 +1184,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5547,
-    "originalSrc": "/images/Gallery New/Montreal-New/24.jpg",
     "thumbSizeKB": 22,
     "fullSizeKB": 105
   },
@@ -1273,7 +1200,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5472,
-    "originalSrc": "/images/Gallery New/Montreal-New/26.jpg",
     "thumbSizeKB": 26,
     "fullSizeKB": 118
   },
@@ -1290,7 +1216,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5716,
-    "originalSrc": "/images/Gallery New/Montreal-New/27.jpg",
     "thumbSizeKB": 25,
     "fullSizeKB": 119
   },
@@ -1307,7 +1232,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 5694,
-    "originalSrc": "/images/Gallery New/Montreal-New/28.jpg",
     "thumbSizeKB": 30,
     "fullSizeKB": 132
   },
@@ -1324,7 +1248,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 4008,
-    "originalSrc": "/images/Gallery New/Montreal-New/29.jpg",
     "thumbSizeKB": 30,
     "fullSizeKB": 126
   },
@@ -1341,7 +1264,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10924,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00021 .jpg",
     "thumbSizeKB": 26,
     "fullSizeKB": 139
   },
@@ -1358,7 +1280,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 13652,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00028.jpg",
     "thumbSizeKB": 21,
     "fullSizeKB": 110
   },
@@ -1375,7 +1296,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 13162,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00031.jpg",
     "thumbSizeKB": 23,
     "fullSizeKB": 137
   },
@@ -1392,7 +1312,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 12459,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00032.jpg",
     "thumbSizeKB": 23,
     "fullSizeKB": 135
   },
@@ -1409,7 +1328,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10801,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00038.jpg",
     "thumbSizeKB": 20,
     "fullSizeKB": 108
   },
@@ -1426,7 +1344,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 10014,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00040.jpg",
     "thumbSizeKB": 23,
     "fullSizeKB": 131
   },
@@ -1443,7 +1360,6 @@ export const GALLERY_ITEMS = [
     "height": 480,
     "aspectRatio": "landscape",
     "fileSizeKB": 20039,
-    "originalSrc": "/images/Gallery New/Niagara falls-New/DSC00043.jpg",
     "thumbSizeKB": 21,
     "fullSizeKB": 173
   }
