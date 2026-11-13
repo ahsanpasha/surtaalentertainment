@@ -137,13 +137,12 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
       {/* Featured Tour Banner */}
       <div className="gallery-tour-banner" data-aos="fade-up">
         <div className="gallery-banner-left">
-          <div className="gallery-pulse-dot"></div>
           <h3 className="gallery-banner-title">
-            <span>Zain Zohaib</span> Meet &amp; Greet Canada 2026 Tour
+            <span>Zain Zohaib </span> Meet &amp; Greet Canada 2026 Tour
           </h3>
         </div>
         <div className="gallery-banner-stats">
-          <span className="gallery-stat-pill">99 Moments</span>
+
           <span className="gallery-stat-pill">4 Landmark Cities</span>
           <span className="gallery-stat-pill">100% Sold Out Tour</span>
         </div>
@@ -183,8 +182,8 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
           const displayLimit = isHomePage
             ? Math.min(4, cityPhotos.length)
             : isExpanded
-            ? cityPhotos.length
-            : initialLimitPerCity;
+              ? cityPhotos.length
+              : initialLimitPerCity;
           const photosToShow = cityPhotos.slice(0, displayLimit);
 
           return (
