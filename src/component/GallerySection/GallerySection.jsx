@@ -285,7 +285,7 @@ export default function GallerySection({ isHomePage = false, initialLimitPerCity
             className="gallery-load-more-btn"
             onClick={() => router.push("/gallery")}
           >
-            Explore Full Meet &amp; Greet Gallery (99 Photos)
+            Explore Full Meet &amp; Greet Gallery ({GALLERY_ITEMS.length} Photos)
             <img src="/Images/Navbar/arrow.svg" alt="" />
           </button>
         </div>

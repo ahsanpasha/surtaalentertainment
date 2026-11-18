@@ -22,7 +22,7 @@ export const GALLERY_CATEGORIES = [
     "city": "Montreal, QC",
     "venue": "Oscar Peterson Concert Hall",
     "folder": "Montreal-New",
-    "count": 28
+    "count": 27
   },
   {
     "id": "niagara-falls",
@@ -826,22 +826,6 @@ export const GALLERY_ITEMS = [
     "city": "Montreal, QC",
     "venue": "Oscar Peterson Concert Hall",
     "title": "Montreal Live Moments",
-    "src": "/Images/gallery-optimized/full/Montreal-New/2.webp",
-    "thumb": "/Images/gallery-optimized/thumbs/Montreal-New/2.webp",
-    "width": 640,
-    "height": 480,
-    "aspectRatio": "landscape",
-    "fileSizeKB": 5283,
-    "thumbSizeKB": 25,
-    "fullSizeKB": 116
-  },
-  {
-    "id": "gal-montreal-3",
-    "categoryId": "montreal",
-    "categoryName": "Montreal",
-    "city": "Montreal, QC",
-    "venue": "Oscar Peterson Concert Hall",
-    "title": "Montreal Live Moments",
     "src": "/Images/gallery-optimized/full/Montreal-New/3.webp",
     "thumb": "/Images/gallery-optimized/thumbs/Montreal-New/3.webp",
     "width": 640,
@@ -852,7 +836,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 119
   },
   {
-    "id": "gal-montreal-4",
+    "id": "gal-montreal-3",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -868,7 +852,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 125
   },
   {
-    "id": "gal-montreal-5",
+    "id": "gal-montreal-4",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -884,7 +868,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 143
   },
   {
-    "id": "gal-montreal-6",
+    "id": "gal-montreal-5",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -900,7 +884,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 95
   },
   {
-    "id": "gal-montreal-7",
+    "id": "gal-montreal-6",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -916,7 +900,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 97
   },
   {
-    "id": "gal-montreal-8",
+    "id": "gal-montreal-7",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -932,7 +916,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 97
   },
   {
-    "id": "gal-montreal-9",
+    "id": "gal-montreal-8",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -948,7 +932,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 115
   },
   {
-    "id": "gal-montreal-10",
+    "id": "gal-montreal-9",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -964,7 +948,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 98
   },
   {
-    "id": "gal-montreal-11",
+    "id": "gal-montreal-10",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -980,7 +964,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 101
   },
   {
-    "id": "gal-montreal-12",
+    "id": "gal-montreal-11",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -996,7 +980,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 168
   },
   {
-    "id": "gal-montreal-13",
+    "id": "gal-montreal-12",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1012,7 +996,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 142
   },
   {
-    "id": "gal-montreal-14",
+    "id": "gal-montreal-13",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1028,7 +1012,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 89
   },
   {
-    "id": "gal-montreal-15",
+    "id": "gal-montreal-14",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1044,7 +1028,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 156
   },
   {
-    "id": "gal-montreal-16",
+    "id": "gal-montreal-15",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1060,7 +1044,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 157
   },
   {
-    "id": "gal-montreal-17",
+    "id": "gal-montreal-16",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1076,7 +1060,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 116
   },
   {
-    "id": "gal-montreal-18",
+    "id": "gal-montreal-17",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1092,7 +1076,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 112
   },
   {
-    "id": "gal-montreal-19",
+    "id": "gal-montreal-18",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1108,7 +1092,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 120
   },
   {
-    "id": "gal-montreal-20",
+    "id": "gal-montreal-19",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1124,7 +1108,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 148
   },
   {
-    "id": "gal-montreal-21",
+    "id": "gal-montreal-20",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1140,7 +1124,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 112
   },
   {
-    "id": "gal-montreal-22",
+    "id": "gal-montreal-21",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1156,7 +1140,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 121
   },
   {
-    "id": "gal-montreal-23",
+    "id": "gal-montreal-22",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1172,7 +1156,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 123
   },
   {
-    "id": "gal-montreal-24",
+    "id": "gal-montreal-23",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1188,7 +1172,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 105
   },
   {
-    "id": "gal-montreal-25",
+    "id": "gal-montreal-24",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1204,7 +1188,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 118
   },
   {
-    "id": "gal-montreal-26",
+    "id": "gal-montreal-25",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1220,7 +1204,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 119
   },
   {
-    "id": "gal-montreal-27",
+    "id": "gal-montreal-26",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
@@ -1236,7 +1220,7 @@ export const GALLERY_ITEMS = [
     "fullSizeKB": 132
   },
   {
-    "id": "gal-montreal-28",
+    "id": "gal-montreal-27",
     "categoryId": "montreal",
     "categoryName": "Montreal",
     "city": "Montreal, QC",
